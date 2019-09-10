@@ -818,15 +818,16 @@ MonoBehaviour:
   - {fileID: 6816400102138735202, guid: b1500b314522df14ca1625ba83a74e6a, type: 3}
   - {fileID: 6816400102138735202, guid: bd0b0306e081d454c975339e51a484c4, type: 3}
   - {fileID: 6816400102138735202, guid: 3e894210a23b2404bb0ec739d63f9e93, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 6816400102138735202, guid: b1500b314522df14ca1625ba83a74e6a, type: 3}
+  - {fileID: 6816400102138735202, guid: bd0b0306e081d454c975339e51a484c4, type: 3}
+  - {fileID: 6816400102138735202, guid: 3e894210a23b2404bb0ec739d63f9e93, type: 3}
+  - {fileID: 6816400102138735202, guid: b1500b314522df14ca1625ba83a74e6a, type: 3}
+  - {fileID: 6816400102138735202, guid: bd0b0306e081d454c975339e51a484c4, type: 3}
+  - {fileID: 6816400102138735202, guid: 3e894210a23b2404bb0ec739d63f9e93, type: 3}
+  - {fileID: 6816400102138735202, guid: b1500b314522df14ca1625ba83a74e6a, type: 3}
   itemInInventorySelected: 0
   spawnLocation: {fileID: 752037142}
+  currentlyHolding: {fileID: 0}
 --- !u!114 &1186218334
 MonoBehaviour:
   m_ObjectHideFlags: 0

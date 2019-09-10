@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     Transform spawnLocation;
+    [SerializeField]
+    GameObject currentlyHolding;
 
     private Vector3 moveDirection;
     private bool itemSelected;
@@ -23,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         //inventory = new GameObject[10];
+        currentlyHolding = inventory[0];
     }
 
     // Update is called once per frame
@@ -46,9 +49,11 @@ public class PlayerController : MonoBehaviour
 
     private void DisplayItemSelected()
     {
-        
-        GameObject item = (GameObject)Instantiate(inventory[itemInInventorySelected], spawnLocation.position, spawnLocation.rotation);
+        currentlyHolding = inventory[itemInInventorySelected];
+        //currentlyHolding.transform.position = spawnLocation.transform.position;
+        GameObject item = (GameObject)Instantiate(currentlyHolding, spawnLocation.transform);
         item.transform.parent = this.transform;
+
     }
 
     private void SelectItem()
