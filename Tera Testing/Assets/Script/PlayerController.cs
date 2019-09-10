@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour
         SelectItem();
         if(!itemSelected)
         {
+            // Since Item was switched, destroy what was previously held and assign the new value
+            Destroy(currentlyHolding.gameObject);
             DisplayItemSelected();
             itemSelected = true;
         }
@@ -49,10 +51,11 @@ public class PlayerController : MonoBehaviour
 
     private void DisplayItemSelected()
     {
-        currentlyHolding = inventory[itemInInventorySelected];
+        // Assigning the currently held item
+        currentlyHolding = (GameObject)Instantiate(inventory[itemInInventorySelected]);
         //currentlyHolding.transform.position = spawnLocation.transform.position;
-        GameObject item = (GameObject)Instantiate(currentlyHolding, spawnLocation.transform);
-        item.transform.parent = this.transform;
+        //GameObject item = (GameObject)Instantiate(currentlyHolding, spawnLocation.transform);
+        //item.transform.parent = this.transform;
 
     }
 
