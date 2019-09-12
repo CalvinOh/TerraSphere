@@ -18,9 +18,14 @@ public class PlayerController : MonoBehaviour
     Transform spawnLocation;
     [SerializeField]
     GameObject currentlyHolding;
+    [SerializeField]
+    GameObject blankSlot;
+    [SerializeField]
+    private float jumpHeight;
 
     private Vector3 moveDirection;
     private bool itemSelected;
+    private bool hasJumped;
 
     private void Start()
     {
@@ -40,19 +45,16 @@ public class PlayerController : MonoBehaviour
             DisplayItemSelected();
             itemSelected = true;
         }
-        
-        PlaceItem();
+        Jump();
+        UseItem();
     }
 
-    private void PlaceItem()
-    {
-      
-    }
 
     private void DisplayItemSelected()
     {
         // Assigning the currently held item
-        currentlyHolding = (GameObject)Instantiate(inventory[itemInInventorySelected]);
+        currentlyHolding = (GameObject)Instantiate(inventory[itemInInventorySelected], spawnLocation.transform.position, spawnLocation.transform.rotation);
+        currentlyHolding.transform.parent = spawnLocation.transform;
         //currentlyHolding.transform.position = spawnLocation.transform.position;
         //GameObject item = (GameObject)Instantiate(currentlyHolding, spawnLocation.transform);
         //item.transform.parent = this.transform;
@@ -117,5 +119,47 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         this.GetComponent<Rigidbody>().MovePosition(this.GetComponent<Rigidbody>().position + transform.TransformDirection(moveDirection) * moveSpeed * Time.deltaTime);
+    }
+
+    void Jump()
+    {
+        if(Input.GetButtonDown("Jump") && hasJumped == false)
+        {
+            Debug.Log("Jumping");
+            this.gameObject.GetComponent<Rigidbody>().AddForce(transform.up *jumpHeight);
+            hasJumped = true;
+            
+        }
+    }
+
+    void UseItem()
+    {
+
+        if(Input.GetButtonDown("Fire1"))
+        {
+            //Seed, 
+            if (currentlyHolding.CompareTag("Seed"))
+            {
+                PlantSeed();
+            }
+        }
+    }
+
+    void PlantSeed()
+    {
+        //Spawn a new seed/plant onto the world, and starts the plant growth cycle, removes a stack until 0 and removes from inventory.
+        GameObject newSeed = (GameObject)Instantiate(inventory[itemInInventorySelected], spawnLocation.transform.position, spawnLocation.transform.rotation);
+        blankSlot = new GameObject();
+        inventory[itemInInventorySelected] = blankSlot;
+        currentlyHolding = inventory[itemInInventorySelected];
+
+        //check for stack, if yes -- from stack; else remove from inventory;
+
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        hasJumped = false;
     }
 }
