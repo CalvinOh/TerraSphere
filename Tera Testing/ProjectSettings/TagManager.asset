@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Seed
+  - ToolManager
+  - Tool
+  - Item
   layers:
   - Default
   - TransparentFX
