@@ -644,7 +644,7 @@ RectTransform:
   m_GameObject: {fileID: 440210811}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 1104751780}
   m_RootOrder: 0
@@ -872,7 +872,7 @@ GameObject:
   - component: {fileID: 929314854}
   - component: {fileID: 929314853}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1266,7 +1266,7 @@ GameObject:
   - component: {fileID: 961162368}
   - component: {fileID: 961162370}
   m_Layer: 5
-  m_Name: Image
+  m_Name: FilledBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2237,7 +2237,7 @@ RectTransform:
   m_GameObject: {fileID: 1303689049}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 953427495}
   m_RootOrder: 0
@@ -2402,7 +2402,7 @@ RectTransform:
   m_GameObject: {fileID: 1372054194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 330031897}
   m_RootOrder: 0
@@ -3422,7 +3422,7 @@ RectTransform:
   m_GameObject: {fileID: 2102736062}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 1983582736}
   m_RootOrder: 0
