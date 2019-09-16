@@ -34,6 +34,8 @@ public class CameraController : MonoBehaviour
         //rotate player as according to mouse X axis
         transform.Rotate(( new Vector3(0, Input.GetAxis("Mouse X"), 0)) * Time.deltaTime * speed);
 
+
+        //button switch for the two cameras
         if (Input.GetKeyDown(KeyCode.V))
         {
             TPSCamera.active = !TPSCamera.active;
