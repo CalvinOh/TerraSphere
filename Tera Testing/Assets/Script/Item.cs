@@ -5,10 +5,10 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     public int ID;
-    public string type;
+    public string type; // seed, tool, etc. Like an internal tag
     public string description;
-    public Sprite icon;
-    public bool pickedUp;
+    public Sprite icon; // the icon used for the inventory menu
+    public bool pickedUp; 
 
     [HideInInspector]
     public bool equipped; // Tool currently equipped
