@@ -54,12 +54,17 @@ public class Item : MonoBehaviour
         }
     }
 
-    public void itemUsage()
+    public void itemUsage(Slot itemFromSlot)
     {
         if (type == "Tool")
         {
             tool.SetActive(true);
             tool.GetComponent<Item>().equipped = true;
+        }
+
+        if(type == "Seed")
+        {
+            Instantiate(itemFromSlot.item, toolManager.gameObject.GetComponent<PlayerControllerV2>().spawnLocation);
         }
 
 
