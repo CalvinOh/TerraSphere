@@ -12,6 +12,7 @@ TagManager:
   - Dug
   - Seeded
   - Obstacle
+  - Plant
   layers:
   - Default
   - TransparentFX
