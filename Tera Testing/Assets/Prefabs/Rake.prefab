@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 97916330595291895}
   - component: {fileID: 8579277223848969239}
   m_Layer: 0
-  m_Name: plant
-  m_TagString: Seed
+  m_Name: Rake
+  m_TagString: Rake
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c2fd567473c8fae4c8eb0faf95e08969, type: 2}
+  - {fileID: 2100000, guid: 694831d5a0d522340a3532cdfb15b0c6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

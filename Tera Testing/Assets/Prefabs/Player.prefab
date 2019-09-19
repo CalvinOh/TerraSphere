@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1898537939971368263}
   m_Layer: 0
-  m_Name: SpawnLocation
+  m_Name: SpawnHeldLocation
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898537939971368260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.28}
+  m_LocalPosition: {x: 0, y: -0.28, z: 1.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1898537941756479754}
@@ -263,6 +263,7 @@ Transform:
   - {fileID: 1898537939971368263}
   - {fileID: 1898537941523748808}
   - {fileID: 1898537940282873769}
+  - {fileID: 2471129310849179604}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -356,12 +357,14 @@ MonoBehaviour:
   - {fileID: 6816400102138735202, guid: b1500b314522df14ca1625ba83a74e6a, type: 3}
   - {fileID: 6816400102138735202, guid: bd0b0306e081d454c975339e51a484c4, type: 3}
   - {fileID: 6816400102138735202, guid: 3e894210a23b2404bb0ec739d63f9e93, type: 3}
-  - {fileID: 6816400102138735202, guid: b1500b314522df14ca1625ba83a74e6a, type: 3}
+  - {fileID: 6816400102138735202, guid: e6af9b72488865741a8240fa511fe84f, type: 3}
   itemInInventorySelected: 0
-  spawnLocation: {fileID: 1898537939971368263}
+  spawnHeldLocation: {fileID: 1898537939971368263}
+  spawnItemLocation: {fileID: 2471129310849179604}
   currentlyHolding: {fileID: 1898537941523748809}
   blankSlot: {fileID: 1898537941523748809}
   jumpHeight: 500
+  currentlySelecting: {fileID: 0}
 --- !u!54 &1898537941756479757
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -378,3 +381,47 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &7347825636834681758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2471129310849179604}
+  - component: {fileID: 4594367841169808553}
+  m_Layer: 0
+  m_Name: Spawn/Check_Location
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2471129310849179604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7347825636834681758}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.73, z: 1.84}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1898537941756479754}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4594367841169808553
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7347825636834681758}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
