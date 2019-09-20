@@ -5282,8 +5282,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuPanel: {fileID: 1490539245}
   title: {fileID: 1435593961}
-  timeNeededAnim: 5
-  crossfadeTime: 3
+  timeNeededAnim: 6
+  crossfadeTime: 2
   timeNeededMenu: 8.5
 --- !u!1001 &991726009
 PrefabInstance:
@@ -7308,7 +7308,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 1417.3, y: -175}
-  m_SizeDelta: {x: 700, y: 150}
+  m_SizeDelta: {x: 1000, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1435593961
 MonoBehaviour:
@@ -7332,7 +7332,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 99df9aae07b7d324799c1417fc8e3aad, type: 3}
-    m_FontSize: 84
+    m_FontSize: 108
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -8176,7 +8176,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 15
+    angle: 20
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -8262,7 +8262,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.09
+      value: 0.05
       mode: 0
       spread: 0
       speed:
@@ -12244,8 +12244,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 457.3, y: -105.5}
-  m_SizeDelta: {x: -1114.6, y: -410.9}
+  m_AnchoredPosition: {x: 457.3, y: -110.024994}
+  m_SizeDelta: {x: -1114.6, y: -419.94998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1490539247
 MonoBehaviour:
