@@ -5,18 +5,18 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
 
-    public bool inventoryEnabled;
+    public bool inventoryDisplaying;
     public GameObject inventory;
 
     private int allSlots;
     private int enabledSlots;
-    private GameObject[] slot;
+    public GameObject[] slot;
 
     public GameObject slotHolder;
 
     private void Start()
     {
-        allSlots = 30;
+        allSlots = 10;
         slot = new GameObject[allSlots];
 
         for(int i = 0; i < allSlots; i++)
@@ -32,10 +32,10 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.I))
+        if(Input.GetKeyDown(KeyCode.E))
         {
-            inventoryEnabled = !inventoryEnabled;
-            if(inventoryEnabled)
+            inventoryDisplaying = !inventoryDisplaying;
+            if(inventoryDisplaying)
             {
                 inventory.SetActive(true);
             }
