@@ -5,10 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Seed
-  - ToolManager
-  - Tool
-  - Item
-  - InventoryObject
+  - Ground
+  - Shovel
+  - Rake
+  - WateringCan
+  - Dug
+  - Seeded
+  - Obstacle
+  - Plant
   layers:
   - Default
   - TransparentFX
