@@ -38,5 +38,6 @@ public class MenuStart : MonoBehaviour
             mainMenuPanel.SetActive(true);
             menuOnce = true;
         }
+        //comment test
     }
 }
