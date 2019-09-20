@@ -32,6 +32,6 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 
     public void useItem()
     {
-        item.GetComponent<Item>().itemUsage();
+        item.GetComponent<Item>().itemUsage(this);
     }
 }
