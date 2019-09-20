@@ -1,22 +1,12 @@
 # TERA_Project
-Game Vision - TerraSphere
 
-The Story - 
-You, an "Astronaut", has landed on a small barren world and in order to survive you must bring life to it. Plant, Harvest, Live. 
+TerraSphere is a relaxing, survival, farming simulator. The game takes place when the player lands on a barren planet and in order to survive they must farm and in doing so terraform the planet bringing life to it. For design the major aspects of the game that we are concerned about is; User Interfaces, Number Balancing, Asset Implementation, and in Engine processes like cutscenes, lighting and more. Programming consists of system work, at the moment this is taking the form of the creation of the main gameplay mechanics like planting, growing, and player movement along the sphere. Artists are working on the visuals of the game like the environmental assets and the player character.
 
-The Gameplay - 
-The player will perform simple tasks seeding plants around the planet to terraform the planet into a garden world. 
 
-Art Style - 
-Cartoonish with a cell shader. Art Style more in line like astroneer.
+Vision Doc: https://docs.google.com/document/d/17DQpYPswP-itVK-_0gvkUJvQ-ZoipK7GrCyg8AWDVlA/edit?usp=sharing
 
-Experience - 
-We want the game to feel casual and relaxing while also helping bring a sense of accomplishment as you see the world slowly become teaming with life.
+Design Process Journal: https://docs.google.com/document/d/17DQpYPswP-itVK-_0gvkUJvQ-ZoipK7GrCyg8AWDVlA/edit?usp=sharing
 
-Delegation
-Calvin - Gameplay Programmer
-Pedro - Systems Programmer
-Victoria - Environemental and Prop Artist
-Maddy - Character Artist
-Jiening - Gameplay Designer
-Zoey - UI/UX and Narrative Designer
+Technical Journal: https://github.com/CalvinOh/TERA_Project/wiki/Technical-Journal
+
+Artist Manifesto: https://github.com/CalvinOh/TERA_Project/wiki/Artist-Manifesto
