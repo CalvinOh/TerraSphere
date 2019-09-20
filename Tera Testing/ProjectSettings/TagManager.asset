@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Seed
+  - Ground
+  - Shovel
+  - Rake
+  - WateringCan
+  - Dug
+  - Seeded
+  - Obstacle
+  - Plant
   layers:
   - Default
   - TransparentFX
