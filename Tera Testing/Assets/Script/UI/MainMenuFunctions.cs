@@ -24,6 +24,10 @@ public class MainMenuFunctions : MonoBehaviour
     [Tooltip("The number for the Scene Index you wish to switch to.")]
     private int sceneSwitch = 1;
 
+    [SerializeField]
+    [Tooltip("The number for the Scene Index you wish to switch from.")]
+    private int currentScene = 0;
+
     private string currentPanel;
     private string previousPanel;
     private EventSystem eventSystem;
@@ -42,6 +46,7 @@ public class MainMenuFunctions : MonoBehaviour
     public void GoToScene()
     {
         SceneManager.LoadScene(sceneSwitch);
+        SceneManager.UnloadSceneAsync(currentScene);
     }
 
     public void EndGame()
