@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 97916330595291895}
   - component: {fileID: 8579277223848969239}
   m_Layer: 0
-  m_Name: plant
-  m_TagString: Seed
+  m_Name: Shovel
+  m_TagString: Shovel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
