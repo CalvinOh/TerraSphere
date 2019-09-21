@@ -25,6 +25,7 @@ public class PlantGrowth : MonoBehaviour
     [SerializeField]
     private GameObject Stage2;
 
+    public bool Grow;
 
 
     public float AccelTimeer; //how much longer the plant will remain in accelerated growth, after watering. public for debugging ONLY.
@@ -49,6 +50,7 @@ public class PlantGrowth : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(Grow)
         UpdateGrowth();
     }
 
