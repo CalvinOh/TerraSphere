@@ -26,6 +26,12 @@ public class PlayerController : MonoBehaviour
     private float jumpHeight;
     [SerializeField]
     private GameObject currentlySelecting;
+    [SerializeField]
+    private GameObject shovel;
+    [SerializeField]
+    private GameObject rake;
+    [SerializeField]
+    private GameObject wateringCan;
 
     private GameObject planet;
 
@@ -44,6 +50,15 @@ public class PlayerController : MonoBehaviour
             planet = FindObjectOfType<GravityAttractor>().gameObject;
         }
         objectsInTrigger = new List<GameObject>();
+
+        shovel.transform.position = spawnHeldLocation.transform.position;
+        rake.transform.position = spawnHeldLocation.transform.position;
+        wateringCan.transform.position = spawnHeldLocation.transform.position;
+
+        inventory[0] = shovel;
+        inventory[2] = rake;
+        inventory[3] = wateringCan;
+
     }
 
     // Update is called once per frame
