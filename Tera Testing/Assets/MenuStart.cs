@@ -29,6 +29,12 @@ public class MenuStart : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetButton("Submit"))
+        {
+            timeNeededAnim = 0;
+            timeNeededMenu = 0;
+            crossfadeTime = 0;
+        }
         if (timeNeededAnim <= Time.time && !animOnce)
         {
             title.CrossFadeAlpha(255.0f, crossfadeTime, true);
