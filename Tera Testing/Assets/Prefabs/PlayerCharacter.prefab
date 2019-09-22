@@ -219,13 +219,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1912088723827952216}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0.03999996, y: 1.7100003, z: 1.0519999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7268913148270936331}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &3853549996314032983
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +358,7 @@ MonoBehaviour:
   currentlySelecting: {fileID: 0}
   shovel: {fileID: 3177799350950190381, guid: a0b6729568d46fe47bc7a5d82db09df2, type: 3}
   rake: {fileID: 1093187540545653568, guid: 9e96b98f3cb232147a33a635359a624a, type: 3}
-  wateringCan: {fileID: 6742677743900187071, guid: 0ad1d9e500bb55f48b99261311131b57,
+  wateringCan: {fileID: 2079379734958626780, guid: f98f4e7ddb6382848b0d5ce12489e571,
     type: 3}
   objectsInTrigger: []
 --- !u!114 &7750505843793819478
