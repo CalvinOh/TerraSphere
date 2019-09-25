@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 3644854600264219312}
   - component: {fileID: 8975438540955728481}
   m_Layer: 0
-  m_Name: Main Camera (1)
+  m_Name: TDown Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6216677987890514502
 Transform:
   m_ObjectHideFlags: 0
@@ -125,12 +125,12 @@ GameObject:
   - component: {fileID: 4882853130352605984}
   - component: {fileID: 3898953468817258059}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: TPS Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8006699668530166228
 Transform:
   m_ObjectHideFlags: 0
@@ -219,13 +219,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1912088723827952216}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0.03999996, y: 1.7100003, z: 1.0519999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7268913148270936331}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &3853549996314032983
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,8 +358,11 @@ MonoBehaviour:
   currentlySelecting: {fileID: 0}
   shovel: {fileID: 3177799350950190381, guid: a0b6729568d46fe47bc7a5d82db09df2, type: 3}
   rake: {fileID: 1093187540545653568, guid: 9e96b98f3cb232147a33a635359a624a, type: 3}
-  wateringCan: {fileID: 6742677743900187071, guid: 0ad1d9e500bb55f48b99261311131b57,
+  wateringCan: {fileID: 2079379734958626780, guid: f98f4e7ddb6382848b0d5ce12489e571,
     type: 3}
+  speed: 100
+  TPSCamera: {fileID: 1693675421394986288}
+  TDCamera: {fileID: 711164474256268396}
   objectsInTrigger: []
 --- !u!114 &7750505843793819478
 MonoBehaviour:

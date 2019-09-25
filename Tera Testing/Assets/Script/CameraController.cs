@@ -36,7 +36,7 @@ public class CameraController : MonoBehaviour
 
 
         //button switch for the two cameras
-        if (Input.GetKeyDown(KeyCode.V))
+        if (Input.GetKeyDown(KeyCode.V) )
         {
             TPSCamera.active = !TPSCamera.active;
             TDCamera.active = !TDCamera.active;

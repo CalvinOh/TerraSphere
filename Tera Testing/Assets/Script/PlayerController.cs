@@ -33,6 +33,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject wateringCan;
 
+    [SerializeField]
+    [Tooltip("Speed of rotation, 100 suggested")]
+    private float speed = 100;
+
+    [SerializeField]
+    [Tooltip("Plug in thid person camera")]
+    private GameObject TPSCamera;
+    [SerializeField]
+    [Tooltip("Plug in top down camera")]
+    private GameObject TDCamera;
+
+    [SerializeField]
     private GameObject planet;
 
     public List<GameObject> objectsInTrigger;
@@ -45,9 +57,11 @@ public class PlayerController : MonoBehaviour
     {
         //inventory = new GameObject[10];
         currentlyHolding = inventory[0];
-        if(planet = null)
+        if(planet == null)
         {
+            
             planet = FindObjectOfType<GravityAttractor>().gameObject;
+            print("Planet Found");
         }
         objectsInTrigger = new List<GameObject>();
 
@@ -59,13 +73,17 @@ public class PlayerController : MonoBehaviour
         inventory[2] = rake;
         inventory[3] = wateringCan;
 
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
         moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
-        SelectItem();
+        //SelectItemKeyboard();
+        SelectItemController();
+        RotateCamera();
+        ChangeCameraView();
         if(!itemSelected)
         {
             // Since Item was switched, destroy what was previously held and assign the new value
@@ -75,6 +93,11 @@ public class PlayerController : MonoBehaviour
         }
         Jump();
         UseItem();
+
+        if (objectsInTrigger.Count == 0 || (objectsInTrigger.Count == 1 && objectsInTrigger[0] == planet))
+        {
+            currentlySelecting = planet;
+        }
     }
 
 
@@ -89,7 +112,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void SelectItem()
+    private void SelectItemKeyboard()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1) && inventory[0] != null)
         {
@@ -112,41 +135,52 @@ public class PlayerController : MonoBehaviour
             itemInInventorySelected = 3;
             itemSelected = false;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha5) && inventory[4] != null)
+   
+    }
+
+    private void SelectItemController()
+    {
+        if(Input.GetButtonDown("Left Bumper"))
         {
-            itemInInventorySelected = 4;
-            itemSelected = false;
+
+            print("leftbumper");
+           if(itemInInventorySelected == 0)
+            {
+                itemInInventorySelected = 3;
+                itemSelected = false;
+            }
+           else
+            {
+                itemInInventorySelected--;
+                itemSelected = false;
+            }
         }
-        if (Input.GetKeyDown(KeyCode.Alpha6) && inventory[5] != null)
+        if(Input.GetButtonDown("Right Bumper"))
         {
-            itemInInventorySelected = 5;
-            itemSelected = false;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha7) && inventory[6] != null)
-        {
-            itemInInventorySelected = 6;
-            itemSelected = false;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha8) && inventory[7] != null)
-        {
-            itemInInventorySelected = 7;
-            itemSelected = false;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha9) && inventory[8] != null)
-        {
-            itemInInventorySelected = 8;
-            itemSelected = false;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha0) && inventory[9] != null)
-        {
-            itemInInventorySelected = 9;
-            itemSelected = false;
+            print("rightbumper");
+            if (itemInInventorySelected == 3)
+            {
+                itemInInventorySelected = 0;
+                itemSelected = false;
+            }
+            else
+            {
+                itemInInventorySelected++;
+                itemSelected = false;
+            }
         }
     }
 
     private void FixedUpdate()
     {
-        this.GetComponent<Rigidbody>().MovePosition(this.GetComponent<Rigidbody>().position + transform.TransformDirection(moveDirection) * moveSpeed * Time.deltaTime);
+        Movement();
+    }
+
+    private void Movement()
+    {
+
+       this.GetComponent<Rigidbody>().MovePosition(this.GetComponent<Rigidbody>().position + transform.TransformDirection(moveDirection) * moveSpeed * Time.deltaTime);
+      
     }
 
     void Jump()
@@ -163,7 +197,7 @@ public class PlayerController : MonoBehaviour
     void UseItem()
     {
 
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Use Item"))
         {
             //When left click, based on item held, trigger function
             if (currentlyHolding.CompareTag("Shovel"))
@@ -228,6 +262,24 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    private void RotateCamera()
+    {
+        transform.Rotate((new Vector3(0, Input.GetAxis("Right Joystick X"), 0)) * Time.deltaTime * speed);
+
+
+        //button switch for the two cameras
+      
+    }
+
+    private void ChangeCameraView()
+    {
+        if (Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("Select"))
+        {
+            TPSCamera.active = !TPSCamera.active;
+            TDCamera.active = !TDCamera.active;
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         hasJumped = false;
@@ -243,9 +295,6 @@ public class PlayerController : MonoBehaviour
     {
         objectsInTrigger.Remove(other.gameObject);
 
-        if(objectsInTrigger.Count == 0 || (objectsInTrigger.Count == 1 && objectsInTrigger[0] == planet) )
-        {
-            currentlySelecting = planet;
-        }
+      
     }
 }
