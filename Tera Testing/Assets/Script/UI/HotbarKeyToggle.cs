@@ -16,6 +16,17 @@ public class HotbarKeyToggle : MonoBehaviour
     [SerializeField]
     Toggle watercan;
 
+    [SerializeField]
+    Inventory inv;
+
+    private void Start()
+    {
+        if(inv == null)
+        {
+            inv = FindObjectOfType<Inventory>();
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

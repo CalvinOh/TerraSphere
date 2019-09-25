@@ -5,7 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
 
-    public bool inventoryDisplaying;
+    public bool inventoryDisplaying = true;
     public GameObject inventory;
 
     private int allSlots;
@@ -28,21 +28,29 @@ public class Inventory : MonoBehaviour
                 slot[i].GetComponent<Slot>().empty = true;
             }
         }
+
+        //inventoryDisplaying = true;
+        ToggleDisplayInventory();
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Open Inventory"));
         {
-            inventoryDisplaying = !inventoryDisplaying;
-            if(inventoryDisplaying)
-            {
-                inventory.SetActive(true);
-            }
-            else
-            {
-                inventory.SetActive(false);
-            }
+            ToggleDisplayInventory();
+        }
+    }
+
+    private void ToggleDisplayInventory()
+    {
+        inventoryDisplaying = !inventoryDisplaying;
+        if (inventoryDisplaying)
+        {
+            inventory.SetActive(true);
+        }
+        else
+        {
+            inventory.SetActive(false);
         }
     }
 
