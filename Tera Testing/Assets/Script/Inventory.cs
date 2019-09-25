@@ -35,7 +35,7 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Open Inventory"));
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Open Inventory"))
         {
             ToggleDisplayInventory();
         }
