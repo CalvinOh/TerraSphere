@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7856097418601620295}
   - component: {fileID: 7856097418601620296}
   - component: {fileID: 7856097418601620297}
+  - component: {fileID: 5735122763417303522}
   m_Layer: 0
   m_Name: Shrooms
-  m_TagString: Untagged
+  m_TagString: Seed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,6 +54,7 @@ MonoBehaviour:
   Stage2Cap: 20
   Stage1: {fileID: 2114745824570985606}
   Stage2: {fileID: 7522478663535892357}
+  Grow: 0
   AccelTimeer: 0
   CurrentGrowthAmount: 0
 --- !u!198 &7856097418601620296
@@ -4775,6 +4777,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!65 &5735122763417303522
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856097418601620298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.42833495, y: 0.5111811, z: 0.5383388}
+  m_Center: {x: -0.040292144, y: 0.2223407, z: 0.008090913}
 --- !u!1001 &7856097418737606471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4786,6 +4801,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shrooms_SAP_P
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097297195515810753, guid: 4f53001143db838439157732e2e3383b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Seed
       objectReference: {fileID: 0}
     - target: {fileID: 4801787267954140523, guid: 4f53001143db838439157732e2e3383b,
         type: 3}
@@ -4887,6 +4907,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 388224945109886459, guid: 48145365d658bde42b7e106e5f2270d8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Plant
       objectReference: {fileID: 0}
     - target: {fileID: 6485403864180175209, guid: 48145365d658bde42b7e106e5f2270d8,
         type: 3}
