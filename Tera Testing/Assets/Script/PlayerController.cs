@@ -9,7 +9,9 @@ public class PlayerController : MonoBehaviour
     float moveSpeed;
 
     [SerializeField]
-    GameObject[] inventory = new GameObject[10];
+    GameObject[] hotBarInventory = new GameObject[10];
+    [SerializeField]
+    Inventory invScript;
 
     [SerializeField]
     int itemInInventorySelected;
@@ -56,8 +58,12 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         //inventory = new GameObject[10];
-        currentlyHolding = inventory[0];
-        if(planet == null)
+        currentlyHolding = hotBarInventory[0];
+        if (invScript == null)
+        {
+            invScript = this.gameObject.GetComponent<Inventory>();
+        }
+        if (planet == null)
         {
             
             planet = FindObjectOfType<GravityAttractor>().gameObject;
@@ -69,9 +75,9 @@ public class PlayerController : MonoBehaviour
         rake.transform.position = spawnHeldLocation.transform.position;
         wateringCan.transform.position = spawnHeldLocation.transform.position;
 
-        inventory[0] = shovel;
-        inventory[2] = rake;
-        inventory[3] = wateringCan;
+        hotBarInventory[0] = shovel;
+        hotBarInventory[2] = rake;
+        hotBarInventory[3] = wateringCan;
 
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -79,7 +85,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
         SelectItemKeyboard();
         SelectItemController();
         RotateCamera();
@@ -108,7 +113,7 @@ public class PlayerController : MonoBehaviour
     private void DisplayItemSelected()
     {
         // Assigning the currently held item
-        currentlyHolding = (GameObject)Instantiate(inventory[itemInInventorySelected], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
+        currentlyHolding = (GameObject)Instantiate(hotBarInventory[itemInInventorySelected], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
         currentlyHolding.transform.parent = spawnHeldLocation.transform;
         //currentlyHolding.transform.position = spawnLocation.transform.position;
         //GameObject item = (GameObject)Instantiate(currentlyHolding, spawnLocation.transform);
@@ -118,23 +123,23 @@ public class PlayerController : MonoBehaviour
 
     private void SelectItemKeyboard()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1) && inventory[0] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha1) && hotBarInventory[0] != null)
         {
             itemInInventorySelected = 0;
             itemSelected = false;
         }
             
-        if (Input.GetKeyDown(KeyCode.Alpha2) && inventory[1] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha2) && hotBarInventory[1] != null)
         {
             itemInInventorySelected = 1;
             itemSelected = false;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && inventory[2] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha3) && hotBarInventory[2] != null)
         {
             itemInInventorySelected = 2;
             itemSelected = false;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4) && inventory[3] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha4) && hotBarInventory[3] != null)
         {
             itemInInventorySelected = 3;
             itemSelected = false;
@@ -182,9 +187,12 @@ public class PlayerController : MonoBehaviour
 
     private void Movement()
     {
-
-       this.GetComponent<Rigidbody>().MovePosition(this.GetComponent<Rigidbody>().position + transform.TransformDirection(moveDirection) * moveSpeed * Time.deltaTime);
-      
+        // Move only if the inventory menu is not present.
+        if (!invScript.inventoryDisplaying)
+        {
+            moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
+            this.GetComponent<Rigidbody>().MovePosition(this.GetComponent<Rigidbody>().position + transform.TransformDirection(moveDirection) * moveSpeed * Time.deltaTime);
+        }
     }
 
     void Jump()
@@ -259,10 +267,10 @@ public class PlayerController : MonoBehaviour
         if(currentlySelecting.CompareTag("Ground"))
         {
             //Spawn a new seed/plant onto the world, removes a stack until 0 and removes from inventory.
-            GameObject newSeed = (GameObject)Instantiate(inventory[itemInInventorySelected], spawnItemLocation.transform.position, spawnItemLocation.transform.rotation);
+            GameObject newSeed = (GameObject)Instantiate(hotBarInventory[itemInInventorySelected], spawnItemLocation.transform.position, spawnItemLocation.transform.rotation);
             blankSlot = new GameObject();
-            inventory[itemInInventorySelected] = blankSlot;
-            currentlyHolding = inventory[itemInInventorySelected];
+            hotBarInventory[itemInInventorySelected] = blankSlot;
+            currentlyHolding = hotBarInventory[itemInInventorySelected];
             print("Planting");
             //check for stack, if yes -- from stack; else remove from inventory;
         }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -16,7 +17,8 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-        allSlots = 10;
+        // Find how many slots the UI has for the inventory
+        allSlots = slotHolder.GetComponentsInChildren<Slot>().Length;
         slot = new GameObject[allSlots];
 
         for(int i = 0; i < allSlots; i++)
@@ -29,7 +31,6 @@ public class Inventory : MonoBehaviour
             }
         }
 
-        //inventoryDisplaying = true;
         ToggleDisplayInventory();
     }
 
@@ -46,11 +47,13 @@ public class Inventory : MonoBehaviour
         inventoryDisplaying = !inventoryDisplaying;
         if (inventoryDisplaying)
         {
-            inventory.SetActive(true);
+            inventory.GetComponentInParent<Canvas>().targetDisplay = 0;
+            Cursor.lockState = CursorLockMode.None;
         }
         else
         {
-            inventory.SetActive(false);
+            inventory.GetComponentInParent<Canvas>().targetDisplay = 7;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
@@ -61,6 +64,7 @@ public class Inventory : MonoBehaviour
             GameObject itemPickedUp = other.gameObject;
             Item item = itemPickedUp.GetComponent<Item>();
             addItem(itemPickedUp, item.ID, item.type, item.description, item.icon);
+            //other.gameObject.transform.position.Set(0, 0, 0);
         }
     }
 
@@ -78,8 +82,9 @@ public class Inventory : MonoBehaviour
                 slot[i].GetComponent<Slot>().ID = itemID;
                 slot[i].GetComponent<Slot>().description = itemDescription;
 
-                itemObject.transform.parent = slot[i].transform;
-                itemObject.SetActive(false);
+                itemObject.transform.position = new Vector3(0, 0, 0);
+                //itemObject.transform.parent = slot[i].transform;
+                //itemObject.SetActive(false);
 
                 slot[i].GetComponent<Slot>().UpdateSlot();
                 slot[i].GetComponent<Slot>().empty = false;

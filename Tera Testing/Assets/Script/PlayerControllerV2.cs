@@ -8,8 +8,10 @@ public class PlayerControllerV2 : MonoBehaviour
     [SerializeField]
     float moveSpeed;
 
+    public GameObject planet;
+
     [SerializeField]
-    Inventory inv;
+    Inventory invScript;
 
     [SerializeField]
     int itemInInventorySelected;
@@ -17,7 +19,7 @@ public class PlayerControllerV2 : MonoBehaviour
     [SerializeField]
     public Transform spawnLocation;
     [SerializeField]
-    GameObject currentlyHolding;
+    public GameObject currentlyHolding;
     [SerializeField]
     GameObject blankSlot;
     [SerializeField]
@@ -30,9 +32,13 @@ public class PlayerControllerV2 : MonoBehaviour
     private void Start()
     {
         //inventory = new GameObject[10];
-        if(inv == null)
+        if(invScript == null)
         {
-            inv = this.gameObject.GetComponent<Inventory>();
+            invScript = this.gameObject.GetComponent<Inventory>();
+        }
+        if(planet == null)
+        {
+            planet = FindObjectOfType<GravityAttractor>().gameObject;
         }
     }
 
@@ -54,7 +60,7 @@ public class PlayerControllerV2 : MonoBehaviour
 
     private void Movement()
     {
-        if (!inv.inventoryDisplaying)
+        if (!invScript.inventoryDisplaying)
         {
             moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
         }
@@ -79,53 +85,53 @@ public class PlayerControllerV2 : MonoBehaviour
 
     private void SelectItem()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1) && inv.slot[0] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha1) && invScript.slot[0] != null)
         {
             itemInInventorySelected = 0;
             itemSelected = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2) && inv.slot[1] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha2) && invScript.slot[1] != null)
         {
             itemInInventorySelected = 1;
             itemSelected = false;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && inv.slot[2] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha3) && invScript.slot[2] != null)
         {
             itemInInventorySelected = 2;
             itemSelected = false;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4) && inv.slot[3] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha4) && invScript.slot[3] != null)
         {
             itemInInventorySelected = 3;
             itemSelected = false;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha5) && inv.slot[4] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha5) && invScript.slot[4] != null)
         {
             itemInInventorySelected = 4;
             itemSelected = false;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha6) && inv.slot[5] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha6) && invScript.slot[5] != null)
         {
             itemInInventorySelected = 5;
             itemSelected = false;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha7) && inv.slot[6] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha7) && invScript.slot[6] != null)
         {
             itemInInventorySelected = 6;
             itemSelected = false;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha8) && inv.slot[7] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha8) && invScript.slot[7] != null)
         {
             itemInInventorySelected = 7;
             itemSelected = false;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha9) && inv.slot[8] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha9) && invScript.slot[8] != null)
         {
             itemInInventorySelected = 8;
             itemSelected = false;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha0) && inv.slot[9] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha0) && invScript.slot[9] != null)
         {
             itemInInventorySelected = 9;
             itemSelected = false;
@@ -139,7 +145,7 @@ public class PlayerControllerV2 : MonoBehaviour
 
     void Jump()
     {
-        if (!inv.inventoryDisplaying)
+        if (!invScript.inventoryDisplaying)
         {
             if (Input.GetButtonDown("Jump") && hasJumped == false)
             {
@@ -153,13 +159,13 @@ public class PlayerControllerV2 : MonoBehaviour
 
     void UseItem()
     {
-        if(!inv.inventoryDisplaying)
+        if(!invScript.inventoryDisplaying)
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                if (inv.slot[itemInInventorySelected] != null)
+                if (invScript.slot[itemInInventorySelected] != null)
                 {
-                    inv.slot[itemInInventorySelected].GetComponent<Slot>().useItem();
+                    invScript.slot[itemInInventorySelected].GetComponent<Slot>().useItem();
                     print("Item Used");
                 }
                 //Seed, 
