@@ -344,11 +344,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 15
-  inventory:
-  - {fileID: 0}
-  - {fileID: 6816400102138735202, guid: bd0b0306e081d454c975339e51a484c4, type: 3}
+  hotBarInventory:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  invScript: {fileID: 0}
   itemInInventorySelected: 0
   spawnHeldLocation: {fileID: 4299454363317762921}
   spawnItemLocation: {fileID: 7867978959416469243}
@@ -363,7 +370,24 @@ MonoBehaviour:
   speed: 100
   TPSCamera: {fileID: 1693675421394986288}
   TDCamera: {fileID: 711164474256268396}
+  planet: {fileID: 0}
   objectsInTrigger: []
+--- !u!114 &8256403958841977907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5961363093384459032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec6cd6746cbfad0499a38887933f8dd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryDisplaying: 1
+  inventory: {fileID: 0}
+  slot: []
+  slotHolder: {fileID: 0}
 --- !u!114 &7750505843793819478
 MonoBehaviour:
   m_ObjectHideFlags: 0

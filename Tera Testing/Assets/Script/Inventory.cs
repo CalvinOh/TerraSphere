@@ -48,26 +48,12 @@ public class Inventory : MonoBehaviour
         if (inventoryDisplaying)
         {
             inventory.GetComponentInParent<Canvas>().targetDisplay = 0;
-            //inventory.GetComponentInParent<CanvasRenderer>().SetAlpha(1);
-            //inventory.GetComponent<CanvasRenderer>().SetAlpha(1);
-            //slotHolder.GetComponent<CanvasRenderer>().SetAlpha(1);
-            //foreach (GameObject s in slot)
-            //{
-            //    s.GetComponent<CanvasRenderer>().SetAlpha(1);
-            //}
-
-            //inventory.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
         }
         else
         {
             inventory.GetComponentInParent<Canvas>().targetDisplay = 7;
-            //inventory.GetComponent<CanvasRenderer>().SetAlpha(0);
-            //slotHolder.GetComponent<CanvasRenderer>().SetAlpha(0);
-            //foreach (GameObject s in slot)
-            //{
-            //    s.GetComponent<CanvasRenderer>().SetAlpha(0);
-            //}
-            //inventory.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 

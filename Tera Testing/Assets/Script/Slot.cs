@@ -18,8 +18,11 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData pointerEventData)
     {
-        //useItem();
-        player.GetComponent<PlayerControllerV2>().currentlyHolding = item;
+        if(item.GetComponent<Item>().type == "Plant")
+        {
+            useItem();
+        }
+        //player.GetComponent<PlayerControllerV2>().currentlyHolding = item;
     }
 
     public void Start()
