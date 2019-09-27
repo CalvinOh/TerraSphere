@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class Slot : MonoBehaviour, IPointerClickHandler
 {
+    public GameObject player;
     public GameObject item;
     public int ID;
     public string type;
@@ -17,12 +18,17 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData pointerEventData)
     {
-        useItem();
+        if(item.GetComponent<Item>().type == "Plant")
+        {
+            useItem();
+        }
+        //player.GetComponent<PlayerControllerV2>().currentlyHolding = item;
     }
 
     public void Start()
     {
         slotIconGO = transform.GetChild(0);
+        player = FindObjectOfType<Inventory>().gameObject;
     }
 
     public void UpdateSlot()
