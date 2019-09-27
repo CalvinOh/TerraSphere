@@ -29,7 +29,7 @@ public class MenuStart : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetButton("Submit"))
+        if(Input.GetButtonDown("Use Item"))
         {
             timeNeededAnim = 0;
             timeNeededMenu = 0;
