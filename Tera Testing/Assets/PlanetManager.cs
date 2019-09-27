@@ -8,8 +8,11 @@ public class PlanetManager : MonoBehaviour
     [SerializeField]
     private float PlanetTerraformAmount;
 
+    //static on purpose, for plant burst growth
     static float CurrentTerraformAmount;
-    private float TerraformAountPerSecond;
+
+    private List<PlantGrowth> PlantsOnPlanet = new List<PlantGrowth>();
+
 
     public float TerraformPercentage
     {
@@ -23,7 +26,6 @@ public class PlanetManager : MonoBehaviour
     void Start()
     {
         CurrentTerraformAmount = 0;
-        TerraformAountPerSecond = 0;
     }
 
 
@@ -31,7 +33,10 @@ public class PlanetManager : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        CurrentTerraformAmount += TerraformAountPerSecond * Time.deltaTime;
+        foreach (PlantGrowth plant in PlantsOnPlanet)
+        {
+            CurrentTerraformAmount += plant.CurrentTerraFormAmountProvidedPerSecond;
+        }
         CurrentTerraformAmount = Mathf.Clamp(CurrentTerraformAmount, 0, PlanetTerraformAmount);
     }
     

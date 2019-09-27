@@ -912,10 +912,16 @@ MonoBehaviour:
   - {fileID: 6816400102138735202, guid: 3e894210a23b2404bb0ec739d63f9e93, type: 3}
   - {fileID: 6816400102138735202, guid: b1500b314522df14ca1625ba83a74e6a, type: 3}
   itemInInventorySelected: 0
-  spawnLocation: {fileID: 752037142}
+  spawnHeldLocation: {fileID: 0}
+  spawnItemLocation: {fileID: 0}
   currentlyHolding: {fileID: 1364500376}
   blankSlot: {fileID: 1364500376}
   jumpHeight: 500
+  currentlySelecting: {fileID: 0}
+  shovel: {fileID: 0}
+  rake: {fileID: 0}
+  wateringCan: {fileID: 0}
+  objectsInTrigger: []
 --- !u!114 &1186218334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1533,6 +1539,7 @@ GameObject:
   - component: {fileID: 2050576569}
   - component: {fileID: 2050576568}
   - component: {fileID: 2050576572}
+  - component: {fileID: 2050576573}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Untagged
@@ -1626,6 +1633,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: -20
+--- !u!114 &2050576573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050576567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66eb41cad8bf6f54ab6436cb496b593d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlanetTerraformAmount: 0
 --- !u!1 &2055952809
 GameObject:
   m_ObjectHideFlags: 0
