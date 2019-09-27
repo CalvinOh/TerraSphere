@@ -347,37 +347,49 @@ PrefabInstance:
     - target: {fileID: 6696978963098488621, guid: 877c546e48bb3d04abd6b64a8d8d4f05,
         type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
       value: 38.172
+=======
+      value: 38.30006
+>>>>>>> parent of c153db8... Re-added Light weight render pipeline and shader graph, toon shader
       objectReference: {fileID: 0}
     - target: {fileID: 6696978963098488621, guid: 877c546e48bb3d04abd6b64a8d8d4f05,
         type: 3}
       propertyPath: m_LocalPosition.y
+<<<<<<< HEAD
       value: 0.034
+=======
+      value: 0.07606857
+>>>>>>> parent of c153db8... Re-added Light weight render pipeline and shader graph, toon shader
       objectReference: {fileID: 0}
     - target: {fileID: 6696978963098488621, guid: 877c546e48bb3d04abd6b64a8d8d4f05,
         type: 3}
       propertyPath: m_LocalPosition.z
+<<<<<<< HEAD
       value: -130.792
+=======
+      value: -130.83882
+>>>>>>> parent of c153db8... Re-added Light weight render pipeline and shader graph, toon shader
       objectReference: {fileID: 0}
     - target: {fileID: 6696978963098488621, guid: 877c546e48bb3d04abd6b64a8d8d4f05,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.03239915
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6696978963098488621, guid: 877c546e48bb3d04abd6b64a8d8d4f05,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9385142
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6696978963098488621, guid: 877c546e48bb3d04abd6b64a8d8d4f05,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.1355735
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6696978963098488621, guid: 877c546e48bb3d04abd6b64a8d8d4f05,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.3158501
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6696978963098488621, guid: 877c546e48bb3d04abd6b64a8d8d4f05,
         type: 3}
@@ -387,23 +399,18 @@ PrefabInstance:
     - target: {fileID: 6696978963098488621, guid: 877c546e48bb3d04abd6b64a8d8d4f05,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 15.959001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6696978963098488621, guid: 877c546e48bb3d04abd6b64a8d8d4f05,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 142.59201
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6696978963098488621, guid: 877c546e48bb3d04abd6b64a8d8d4f05,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -1.48
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4963438270044429062, guid: 877c546e48bb3d04abd6b64a8d8d4f05,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 0531f8b0ef254d8419fb63debb363bd1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 877c546e48bb3d04abd6b64a8d8d4f05, type: 3}
 --- !u!1001 &57885534
@@ -633,7 +640,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 44
+=======
+  m_RootOrder: 25
+>>>>>>> parent of c153db8... Re-added Light weight render pipeline and shader graph, toon shader
   m_LocalEulerAnglesHint: {x: 39.226, y: -116.949005, z: -50.871002}
 --- !u!1001 &154422178
 PrefabInstance:
@@ -857,7 +868,7 @@ PrefabInstance:
     - target: {fileID: 4871823003511861739, guid: b88d95b26b67cf644ac8b8a007ed4121,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 38.256
+      value: 38.372
       objectReference: {fileID: 0}
     - target: {fileID: 4871823003511861739, guid: b88d95b26b67cf644ac8b8a007ed4121,
         type: 3}
@@ -867,7 +878,7 @@ PrefabInstance:
     - target: {fileID: 4871823003511861739, guid: b88d95b26b67cf644ac8b8a007ed4121,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -130.141
+      value: -130.44502
       objectReference: {fileID: 0}
     - target: {fileID: 4871823003511861739, guid: b88d95b26b67cf644ac8b8a007ed4121,
         type: 3}
@@ -1422,11 +1433,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -91.301
       objectReference: {fileID: 0}
-    - target: {fileID: 4614413189988503558, guid: 415f7f53d9be5b04c839f87e4419cfc1,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5825eb213d849d947840a9fe152a08e7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 415f7f53d9be5b04c839f87e4419cfc1, type: 3}
 --- !u!1001 &725625600
@@ -1515,7 +1521,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &783185540
 Transform:
   m_ObjectHideFlags: 0
@@ -6319,6 +6325,98 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15eb635d5f7b3fa4a8d70945ee4d4d47, type: 3}
+--- !u!1 &833154388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 833154392}
+  - component: {fileID: 833154391}
+  - component: {fileID: 833154390}
+  - component: {fileID: 833154389}
+  m_Layer: 0
+  m_Name: Plane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &833154389
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833154388}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &833154390
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833154388}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &833154391
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833154388}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &833154392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833154388}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 66.2883, y: 66.2883, z: 66.2883}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &877752158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6472,7 +6570,7 @@ PrefabInstance:
     - target: {fileID: 6290836298005231500, guid: 8f107b3c77458154196266092fbf7aef,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 38.225
+      value: 38.341
       objectReference: {fileID: 0}
     - target: {fileID: 6290836298005231500, guid: 8f107b3c77458154196266092fbf7aef,
         type: 3}
@@ -6482,7 +6580,7 @@ PrefabInstance:
     - target: {fileID: 6290836298005231500, guid: 8f107b3c77458154196266092fbf7aef,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -129.86601
+      value: -130.22595
       objectReference: {fileID: 0}
     - target: {fileID: 6290836298005231500, guid: 8f107b3c77458154196266092fbf7aef,
         type: 3}
@@ -6822,6 +6920,7 @@ Transform:
   m_LocalScale: {x: 0.10834, y: 0.10834, z: 0.10834}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1125659860
@@ -6915,6 +7014,9 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 48
+=======
+  m_RootOrder: 27
+>>>>>>> parent of c153db8... Re-added Light weight render pipeline and shader graph, toon shader
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1136073890
 PrefabInstance:
@@ -7074,7 +7176,11 @@ Transform:
   m_LocalScale: {x: 0.10834, y: 0.10834, z: 0.10834}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 45
+=======
+  m_RootOrder: 26
+>>>>>>> parent of c153db8... Re-added Light weight render pipeline and shader graph, toon shader
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1206091649
 PrefabInstance:
@@ -7585,7 +7691,11 @@ PrefabInstance:
     - target: {fileID: 4908489581931084449, guid: df1031408dd9ef444a9cc6aabaa023ce,
         type: 3}
       propertyPath: m_LocalPosition.y
+<<<<<<< HEAD
       value: 0.04203332
+=======
+      value: 0.573
+>>>>>>> parent of c153db8... Re-added Light weight render pipeline and shader graph, toon shader
       objectReference: {fileID: 0}
     - target: {fileID: 4908489581931084449, guid: df1031408dd9ef444a9cc6aabaa023ce,
         type: 3}
@@ -7999,7 +8109,11 @@ Transform:
   m_LocalScale: {x: 0.10834, y: 0.10834, z: 0.10834}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 47
+=======
+  m_RootOrder: 28
+>>>>>>> parent of c153db8... Re-added Light weight render pipeline and shader graph, toon shader
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1803397268
 PrefabInstance:
