@@ -80,11 +80,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
-        //SelectItemKeyboard();
+        SelectItemKeyboard();
         SelectItemController();
         RotateCamera();
         ChangeCameraView();
-        if(!itemSelected)
+        if (!itemSelected)
         {
             // Since Item was switched, destroy what was previously held and assign the new value
             Destroy(currentlyHolding.gameObject);
@@ -94,12 +94,16 @@ public class PlayerController : MonoBehaviour
         Jump();
         UseItem();
 
+        ReassigningPlanetAsBaseSelection();
+    }
+
+    private void ReassigningPlanetAsBaseSelection()
+    {
         if (objectsInTrigger.Count == 0 || (objectsInTrigger.Count == 1 && objectsInTrigger[0] == planet))
         {
             currentlySelecting = planet;
         }
     }
-
 
     private void DisplayItemSelected()
     {
@@ -224,6 +228,7 @@ public class PlayerController : MonoBehaviour
         if (currentlySelecting.CompareTag("Seeded") || currentlySelecting.CompareTag("Plant"))
         {
             //Trigger plant accelarate function
+            currentlySelecting.gameObject.GetComponent<PlantGrowth>().Water(10f);
         }
     }
 
@@ -233,6 +238,9 @@ public class PlayerController : MonoBehaviour
         {
             //Trigger plant growth function plus cover up seed 
             print("Raking...");
+
+            currentlySelecting.gameObject.GetComponent<PlantGrowth>().Grow = true;
+
         }
     }
 
@@ -248,14 +256,14 @@ public class PlayerController : MonoBehaviour
 
     void PlantSeed()
     {
-        if(currentlySelecting.CompareTag("Dug"))
+        if(currentlySelecting.CompareTag("Ground"))
         {
-            //Spawn a new seed/plant onto the world, and starts the plant growth cycle, removes a stack until 0 and removes from inventory.
+            //Spawn a new seed/plant onto the world, removes a stack until 0 and removes from inventory.
             GameObject newSeed = (GameObject)Instantiate(inventory[itemInInventorySelected], spawnItemLocation.transform.position, spawnItemLocation.transform.rotation);
             blankSlot = new GameObject();
             inventory[itemInInventorySelected] = blankSlot;
             currentlyHolding = inventory[itemInInventorySelected];
-
+            print("Planting");
             //check for stack, if yes -- from stack; else remove from inventory;
         }
 
@@ -265,10 +273,10 @@ public class PlayerController : MonoBehaviour
     private void RotateCamera()
     {
         transform.Rotate((new Vector3(0, Input.GetAxis("Right Joystick X"), 0)) * Time.deltaTime * speed);
-
+        transform.Rotate((new Vector3(0, Input.GetAxis("Mouse X"), 0)) * Time.deltaTime * speed);
 
         //button switch for the two cameras
-      
+
     }
 
     private void ChangeCameraView()
