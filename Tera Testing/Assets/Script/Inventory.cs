@@ -64,6 +64,9 @@ public class Inventory : MonoBehaviour
             GameObject itemPickedUp = other.gameObject;
             Item item = itemPickedUp.GetComponent<Item>();
             addItem(itemPickedUp, item.ID, item.type, item.description, item.icon);
+
+            //seedItem and ediblePlant
+            //if()
             //other.gameObject.transform.position.Set(0, 0, 0);
         }
     }

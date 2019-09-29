@@ -93,7 +93,11 @@ public class PlayerController : MonoBehaviour
     {
         SelectItemKeyboard();
         SelectItemController();
-        RotateCamera();
+        if (!invScript.inventoryDisplaying)
+        {
+            RotateCamera();
+        }
+
         ChangeCameraView();
         if (!itemSelected)
         {

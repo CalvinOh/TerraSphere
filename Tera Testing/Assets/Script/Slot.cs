@@ -20,7 +20,12 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     {
         if(item.GetComponent<Item>().type == "Plant")
         {
-            useItem();
+            //useItem();
+
+        }
+        if(item.GetComponent<Item>().type == "Seed")
+        {
+            
         }
         //player.GetComponent<PlayerControllerV2>().currentlyHolding = item;
     }
