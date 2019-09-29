@@ -38,7 +38,10 @@ public class PlanetManager : MonoBehaviour
         }
         CurrentTerraformAmount = Mathf.Clamp(CurrentTerraformAmount, 0, PlanetTerraformAmount);
     }
-    
-        
+
+    public void AddPlant(PlantGrowth PlantToAdd)
+    {
+        PlantsOnPlanet.Add(PlantToAdd);
+    }
     
 }
