@@ -1501,6 +1501,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1415005164429877752, guid: cb4993e1d92d5034bb49ab544db883ca,
+        type: 3}
+      propertyPath: m_FillOrigin
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1415005164907411263, guid: cb4993e1d92d5034bb49ab544db883ca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2100,13 +2105,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfde121f98dacf64aa66bed1a875cef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AstroidInOrbit1: {fileID: 0}
-  AstroidInOrbit2: {fileID: 0}
-  AstroidInOrbit3: {fileID: 0}
-  AstroidInOrbit4: {fileID: 0}
-  MaxAstroids: 0
-  MinAstroids: 0
-  MaxOrbitSpeed: 0
+  AstroidInOrbit1: {fileID: 5933487050434181844, guid: e40b48500429a6d4f90fe441b66582b5,
+    type: 3}
+  AstroidInOrbit2: {fileID: 9011958789063569252, guid: 5186069c580d7bb4791fbd5c8e7a59a2,
+    type: 3}
+  AstroidInOrbit3: {fileID: 5485937029062027786, guid: d1c57e8dc5d8d974aae1c3dcf3a4a379,
+    type: 3}
+  AstroidInOrbit4: {fileID: 27514264039538447, guid: 4e0d0f55e67e42c44bb23be8c14a3f41,
+    type: 3}
+  MaxAstroids: 100
+  MinAstroids: 99
+  MaxOrbitSpeed: 20
   MinOrbitSpeed: 0
   AstroidMaxHeight: 50
   AstroidMinHeight: 40
@@ -2197,7 +2206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66eb41cad8bf6f54ab6436cb496b593d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlanetTerraformAmount: 100
+  PlanetTerraformAmount: 10000
 --- !u!114 &8962144445664453613
 MonoBehaviour:
   m_ObjectHideFlags: 0
