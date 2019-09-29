@@ -18,17 +18,18 @@ public class Oxybar : MonoBehaviour
     [Tooltip("Current percentage of oxygen the player has.")]
     private float currentPercentage;
 
-    private float maxOxygen = 1;
-    private float currentOxygen = 1;
+    private float maxOxygen;
+    private float currentOxygen;
 
     private void Awake()
     {
-        //Insert playerController.maxOxygen = maxOxygen
+        playerController = FindObjectOfType<PlayerController>();
+        maxOxygen = playerController.oxygenMax;
     }
 
     void FixedUpdate()
     {
-        //Insert playerController.currentOxygen = currentOxygen
+        currentOxygen = playerController.oxygenValue;
         currentPercentage = currentOxygen / maxOxygen;
         oxybar.fillAmount = currentPercentage;
     }
