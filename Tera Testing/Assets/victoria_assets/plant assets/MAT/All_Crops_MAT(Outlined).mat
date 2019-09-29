@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: All_Crops_MAT
+  m_Name: All_Crops_MAT(Outlined)
   m_Shader: {fileID: 4800000, guid: adb1747a732ce2a42825fc58d1d47fd6, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -102,7 +102,7 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Outline: 0
+    - _Outline: 1
     - _OutlineWidth: 2
     - _Parallax: 0.02
     - _QueueOffset: 0

@@ -21,11 +21,14 @@ public class TerraBar : MonoBehaviour
 
     void Update()
     {
-        currentBarValue = currentBarValue + (addRate * Time.deltaTime);
+        //currentBarValue = currentBarValue + (addRate * Time.deltaTime);
         //Adds the rate for current unharvested plants, the rate adds every second.
-        calculatePercentage();
+        //calculatePercentage();
+
+        barFill.fillAmount = FindObjectOfType<PlanetManager>().TerraformPercentage;
     }
 
+    /*
     private void calculatePercentage()
     {
         //Calculates the percentage of the bar filled and sets the bar to that amount.
@@ -48,4 +51,5 @@ public class TerraBar : MonoBehaviour
         //Used when plant becomes first harvestable, adds one sizable boost to the bar.
         currentBarValue += amountToAdd;
     }
+    */
 }
