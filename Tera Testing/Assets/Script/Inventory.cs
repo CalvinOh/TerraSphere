@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Inventory : MonoBehaviour
 {
+    [SerializeField]
+    [Tooltip("The toggle the inventory starts on.")]
+    private GameObject toggleStart;
 
     public bool inventoryDisplaying = true;
     public GameObject inventory;
@@ -12,6 +16,7 @@ public class Inventory : MonoBehaviour
     private int allSlots;
     private int enabledSlots;
     public GameObject[] slot;
+    private EventSystem eventSystem;
 
     public GameObject slotHolder;
 
@@ -20,6 +25,8 @@ public class Inventory : MonoBehaviour
         // Find how many slots the UI has for the inventory
         allSlots = slotHolder.GetComponentsInChildren<Slot>().Length;
         slot = new GameObject[allSlots];
+
+        eventSystem = FindObjectOfType<EventSystem>();
 
         for(int i = 0; i < allSlots; i++)
         {
@@ -44,6 +51,7 @@ public class Inventory : MonoBehaviour
 
     private void ToggleDisplayInventory()
     {
+        eventSystem.SetSelectedGameObject(toggleStart);
         inventoryDisplaying = !inventoryDisplaying;
         if (inventoryDisplaying)
         {
