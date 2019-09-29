@@ -29,7 +29,6 @@ public class PlanetManager : MonoBehaviour
     }
 
 
-
     // Update is called once per frame
     private void FixedUpdate()
     {

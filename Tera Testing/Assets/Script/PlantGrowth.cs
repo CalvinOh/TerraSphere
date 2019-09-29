@@ -32,6 +32,15 @@ public class PlantGrowth : MonoBehaviour
     [SerializeField]
     private GameObject Stage2;
 
+    [SerializeField]
+    private int MinAmountOfSeedDrop;
+    [SerializeField]
+    private int MaxAmountOfSeedDrop;
+    [SerializeField]
+    private GameObject SeedSpawnedWhenHarvested;
+    [SerializeField]
+    private GameObject PlantSpawnedWhenHarvested;
+
     public bool Grow;
 
 
@@ -120,5 +129,21 @@ public class PlantGrowth : MonoBehaviour
     public void Water(float water)
     {
         AccelTimeer = water;
+    }
+
+    public void Harvest()
+    {
+        int NumberOfSeeds = Random.Range(MinAmountOfSeedDrop, MaxAmountOfSeedDrop);
+        for (int i = 0; i < NumberOfSeeds; i++)
+        {
+            GameObject DroppedSeed = Instantiate(SeedSpawnedWhenHarvested, transform.position, transform.rotation);
+        }
+        
+        if (PlantSpawnedWhenHarvested != null)
+        {
+            GameObject DroppedPlant = Instantiate(PlantSpawnedWhenHarvested, transform.position, transform.rotation);
+        }
+
+        DestroyObject(this.gameObject);
     }
 }
