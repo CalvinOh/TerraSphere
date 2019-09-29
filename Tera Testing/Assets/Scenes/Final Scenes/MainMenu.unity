@@ -10668,7 +10668,7 @@ GameObject:
   - component: {fileID: 981215985}
   - component: {fileID: 981215990}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: MenuCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10772,7 +10772,7 @@ MonoBehaviour:
   creditsPanel: {fileID: 1734564022}
   creditsStart: {fileID: 924242709}
   mainMenuStart: {fileID: 1638439555}
-  sceneSwitch: 2
+  sceneSwitch: 1
   currentScene: 0
 --- !u!114 &981215990
 MonoBehaviour:
@@ -16918,7 +16918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
+  m_SubmitButton: Use Item
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
@@ -16935,7 +16935,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1638439555}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1923889872
@@ -22199,7 +22199,7 @@ PrefabInstance:
     - target: {fileID: 5413744702374345283, guid: 2285df0234184424d83f95d73571d92f,
         type: 3}
       propertyPath: m_Name
-      value: Sphere
+      value: Planet
       objectReference: {fileID: 0}
     - target: {fileID: 5413744702374345287, guid: 2285df0234184424d83f95d73571d92f,
         type: 3}
@@ -22256,6 +22256,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5413744702374345281, guid: 2285df0234184424d83f95d73571d92f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: e2613998c1334134e96067e3bc8d5cae, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2285df0234184424d83f95d73571d92f, type: 3}
 --- !u!23 &6488769466695703647
