@@ -2113,14 +2113,14 @@ MonoBehaviour:
     type: 3}
   AstroidInOrbit4: {fileID: 27514264039538447, guid: 4e0d0f55e67e42c44bb23be8c14a3f41,
     type: 3}
-  MaxAstroids: 100
-  MinAstroids: 99
+  MaxAstroids: 20
+  MinAstroids: 19
   MaxOrbitSpeed: 20
   MinOrbitSpeed: 0
   AstroidMaxHeight: 50
   AstroidMinHeight: 40
   AstroidWarpAmount: 3
-  AstroidRotationSpeedCap: 20
+  AstroidRotationSpeedCap: 15
 --- !u!23 &8962144445664453608
 MeshRenderer:
   m_ObjectHideFlags: 0
