@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     public float oxygenValue;
 
-    readonly float oxygenMax = 100f;
+    public float oxygenMax = 100f;
 
     [SerializeField]
     [Tooltip("Speed of rotation, 100 suggested")]
@@ -113,7 +113,9 @@ public class PlayerController : MonoBehaviour
         if (objectsInTrigger.Count == 0 || (objectsInTrigger.Count == 1 && objectsInTrigger[0] == planet))
         {
             currentlySelecting = planet;
+           
         }
+
     }
 
     private void DisplayItemSelected()
@@ -260,13 +262,7 @@ public class PlayerController : MonoBehaviour
 
     private void Dig()
     {
-        if(currentlySelecting.CompareTag("Ground"))
-        {
-            //Trigger change in ground
-            //Spawn dug ground on floor
-            print("Digging");
-        }
-        else if(currentlySelecting.CompareTag("Plant"))
+        if(currentlySelecting.CompareTag("Plant"))
         {
             //currentlySelecting.gameObject.GetComponent<PlantGrowth>().Harvest();
             print("Harvesting");
@@ -285,12 +281,6 @@ public class PlayerController : MonoBehaviour
             print("Planting");
             //check for stack, if yes -- from stack; else remove from inventory;
         }
-
-    }
-
-
-    void ConsumePlant()
-    {
 
     }
 
@@ -325,7 +315,7 @@ public class PlayerController : MonoBehaviour
     {
         objectsInTrigger.Add(other.gameObject);
         currentlySelecting = other.gameObject;
-        if(currentlyHolding.CompareTag("Seed") && !currentlySelecting.CompareTag("Ground"))
+        if(currentlyHolding.CompareTag("Seed"))
         {
             currentlyHolding.gameObject.GetComponent<PlantGrowth>().ToggleOutline();
         }
@@ -334,10 +324,7 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         objectsInTrigger.Remove(other.gameObject);
-        if (currentlyHolding.CompareTag("Seed") && currentlySelecting.CompareTag("Ground"))
-        {
-            currentlyHolding.gameObject.GetComponent<PlantGrowth>().ToggleOutline();
-        }
+       
 
     }
 }
