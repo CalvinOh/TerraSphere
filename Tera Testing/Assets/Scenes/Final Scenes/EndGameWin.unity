@@ -4908,7 +4908,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200, y: -50}
+  m_AnchoredPosition: {x: 280, y: -50}
   m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &548850496
@@ -9858,7 +9858,7 @@ PrefabInstance:
     - target: {fileID: 5413744702374345283, guid: 2285df0234184424d83f95d73571d92f,
         type: 3}
       propertyPath: m_Name
-      value: Sphere
+      value: Planet
       objectReference: {fileID: 0}
     - target: {fileID: 5413744702374345287, guid: 2285df0234184424d83f95d73571d92f,
         type: 3}
@@ -10264,7 +10264,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 40}
+  m_AnchoredPosition: {x: 0, y: -179}
   m_SizeDelta: {x: -800, y: -939.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1359504824
@@ -20006,7 +20006,7 @@ GameObject:
   - component: {fileID: 1756521658}
   - component: {fileID: 1756521659}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: OptionsCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20127,7 +20127,7 @@ MonoBehaviour:
   creditsStart: {fileID: 0}
   mainMenuStart: {fileID: 548850494}
   sceneSwitch: 1
-  currentScene: 0
+  currentScene: 2
 --- !u!1 &1766809449
 GameObject:
   m_ObjectHideFlags: 0
@@ -24916,7 +24916,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 600, y: -50}
+  m_AnchoredPosition: {x: 840, y: -50}
   m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1826210970

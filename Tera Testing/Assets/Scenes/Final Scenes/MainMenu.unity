@@ -10668,7 +10668,7 @@ GameObject:
   - component: {fileID: 981215985}
   - component: {fileID: 981215990}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: MenuCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10772,7 +10772,7 @@ MonoBehaviour:
   creditsPanel: {fileID: 1734564022}
   creditsStart: {fileID: 924242709}
   mainMenuStart: {fileID: 1638439555}
-  sceneSwitch: 2
+  sceneSwitch: 1
   currentScene: 0
 --- !u!114 &981215990
 MonoBehaviour:
@@ -22199,7 +22199,7 @@ PrefabInstance:
     - target: {fileID: 5413744702374345283, guid: 2285df0234184424d83f95d73571d92f,
         type: 3}
       propertyPath: m_Name
-      value: Sphere
+      value: Planet
       objectReference: {fileID: 0}
     - target: {fileID: 5413744702374345287, guid: 2285df0234184424d83f95d73571d92f,
         type: 3}

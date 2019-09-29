@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final Scenes/MainMenu.unity
     guid: 92da4b6929ac25847b8ea694861dbe5e
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/PlanetAlpha.unity
+    guid: dd4d3fdb3901a7b439c0a37dd0b30ae2
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/EndGameWin.unity
+    guid: 4e5c572349e2a7b4691687e1309dbb59
   m_configObjects: {}

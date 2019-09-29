@@ -45,8 +45,8 @@ public class MainMenuFunctions : MonoBehaviour
 
     public void GoToScene()
     {
-        SceneManager.LoadScene(sceneSwitch);
         SceneManager.UnloadSceneAsync(currentScene);
+        SceneManager.LoadScene(sceneSwitch);
     }
 
     public void EndGame()
