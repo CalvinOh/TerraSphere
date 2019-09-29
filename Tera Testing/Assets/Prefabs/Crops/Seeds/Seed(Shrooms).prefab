@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 399676148870164917}
   - component: {fileID: 6383971853278518318}
   - component: {fileID: 8100189572451874654}
+  - component: {fileID: -5166402505609139982}
   m_Layer: 0
   m_Name: Seed(Shrooms)
   m_TagString: Seed
@@ -106,3 +107,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlantToGrowInto: {fileID: 7856097418601620298, guid: 96566f5f10b0f36438fba78bb5c2356e,
     type: 3}
+--- !u!114 &-5166402505609139982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725089123845229640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfa4751f29fb1fe4ea3ff5fe11fafc2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  type: 
+  description: 
+  icon: {fileID: 0}
+  pickedUp: 0
