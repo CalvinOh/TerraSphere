@@ -36,6 +36,11 @@ public class PlayerController : MonoBehaviour
     private GameObject wateringCan;
 
     [SerializeField]
+    public float oxygenValue;
+
+    readonly float oxygenMax = 100f;
+
+    [SerializeField]
     [Tooltip("Speed of rotation, 100 suggested")]
     private float speed = 100;
 
@@ -80,6 +85,7 @@ public class PlayerController : MonoBehaviour
         hotBarInventory[3] = wateringCan;
 
         Cursor.lockState = CursorLockMode.Locked;
+
     }
 
     // Update is called once per frame
@@ -214,7 +220,7 @@ public class PlayerController : MonoBehaviour
             //When left click, based on item held, trigger function
             if (currentlyHolding.CompareTag("Shovel"))
             {
-                DigGround();
+                Dig();
             }
             if (currentlyHolding.CompareTag("Seed"))
             {
@@ -252,13 +258,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void DigGround()
+    private void Dig()
     {
         if(currentlySelecting.CompareTag("Ground"))
         {
             //Trigger change in ground
             //Spawn dug ground on floor
             print("Digging");
+        }
+        else if(currentlySelecting.CompareTag("Plant"))
+        {
+            //currentlySelecting.gameObject.GetComponent<PlantGrowth>().Harvest();
+            print("Harvesting");
         }
     }
 
@@ -267,13 +278,19 @@ public class PlayerController : MonoBehaviour
         if(currentlySelecting.CompareTag("Ground"))
         {
             //Spawn a new seed/plant onto the world, removes a stack until 0 and removes from inventory.
-            GameObject newSeed = (GameObject)Instantiate(hotBarInventory[itemInInventorySelected], spawnItemLocation.transform.position, spawnItemLocation.transform.rotation);
-            blankSlot = new GameObject();
-            hotBarInventory[itemInInventorySelected] = blankSlot;
+            GameObject newSeed = (GameObject)Instantiate(hotBarInventory[itemInInventorySelected].gameObject.GetComponent<SeedItem>().plantToGrowInto, spawnItemLocation.transform.position, spawnItemLocation.transform.rotation);
+            //blankSlot = new GameObject();
+            //hotBarInventory[itemInInventorySelected] = blankSlot;
             currentlyHolding = hotBarInventory[itemInInventorySelected];
             print("Planting");
             //check for stack, if yes -- from stack; else remove from inventory;
         }
+
+    }
+
+
+    void ConsumePlant()
+    {
 
     }
 
@@ -296,6 +313,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+
+
     private void OnCollisionEnter(Collision collision)
     {
         hasJumped = false;
@@ -305,12 +325,19 @@ public class PlayerController : MonoBehaviour
     {
         objectsInTrigger.Add(other.gameObject);
         currentlySelecting = other.gameObject;
+        if(currentlyHolding.CompareTag("Seed") && !currentlySelecting.CompareTag("Ground"))
+        {
+            currentlyHolding.gameObject.GetComponent<PlantGrowth>().ToggleOutline();
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         objectsInTrigger.Remove(other.gameObject);
+        if (currentlyHolding.CompareTag("Seed") && currentlySelecting.CompareTag("Ground"))
+        {
+            currentlyHolding.gameObject.GetComponent<PlantGrowth>().ToggleOutline();
+        }
 
-      
     }
 }
