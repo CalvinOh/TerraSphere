@@ -25,7 +25,7 @@ public class TerraBar : MonoBehaviour
         //Adds the rate for current unharvested plants, the rate adds every second.
         //calculatePercentage();
 
-        barFill.fillAmount = FindObjectOfType<PlanetManager>().TerraformPercentage;
+        barFill.fillAmount = FindObjectOfType<PlanetManager>().TerraformPercentage/100;
     }
 
     /*

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8100189572451874654}
   m_Layer: 0
   m_Name: Seed(Shrooms)
-  m_TagString: Untagged
+  m_TagString: Seed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
