@@ -20,6 +20,7 @@ public class PlantGrowth : MonoBehaviour
     [Tooltip("Time at which plant growth stops, need to be bigger than Stage1Cap")]
     private float Stage2Cap = 20;
 
+    [SerializeField]
     [Tooltip("Terraform amount persecond provided by this plant in Stage 1")]
     private float Stage1TerraFormPerSecond = 10;
     [SerializeField]
@@ -54,20 +55,29 @@ public class PlantGrowth : MonoBehaviour
     private int Stage;
     public float CurrentTerraFormAmountProvidedPerSecond
     {
+        
         get
         {
-            float TerraformAmount = 0;
+            if (!Grow)
+            {
+                return 0;
+            }
+            else
+            {
+                float TerraformAmount = 0;
 
-            if (Stage == 1)
-                TerraformAmount = Stage1TerraFormPerSecond;
-            else if (Stage == 2)
-                TerraformAmount = Stage2TerraFormPerSecond;
+                if (Stage == 1)
+                    TerraformAmount = Stage1TerraFormPerSecond;
+                else if (Stage == 2)
+                    TerraformAmount = Stage2TerraFormPerSecond;
 
-            if (AccelTimeer > 0)
-                TerraformAmount *= 2;
+                if (AccelTimeer > 0)
+                    TerraformAmount *= 2;
 
-            return TerraformAmount;
+                return TerraformAmount;
+            }
         }
+        
     }
 
 
@@ -82,6 +92,7 @@ public class PlantGrowth : MonoBehaviour
         Stage1.SetActive(true);
         Stage2.SetActive(false);
         MyPS.enableEmission = false;
+        FindObjectOfType<PlanetManager>().AddPlant(this);
     }
 
 
