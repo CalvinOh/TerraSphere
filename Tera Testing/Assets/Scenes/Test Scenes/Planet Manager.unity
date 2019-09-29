@@ -900,17 +900,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 15
-  inventory:
-  - {fileID: 6816400102138735202, guid: b1500b314522df14ca1625ba83a74e6a, type: 3}
-  - {fileID: 6816400102138735202, guid: bd0b0306e081d454c975339e51a484c4, type: 3}
-  - {fileID: 6816400102138735202, guid: 3e894210a23b2404bb0ec739d63f9e93, type: 3}
-  - {fileID: 6816400102138735202, guid: b1500b314522df14ca1625ba83a74e6a, type: 3}
-  - {fileID: 6816400102138735202, guid: bd0b0306e081d454c975339e51a484c4, type: 3}
-  - {fileID: 6816400102138735202, guid: 3e894210a23b2404bb0ec739d63f9e93, type: 3}
-  - {fileID: 6816400102138735202, guid: b1500b314522df14ca1625ba83a74e6a, type: 3}
-  - {fileID: 6816400102138735202, guid: bd0b0306e081d454c975339e51a484c4, type: 3}
-  - {fileID: 6816400102138735202, guid: 3e894210a23b2404bb0ec739d63f9e93, type: 3}
-  - {fileID: 6816400102138735202, guid: b1500b314522df14ca1625ba83a74e6a, type: 3}
+  hotBarInventory:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  invScript: {fileID: 0}
   itemInInventorySelected: 0
   spawnHeldLocation: {fileID: 0}
   spawnItemLocation: {fileID: 0}
@@ -921,6 +922,10 @@ MonoBehaviour:
   shovel: {fileID: 0}
   rake: {fileID: 0}
   wateringCan: {fileID: 0}
+  speed: 100
+  TPSCamera: {fileID: 0}
+  TDCamera: {fileID: 0}
+  planet: {fileID: 0}
   objectsInTrigger: []
 --- !u!114 &1186218334
 MonoBehaviour:
@@ -1526,6 +1531,157 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626613557}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1899776763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1899776764}
+  - component: {fileID: 1899776767}
+  - component: {fileID: 1899776766}
+  - component: {fileID: 1899776765}
+  m_Layer: 0
+  m_Name: Sphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1899776764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899776763}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1948202907}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1899776765
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899776763}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1899776766
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899776763}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1899776767
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899776763}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1948202906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1948202907}
+  - component: {fileID: 1948202908}
+  m_Layer: 0
+  m_Name: Astroid Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1948202907
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948202906}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 29.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1899776764}
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1948202908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948202906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfde121f98dacf64aa66bed1a875cef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AstroidInOrbit1: {fileID: 5933487050434181844, guid: e40b48500429a6d4f90fe441b66582b5,
+    type: 3}
+  AstroidInOrbit2: {fileID: 9011958789063569252, guid: 5186069c580d7bb4791fbd5c8e7a59a2,
+    type: 3}
+  AstroidInOrbit3: {fileID: 5485937029062027786, guid: d1c57e8dc5d8d974aae1c3dcf3a4a379,
+    type: 3}
+  AstroidInOrbit4: {fileID: 27514264039538447, guid: 4e0d0f55e67e42c44bb23be8c14a3f41,
+    type: 3}
+  MaxAstroids: 100
+  MinAstroids: 99
+  MaxOrbitSpeed: 15
+  MinOrbitSpeed: 0
+  MaxHeight: 50
+  MinHeight: 40
+  WarpAmount: 2
+  RotationSpeedCap: 15
 --- !u!1 &2050576567
 GameObject:
   m_ObjectHideFlags: 0

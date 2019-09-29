@@ -32,6 +32,20 @@ public class PlantGrowth : MonoBehaviour
     [SerializeField]
     private GameObject Stage2;
 
+    [SerializeField]
+    private int MinAmountOfSeedDrop;
+    [SerializeField]
+    private int MaxAmountOfSeedDrop;
+    [SerializeField]
+    private GameObject SeedSpawnedWhenHarvested;
+    [SerializeField]
+    private GameObject PlantSpawnedWhenHarvested;
+
+    [SerializeField]
+    private Material UnOutlined;
+    [SerializeField]
+    private Material Outlined;
+
     public bool Grow;
 
 
@@ -77,6 +91,7 @@ public class PlantGrowth : MonoBehaviour
         {
             UpdateGrowth();
         }
+
     }
 
 
@@ -120,5 +135,34 @@ public class PlantGrowth : MonoBehaviour
     public void Water(float water)
     {
         AccelTimeer = water;
+    }
+
+    public void Harvest()
+    {
+        int NumberOfSeeds = Random.Range(MinAmountOfSeedDrop, MaxAmountOfSeedDrop);
+
+        for (int i = 0; i < NumberOfSeeds; i++)
+        {
+            GameObject DroppedSeed = Instantiate(SeedSpawnedWhenHarvested, transform.position+ new Vector3(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f)), transform.rotation);
+        }
+        
+        if (PlantSpawnedWhenHarvested != null)
+        {
+            GameObject DroppedPlant = Instantiate(PlantSpawnedWhenHarvested, transform.position, transform.rotation);
+        }
+
+        DestroyObject(this.gameObject);
+    }
+
+    public void ToggleOutline()
+    {
+        MeshRenderer[] AllMeshRenderers = GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer i in AllMeshRenderers)
+        {
+            if (i.material == Outlined)
+                i.material = UnOutlined;
+            else
+                i.material = Outlined;
+        }
     }
 }

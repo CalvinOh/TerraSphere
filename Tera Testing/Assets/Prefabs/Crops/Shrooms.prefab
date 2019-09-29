@@ -52,8 +52,15 @@ MonoBehaviour:
   FinalSize: 2
   Stage1Cap: 10
   Stage2Cap: 20
+  Stage2TerraFormPerSecond: 20
   Stage1: {fileID: 2114745824570985606}
   Stage2: {fileID: 7522478663535892357}
+  MinAmountOfSeedDrop: 0
+  MaxAmountOfSeedDrop: 0
+  SeedSpawnedWhenHarvested: {fileID: 0}
+  PlantSpawnedWhenHarvested: {fileID: 0}
+  UnOutlined: {fileID: 2100000, guid: 4812f976f0f55e74f9a5f90fba3569eb, type: 2}
+  Outlined: {fileID: 2100000, guid: c2807779e31f79d49abeb8d4769d3b55, type: 2}
   Grow: 0
   AccelTimeer: 0
   CurrentGrowthAmount: 0
@@ -4905,13 +4912,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 388224945109886459, guid: 48145365d658bde42b7e106e5f2270d8,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_TagString
+      value: Plant
       objectReference: {fileID: 0}
     - target: {fileID: 388224945109886459, guid: 48145365d658bde42b7e106e5f2270d8,
         type: 3}
-      propertyPath: m_TagString
-      value: Plant
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6485403864180175209, guid: 48145365d658bde42b7e106e5f2270d8,
         type: 3}
