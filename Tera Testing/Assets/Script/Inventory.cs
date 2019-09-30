@@ -15,6 +15,7 @@ public class Inventory : MonoBehaviour
 
     private int allSlots;
     private int enabledSlots;
+    //public int itemsPickedUp;
     public GameObject[] slot;
     private EventSystem eventSystem;
 
@@ -71,6 +72,15 @@ public class Inventory : MonoBehaviour
         {
             GameObject itemPickedUp = other.gameObject;
             Item item = itemPickedUp.GetComponent<Item>();
+            if(item.type == "Seed")
+            {
+                item.tag = "Seed";
+            }
+            //else if(item.type == "Plant")
+            //{
+                
+            //}
+
             addItem(itemPickedUp, item.ID, item.type, item.description, item.icon);
 
             //seedItem and ediblePlant
@@ -99,9 +109,8 @@ public class Inventory : MonoBehaviour
 
                 slot[i].GetComponent<Slot>().UpdateSlot();
                 slot[i].GetComponent<Slot>().empty = false;
+                return;
             }
-
-            return;
         }
     }
 
