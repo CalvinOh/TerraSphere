@@ -51,6 +51,7 @@ MonoBehaviour:
   FinalSize: 2
   Stage1Cap: 10
   Stage2Cap: 20
+  Stage1TerraFormPerSecond: 10
   Stage2TerraFormPerSecond: 20
   Stage1: {fileID: 4963015497458443753}
   Stage2: {fileID: 8177743743262114761}
@@ -4739,8 +4740,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: cdefcb4f9fe80d748bea665620d30119, type: 2}
+  - {fileID: 2100000, guid: cdefcb4f9fe80d748bea665620d30119, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
