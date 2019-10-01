@@ -268,7 +268,7 @@ public class PlayerController : MonoBehaviour
     {
         if(currentlySelecting.CompareTag("Plant"))
         {
-            //currentlySelecting.gameObject.GetComponent<PlantGrowth>().Harvest();
+            currentlySelecting.gameObject.GetComponent<PlantGrowth>().Harvest();
             print("Harvesting");
         }
     }
