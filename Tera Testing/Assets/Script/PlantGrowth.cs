@@ -93,6 +93,7 @@ public class PlantGrowth : MonoBehaviour
         Stage2.SetActive(false);
         MyPS.enableEmission = false;
         FindObjectOfType<PlanetManager>().AddPlant(this);
+        this.gameObject.tag = "Seed";
     }
 
 
@@ -118,6 +119,7 @@ public class PlantGrowth : MonoBehaviour
         else if (CurrentGrowthAmount < Stage2Cap && (CurrentGrowthAmount + GrowthSpeed * Time.deltaTime) >= Stage2Cap)
         {
             MyPS.enableEmission = true;
+            this.gameObject.tag = "Plant";
         }
         
 
@@ -155,11 +157,13 @@ public class PlantGrowth : MonoBehaviour
         for (int i = 0; i < NumberOfSeeds; i++)
         {
             GameObject DroppedSeed = Instantiate(SeedSpawnedWhenHarvested, transform.position+ new Vector3(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f)), transform.rotation);
+            print("Spawning Seed");
         }
         
         if (PlantSpawnedWhenHarvested != null)
         {
             GameObject DroppedPlant = Instantiate(PlantSpawnedWhenHarvested, transform.position, transform.rotation);
+            print("Spawning Plant");
         }
 
         DestroyObject(this.gameObject);

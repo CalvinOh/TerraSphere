@@ -278,8 +278,9 @@ public class PlayerController : MonoBehaviour
     {
         if(currentlySelecting.CompareTag("Plant"))
         {
-            currentlySelecting.gameObject.GetComponent<PlantGrowth>().Harvest();
             print("Harvesting");
+            currentlySelecting.gameObject.GetComponent<PlantGrowth>().Harvest();
+            
         }
     }
 
@@ -293,7 +294,7 @@ public class PlayerController : MonoBehaviour
             //hotBarInventory[itemInInventorySelected] = blankSlot;
             currentlyHolding = hotBarInventory[itemInInventorySelected];
             print("Planting");
-            hotBarInventory[itemInInventorySelected].tag = "Plant";
+            //hotBarInventory[itemInInventorySelected].tag = "Plant";
             //check for stack, if yes -- from stack; else remove from inventory;
         }
 

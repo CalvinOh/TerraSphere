@@ -2736,6 +2736,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FinishPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 6382385674807604040, guid: d64cfc0e221e98b408db0930da674aad,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7985621915443685762, guid: d64cfc0e221e98b408db0930da674aad,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2744,7 +2749,7 @@ PrefabInstance:
     - target: {fileID: 7985621915443685762, guid: d64cfc0e221e98b408db0930da674aad,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 61.5
+      value: 54.66
       objectReference: {fileID: 0}
     - target: {fileID: 7985621915443685762, guid: d64cfc0e221e98b408db0930da674aad,
         type: 3}
@@ -2816,6 +2821,16 @@ PrefabInstance:
       propertyPath: TDCamera
       value: 
       objectReference: {fileID: 8502688422231244798}
+    - target: {fileID: 6628017133948517553, guid: d64cfc0e221e98b408db0930da674aad,
+        type: 3}
+      propertyPath: oxygenValue
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6628017133948517553, guid: d64cfc0e221e98b408db0930da674aad,
+        type: 3}
+      propertyPath: oxygenDecreaseValue
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 6271376325731813486, guid: d64cfc0e221e98b408db0930da674aad,
         type: 3}
       propertyPath: inventory
@@ -2831,6 +2846,21 @@ PrefabInstance:
       propertyPath: toggleStart
       value: 
       objectReference: {fileID: 1103982967}
+    - target: {fileID: 2138703530824299944, guid: d64cfc0e221e98b408db0930da674aad,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.132
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138703530824299944, guid: d64cfc0e221e98b408db0930da674aad,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: 3527049133544179183, guid: d64cfc0e221e98b408db0930da674aad,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d64cfc0e221e98b408db0930da674aad, type: 3}
 --- !u!1 &8502688422231244797 stripped

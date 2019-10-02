@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 96758828577659761}
   m_Layer: 0
   m_Name: Seed(Cone)
-  m_TagString: Untagged
+  m_TagString: Seed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,3 +124,4 @@ MonoBehaviour:
   description: 
   icon: {fileID: 0}
   pickedUp: 0
+  oxygenValue: 0
