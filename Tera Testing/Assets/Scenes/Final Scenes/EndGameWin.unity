@@ -20131,7 +20131,7 @@ MonoBehaviour:
   creditsPanel: {fileID: 1359504822}
   creditsStart: {fileID: 548850494}
   mainMenuStart: {fileID: 548850494}
-  sceneSwitch: 1
+  sceneSwitch: 0
   currentScene: 2
 --- !u!1 &1766809449
 GameObject:
