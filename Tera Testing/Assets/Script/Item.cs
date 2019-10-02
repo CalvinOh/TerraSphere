@@ -10,6 +10,9 @@ public class Item : MonoBehaviour
     public Sprite icon; // the icon used for the inventory menu
     public bool pickedUp;
 
+    [SerializeField]
+    float oxygenValue;
+
 
     //[HideInInspector]
     //public bool equipped; // Tool currently equipped
@@ -76,9 +79,10 @@ public class Item : MonoBehaviour
             //itemFromSlot.item.transform.position = toolManager.gameObject.GetComponent<PlayerControllerV2>().spawnLocation.position;
         }
 
-        if(type == "Plant")
+        if(type == "Plant" || this.tag == "Plant")
         {
             print("Used Plant!");
+            itemFromSlot.player.GetComponent<PlayerController>().oxygenValue += this.oxygenValue;
         }
 
 

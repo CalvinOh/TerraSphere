@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     float moveSpeed;
 
     [SerializeField]
-    GameObject[] hotBarInventory = new GameObject[10];
+    public GameObject[] hotBarInventory = new GameObject[10];
     [SerializeField]
     Inventory invScript;
 
@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     public float oxygenValue;
+    [SerializeField]
+    private float oxygenDecreaseValue;
 
     public float oxygenMax = 100f;
 
@@ -63,7 +65,6 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         //inventory = new GameObject[10];
-        currentlyHolding = hotBarInventory[0];
         if (invScript == null)
         {
             invScript = this.gameObject.GetComponent<Inventory>();
@@ -84,6 +85,7 @@ public class PlayerController : MonoBehaviour
         hotBarInventory[2] = rake;
         hotBarInventory[3] = wateringCan;
 
+        currentlyHolding = hotBarInventory[0];
         Cursor.lockState = CursorLockMode.Locked;
 
     }
@@ -96,6 +98,7 @@ public class PlayerController : MonoBehaviour
         if (!invScript.inventoryDisplaying)
         {
             RotateCamera();
+            Jump();
         }
 
         ChangeCameraView();
@@ -106,10 +109,17 @@ public class PlayerController : MonoBehaviour
             DisplayItemSelected();
             itemSelected = true;
         }
-        Jump();
+        
         UseItem();
 
         ReassigningPlanetAsBaseSelection();
+
+        DecreaseOxygen();
+    }
+
+    private void DecreaseOxygen()
+    {
+        oxygenValue -= oxygenDecreaseValue;
     }
 
     private void ReassigningPlanetAsBaseSelection()
@@ -283,6 +293,7 @@ public class PlayerController : MonoBehaviour
             //hotBarInventory[itemInInventorySelected] = blankSlot;
             currentlyHolding = hotBarInventory[itemInInventorySelected];
             print("Planting");
+            hotBarInventory[itemInInventorySelected].tag = "Plant";
             //check for stack, if yes -- from stack; else remove from inventory;
         }
 

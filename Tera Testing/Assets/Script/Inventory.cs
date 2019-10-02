@@ -72,20 +72,37 @@ public class Inventory : MonoBehaviour
         {
             GameObject itemPickedUp = other.gameObject;
             Item item = itemPickedUp.GetComponent<Item>();
-            if(item.type == "Seed")
+            if (item.type == "Seed")
             {
                 item.tag = "Seed";
             }
             //else if(item.type == "Plant")
             //{
-                
+
             //}
 
             addItem(itemPickedUp, item.ID, item.type, item.description, item.icon);
 
+            SetSeedSlot();
+
             //seedItem and ediblePlant
             //if()
             //other.gameObject.transform.position.Set(0, 0, 0);
+        }
+    }
+
+    private void SetSeedSlot()
+    {
+        if (slot[0].GetComponent<Slot>().player.GetComponent<PlayerController>().hotBarInventory[1] == null)
+        {
+            for (int i = 0; i < slot.Length; i++)
+            {
+                if (slot[i].GetComponent<Slot>().item.tag == "Seed")
+                {
+                    slot[0].GetComponent<Slot>().player.GetComponent<PlayerController>().hotBarInventory[1] =
+                        slot[i].GetComponent<Slot>().item.GetComponent<Item>().gameObject;
+                }
+            }
         }
     }
 
