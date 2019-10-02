@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4296525111716788805}
   - component: {fileID: 4296525111716788804}
   - component: {fileID: 4296525111716788807}
+  - component: {fileID: 5994474592141467309}
   m_Layer: 0
   m_Name: Star1
   m_TagString: Untagged
@@ -138,3 +139,19 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &5994474592141467309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4296525111716788810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5daf5ac95e6d3a04196824051743b8c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinHeight: 30
+  MaxHeight: 40
+  WarpAmount: 3
+  RotationSpeedCap: 20

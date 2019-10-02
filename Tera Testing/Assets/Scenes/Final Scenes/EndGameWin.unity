@@ -20128,8 +20128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuPanel: {fileID: 1359504822}
-  creditsPanel: {fileID: 0}
-  creditsStart: {fileID: 0}
+  creditsPanel: {fileID: 1359504822}
+  creditsStart: {fileID: 548850494}
   mainMenuStart: {fileID: 548850494}
   sceneSwitch: 1
   currentScene: 2

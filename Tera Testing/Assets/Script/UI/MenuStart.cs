@@ -35,11 +35,11 @@ public class MenuStart : MonoBehaviour
             timeNeededMenu = 0;
             crossfadeTime = 0;
         }
-        if (timeNeededAnim <= Time.time && !animOnce)
+        if (timeNeededAnim <= Time.timeSinceLevelLoad && !animOnce)
         {
             title.CrossFadeAlpha(255.0f, crossfadeTime, true);
         }
-        if (timeNeededMenu <= Time.time && !menuOnce)
+        if (timeNeededMenu <= Time.timeSinceLevelLoad && !menuOnce)
         {
             mainMenuPanel.SetActive(true);
             menuOnce = true;

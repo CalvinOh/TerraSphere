@@ -13,6 +13,7 @@ TagManager:
   - Seeded
   - Obstacle
   - Plant
+  - Rocket
   layers:
   - Default
   - TransparentFX
