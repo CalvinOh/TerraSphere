@@ -33,7 +33,7 @@ public class EnviromentTree : MonoBehaviour
 
     void DeterminCurrentSize()
     {
-        CurrentScale = -(20 * Mathf.Cos(Time.fixedTime - StartTime)) / (Time.fixedTime - StartTime) + 10;
+        CurrentScale = -(20 * Mathf.Sin(20*(Time.fixedTime - StartTime))) / (20*(Time.fixedTime - StartTime)) + 10;
         CurrentScale = Mathf.Clamp(CurrentScale, 0, 1000000);
 
     }
