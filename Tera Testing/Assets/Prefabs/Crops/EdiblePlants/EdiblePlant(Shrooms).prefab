@@ -104,4 +104,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa703eb6cb70784997da0fd903ff253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OxygenProvided: 0
+  OxygenProvided: 20

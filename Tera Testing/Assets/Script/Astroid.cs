@@ -51,7 +51,7 @@ public class Astroid : MonoBehaviour
         transform.localPosition = new Vector3(0, Random.Range(MinHeight, MaxHeight), 0);
     }
 
-
+    /*
     public void Prep(float minHeight,float maxHeight,float warpAmount, float rotationSpeedCap)
     {
         MaxHeight = maxHeight;
@@ -74,4 +74,5 @@ public class Astroid : MonoBehaviour
 
         transform.localPosition = new Vector3(0, Random.Range(MinHeight, MaxHeight), 0);
     }
+    */
 }
