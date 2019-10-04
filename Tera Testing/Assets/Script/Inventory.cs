@@ -57,7 +57,12 @@ public class Inventory : MonoBehaviour
         if (inventoryDisplaying)
         {
             inventory.GetComponentInParent<Canvas>().targetDisplay = 0;
-            Cursor.lockState = CursorLockMode.None;
+            // making sure that all of the slots are not "chosen"
+            for (int i = 0; i < slot.Length; i++)
+            {
+                slot[i].GetComponent<Toggle>().isOn = false;
+            }
+            //Cursor.lockState = CursorLockMode.None;
         }
         else
         {
@@ -77,10 +82,10 @@ public class Inventory : MonoBehaviour
                 item.tag = "Seed";
 
                 //Loop through inventory and hot bar, if current seed exists then add to stack, if not add to inventory 
-                if(item.subType == "Shroom Seed")
-                {
-                    item.stackNumber++;
-                }
+                //if(item.subType == "Shroom Seed")
+                //{
+                //    item.stackNumber++;
+                //}
             }
             else if (item.type == "Plant")
             {
@@ -116,6 +121,11 @@ public class Inventory : MonoBehaviour
     {
         for(int i = 0; i < allSlots; i++)
         {
+            //if(slot[i].GetComponent<Slot>().item.GetComponent<Item>().subType == subType)
+            //{
+            //    slot[i].GetComponent<Slot>().item.GetComponent<Item>().stackNumber++;
+            //    slot[i].GetComponent<Slot>().stackNumber++;
+            //}
             if(slot[i].GetComponent<Slot>().empty)
             {
                 itemObject.GetComponent<Item>().pickedUp = true;
@@ -125,8 +135,8 @@ public class Inventory : MonoBehaviour
                 slot[i].GetComponent<Slot>().type = itemType;
                 slot[i].GetComponent<Slot>().ID = itemID;
                 slot[i].GetComponent<Slot>().description = itemDescription;
-                slot[i].GetComponent<Slot>().type = subType;
-                slot[i].GetComponent<Slot>().ID = stackNumber;
+                slot[i].GetComponent<Slot>().subType = subType;
+                slot[i].GetComponent<Slot>().stackNumber = 1;
 
                 itemObject.transform.position = new Vector3(0, 0, 0);
                 //itemObject.transform.parent = slot[i].transform;
