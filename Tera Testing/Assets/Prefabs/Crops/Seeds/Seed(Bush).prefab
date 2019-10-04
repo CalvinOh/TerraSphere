@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 1710137528266364835}
   - component: {fileID: 2227933720768994652}
   - component: {fileID: 8355831943016000947}
+  - component: {fileID: 5536649961902197919}
   m_Layer: 0
   m_Name: Seed(Bush)
-  m_TagString: Untagged
+  m_TagString: Seed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 96c6e0c68af878440b5f45843bdff30d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,3 +107,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlantToGrowInto: {fileID: 7772021717637033355, guid: c63b0296908a1e4409048085f993332d,
     type: 3}
+--- !u!114 &5536649961902197919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824234452939722068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfa4751f29fb1fe4ea3ff5fe11fafc2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  type: Seed
+  description: 
+  icon: {fileID: 0}
+  pickedUp: 0
+  oxygenValue: 0
+  stackNumber: 1
+  subType: Bush Seed

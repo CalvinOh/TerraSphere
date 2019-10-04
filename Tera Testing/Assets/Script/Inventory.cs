@@ -15,6 +15,7 @@ public class Inventory : MonoBehaviour
 
     private int allSlots;
     private int enabledSlots;
+    //public int itemsPickedUp;
     public GameObject[] slot;
     private EventSystem eventSystem;
 
@@ -71,7 +72,24 @@ public class Inventory : MonoBehaviour
         {
             GameObject itemPickedUp = other.gameObject;
             Item item = itemPickedUp.GetComponent<Item>();
-            addItem(itemPickedUp, item.ID, item.type, item.description, item.icon);
+            if (item.type == "Seed")
+            {
+                item.tag = "Seed";
+
+                //Loop through inventory and hot bar, if current seed exists then add to stack, if not add to inventory 
+                if(item.subType == "Shroom Seed")
+                {
+                    item.stackNumber++;
+                }
+            }
+            else if (item.type == "Plant")
+            {
+                item.tag = "Plant";//same as seed, add to stack if have, if not add new. 
+            }
+
+            addItem(itemPickedUp, item.ID, item.type, item.description, item.icon, item.subType, item.stackNumber);
+
+            SetSeedSlot();
 
             //seedItem and ediblePlant
             //if()
@@ -79,7 +97,22 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    void addItem(GameObject itemObject, int itemID, string itemType, string itemDescription, Sprite itemIcon)
+    private void SetSeedSlot()
+    {
+        if (slot[0].GetComponent<Slot>().player.GetComponent<PlayerController>().hotBarInventory[1] == null)
+        {
+            for (int i = 0; i < slot.Length; i++)
+            {
+                if (slot[i].GetComponent<Slot>().item.tag == "Seed")
+                {
+                    slot[0].GetComponent<Slot>().player.GetComponent<PlayerController>().hotBarInventory[1] =
+                        slot[i].GetComponent<Slot>().item.GetComponent<Item>().gameObject;
+                }
+            }
+        }
+    }
+
+    void addItem(GameObject itemObject, int itemID, string itemType, string itemDescription, Sprite itemIcon, string subType, int stackNumber)
     {
         for(int i = 0; i < allSlots; i++)
         {
@@ -92,6 +125,8 @@ public class Inventory : MonoBehaviour
                 slot[i].GetComponent<Slot>().type = itemType;
                 slot[i].GetComponent<Slot>().ID = itemID;
                 slot[i].GetComponent<Slot>().description = itemDescription;
+                slot[i].GetComponent<Slot>().type = subType;
+                slot[i].GetComponent<Slot>().ID = stackNumber;
 
                 itemObject.transform.position = new Vector3(0, 0, 0);
                 //itemObject.transform.parent = slot[i].transform;
@@ -99,9 +134,8 @@ public class Inventory : MonoBehaviour
 
                 slot[i].GetComponent<Slot>().UpdateSlot();
                 slot[i].GetComponent<Slot>().empty = false;
+                return;
             }
-
-            return;
         }
     }
 

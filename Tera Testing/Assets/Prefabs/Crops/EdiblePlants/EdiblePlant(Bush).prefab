@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 6495203801546656327}
   - component: {fileID: 5279369981672905506}
   - component: {fileID: 3303319055168159330}
+  - component: {fileID: -3917672076281897384}
   m_Layer: 0
   m_Name: EdiblePlant(Bush)
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2fd567473c8fae4c8eb0faf95e08969, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,3 +106,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OxygenProvided: 0
+--- !u!114 &-3917672076281897384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5190321429641769492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfa4751f29fb1fe4ea3ff5fe11fafc2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  type: Plant
+  description: 
+  icon: {fileID: 0}
+  pickedUp: 0
+  oxygenValue: 0
+  stackSeedNumber: 0
+  subType: Bush Plant
