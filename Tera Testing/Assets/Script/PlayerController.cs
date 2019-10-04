@@ -94,6 +94,7 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         SpawnItems();
+
     }
 
     // Update is called once per frame
@@ -101,6 +102,7 @@ public class PlayerController : MonoBehaviour
     {
         SelectItemKeyboard();
         SelectItemController();
+        UseItem();
         if (!invScript.inventoryDisplaying)
         {
             RotateCamera();
@@ -108,7 +110,8 @@ public class PlayerController : MonoBehaviour
             //ChangeCameraView();
         }
 
-       
+      
+
         if (!itemSelected)
         {
             // Since Item was switched, destroy what was previously held and assign the new value
@@ -117,8 +120,7 @@ public class PlayerController : MonoBehaviour
             itemSelected = true;
         }
         
-        UseItem();
-
+       
         ReassigningPlanetAsBaseSelection();
 
         DecreaseOxygen();
@@ -151,49 +153,53 @@ public class PlayerController : MonoBehaviour
         spawnRakeItem = (GameObject)Instantiate(hotBarInventory[2], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
         spawnWateringGun = (GameObject)Instantiate(hotBarInventory[3], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
 
+        spawnShovelItem.transform.parent = this.spawnHeldLocation;
+        spawnSeedItem.transform.parent = this.spawnHeldLocation;
+        spawnRakeItem.transform.parent = this.spawnHeldLocation;
+        spawnWateringGun.transform.parent = this.spawnHeldLocation;
 
-        spawnSeedItem.SetActive(false);
-        spawnRakeItem.SetActive(false);
-        spawnWateringGun.SetActive(false);
+        spawnSeedItem.transform.position = planet.transform.position;
+        spawnRakeItem.transform.position = planet.transform.position;
+        spawnWateringGun.transform.position = planet.transform.position;
 
 
     }
 
     private void SetItemToPlayer()
     {
-
-        currentlyHolding.transform.parent = spawnHeldLocation.transform;
+     
+        currentlyHolding = hotBarInventory[itemInInventorySelected];
     }
 
-    private void SetItemActive()
+    private void SetItemPosition()
     {
         if(itemInInventorySelected == 0)
         {
-            spawnShovelItem.SetActive(true);
-            spawnSeedItem.SetActive(false);
-            spawnRakeItem.SetActive(false);
-            spawnWateringGun.SetActive(false);
+            spawnShovelItem.transform.position = spawnHeldLocation.transform.position;
+            spawnSeedItem.transform.position = planet.transform.position;
+            spawnRakeItem.transform.position = planet.transform.position;
+            spawnWateringGun.transform.position = planet.transform.position;
         }
         else if (itemInInventorySelected == 1)
         {
-            spawnShovelItem.SetActive(false);
-            spawnSeedItem.SetActive(true);
-            spawnRakeItem.SetActive(false);
-            spawnWateringGun.SetActive(false);
+            spawnShovelItem.transform.position = planet.transform.position;
+            spawnSeedItem.transform.position = spawnHeldLocation.transform.position;
+            spawnRakeItem.transform.position = planet.transform.position;
+            spawnWateringGun.transform.position = planet.transform.position;
         }
         else if (itemInInventorySelected == 2)
         {
-            spawnShovelItem.SetActive(false);
-            spawnSeedItem.SetActive(false);
-            spawnRakeItem.SetActive(true);
-            spawnWateringGun.SetActive(false);
+            spawnShovelItem.transform.position = planet.transform.position;
+            spawnSeedItem.transform.position = planet.transform.position;
+            spawnRakeItem.transform.position = spawnHeldLocation.transform.position;
+            spawnWateringGun.transform.position = planet.transform.position;
         }
         else if (itemInInventorySelected == 3)
         {
-            spawnShovelItem.SetActive(false);
-            spawnSeedItem.SetActive(false);
-            spawnRakeItem.SetActive(false);
-            spawnWateringGun.SetActive(true);
+            spawnShovelItem.transform.position = planet.transform.position;
+            spawnSeedItem.transform.position = planet.transform.position;
+            spawnRakeItem.transform.position = planet.transform.position;
+            spawnWateringGun.transform.position = spawnHeldLocation.transform.position;
         }
     }
 
@@ -232,13 +238,17 @@ public class PlayerController : MonoBehaviour
            if(itemInInventorySelected == 0)
             {
                 itemInInventorySelected = 3;
-                SetItemActive();
+               
+                SetItemPosition();
+                
                 itemSelected = false;
             }
            else
             {
                 itemInInventorySelected--;
-                SetItemActive();
+  
+                SetItemPosition();
+               
                 itemSelected = false;
             }
 
@@ -251,13 +261,17 @@ public class PlayerController : MonoBehaviour
             if (itemInInventorySelected == 3)
             {
                 itemInInventorySelected = 0;
-                SetItemActive();
+    
+                SetItemPosition();
+             
                 itemSelected = false;
             }
             else
             {
                 itemInInventorySelected++;
-                SetItemActive();
+  
+                SetItemPosition();
+               
                 itemSelected = false;
             }
         }
@@ -367,7 +381,7 @@ public class PlayerController : MonoBehaviour
         if (currentlyHolding.gameObject.GetComponent<Item>().stackNumber == 1)
         {
             PlantSeed();
-            currentlyHolding.gameObject.GetComponent<Item>().stackNumber--;
+            currentlyHolding.gameObject.GetComponent<Item>().stackNumber--; //Bugged Right now
             hotBarInventory[1] = blankSlot; //Bugged, stays even when 0 and swapped.
            
         }
