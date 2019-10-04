@@ -382,7 +382,7 @@ public class PlayerController : MonoBehaviour
         {
             PlantSeed();
             currentlyHolding.gameObject.GetComponent<Item>().stackNumber--; //Bugged Right now
-            hotBarInventory[1] = blankSlot; //Bugged, stays even when 0 and swapped.
+            hotBarInventory[itemInInventorySelected] = blankSlot; //Bugged, stays even when 0 and swapped.
            
         }
         else
