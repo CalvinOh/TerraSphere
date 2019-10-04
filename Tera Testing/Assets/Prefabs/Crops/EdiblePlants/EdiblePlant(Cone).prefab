@@ -119,8 +119,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 0
-  type: 
+  type: Plant
   description: 
   icon: {fileID: 0}
   pickedUp: 0
   oxygenValue: 0
+  stackSeedNumber: 0
+  subType: Cone Plant

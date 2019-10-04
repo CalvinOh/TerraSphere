@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7853986092499012554}
   - component: {fileID: 7853986092499012555}
   - component: {fileID: 7853986092499012556}
+  - component: {fileID: 3413276506753418492}
   m_Layer: 0
   m_Name: Alien
   m_TagString: Seed
@@ -4784,6 +4785,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!65 &3413276506753418492
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7853986092499012557}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.599771, y: 0.7892195, z: 0.6480737}
+  m_Center: {x: 0.008077979, y: 0.3139189, z: -0.023385525}
 --- !u!1001 &7853986092515691329
 PrefabInstance:
   m_ObjectHideFlags: 0

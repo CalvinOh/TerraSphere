@@ -2836,7 +2836,7 @@ PrefabInstance:
         type: 3}
       propertyPath: hotBarInventory.Array.data[1]
       value: 
-      objectReference: {fileID: 4341512700140465137, guid: 4f65980185057794c9aa4accc8405393,
+      objectReference: {fileID: 1725089123845229640, guid: 8bc7ce2451e8f4c4781a7a5b86b68493,
         type: 3}
     - target: {fileID: 6271376325731813486, guid: d64cfc0e221e98b408db0930da674aad,
         type: 3}

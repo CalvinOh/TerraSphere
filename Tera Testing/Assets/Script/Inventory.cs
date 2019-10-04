@@ -75,13 +75,19 @@ public class Inventory : MonoBehaviour
             if (item.type == "Seed")
             {
                 item.tag = "Seed";
+
+                //Loop through inventory and hot bar, if current seed exists then add to stack, if not add to inventory 
+                if(item.subType == "Shroom Seed")
+                {
+                    item.stackNumber++;
+                }
             }
-            //else if(item.type == "Plant")
-            //{
+            else if (item.type == "Plant")
+            {
+                item.tag = "Plant";//same as seed, add to stack if have, if not add new. 
+            }
 
-            //}
-
-            addItem(itemPickedUp, item.ID, item.type, item.description, item.icon);
+            addItem(itemPickedUp, item.ID, item.type, item.description, item.icon, item.subType, item.stackNumber);
 
             SetSeedSlot();
 
@@ -106,7 +112,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    void addItem(GameObject itemObject, int itemID, string itemType, string itemDescription, Sprite itemIcon)
+    void addItem(GameObject itemObject, int itemID, string itemType, string itemDescription, Sprite itemIcon, string subType, int stackNumber)
     {
         for(int i = 0; i < allSlots; i++)
         {
@@ -119,6 +125,8 @@ public class Inventory : MonoBehaviour
                 slot[i].GetComponent<Slot>().type = itemType;
                 slot[i].GetComponent<Slot>().ID = itemID;
                 slot[i].GetComponent<Slot>().description = itemDescription;
+                slot[i].GetComponent<Slot>().type = subType;
+                slot[i].GetComponent<Slot>().ID = stackNumber;
 
                 itemObject.transform.position = new Vector3(0, 0, 0);
                 //itemObject.transform.parent = slot[i].transform;

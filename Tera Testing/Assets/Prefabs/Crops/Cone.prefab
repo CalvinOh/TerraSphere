@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8196157380436129785}
   - component: {fileID: 8196157380436129786}
   - component: {fileID: 8196157380436129787}
+  - component: {fileID: 8156461739797458781}
   m_Layer: 0
   m_Name: Cone
   m_TagString: Seed
@@ -4784,6 +4785,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!65 &8156461739797458781
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196157380436129780}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0098336, y: 0.7213415, z: 1.106732}
+  m_Center: {x: -0.018674493, y: 0.32303733, z: 0.04174453}
 --- !u!1001 &8196157379175393988
 PrefabInstance:
   m_ObjectHideFlags: 0

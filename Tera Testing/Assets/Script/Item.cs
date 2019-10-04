@@ -13,6 +13,11 @@ public class Item : MonoBehaviour
     [SerializeField]
     float oxygenValue;
 
+    //Calvin - Edits
+    [SerializeField]
+    public int stackNumber;
+    [SerializeField]
+    public string subType; //Secondary tag for seeds, ie. Shroom Seed etc
 
     //[HideInInspector]
     //public bool equipped; // Tool currently equipped
@@ -74,9 +79,11 @@ public class Item : MonoBehaviour
         if(type == "Seed")
         {
             //Instantiate(itemFromSlot.item, itemFromSlot.GetComponent<Slot>().player.GetComponent<PlayerControllerV2>().planet.transform, true);
-            itemFromSlot.item.transform.position = itemFromSlot.GetComponent<Slot>().player.GetComponent<PlayerControllerV2>().spawnLocation.position;
+            //itemFromSlot.item.transform.position = itemFromSlot.GetComponent<Slot>().player.GetComponent<PlayerControllerV2>().spawnLocation.position;
             //Instantiate(itemFromSlot.item, itemFromSlot.GetComponent<Slot>().player.GetComponent<PlayerControllerV2>().spawnLocation, true);
             //itemFromSlot.item.transform.position = toolManager.gameObject.GetComponent<PlayerControllerV2>().spawnLocation.position;
+
+          
         }
 
         if(type == "Plant" || this.tag == "Plant")

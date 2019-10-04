@@ -120,8 +120,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 0
-  type: 
+  type: Seed
   description: 
   icon: {fileID: 0}
   pickedUp: 0
   oxygenValue: 0
+  stackNumber: 1
+  subType: Cone Seed

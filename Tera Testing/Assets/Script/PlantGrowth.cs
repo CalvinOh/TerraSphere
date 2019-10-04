@@ -110,30 +110,47 @@ public class PlantGrowth : MonoBehaviour
     private void UpdateGrowth()
     {
         //this part is about switching models and activating the particle emission, purely visual
-        if (CurrentGrowthAmount < Stage1Cap && (CurrentGrowthAmount + GrowthSpeed * Time.deltaTime) >= Stage1Cap)
-        {
-            Stage1.SetActive(false);
-            Stage2.SetActive(true);
-            Stage += 1;
-        }
-        else if (CurrentGrowthAmount < Stage2Cap && (CurrentGrowthAmount + GrowthSpeed * Time.deltaTime) >= Stage2Cap)
-        {
-            MyPS.enableEmission = true;
-            this.gameObject.tag = "Plant";
-        }
+        
         
 
         if (CurrentGrowthAmount >= Stage2Cap)
         {
+            if(AccelTimeer>0)
                 AccelTimeer -= Time.deltaTime;
             //happens when plant is fully grown every frame, eg. produce terraforming points, dooesn't grow anymore, provides terraform amount.
         }
         else
         {
-            if (AccelTimeer < 0)
+            if (AccelTimeer <= 0)
+            {
+                if (CurrentGrowthAmount < Stage1Cap && (CurrentGrowthAmount + GrowthSpeed * Time.deltaTime) >= Stage1Cap)
+                {
+                    Stage1.SetActive(false);
+                    Stage2.SetActive(true);
+                    Stage += 1;
+                }
+                else if (CurrentGrowthAmount < Stage2Cap && (CurrentGrowthAmount + GrowthSpeed * Time.deltaTime) >= Stage2Cap)
+                {
+                    MyPS.enableEmission = true;
+                    this.gameObject.tag = "Plant";
+                }
+
                 CurrentGrowthAmount += GrowthSpeed * Time.deltaTime;
+            }
             else
             {
+                if (CurrentGrowthAmount < Stage1Cap && (CurrentGrowthAmount + GrowthSpeed * Time.deltaTime*2) >= Stage1Cap)
+                {
+                    Stage1.SetActive(false);
+                    Stage2.SetActive(true);
+                    Stage += 1;
+                }
+                else if (CurrentGrowthAmount < Stage2Cap && (CurrentGrowthAmount + GrowthSpeed * Time.deltaTime*2) >= Stage2Cap)
+                {
+                    MyPS.enableEmission = true;
+                    this.gameObject.tag = "Plant";
+                }
+
                 CurrentGrowthAmount += GrowthSpeed * Time.deltaTime * 2;
                 AccelTimeer -= Time.deltaTime;
             }

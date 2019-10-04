@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7772021717637033358}
   - component: {fileID: 7772021717637033353}
   - component: {fileID: 7772021717637033352}
+  - component: {fileID: 5013824869678111954}
   m_Layer: 0
   m_Name: Bush
   m_TagString: Seed
@@ -4784,6 +4785,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!65 &5013824869678111954
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7772021717637033355}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.66697764, y: 1.0009944, z: 0.764889}
+  m_Center: {x: 0.005007148, y: 0.3824395, z: -0.02973336}
 --- !u!1001 &7772021718287678667
 PrefabInstance:
   m_ObjectHideFlags: 0
