@@ -93,7 +93,7 @@ public class Inventory : MonoBehaviour
             }
 
             addItem(itemPickedUp, item.ID, item.type, item.description, item.icon, item.subType, item.stackNumber);
-
+            item.gameObject.transform.parent = slot[0].GetComponent<Slot>().player.gameObject.GetComponent<PlayerController>().spawnHeldLocation;
             SetSeedSlot();
 
             //seedItem and ediblePlant
@@ -138,7 +138,7 @@ public class Inventory : MonoBehaviour
                 slot[i].GetComponent<Slot>().subType = subType;
                 slot[i].GetComponent<Slot>().stackNumber = 1;
 
-                itemObject.transform.position = new Vector3(0, 0, 0);
+                itemObject.transform.position = slot[0].GetComponent<Slot>().player.gameObject.GetComponent<PlayerController>().planet.transform.position;
                 //itemObject.transform.parent = slot[i].transform;
                 //itemObject.SetActive(false);
 

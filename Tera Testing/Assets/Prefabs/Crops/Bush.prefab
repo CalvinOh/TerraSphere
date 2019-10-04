@@ -56,10 +56,12 @@ MonoBehaviour:
   Stage2TerraFormPerSecond: 20
   Stage1: {fileID: 536782611947779402}
   Stage2: {fileID: 1165414289947902568}
-  MinAmountOfSeedDrop: 0
-  MaxAmountOfSeedDrop: 0
-  SeedSpawnedWhenHarvested: {fileID: 0}
-  PlantSpawnedWhenHarvested: {fileID: 0}
+  MinAmountOfSeedDrop: 1
+  MaxAmountOfSeedDrop: 3
+  SeedSpawnedWhenHarvested: {fileID: 1824234452939722068, guid: e8ca7eedfbbdc964ab83deaed7678526,
+    type: 3}
+  PlantSpawnedWhenHarvested: {fileID: 5190321429641769492, guid: ab8a195b666c03e4582c719b4618633b,
+    type: 3}
   UnOutlined: {fileID: 2100000, guid: 4812f976f0f55e74f9a5f90fba3569eb, type: 2}
   Outlined: {fileID: 2100000, guid: c2807779e31f79d49abeb8d4769d3b55, type: 2}
   Grow: 0

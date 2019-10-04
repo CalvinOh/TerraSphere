@@ -37,6 +37,19 @@ public class Slot : MonoBehaviour, IPointerClickHandler
         slotIconGO = transform.GetChild(0);
         player = FindObjectOfType<Inventory>().gameObject;
         this.gameObject.GetComponent<Toggle>().isOn = false;
+
+        if(item != null)
+        {
+            item = item.GetComponent<Item>().gameObject;
+            icon = item.GetComponent<Item>().icon;
+            type = item.GetComponent<Item>().type;
+            ID = item.GetComponent<Item>().ID;
+            description = item.GetComponent<Item>().description;
+            subType = item.GetComponent<Item>().subType;
+            stackNumber = 1;
+            icon = item.GetComponent<Item>().icon;
+            UpdateSlot();
+        }
     }
 
     public void Update()

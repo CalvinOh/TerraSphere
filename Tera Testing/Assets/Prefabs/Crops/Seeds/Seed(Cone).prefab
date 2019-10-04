@@ -122,7 +122,7 @@ MonoBehaviour:
   ID: 0
   type: Seed
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: dd224b1bd757a9b4e85a221c0a64fc35, type: 3}
   pickedUp: 0
   oxygenValue: 0
   stackNumber: 1

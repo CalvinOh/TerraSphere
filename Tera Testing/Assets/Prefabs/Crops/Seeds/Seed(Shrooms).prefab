@@ -122,8 +122,8 @@ MonoBehaviour:
   ID: 0
   type: Seed
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 19f06b4a8880f3145a7a8e5c1b6490c6, type: 3}
   pickedUp: 0
   oxygenValue: 0
-  stackNumber: 2
+  stackNumber: 1
   subType: Shroom Seed

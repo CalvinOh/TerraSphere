@@ -123,6 +123,6 @@ MonoBehaviour:
   description: 
   icon: {fileID: 0}
   pickedUp: 0
-  oxygenValue: 0
-  stackSeedNumber: 0
+  oxygenValue: 10
+  stackNumber: 0
   subType: Bush Plant
