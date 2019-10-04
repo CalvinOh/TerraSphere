@@ -93,6 +93,7 @@ public class PlantGrowth : MonoBehaviour
         Stage2.SetActive(false);
         MyPS.enableEmission = false;
         FindObjectOfType<PlanetManager>().AddPlant(this);
+        this.gameObject.tag = "Seed";
     }
 
 
@@ -109,29 +110,47 @@ public class PlantGrowth : MonoBehaviour
     private void UpdateGrowth()
     {
         //this part is about switching models and activating the particle emission, purely visual
-        if (CurrentGrowthAmount < Stage1Cap && (CurrentGrowthAmount + GrowthSpeed * Time.deltaTime) >= Stage1Cap)
-        {
-            Stage1.SetActive(false);
-            Stage2.SetActive(true);
-            Stage += 1;
-        }
-        else if (CurrentGrowthAmount < Stage2Cap && (CurrentGrowthAmount + GrowthSpeed * Time.deltaTime) >= Stage2Cap)
-        {
-            MyPS.enableEmission = true;
-        }
+        
         
 
         if (CurrentGrowthAmount >= Stage2Cap)
         {
+            if(AccelTimeer>0)
                 AccelTimeer -= Time.deltaTime;
             //happens when plant is fully grown every frame, eg. produce terraforming points, dooesn't grow anymore, provides terraform amount.
         }
         else
         {
-            if (AccelTimeer < 0)
+            if (AccelTimeer <= 0)
+            {
+                if (CurrentGrowthAmount < Stage1Cap && (CurrentGrowthAmount + GrowthSpeed * Time.deltaTime) >= Stage1Cap)
+                {
+                    Stage1.SetActive(false);
+                    Stage2.SetActive(true);
+                    Stage += 1;
+                }
+                else if (CurrentGrowthAmount < Stage2Cap && (CurrentGrowthAmount + GrowthSpeed * Time.deltaTime) >= Stage2Cap)
+                {
+                    MyPS.enableEmission = true;
+                    this.gameObject.tag = "Plant";
+                }
+
                 CurrentGrowthAmount += GrowthSpeed * Time.deltaTime;
+            }
             else
             {
+                if (CurrentGrowthAmount < Stage1Cap && (CurrentGrowthAmount + GrowthSpeed * Time.deltaTime*2) >= Stage1Cap)
+                {
+                    Stage1.SetActive(false);
+                    Stage2.SetActive(true);
+                    Stage += 1;
+                }
+                else if (CurrentGrowthAmount < Stage2Cap && (CurrentGrowthAmount + GrowthSpeed * Time.deltaTime*2) >= Stage2Cap)
+                {
+                    MyPS.enableEmission = true;
+                    this.gameObject.tag = "Plant";
+                }
+
                 CurrentGrowthAmount += GrowthSpeed * Time.deltaTime * 2;
                 AccelTimeer -= Time.deltaTime;
             }
@@ -155,14 +174,18 @@ public class PlantGrowth : MonoBehaviour
         for (int i = 0; i < NumberOfSeeds; i++)
         {
             GameObject DroppedSeed = Instantiate(SeedSpawnedWhenHarvested, transform.position+ new Vector3(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f)), transform.rotation);
+            DroppedSeed.gameObject.tag = "Item";
+            print("Spawning Seed");
         }
         
         if (PlantSpawnedWhenHarvested != null)
         {
             GameObject DroppedPlant = Instantiate(PlantSpawnedWhenHarvested, transform.position, transform.rotation);
+            DroppedPlant.gameObject.tag = "Item";
+            print("Spawning Plant");
         }
 
-        DestroyObject(this.gameObject);
+        Destroy(this.gameObject);
     }
 
     public void ToggleOutline()

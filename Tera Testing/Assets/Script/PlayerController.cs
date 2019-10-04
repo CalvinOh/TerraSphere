@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     float moveSpeed;
 
     [SerializeField]
-    GameObject[] hotBarInventory = new GameObject[10];
+    public GameObject[] hotBarInventory = new GameObject[10];
     [SerializeField]
     Inventory invScript;
 
@@ -35,8 +35,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject wateringCan;
 
+    private GameObject spawnShovelItem;
+    private GameObject spawnSeedItem;
+    private GameObject spawnRakeItem;
+    private GameObject spawnWateringGun;
+
     [SerializeField]
     public float oxygenValue;
+    [SerializeField]
+    private float oxygenDecreaseValue;
 
     public float oxygenMax = 100f;
 
@@ -63,7 +70,6 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         //inventory = new GameObject[10];
-        currentlyHolding = hotBarInventory[0];
         if (invScript == null)
         {
             invScript = this.gameObject.GetComponent<Inventory>();
@@ -84,7 +90,10 @@ public class PlayerController : MonoBehaviour
         hotBarInventory[2] = rake;
         hotBarInventory[3] = wateringCan;
 
+        currentlyHolding = hotBarInventory[0];
         Cursor.lockState = CursorLockMode.Locked;
+
+        SpawnItems();
 
     }
 
@@ -93,23 +102,33 @@ public class PlayerController : MonoBehaviour
     {
         SelectItemKeyboard();
         SelectItemController();
+        UseItem();
         if (!invScript.inventoryDisplaying)
         {
             RotateCamera();
+            Jump();
+            //ChangeCameraView();
         }
 
-        ChangeCameraView();
+      
+
         if (!itemSelected)
         {
             // Since Item was switched, destroy what was previously held and assign the new value
-            Destroy(currentlyHolding.gameObject);
-            DisplayItemSelected();
+            //Destroy(currentlyHolding.gameObject);
+            SetItemToPlayer();
             itemSelected = true;
         }
-        Jump();
-        UseItem();
-
+        
+       
         ReassigningPlanetAsBaseSelection();
+
+        DecreaseOxygen();
+    }
+
+    private void DecreaseOxygen()
+    {
+        oxygenValue -= oxygenDecreaseValue;
     }
 
     private void ReassigningPlanetAsBaseSelection()
@@ -122,15 +141,66 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void DisplayItemSelected()
+    private void SpawnItems()
     {
         // Assigning the currently held item
-        currentlyHolding = (GameObject)Instantiate(hotBarInventory[itemInInventorySelected], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
-        currentlyHolding.transform.parent = spawnHeldLocation.transform;
-        //currentlyHolding.transform.position = spawnLocation.transform.position;
+        //currentlyHolding = (GameObject)Instantiate(hotBarInventory[itemInInventorySelected], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
+        //
         //GameObject item = (GameObject)Instantiate(currentlyHolding, spawnLocation.transform);
         //item.transform.parent = this.transform;
+        spawnShovelItem = (GameObject)Instantiate(hotBarInventory[0], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
+        spawnSeedItem = (GameObject)Instantiate(hotBarInventory[1], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
+        spawnRakeItem = (GameObject)Instantiate(hotBarInventory[2], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
+        spawnWateringGun = (GameObject)Instantiate(hotBarInventory[3], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
 
+        spawnShovelItem.transform.parent = this.spawnHeldLocation;
+        spawnSeedItem.transform.parent = this.spawnHeldLocation;
+        spawnRakeItem.transform.parent = this.spawnHeldLocation;
+        spawnWateringGun.transform.parent = this.spawnHeldLocation;
+
+        spawnSeedItem.transform.position = planet.transform.position;
+        spawnRakeItem.transform.position = planet.transform.position;
+        spawnWateringGun.transform.position = planet.transform.position;
+
+
+    }
+
+    private void SetItemToPlayer()
+    {
+     
+        currentlyHolding = hotBarInventory[itemInInventorySelected];
+    }
+
+    private void SetItemPosition()
+    {
+        if(itemInInventorySelected == 0)
+        {
+            spawnShovelItem.transform.position = spawnHeldLocation.transform.position;
+            spawnSeedItem.transform.position = planet.transform.position;
+            spawnRakeItem.transform.position = planet.transform.position;
+            spawnWateringGun.transform.position = planet.transform.position;
+        }
+        else if (itemInInventorySelected == 1)
+        {
+            spawnShovelItem.transform.position = planet.transform.position;
+            spawnSeedItem.transform.position = spawnHeldLocation.transform.position;
+            spawnRakeItem.transform.position = planet.transform.position;
+            spawnWateringGun.transform.position = planet.transform.position;
+        }
+        else if (itemInInventorySelected == 2)
+        {
+            spawnShovelItem.transform.position = planet.transform.position;
+            spawnSeedItem.transform.position = planet.transform.position;
+            spawnRakeItem.transform.position = spawnHeldLocation.transform.position;
+            spawnWateringGun.transform.position = planet.transform.position;
+        }
+        else if (itemInInventorySelected == 3)
+        {
+            spawnShovelItem.transform.position = planet.transform.position;
+            spawnSeedItem.transform.position = planet.transform.position;
+            spawnRakeItem.transform.position = planet.transform.position;
+            spawnWateringGun.transform.position = spawnHeldLocation.transform.position;
+        }
     }
 
     private void SelectItemKeyboard()
@@ -168,13 +238,22 @@ public class PlayerController : MonoBehaviour
            if(itemInInventorySelected == 0)
             {
                 itemInInventorySelected = 3;
+               
+                SetItemPosition();
+                
                 itemSelected = false;
             }
            else
             {
                 itemInInventorySelected--;
+  
+                SetItemPosition();
+               
                 itemSelected = false;
             }
+
+
+
         }
         if(Input.GetButtonDown("Right Bumper"))
         {
@@ -182,11 +261,17 @@ public class PlayerController : MonoBehaviour
             if (itemInInventorySelected == 3)
             {
                 itemInInventorySelected = 0;
+    
+                SetItemPosition();
+             
                 itemSelected = false;
             }
             else
             {
                 itemInInventorySelected++;
+  
+                SetItemPosition();
+               
                 itemSelected = false;
             }
         }
@@ -230,7 +315,8 @@ public class PlayerController : MonoBehaviour
             }
             if (currentlyHolding.CompareTag("Seed"))
             {
-                PlantSeed();
+                CheckSeedNumber();
+                
             }
             if (currentlyHolding.CompareTag("Rake"))
             {
@@ -245,9 +331,10 @@ public class PlayerController : MonoBehaviour
 
     private void Water()
     {
-        if (currentlySelecting.CompareTag("Seeded") || currentlySelecting.CompareTag("Plant"))
+        if (currentlySelecting.CompareTag("Seed"))
         {
             //Trigger plant accelarate function
+            print("Watering");
             currentlySelecting.gameObject.GetComponent<PlantGrowth>().Water(10f);
         }
     }
@@ -268,8 +355,9 @@ public class PlayerController : MonoBehaviour
     {
         if(currentlySelecting.CompareTag("Plant"))
         {
-            //currentlySelecting.gameObject.GetComponent<PlantGrowth>().Harvest();
             print("Harvesting");
+            currentlySelecting.gameObject.GetComponent<PlantGrowth>().Harvest();
+            
         }
     }
 
@@ -281,13 +369,30 @@ public class PlayerController : MonoBehaviour
             GameObject newSeed = (GameObject)Instantiate(hotBarInventory[itemInInventorySelected].gameObject.GetComponent<SeedItem>().plantToGrowInto, spawnItemLocation.transform.position, spawnItemLocation.transform.rotation);
             //blankSlot = new GameObject();
             //hotBarInventory[itemInInventorySelected] = blankSlot;
-            currentlyHolding = hotBarInventory[itemInInventorySelected];
+            //currentlyHolding = hotBarInventory[itemInInventorySelected];
             print("Planting");
             //check for stack, if yes -- from stack; else remove from inventory;
         }
 
     }
 
+    void CheckSeedNumber()
+    {
+        if (currentlyHolding.gameObject.GetComponent<Item>().stackNumber == 1)
+        {
+            PlantSeed();
+            currentlyHolding.gameObject.GetComponent<Item>().stackNumber--; //Bugged Right now
+            hotBarInventory[1] = blankSlot; //Bugged, stays even when 0 and swapped.
+           
+        }
+        else
+        {
+            PlantSeed();
+            print("Decrease Stack");
+            currentlyHolding.gameObject.GetComponent<Item>().stackNumber--;
+           
+        }
+    }
 
     private void RotateCamera()
     {
@@ -319,16 +424,17 @@ public class PlayerController : MonoBehaviour
     {
         objectsInTrigger.Add(other.gameObject);
         currentlySelecting = other.gameObject;
-        if(currentlyHolding.CompareTag("Seed"))
-        {
-            currentlyHolding.gameObject.GetComponent<PlantGrowth>().ToggleOutline();
-        }
+        //if(currentlySelecting.CompareTag("Plant"))
+        //{
+        //    currentlySelecting.gameObject.GetComponent<PlantGrowth>().ToggleOutline();
+        //}
     }
 
     private void OnTriggerExit(Collider other)
     {
         objectsInTrigger.Remove(other.gameObject);
        
+        //Outline still in development, not going to be in alpha
 
     }
 }
