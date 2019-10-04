@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8196157380436129787}
   m_Layer: 0
   m_Name: Cone
-  m_TagString: Untagged
+  m_TagString: Seed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4796,6 +4796,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cone_SAP_P
       objectReference: {fileID: 0}
+    - target: {fileID: 3845711219989597997, guid: e90c99eadcf136c44878a236678c6586,
+        type: 3}
+      propertyPath: m_TagString
+      value: Seed
+      objectReference: {fileID: 0}
     - target: {fileID: 6367407436723614548, guid: e90c99eadcf136c44878a236678c6586,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4896,6 +4901,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55089024721840941, guid: c66f15a53d702c44fb9193ec588777fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: Plant
       objectReference: {fileID: 0}
     - target: {fileID: 6173565730814118232, guid: c66f15a53d702c44fb9193ec588777fa,
         type: 3}

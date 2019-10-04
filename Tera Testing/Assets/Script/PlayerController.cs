@@ -133,11 +133,10 @@ public class PlayerController : MonoBehaviour
     }
 
     private void DisplayItemSelected()
-    {
+    { 
         // Assigning the currently held item
         currentlyHolding = (GameObject)Instantiate(hotBarInventory[itemInInventorySelected], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
         currentlyHolding.transform.parent = spawnHeldLocation.transform;
-        //currentlyHolding.transform.position = spawnLocation.transform.position;
         //GameObject item = (GameObject)Instantiate(currentlyHolding, spawnLocation.transform);
         //item.transform.parent = this.transform;
 
@@ -292,9 +291,8 @@ public class PlayerController : MonoBehaviour
             GameObject newSeed = (GameObject)Instantiate(hotBarInventory[itemInInventorySelected].gameObject.GetComponent<SeedItem>().plantToGrowInto, spawnItemLocation.transform.position, spawnItemLocation.transform.rotation);
             //blankSlot = new GameObject();
             //hotBarInventory[itemInInventorySelected] = blankSlot;
-            currentlyHolding = hotBarInventory[itemInInventorySelected];
+            //currentlyHolding = hotBarInventory[itemInInventorySelected];
             print("Planting");
-            //hotBarInventory[itemInInventorySelected].tag = "Plant";
             //check for stack, if yes -- from stack; else remove from inventory;
         }
 
@@ -331,9 +329,9 @@ public class PlayerController : MonoBehaviour
     {
         objectsInTrigger.Add(other.gameObject);
         currentlySelecting = other.gameObject;
-        if(currentlyHolding.CompareTag("Seed"))
+        if(currentlySelecting.CompareTag("Plant"))
         {
-            currentlyHolding.gameObject.GetComponent<PlantGrowth>().ToggleOutline();
+            currentlySelecting.gameObject.GetComponent<PlantGrowth>().ToggleOutline();
         }
     }
 
@@ -341,6 +339,7 @@ public class PlayerController : MonoBehaviour
     {
         objectsInTrigger.Remove(other.gameObject);
        
+        //Outline still in development, not going to be in alpha
 
     }
 }

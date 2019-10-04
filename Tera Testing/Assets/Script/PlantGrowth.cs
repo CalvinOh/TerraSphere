@@ -157,16 +157,18 @@ public class PlantGrowth : MonoBehaviour
         for (int i = 0; i < NumberOfSeeds; i++)
         {
             GameObject DroppedSeed = Instantiate(SeedSpawnedWhenHarvested, transform.position+ new Vector3(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f)), transform.rotation);
+            DroppedSeed.gameObject.tag = "Item";
             print("Spawning Seed");
         }
         
         if (PlantSpawnedWhenHarvested != null)
         {
             GameObject DroppedPlant = Instantiate(PlantSpawnedWhenHarvested, transform.position, transform.rotation);
+            DroppedPlant.gameObject.tag = "Item";
             print("Spawning Plant");
         }
 
-        DestroyObject(this.gameObject);
+        Destroy(this.gameObject);
     }
 
     public void ToggleOutline()

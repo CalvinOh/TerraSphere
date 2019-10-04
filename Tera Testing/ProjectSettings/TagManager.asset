@@ -13,6 +13,7 @@ TagManager:
   - Seeded
   - Obstacle
   - Plant
+  - Item
   layers:
   - Default
   - TransparentFX

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7853986092499012556}
   m_Layer: 0
   m_Name: Alien
-  m_TagString: Untagged
+  m_TagString: Seed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4801,6 +4801,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2260323551048197847, guid: a968d1cfd102d5746b34f480fa121cbb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Plant
+      objectReference: {fileID: 0}
     - target: {fileID: 5313924757266393004, guid: a968d1cfd102d5746b34f480fa121cbb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4896,6 +4901,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Alien_SAP_P
+      objectReference: {fileID: 0}
+    - target: {fileID: 4605582474802256804, guid: 60482861e12be424795e2812ce1823e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Seed
       objectReference: {fileID: 0}
     - target: {fileID: 6994919771324859081, guid: 60482861e12be424795e2812ce1823e1,
         type: 3}

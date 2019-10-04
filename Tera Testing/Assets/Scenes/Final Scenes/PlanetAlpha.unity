@@ -2810,7 +2810,8 @@ PrefabInstance:
         type: 3}
       propertyPath: blankSlot
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9100561491492978919, guid: b98cebb222c6a5f44beb4b27dc5e0a11,
+        type: 3}
     - target: {fileID: 6628017133948517553, guid: d64cfc0e221e98b408db0930da674aad,
         type: 3}
       propertyPath: TPSCamera
