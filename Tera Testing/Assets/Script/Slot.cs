@@ -10,7 +10,9 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     public GameObject item;
     public int ID;
     public string type;
+    public string subType;
     public string description;
+    public int stackNumber; // how many of an item are in a stack for a slot.
     public bool empty;
 
     public Transform slotIconGO;
@@ -34,7 +36,41 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     {
         slotIconGO = transform.GetChild(0);
         player = FindObjectOfType<Inventory>().gameObject;
+        this.gameObject.GetComponent<Toggle>().isOn = false;
+
+        if(item != null)
+        {
+            item = item.GetComponent<Item>().gameObject;
+            icon = item.GetComponent<Item>().icon;
+            type = item.GetComponent<Item>().type;
+            ID = item.GetComponent<Item>().ID;
+            description = item.GetComponent<Item>().description;
+            subType = item.GetComponent<Item>().subType;
+            stackNumber = 1;
+            icon = item.GetComponent<Item>().icon;
+            UpdateSlot();
+        }
     }
+
+    public void Update()
+    {
+        if(this.gameObject.GetComponent<Toggle>().isOn)
+        {
+            if(item.GetComponent<Item>().type == "Plant")
+            {
+                this.gameObject.GetComponent<Toggle>().isOn = false; // deactivate to prevent using infinite times
+                useItem();
+            }
+            else if (item.GetComponent<Item>().type == "Seed")
+            {
+                this.player.GetComponent<PlayerController>().hotBarInventory[1] = item;
+
+            }
+            //this.gameObject.GetComponent<Toggle>().isOn = false; // deactivate to prevent using infinite times
+        }
+    }
+
+
 
     public void UpdateSlot()
     {
@@ -44,5 +80,11 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     public void useItem()
     {
         item.GetComponent<Item>().itemUsage(this);
+        stackNumber--;
+        if(stackNumber <= 0)
+        {
+            empty = true;
+
+        }
     }
 }

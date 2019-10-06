@@ -7,13 +7,17 @@ public class EnviromentTree : MonoBehaviour
     [SerializeField]
     private float PopupSize;
 
+    [SerializeField]
+    private GameObject VisualObject;
+
+   
 
 
     private Vector3 StartSize;
     private float CurrentScale;
-
+    private Collider MyCollider;
     private float StartTime;
-
+    private bool Grow;
 
 
         
@@ -22,17 +26,24 @@ public class EnviromentTree : MonoBehaviour
     void Start()
     {
         StartTime = 0;
-        StartSize = transform.localScale;
-        CurrentScale = 0.1f;
+        StartSize = VisualObject.transform.localScale;
+        CurrentScale = 0.0000001f;
+        MyCollider = GetComponent<Collider>();
+        MyCollider.enabled = false;
+        //this need to be set to false for the tree to not appear at the start
+        Grow = false;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (CurrentScale < 1f)
+        if (Grow)
+        {
+            if (CurrentScale <= 1f)
             DeterminCurrentSize();
 
-        this.transform.localScale = StartSize * CurrentScale;
+            VisualObject.transform.localScale = StartSize * CurrentScale;
+        }
     }
 
 
@@ -41,9 +52,9 @@ public class EnviromentTree : MonoBehaviour
         // CurrentScale *= 1.01f;
         //CurrentScale = (-(20 * Mathf.Sin(20 * (Time.fixedTime - StartTime))) / (20 * (Time.fixedTime - StartTime)) + 10) / 10 * PopupSize;
         
-        if (Time.fixedTime - StartTime >= 0.824)
+        if (Time.fixedTime - StartTime >= 0.8)
         {
-            CurrentScale *= 1.00005f;
+            CurrentScale *= 1.0005f;
         }
         else
         {
@@ -54,7 +65,12 @@ public class EnviromentTree : MonoBehaviour
         CurrentScale = Mathf.Clamp(CurrentScale, 0f, 1f);
     }
 
-
+    public void StartGrow()
+    {
+        StartTime = Time.fixedTime;
+        MyCollider.enabled = true;
+        Grow = true;
+    }
 
 
 }

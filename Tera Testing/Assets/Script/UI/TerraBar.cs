@@ -10,46 +10,16 @@ public class TerraBar : MonoBehaviour
     private Image barFill;
 
     [SerializeField]
-    [Tooltip("The maximum amount for the terraform bar to be completely filled.")]
-    private float maxBarValue;
+    private Material grass;
     
     [Tooltip("The percentage of the bar that is filled indicated using decimals 0 to 1.")]
-    private float barPercentage;
-    [Tooltip("The amount added everysecond for having plants unharvested.")]
-    private float addRate;
-    private float currentBarValue;
+    public float barPercentage;
 
     void Update()
     {
-        //currentBarValue = currentBarValue + (addRate * Time.deltaTime);
-        //Adds the rate for current unharvested plants, the rate adds every second.
-        //calculatePercentage();
-
-        barFill.fillAmount = FindObjectOfType<PlanetManager>().TerraformPercentage/100;
-    }
-
-    /*
-    private void calculatePercentage()
-    {
-        //Calculates the percentage of the bar filled and sets the bar to that amount.
-        barPercentage = currentBarValue / maxBarValue;
+        barPercentage = FindObjectOfType<PlanetManager>().TerraformPercentage/100;
         barFill.fillAmount = barPercentage;
+        Color alpha = new Color(1, 1, 1, barPercentage);
+        grass.color = alpha;
     }
-
-    private void AddRate(float rateIncrease)
-    {
-        addRate += rateIncrease;
-    }
-
-    private void ResetRate()
-    {
-        addRate = 0f;
-    }
-
-    private void AddAmount(float amountToAdd)
-    {
-        //Used when plant becomes first harvestable, adds one sizable boost to the bar.
-        currentBarValue += amountToAdd;
-    }
-    */
 }

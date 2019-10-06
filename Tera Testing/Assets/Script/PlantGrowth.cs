@@ -169,6 +169,7 @@ public class PlantGrowth : MonoBehaviour
 
     public void Harvest()
     {
+        Grow = false;
         int NumberOfSeeds = Random.Range(MinAmountOfSeedDrop, MaxAmountOfSeedDrop);
 
         for (int i = 0; i < NumberOfSeeds; i++)

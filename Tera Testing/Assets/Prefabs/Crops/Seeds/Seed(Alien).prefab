@@ -120,9 +120,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 0
-  type: 
+  type: Seed
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 65e213f5f9177df40a8471ac5c42053e, type: 3}
   pickedUp: 0
   oxygenValue: 0
   stackNumber: 1

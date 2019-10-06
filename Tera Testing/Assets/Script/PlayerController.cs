@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     int itemInInventorySelected;
 
     [SerializeField]
-    Transform spawnHeldLocation;
+    public Transform spawnHeldLocation;
     [SerializeField]
     Transform spawnItemLocation;
     [SerializeField]
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     private GameObject TDCamera;
 
     [SerializeField]
-    private GameObject planet;
+    public GameObject planet;
 
     public List<GameObject> objectsInTrigger;
 
@@ -110,13 +110,14 @@ public class PlayerController : MonoBehaviour
             //ChangeCameraView();
         }
 
-      
+        SetItemToPlayer();
 
         if (!itemSelected)
         {
             // Since Item was switched, destroy what was previously held and assign the new value
             //Destroy(currentlyHolding.gameObject);
-            SetItemToPlayer();
+           
+            SetItemPosition();
             itemSelected = true;
         }
         
@@ -167,7 +168,6 @@ public class PlayerController : MonoBehaviour
 
     private void SetItemToPlayer()
     {
-     
         currentlyHolding = hotBarInventory[itemInInventorySelected];
     }
 
@@ -378,14 +378,14 @@ public class PlayerController : MonoBehaviour
 
     void CheckSeedNumber()
     {
-        if (currentlyHolding.gameObject.GetComponent<Item>().stackNumber == 1)
+        if (currentlyHolding.gameObject.GetComponent<Item>().stackNumber <= 1)
         {
             PlantSeed();
             currentlyHolding.gameObject.GetComponent<Item>().stackNumber--; //Bugged Right now
-            hotBarInventory[1] = blankSlot; //Bugged, stays even when 0 and swapped.
+            hotBarInventory[itemInInventorySelected] = blankSlot; //Bugged, stays even when 0 and swapped.
            
         }
-        else
+        else if(currentlyHolding.gameObject.GetComponent<Item>().stackNumber > 1)
         {
             PlantSeed();
             print("Decrease Stack");

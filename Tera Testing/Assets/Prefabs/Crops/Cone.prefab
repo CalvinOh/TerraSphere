@@ -56,10 +56,12 @@ MonoBehaviour:
   Stage2TerraFormPerSecond: 20
   Stage1: {fileID: 4963015497458443753}
   Stage2: {fileID: 8177743743262114761}
-  MinAmountOfSeedDrop: 0
-  MaxAmountOfSeedDrop: 0
-  SeedSpawnedWhenHarvested: {fileID: 0}
-  PlantSpawnedWhenHarvested: {fileID: 0}
+  MinAmountOfSeedDrop: 1
+  MaxAmountOfSeedDrop: 3
+  SeedSpawnedWhenHarvested: {fileID: 4341512700140465137, guid: 4f65980185057794c9aa4accc8405393,
+    type: 3}
+  PlantSpawnedWhenHarvested: {fileID: 3079812670169710357, guid: 39345e352b317c54085ea6a4cba4604d,
+    type: 3}
   UnOutlined: {fileID: 2100000, guid: 4812f976f0f55e74f9a5f90fba3569eb, type: 2}
   Outlined: {fileID: 2100000, guid: c2807779e31f79d49abeb8d4769d3b55, type: 2}
   Grow: 0
@@ -4805,16 +4807,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8196157380436129784}
     m_Modifications:
-    - target: {fileID: 3845711219989597997, guid: e90c99eadcf136c44878a236678c6586,
-        type: 3}
-      propertyPath: m_Name
-      value: Cone_SAP_P
-      objectReference: {fileID: 0}
-    - target: {fileID: 3845711219989597997, guid: e90c99eadcf136c44878a236678c6586,
-        type: 3}
-      propertyPath: m_TagString
-      value: Seed
-      objectReference: {fileID: 0}
     - target: {fileID: 6367407436723614548, guid: e90c99eadcf136c44878a236678c6586,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4885,6 +4877,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 70
       objectReference: {fileID: 0}
+    - target: {fileID: 3845711219989597997, guid: e90c99eadcf136c44878a236678c6586,
+        type: 3}
+      propertyPath: m_Name
+      value: Cone_SAP_P
+      objectReference: {fileID: 0}
+    - target: {fileID: 3845711219989597997, guid: e90c99eadcf136c44878a236678c6586,
+        type: 3}
+      propertyPath: m_TagString
+      value: Seed
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e90c99eadcf136c44878a236678c6586, type: 3}
 --- !u!1 &4963015497458443753 stripped
@@ -4906,21 +4908,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8196157380436129784}
     m_Modifications:
-    - target: {fileID: 55089024721840941, guid: c66f15a53d702c44fb9193ec588777fa,
-        type: 3}
-      propertyPath: m_Name
-      value: Cone_PLANT_P
-      objectReference: {fileID: 0}
-    - target: {fileID: 55089024721840941, guid: c66f15a53d702c44fb9193ec588777fa,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 55089024721840941, guid: c66f15a53d702c44fb9193ec588777fa,
-        type: 3}
-      propertyPath: m_TagString
-      value: Plant
-      objectReference: {fileID: 0}
     - target: {fileID: 6173565730814118232, guid: c66f15a53d702c44fb9193ec588777fa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4990,6 +4977,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 55089024721840941, guid: c66f15a53d702c44fb9193ec588777fa,
+        type: 3}
+      propertyPath: m_Name
+      value: Cone_PLANT_P
+      objectReference: {fileID: 0}
+    - target: {fileID: 55089024721840941, guid: c66f15a53d702c44fb9193ec588777fa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55089024721840941, guid: c66f15a53d702c44fb9193ec588777fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: Plant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c66f15a53d702c44fb9193ec588777fa, type: 3}
