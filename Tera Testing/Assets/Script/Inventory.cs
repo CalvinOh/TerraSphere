@@ -50,7 +50,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void ToggleDisplayInventory()
+    public void ToggleDisplayInventory()
     {
         eventSystem.SetSelectedGameObject(toggleStart);
         inventoryDisplaying = !inventoryDisplaying;
