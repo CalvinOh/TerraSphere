@@ -118,11 +118,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfa4751f29fb1fe4ea3ff5fe11fafc2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 5
   type: Plant
-  description: 
+  description: A harvested bush, ready for consumption
   icon: {fileID: 0}
   pickedUp: 0
   oxygenValue: 0
-  stackSeedNumber: 0
+  stackNumber: 0
   subType: Bush Plant
