@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MenuStart : MonoBehaviour
 {
@@ -27,6 +28,14 @@ public class MenuStart : MonoBehaviour
     [Tooltip("Time for menu to appear.")]
     private float timeNeededMenu;
 
+    private EventSystem eventSystem;
+
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        eventSystem = FindObjectOfType<EventSystem>();
+    }
+
     void Update()
     {
         if(Input.GetButtonDown("Use Item"))
@@ -42,6 +51,7 @@ public class MenuStart : MonoBehaviour
         if (timeNeededMenu <= Time.timeSinceLevelLoad && !menuOnce)
         {
             mainMenuPanel.SetActive(true);
+            eventSystem.SetSelectedGameObject(null);
             menuOnce = true;
         }
         
