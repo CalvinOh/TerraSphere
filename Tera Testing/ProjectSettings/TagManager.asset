@@ -6,15 +6,14 @@ TagManager:
   tags:
   - Seed
   - Ground
-  - Shovel
-  - Rake
-  - WateringCan
   - Dug
   - Seeded
   - Obstacle
   - Plant
   - Item
   - Rocket
+  - Hole
+  - Rake
   layers:
   - Default
   - TransparentFX

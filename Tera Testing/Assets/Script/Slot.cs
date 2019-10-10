@@ -63,7 +63,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
             }
             else if (item.GetComponent<Item>().type == "Seed")
             {
-                this.player.GetComponent<PlayerController>().hotBarInventory[1] = item;
+                //this.player.GetComponent<PlayerController>().hotBarInventory[1] = item;
 
             }
             //this.gameObject.GetComponent<Toggle>().isOn = false; // deactivate to prevent using infinite times
