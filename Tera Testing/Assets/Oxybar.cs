@@ -20,10 +20,16 @@ public class Oxybar : MonoBehaviour
     private float currentPercentage;
 
     [SerializeField]
+    [Tooltip("Color the Oxygen bar starts at.")]
     private Color colorStart;
 
     [SerializeField]
+    [Tooltip("Color the Oxygen bar ends at.")]
     private Color colorEnd;
+
+    [SerializeField]
+    [Tooltip("The multiplier that helps the color clamping, 1-2 recommended.")]
+    private float multiplier = 1.3f;
 
     private float maxOxygen;
     private float currentOxygen;
@@ -44,18 +50,6 @@ public class Oxybar : MonoBehaviour
 
     private void ColorChange()
     {
-        oxybar.color = Color.Lerp(colorEnd,colorStart, currentPercentage*1.3f);
-        /* (currentPercentage >= .6)
-        {
-            oxybar.color = colorStart;
-        }
-        else if (currentPercentage >= .3)
-        {
-            oxybar.color = Color.Lerp(colorStart, colorMiddle, 3);
-        }
-        else if(currentPercentage >= 0)
-        {
-            
-        }*/
+        oxybar.color = Color.Lerp(colorEnd,colorStart, currentPercentage*multiplier);
     }
 }
