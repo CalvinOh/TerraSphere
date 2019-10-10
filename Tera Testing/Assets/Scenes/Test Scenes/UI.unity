@@ -252,7 +252,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6c4296e1d22a27a45ba12a42d2542156, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 745928c96e1808941a33ccdb1ae96675, type: 3}
   m_Type: 3
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1344,7 +1344,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barFill: {fileID: 0}
-  maxBarValue: 0
+  grass: {fileID: 0}
+  barPercentage: 0
 --- !u!1 &1000346280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1498,7 +1499,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 1027956326}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -1773,6 +1774,7 @@ MonoBehaviour:
   seed: {fileID: 951681891}
   rake: {fileID: 1187297278}
   watercan: {fileID: 835131852}
+  inv: {fileID: 0}
 --- !u!1 &1104751779
 GameObject:
   m_ObjectHideFlags: 0
@@ -2828,7 +2830,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 2111170192}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
