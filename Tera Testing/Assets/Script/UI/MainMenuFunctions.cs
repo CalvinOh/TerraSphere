@@ -41,6 +41,13 @@ public class MainMenuFunctions : MonoBehaviour
     void Update()
     {
         UpdatePanel();
+        CheckButton();
+    }
+
+    private void CheckButton()
+    {
+        if (eventSystem.currentSelectedGameObject == null)
+            eventSystem.SetSelectedGameObject(mainMenuStart);
     }
 
     public void GoToScene()
