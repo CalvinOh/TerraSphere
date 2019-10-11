@@ -123,6 +123,7 @@ MonoBehaviour:
   type: Seed
   description: A cone seed
   icon: {fileID: 0}
+
   pickedUp: 0
   oxygenValue: 0
   stackNumber: 1

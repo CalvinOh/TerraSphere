@@ -121,8 +121,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 3
   type: Seed
+
   description: A shroom seed
   icon: {fileID: 0}
+
   pickedUp: 0
   oxygenValue: 0
   stackNumber: 1
