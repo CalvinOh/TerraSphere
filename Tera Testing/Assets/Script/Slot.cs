@@ -65,8 +65,8 @@ public class Slot : MonoBehaviour, IPointerClickHandler
             else if (item.GetComponent<Item>().type == "Seed")
             {
 
-                this.player.GetComponent<PlayerController>().hotBarInventory[1] = item;
-                this.player.GetComponent<PlayerController>().seedSlotBackground.GetComponent<Image>().sprite = item.GetComponent<Item>().icon;
+                this.player.GetComponent<PlayerController>().seedItem = item;
+                //this.player.GetComponent<PlayerController>().seedSlotBackground.GetComponent<Image>().sprite = item.GetComponent<Item>().icon;
                 this.player.GetComponent<Inventory>().ToggleDisplayInventory();
 
             }
