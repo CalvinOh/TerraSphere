@@ -8,37 +8,40 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float moveSpeed;
 
-    [SerializeField]
-    public GameObject[] hotBarInventory = new GameObject[10];
+    //[SerializeField]
+    //public GameObject[] hotBarInventory = new GameObject[10];
     [SerializeField]
     Inventory invScript;
 
     [SerializeField]
     int itemInInventorySelected;
 
-    [SerializeField]
-    public Transform spawnHeldLocation;
+    //[SerializeField]
+    //public Transform spawnHeldLocation;
     [SerializeField]
     Transform spawnItemLocation;
-    [SerializeField]
-    GameObject currentlyHolding;
-    [SerializeField]
-    GameObject blankSlot;
-    [SerializeField]
-    private float jumpHeight;
+    //[SerializeField]
+    //GameObject currentlyHolding;
+    //[SerializeField]
+    //GameObject blankSlot;
+    //[SerializeField]
+    //private float jumpHeight;
     [SerializeField]
     private GameObject currentlySelecting;
     [SerializeField]
-    private GameObject shovel;
+    private GameObject seedItem;
     [SerializeField]
-    private GameObject rake;
-    [SerializeField]
-    private GameObject wateringCan;
+    private GameObject groundHole;
+    //private GameObject shovel;
+    //[SerializeField]
+    //private GameObject rake;
+    //[SerializeField]
+    //private GameObject wateringCan;
 
-    private GameObject spawnShovelItem;
-    private GameObject spawnSeedItem;
-    private GameObject spawnRakeItem;
-    private GameObject spawnWateringGun;
+    //private GameObject spawnShovelItem;
+
+    //private GameObject spawnRakeItem;
+    //private GameObject spawnWateringGun;
 
     [SerializeField]
     public float oxygenValue;
@@ -51,12 +54,12 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Speed of rotation, 100 suggested")]
     private float speed = 100;
 
-    [SerializeField]
-    [Tooltip("Plug in thid person camera")]
-    private GameObject TPSCamera;
-    [SerializeField]
-    [Tooltip("Plug in top down camera")]
-    private GameObject TDCamera;
+    //[SerializeField]
+    //[Tooltip("Plug in thid person camera")]
+    //private GameObject TPSCamera;
+    //[SerializeField]
+    //[Tooltip("Plug in top down camera")]
+    //private GameObject TDCamera;
 
     [SerializeField]
     public GameObject planet;
@@ -64,8 +67,8 @@ public class PlayerController : MonoBehaviour
     public List<GameObject> objectsInTrigger;
 
     private Vector3 moveDirection;
-    private bool itemSelected;
-    private bool hasJumped;
+    //private bool itemSelected;
+    //private bool hasJumped;
 
     private void Start()
     {
@@ -82,44 +85,44 @@ public class PlayerController : MonoBehaviour
         }
         objectsInTrigger = new List<GameObject>();
 
-        shovel.transform.position = spawnHeldLocation.transform.position;
-        rake.transform.position = spawnHeldLocation.transform.position;
-        wateringCan.transform.position = spawnHeldLocation.transform.position;
+        //shovel.transform.position = spawnHeldLocation.transform.position;
+        //rake.transform.position = spawnHeldLocation.transform.position;
+        //wateringCan.transform.position = spawnHeldLocation.transform.position;
 
-        hotBarInventory[0] = shovel;
-        hotBarInventory[2] = rake;
-        hotBarInventory[3] = wateringCan;
+        //hotBarInventory[0] = shovel;
+        //hotBarInventory[2] = rake;
+        //hotBarInventory[3] = wateringCan;
 
-        currentlyHolding = hotBarInventory[0];
+        //currentlyHolding = hotBarInventory[0];
         Cursor.lockState = CursorLockMode.Locked;
 
-        SpawnItems();
+        //SpawnItems();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        SelectItemKeyboard();
-        SelectItemController();
-        UseItem();
+        //SelectItemKeyboard();
+        //SelectItemController();
+        ContextSelectingItem();
         if (!invScript.inventoryDisplaying)
         {
             RotateCamera();
-            Jump();
+            //Jump();
             //ChangeCameraView();
         }
 
-        SetItemToPlayer();
+        //SetItemToPlayer();
 
-        if (!itemSelected)
-        {
-            // Since Item was switched, destroy what was previously held and assign the new value
-            //Destroy(currentlyHolding.gameObject);
+        //if (!itemSelected)
+        //{
+        //    // Since Item was switched, destroy what was previously held and assign the new value
+        //    //Destroy(currentlyHolding.gameObject);
            
-            SetItemPosition();
-            itemSelected = true;
-        }
+        //    SetItemPosition();
+        //    itemSelected = true;
+        //}
         
        
         ReassigningPlanetAsBaseSelection();
@@ -130,6 +133,7 @@ public class PlayerController : MonoBehaviour
     private void DecreaseOxygen()
     {
         oxygenValue -= oxygenDecreaseValue;
+        oxygenValue = Mathf.Clamp(oxygenValue, 0f, 100f);
     }
 
     private void ReassigningPlanetAsBaseSelection()
@@ -142,189 +146,170 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void SpawnItems()
-    {
-        // Assigning the currently held item
-        //currentlyHolding = (GameObject)Instantiate(hotBarInventory[itemInInventorySelected], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
-        //
-        //GameObject item = (GameObject)Instantiate(currentlyHolding, spawnLocation.transform);
-        //item.transform.parent = this.transform;
-        spawnShovelItem = (GameObject)Instantiate(hotBarInventory[0], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
-        spawnSeedItem = (GameObject)Instantiate(hotBarInventory[1], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
-        spawnRakeItem = (GameObject)Instantiate(hotBarInventory[2], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
-        spawnWateringGun = (GameObject)Instantiate(hotBarInventory[3], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
+    //private void SpawnItems()
+    //{
+    //    // Assigning the currently held item
+    //    //currentlyHolding = (GameObject)Instantiate(hotBarInventory[itemInInventorySelected], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
+    //    //
+    //    //GameObject item = (GameObject)Instantiate(currentlyHolding, spawnLocation.transform);
+    //    //item.transform.parent = this.transform;
+    //    spawnShovelItem = (GameObject)Instantiate(hotBarInventory[0], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
+    //    spawnSeedItem = (GameObject)Instantiate(hotBarInventory[1], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
+    //    spawnRakeItem = (GameObject)Instantiate(hotBarInventory[2], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
+    //    spawnWateringGun = (GameObject)Instantiate(hotBarInventory[3], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
 
-        spawnShovelItem.transform.parent = this.spawnHeldLocation;
-        spawnSeedItem.transform.parent = this.spawnHeldLocation;
-        spawnRakeItem.transform.parent = this.spawnHeldLocation;
-        spawnWateringGun.transform.parent = this.spawnHeldLocation;
+    //    spawnShovelItem.transform.parent = this.spawnHeldLocation;
+    //    spawnSeedItem.transform.parent = this.spawnHeldLocation;
+    //    spawnRakeItem.transform.parent = this.spawnHeldLocation;
+    //    spawnWateringGun.transform.parent = this.spawnHeldLocation;
 
-        spawnSeedItem.transform.position = planet.transform.position;
-        spawnRakeItem.transform.position = planet.transform.position;
-        spawnWateringGun.transform.position = planet.transform.position;
+    //    spawnSeedItem.transform.position = planet.transform.position;
+    //    spawnRakeItem.transform.position = planet.transform.position;
+    //    spawnWateringGun.transform.position = planet.transform.position;
 
 
-    }
+    //}
 
-    private void SetItemToPlayer()
-    {
-        currentlyHolding = hotBarInventory[itemInInventorySelected];
-    }
+    //private void SetItemToPlayer()
+    //{
+    //    currentlyHolding = hotBarInventory[itemInInventorySelected];
+    //}
 
-    private void SetItemPosition()
-    {
-        if(itemInInventorySelected == 0)
-        {
-            spawnShovelItem.transform.position = spawnHeldLocation.transform.position;
-            spawnSeedItem.transform.position = planet.transform.position;
-            spawnRakeItem.transform.position = planet.transform.position;
-            spawnWateringGun.transform.position = planet.transform.position;
-        }
-        else if (itemInInventorySelected == 1)
-        {
-            spawnShovelItem.transform.position = planet.transform.position;
-            spawnSeedItem.transform.position = spawnHeldLocation.transform.position;
-            spawnRakeItem.transform.position = planet.transform.position;
-            spawnWateringGun.transform.position = planet.transform.position;
-        }
-        else if (itemInInventorySelected == 2)
-        {
-            spawnShovelItem.transform.position = planet.transform.position;
-            spawnSeedItem.transform.position = planet.transform.position;
-            spawnRakeItem.transform.position = spawnHeldLocation.transform.position;
-            spawnWateringGun.transform.position = planet.transform.position;
-        }
-        else if (itemInInventorySelected == 3)
-        {
-            spawnShovelItem.transform.position = planet.transform.position;
-            spawnSeedItem.transform.position = planet.transform.position;
-            spawnRakeItem.transform.position = planet.transform.position;
-            spawnWateringGun.transform.position = spawnHeldLocation.transform.position;
-        }
-    }
+    //private void SetItemPosition()
+    //{
+    //    if(itemInInventorySelected == 0)
+    //    {
+    //        spawnShovelItem.transform.position = spawnHeldLocation.transform.position;
+    //        spawnSeedItem.transform.position = planet.transform.position;
+    //        spawnRakeItem.transform.position = planet.transform.position;
+    //        spawnWateringGun.transform.position = planet.transform.position;
+    //    }
+    //    else if (itemInInventorySelected == 1)
+    //    {
+    //        spawnShovelItem.transform.position = planet.transform.position;
+    //        spawnSeedItem.transform.position = spawnHeldLocation.transform.position;
+    //        spawnRakeItem.transform.position = planet.transform.position;
+    //        spawnWateringGun.transform.position = planet.transform.position;
+    //    }
+    //    else if (itemInInventorySelected == 2)
+    //    {
+    //        spawnShovelItem.transform.position = planet.transform.position;
+    //        spawnSeedItem.transform.position = planet.transform.position;
+    //        spawnRakeItem.transform.position = spawnHeldLocation.transform.position;
+    //        spawnWateringGun.transform.position = planet.transform.position;
+    //    }
+    //    else if (itemInInventorySelected == 3)
+    //    {
+    //        spawnShovelItem.transform.position = planet.transform.position;
+    //        spawnSeedItem.transform.position = planet.transform.position;
+    //        spawnRakeItem.transform.position = planet.transform.position;
+    //        spawnWateringGun.transform.position = spawnHeldLocation.transform.position;
+    //    }
+    //}
 
-    private void SelectItemKeyboard()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1) && hotBarInventory[0] != null)
-        {
-            itemInInventorySelected = 0;
-            itemSelected = false;
-        }
+    //private void SelectItemKeyboard()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Alpha1) && hotBarInventory[0] != null)
+    //    {
+    //        itemInInventorySelected = 0;
+    //        itemSelected = false;
+    //    }
             
-        if (Input.GetKeyDown(KeyCode.Alpha2) && hotBarInventory[1] != null)
-        {
-            itemInInventorySelected = 1;
-            itemSelected = false;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && hotBarInventory[2] != null)
-        {
-            itemInInventorySelected = 2;
-            itemSelected = false;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4) && hotBarInventory[3] != null)
-        {
-            itemInInventorySelected = 3;
-            itemSelected = false;
-        }
+    //    if (Input.GetKeyDown(KeyCode.Alpha2) && hotBarInventory[1] != null)
+    //    {
+    //        itemInInventorySelected = 1;
+    //        itemSelected = false;
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.Alpha3) && hotBarInventory[2] != null)
+    //    {
+    //        itemInInventorySelected = 2;
+    //        itemSelected = false;
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.Alpha4) && hotBarInventory[3] != null)
+    //    {
+    //        itemInInventorySelected = 3;
+    //        itemSelected = false;
+    //    }
    
-    }
+    //}
 
-    private void SelectItemController()
-    {
-        if(Input.GetButtonDown("Left Bumper"))
-        {
+    //private void SelectItemController()
+    //{
+    //    if(Input.GetButtonDown("Left Bumper"))
+    //    {
 
-            print("leftbumper");
-           if(itemInInventorySelected == 0)
-            {
-                itemInInventorySelected = 3;
+    //        print("leftbumper");
+    //       if(itemInInventorySelected == 0)
+    //        {
+    //            itemInInventorySelected = 3;
                
-                SetItemPosition();
+    //            SetItemPosition();
                 
-                itemSelected = false;
-            }
-           else
-            {
-                itemInInventorySelected--;
+    //            itemSelected = false;
+    //        }
+    //       else
+    //        {
+    //            itemInInventorySelected--;
   
-                SetItemPosition();
+    //            SetItemPosition();
                
-                itemSelected = false;
-            }
+    //            itemSelected = false;
+    //        }
 
 
 
-        }
-        if(Input.GetButtonDown("Right Bumper"))
-        {
-            print("rightbumper");
-            if (itemInInventorySelected == 3)
-            {
-                itemInInventorySelected = 0;
+    //    }
+    //    if(Input.GetButtonDown("Right Bumper"))
+    //    {
+    //        print("rightbumper");
+    //        if (itemInInventorySelected == 3)
+    //        {
+    //            itemInInventorySelected = 0;
     
-                SetItemPosition();
+    //            SetItemPosition();
              
-                itemSelected = false;
-            }
-            else
-            {
-                itemInInventorySelected++;
+    //            itemSelected = false;
+    //        }
+    //        else
+    //        {
+    //            itemInInventorySelected++;
   
-                SetItemPosition();
+    //            SetItemPosition();
                
-                itemSelected = false;
-            }
-        }
-    }
+    //            itemSelected = false;
+    //        }
+    //    }
+    //}
 
     private void FixedUpdate()
     {
         Movement();
     }
 
-    private void Movement()
-    {
-        // Move only if the inventory menu is not present.
-        if (!invScript.inventoryDisplaying)
-        {
-            moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
-            this.GetComponent<Rigidbody>().MovePosition(this.GetComponent<Rigidbody>().position + transform.TransformDirection(moveDirection) * moveSpeed * Time.deltaTime);
-        }
-    }
+    //Use Items
 
-    void Jump()
-    {
-        if(Input.GetButtonDown("Jump") && hasJumped == false)
-        {
-            Debug.Log("Jumping");
-            this.gameObject.GetComponent<Rigidbody>().AddForce(transform.up *jumpHeight);
-            hasJumped = true;
-            
-        }
-    }
-
-    void UseItem()
+    void ContextSelectingItem()
     {
 
         if(Input.GetButtonDown("Use Item"))
         {
             //When left click, based on item held, trigger function
-            if (currentlyHolding.CompareTag("Shovel"))
+            if (currentlySelecting.CompareTag("Ground"))
             {
-                Dig();
+                DigHole();
             }
-            if (currentlyHolding.CompareTag("Seed"))
+            if (currentlySelecting.CompareTag("Hole"))
             {
                 CheckSeedNumber();
-                
+
             }
-            if (currentlyHolding.CompareTag("Rake"))
-            {
-                CoverSeed();
-            }
-            if (currentlyHolding.CompareTag("WateringCan"))
+            if (currentlySelecting.CompareTag("Seed"))
             {
                 Water();
+            }
+            if(currentlySelecting.CompareTag("Plant"))
+            {
+                currentlySelecting.gameObject.GetComponent<PlantGrowth>().Harvest();
             }
         }
     }
@@ -339,34 +324,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void CoverSeed()
+
+    private void DigHole()
     {
-        if (currentlySelecting.CompareTag("Seed"))
+        if(currentlySelecting.CompareTag("Ground"))
         {
-            //Trigger plant growth function plus cover up seed 
-            print("Raking...");
+            print("Digging");
+            Instantiate(groundHole, spawnItemLocation.transform.position, spawnItemLocation.transform.rotation);
 
-            currentlySelecting.gameObject.GetComponent<PlantGrowth>().Grow = true;
-
-        }
-    }
-
-    private void Dig()
-    {
-        if(currentlySelecting.CompareTag("Plant"))
-        {
-            print("Harvesting");
-            currentlySelecting.gameObject.GetComponent<PlantGrowth>().Harvest();
-            
         }
     }
 
     void PlantSeed()
     {
-        if(currentlySelecting.CompareTag("Ground"))
+        if(currentlySelecting.CompareTag("Hole"))
         {
             //Spawn a new seed/plant onto the world, removes a stack until 0 and removes from inventory.
-            GameObject newSeed = (GameObject)Instantiate(hotBarInventory[itemInInventorySelected].gameObject.GetComponent<SeedItem>().plantToGrowInto, spawnItemLocation.transform.position, spawnItemLocation.transform.rotation);
+            GameObject newSeed = (GameObject)Instantiate(seedItem.GetComponent<SeedItem>().plantToGrowInto, spawnItemLocation.transform.position, spawnItemLocation.transform.rotation);
+            newSeed.gameObject.GetComponent<PlantGrowth>().Grow = true;
             //blankSlot = new GameObject();
             //hotBarInventory[itemInInventorySelected] = blankSlot;
             //currentlyHolding = hotBarInventory[itemInInventorySelected];
@@ -378,21 +353,54 @@ public class PlayerController : MonoBehaviour
 
     void CheckSeedNumber()
     {
-        if (currentlyHolding.gameObject.GetComponent<Item>().stackNumber <= 1)
+        if (seedItem.gameObject.GetComponent<Item>().stackNumber <= 1)
         {
             PlantSeed();
-            currentlyHolding.gameObject.GetComponent<Item>().stackNumber--; //Bugged Right now
-            hotBarInventory[itemInInventorySelected] = blankSlot; //Bugged, stays even when 0 and swapped.
+            seedItem.gameObject.GetComponent<Item>().stackNumber--; //Bugged Right now
+            //hotBarInventory[itemInInventorySelected] = blankSlot; //Bugged, stays even when 0 and swapped.
            
         }
-        else if(currentlyHolding.gameObject.GetComponent<Item>().stackNumber > 1)
-        {
-            PlantSeed();
-            print("Decrease Stack");
-            currentlyHolding.gameObject.GetComponent<Item>().stackNumber--;
+        //else if(currentlyHolding.gameObject.GetComponent<Item>().stackNumber > 1)
+        //{
+        //    PlantSeed();
+        //    print("Decrease Stack");
+        //    currentlyHolding.gameObject.GetComponent<Item>().stackNumber--;
            
+        //}
+    }
+
+   
+
+    //private void ChangeCameraView()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("Select"))
+    //    {
+    //        TPSCamera.active = !TPSCamera.active;
+    //        TDCamera.active = !TDCamera.active;
+    //    }
+    //}
+
+    //Movement Functions
+    private void Movement()
+    {
+        // Move only if the inventory menu is not present.
+        if (!invScript.inventoryDisplaying)
+        {
+            moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
+            this.GetComponent<Rigidbody>().MovePosition(this.GetComponent<Rigidbody>().position + transform.TransformDirection(moveDirection) * moveSpeed * Time.deltaTime);
         }
     }
+
+    //void Jump()
+    //{
+    //    if (Input.GetButtonDown("Jump") && hasJumped == false)
+    //    {
+    //        Debug.Log("Jumping");
+    //        this.gameObject.GetComponent<Rigidbody>().AddForce(transform.up * jumpHeight);
+    //        hasJumped = true;
+
+    //    }
+    //}
 
     private void RotateCamera()
     {
@@ -403,22 +411,10 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void ChangeCameraView()
-    {
-        if (Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("Select"))
-        {
-            TPSCamera.active = !TPSCamera.active;
-            TDCamera.active = !TDCamera.active;
-        }
-    }
 
 
 
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        hasJumped = false;
-    }
 
     private void OnTriggerEnter(Collider other)
     {

@@ -93,8 +93,8 @@ public class Inventory : MonoBehaviour
             }
 
             addItem(itemPickedUp, item.ID, item.type, item.description, item.icon, item.subType, item.stackNumber);
-            item.gameObject.transform.parent = slot[0].GetComponent<Slot>().player.gameObject.GetComponent<PlayerController>().spawnHeldLocation;
-            SetSeedSlot();
+            //item.gameObject.transform.parent = slot[0].GetComponent<Slot>().player.gameObject.GetComponent<PlayerController>().spawnHeldLocation;
+            //SetSeedSlot();
 
             //seedItem and ediblePlant
             //if()
@@ -102,20 +102,20 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void SetSeedSlot()
-    {
-        if (slot[0].GetComponent<Slot>().player.GetComponent<PlayerController>().hotBarInventory[1] == null)
-        {
-            for (int i = 0; i < slot.Length; i++)
-            {
-                if (slot[i].GetComponent<Slot>().item.tag == "Seed")
-                {
-                    slot[0].GetComponent<Slot>().player.GetComponent<PlayerController>().hotBarInventory[1] =
-                        slot[i].GetComponent<Slot>().item.GetComponent<Item>().gameObject;
-                }
-            }
-        }
-    }
+    //private void SetSeedSlot()
+    //{
+    //    if (slot[0].GetComponent<Slot>().player.GetComponent<PlayerController>().hotBarInventory[1] == null)
+    //    {
+    //        for (int i = 0; i < slot.Length; i++)
+    //        {
+    //            if (slot[i].GetComponent<Slot>().item.tag == "Seed")
+    //            {
+    //                slot[0].GetComponent<Slot>().player.GetComponent<PlayerController>().hotBarInventory[1] =
+    //                    slot[i].GetComponent<Slot>().item.GetComponent<Item>().gameObject;
+    //            }
+    //        }
+    //    }
+    //}
 
     void addItem(GameObject itemObject, int itemID, string itemType, string itemDescription, Sprite itemIcon, string subType, int stackNumber)
     {
