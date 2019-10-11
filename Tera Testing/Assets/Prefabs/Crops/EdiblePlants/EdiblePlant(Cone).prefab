@@ -13,10 +13,9 @@ GameObject:
   - component: {fileID: 6380600677086164327}
   - component: {fileID: 1760689098772593997}
   - component: {fileID: 2242022037836591331}
-  - component: {fileID: -6362893720561144097}
   m_Layer: 0
   m_Name: EdiblePlant(Cone)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c2fd567473c8fae4c8eb0faf95e08969, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,6 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa703eb6cb70784997da0fd903ff253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+
   OxygenProvided: 0
 --- !u!114 &-6362893720561144097
 MonoBehaviour:
@@ -128,3 +128,4 @@ MonoBehaviour:
 
   stackNumber: 0
   subType: Cone Plant
+

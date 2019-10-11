@@ -11,8 +11,12 @@ public class PlantGrowth : MonoBehaviour
     [Tooltip("Speed of growth, leave at 1 for default")]
     private float GrowthSpeed = 1;
     [SerializeField]
+    [Tooltip("Size scale at start of growth, leave at 0.3 for default")]
+    private float StartingSize = 0.3f;
+    [SerializeField]
     [Tooltip("Size scale at end of growth, leave at 2 for default")]
     private float FinalSize = 2;
+
     [SerializeField]
     [Tooltip("Time at which Stage 1 ends")]
     private float Stage1Cap = 10;
@@ -41,6 +45,8 @@ public class PlantGrowth : MonoBehaviour
     private GameObject SeedSpawnedWhenHarvested;
     [SerializeField]
     private GameObject PlantSpawnedWhenHarvested;
+
+
 
     [SerializeField]
     private Material UnOutlined;
@@ -155,7 +161,7 @@ public class PlantGrowth : MonoBehaviour
                 AccelTimeer -= Time.deltaTime;
             }
                 
-            float scale = ((CurrentGrowthAmount / Stage2Cap) * FinalSize);
+            float scale = ((CurrentGrowthAmount / Stage2Cap) * (FinalSize-StartingSize)+StartingSize);
             MyTransform.localScale =new Vector3( scale,scale,scale);
         }
 
@@ -169,6 +175,7 @@ public class PlantGrowth : MonoBehaviour
 
     public void Harvest()
     {
+        Grow = false;
         int NumberOfSeeds = Random.Range(MinAmountOfSeedDrop, MaxAmountOfSeedDrop);
 
         for (int i = 0; i < NumberOfSeeds; i++)
