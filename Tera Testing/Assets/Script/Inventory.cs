@@ -50,7 +50,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void ToggleDisplayInventory()
+    public void ToggleDisplayInventory()
     {
         eventSystem.SetSelectedGameObject(toggleStart);
         inventoryDisplaying = !inventoryDisplaying;
@@ -93,8 +93,8 @@ public class Inventory : MonoBehaviour
             }
 
             addItem(itemPickedUp, item.ID, item.type, item.description, item.icon, item.subType, item.stackNumber);
-            item.gameObject.transform.parent = slot[0].GetComponent<Slot>().player.gameObject.GetComponent<PlayerController>().spawnHeldLocation;
-            SetSeedSlot();
+            //item.gameObject.transform.parent = slot[0].GetComponent<Slot>().player.gameObject.GetComponent<PlayerController>().spawnHeldLocation;
+            //SetSeedSlot();
 
             //seedItem and ediblePlant
             //if()
@@ -102,31 +102,33 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void SetSeedSlot()
-    {
-        if (slot[0].GetComponent<Slot>().player.GetComponent<PlayerController>().hotBarInventory[1] == null)
-        {
-            for (int i = 0; i < slot.Length; i++)
-            {
-                if (slot[i].GetComponent<Slot>().item.tag == "Seed")
-                {
-                    slot[0].GetComponent<Slot>().player.GetComponent<PlayerController>().hotBarInventory[1] =
-                        slot[i].GetComponent<Slot>().item.GetComponent<Item>().gameObject;
-                }
-            }
-        }
-    }
+    //private void SetSeedSlot()
+    //{
+    //    if (slot[0].GetComponent<Slot>().player.GetComponent<PlayerController>().hotBarInventory[1] == null)
+    //    {
+    //        for (int i = 0; i < slot.Length; i++)
+    //        {
+    //            if (slot[i].GetComponent<Slot>().item.tag == "Seed")
+    //            {
+    //                slot[0].GetComponent<Slot>().player.GetComponent<PlayerController>().hotBarInventory[1] =
+    //                    slot[i].GetComponent<Slot>().item.GetComponent<Item>().gameObject;
+    //            }
+    //        }
+    //    }
+    //}
 
     void addItem(GameObject itemObject, int itemID, string itemType, string itemDescription, Sprite itemIcon, string subType, int stackNumber)
     {
         for(int i = 0; i < allSlots; i++)
         {
-            //if(slot[i].GetComponent<Slot>().item.GetComponent<Item>().subType == subType)
-            //{
-            //    slot[i].GetComponent<Slot>().item.GetComponent<Item>().stackNumber++;
-            //    slot[i].GetComponent<Slot>().stackNumber++;
-            //}
-            if(slot[i].GetComponent<Slot>().empty)
+            // Already has this kind of item
+            if (!slot[i].GetComponent<Slot>().empty && slot[i].GetComponent<Slot>().item.GetComponent<Item>().ID == itemID)
+            {
+                slot[i].GetComponent<Slot>().stackNumber++;
+                itemObject.transform.position = new Vector3(0, 0, 0);
+                return;
+            }
+            else if (slot[i].GetComponent<Slot>().empty)
             {
                 itemObject.GetComponent<Item>().pickedUp = true;
 
@@ -138,9 +140,9 @@ public class Inventory : MonoBehaviour
                 slot[i].GetComponent<Slot>().subType = subType;
                 slot[i].GetComponent<Slot>().stackNumber = 1;
 
-                itemObject.transform.position = slot[0].GetComponent<Slot>().player.gameObject.GetComponent<PlayerController>().planet.transform.position;
-                //itemObject.transform.parent = slot[i].transform;
-                //itemObject.SetActive(false);
+
+                itemObject.transform.position = new Vector3(0, 0, 0);
+
 
                 slot[i].GetComponent<Slot>().UpdateSlot();
                 slot[i].GetComponent<Slot>().empty = false;
