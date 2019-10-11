@@ -30,8 +30,11 @@ public class EnviromentTree : MonoBehaviour
         CurrentScale = 0.0000001f;
         MyCollider = GetComponent<Collider>();
         MyCollider.enabled = false;
+        VisualObject.SetActive(false);
         //this need to be set to false for the tree to not appear at the start
         Grow = false;
+        FindObjectOfType<PlanetManager>().AddTree(this);
+        //StartGrow();
     }
 
     // Update is called once per frame
@@ -39,8 +42,9 @@ public class EnviromentTree : MonoBehaviour
     {
         if (Grow)
         {
-            if (CurrentScale <= 1f)
-            DeterminCurrentSize();
+            
+                DeterminCurrentSize();
+            
 
             VisualObject.transform.localScale = StartSize * CurrentScale;
         }
@@ -54,14 +58,15 @@ public class EnviromentTree : MonoBehaviour
         
         if (Time.fixedTime - StartTime >= 0.8)
         {
-            CurrentScale *= 1.0005f;
+            CurrentScale *= 1.005f;
         }
         else
         {
             CurrentScale = (-(20 * Mathf.Sin(30 * (Time.fixedTime - StartTime))) / (60 * (Time.fixedTime - StartTime)) + 10)/10 * PopupSize;
         }
-        
 
+        if (CurrentScale == 1)
+            Grow = false;
         CurrentScale = Mathf.Clamp(CurrentScale, 0f, 1f);
     }
 
@@ -70,6 +75,7 @@ public class EnviromentTree : MonoBehaviour
         StartTime = Time.fixedTime;
         MyCollider.enabled = true;
         Grow = true;
+        VisualObject.SetActive(true);
     }
 
 
