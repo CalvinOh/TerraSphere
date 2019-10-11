@@ -50,7 +50,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void ToggleDisplayInventory()
+    public void ToggleDisplayInventory()
     {
         eventSystem.SetSelectedGameObject(toggleStart);
         inventoryDisplaying = !inventoryDisplaying;
@@ -121,12 +121,14 @@ public class Inventory : MonoBehaviour
     {
         for(int i = 0; i < allSlots; i++)
         {
-            //if(slot[i].GetComponent<Slot>().item.GetComponent<Item>().subType == subType)
-            //{
-            //    slot[i].GetComponent<Slot>().item.GetComponent<Item>().stackNumber++;
-            //    slot[i].GetComponent<Slot>().stackNumber++;
-            //}
-            if(slot[i].GetComponent<Slot>().empty)
+            // Already has this kind of item
+            if (!slot[i].GetComponent<Slot>().empty && slot[i].GetComponent<Slot>().item.GetComponent<Item>().ID == itemID)
+            {
+                slot[i].GetComponent<Slot>().stackNumber++;
+                itemObject.transform.position = new Vector3(0, 0, 0);
+                return;
+            }
+            else if (slot[i].GetComponent<Slot>().empty)
             {
                 itemObject.GetComponent<Item>().pickedUp = true;
 
@@ -138,9 +140,9 @@ public class Inventory : MonoBehaviour
                 slot[i].GetComponent<Slot>().subType = subType;
                 slot[i].GetComponent<Slot>().stackNumber = 1;
 
-                itemObject.transform.position = slot[0].GetComponent<Slot>().player.gameObject.GetComponent<PlayerController>().planet.transform.position;
-                //itemObject.transform.parent = slot[i].transform;
-                //itemObject.SetActive(false);
+
+                itemObject.transform.position = new Vector3(0, 0, 0);
+
 
                 slot[i].GetComponent<Slot>().UpdateSlot();
                 slot[i].GetComponent<Slot>().empty = false;
