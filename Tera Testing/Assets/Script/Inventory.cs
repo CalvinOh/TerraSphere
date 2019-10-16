@@ -18,8 +18,10 @@ public class Inventory : MonoBehaviour
     //public int itemsPickedUp;
     public GameObject[] slot;
     private EventSystem eventSystem;
+    private GameObject esLastSelected;
 
     public GameObject slotHolder;
+    public Text textBox;
 
     private void Start()
     {
@@ -47,6 +49,15 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Open Inventory"))
         {
             ToggleDisplayInventory();
+        }
+
+        if(inventoryDisplaying)
+        {
+            if(eventSystem.currentSelectedGameObject != esLastSelected)
+            {
+                textBox.text = eventSystem.currentSelectedGameObject.GetComponent<Slot>().item.GetComponent<Item>().itemDescriptionBoxContent();
+            }
+            esLastSelected = eventSystem.currentSelectedGameObject;
         }
     }
 

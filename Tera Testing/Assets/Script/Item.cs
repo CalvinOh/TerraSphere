@@ -91,7 +91,11 @@ public class Item : MonoBehaviour
             print("Used Plant!");
             itemFromSlot.player.GetComponent<PlayerController>().oxygenValue += this.oxygenValue;
         }
+        
+    }
 
-
+    public string itemDescriptionBoxContent()
+    {
+        return $"Item: {subType}\nType: {type}\n\nDescription: {description}";
     }
 }

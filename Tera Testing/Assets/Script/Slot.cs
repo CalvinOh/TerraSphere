@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class Slot : MonoBehaviour, IPointerClickHandler
+public class Slot : MonoBehaviour
 {
     public GameObject player;
     public GameObject item;
@@ -17,20 +17,6 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 
     public Transform slotIconGO;
     public Sprite icon;
-
-    public void OnPointerClick(PointerEventData pointerEventData)
-    {
-        if(item.GetComponent<Item>().type == "Plant")
-        {
-            useItem();
-
-        }
-        if(item.GetComponent<Item>().type == "Seed")
-        {
-            
-        }
-        //player.GetComponent<PlayerControllerV2>().currentlyHolding = item;
-    }
 
     public void Start()
     {
@@ -64,7 +50,6 @@ public class Slot : MonoBehaviour, IPointerClickHandler
             }
             else if (item.GetComponent<Item>().type == "Seed")
             {
-
                 //this.player.GetComponent<PlayerController>().hotBarInventory[1] = item;
                 //this.player.GetComponent<PlayerController>().seedSlotBackground.GetComponent<Image>().sprite = item.GetComponent<Item>().icon;
                 this.player.GetComponent<Inventory>().ToggleDisplayInventory();
