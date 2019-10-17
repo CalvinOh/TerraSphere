@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject currentlySelecting;
     [SerializeField]
-    public GameObject seedItem;
+    private GameObject seedItem;
     [SerializeField]
     private GameObject groundHole;
     //private GameObject shovel;

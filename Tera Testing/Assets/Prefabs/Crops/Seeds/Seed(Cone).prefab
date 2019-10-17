@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7850877792659401192}
   - component: {fileID: 96758828577659761}
   m_Layer: 0
-  m_Name: Seed(Dagger)
+  m_Name: Seed(Cone)
   m_TagString: Seed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,9 +121,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2
   type: Seed
-  description: A surprisingly round seed
-  icon: {fileID: 21300000, guid: ed7639e1c2f3c5744b48f590ca0da959, type: 3}
+  description: A cone seed
+  icon: {fileID: 0}
+
   pickedUp: 0
   oxygenValue: 0
   stackNumber: 1
-  subType: Dagger Seed
+  subType: Cone Seed

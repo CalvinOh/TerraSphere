@@ -121,8 +121,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 1
   type: Seed
+
   description: A bush seed
-  icon: {fileID: 21300000, guid: dc7063a83429f8c40a8e813165846968, type: 3}
+  icon: {fileID: 0}
+
+
   pickedUp: 0
   oxygenValue: 0
   stackNumber: 1
