@@ -121,10 +121,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 3
   type: Seed
-
-  description: A shroom seed
-  icon: {fileID: 0}
-
+  description: A small mushroom you can plant!
+  icon: {fileID: 21300000, guid: c5bdf90083404dd48b2c652cadccb3af, type: 3}
   pickedUp: 0
   oxygenValue: 0
   stackNumber: 1
