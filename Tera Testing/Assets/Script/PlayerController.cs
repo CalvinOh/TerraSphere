@@ -70,8 +70,14 @@ public class PlayerController : MonoBehaviour
     //private bool itemSelected;
     //private bool hasJumped;
 
+    private float MoveSpeedCurrentMultiplier;
+
+    [SerializeField]
+    private float SecondsTakenToFullSpeed =1;
+
     private void Start()
     {
+        MoveSpeedCurrentMultiplier = 0;
         //inventory = new GameObject[10];
         if (invScript == null)
         {
@@ -388,8 +394,18 @@ public class PlayerController : MonoBehaviour
         // Move only if the inventory menu is not present.
         if (!invScript.inventoryDisplaying)
         {
+            
             moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
-            this.GetComponent<Rigidbody>().MovePosition(this.GetComponent<Rigidbody>().position + transform.TransformDirection(moveDirection) * moveSpeed * Time.deltaTime);
+            if (moveDirection != Vector3.zero)
+            {
+                MoveSpeedCurrentMultiplier += Time.deltaTime / SecondsTakenToFullSpeed;
+            }
+            else
+            {
+                MoveSpeedCurrentMultiplier = 0;
+            }
+            MoveSpeedCurrentMultiplier = Mathf.Clamp(MoveSpeedCurrentMultiplier, 0f, 1f);
+            this.GetComponent<Rigidbody>().MovePosition(this.GetComponent<Rigidbody>().position + transform.TransformDirection(moveDirection) * moveSpeed * Time.deltaTime*MoveSpeedCurrentMultiplier);
         }
     }
 
