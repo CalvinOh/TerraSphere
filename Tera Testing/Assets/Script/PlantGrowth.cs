@@ -192,6 +192,7 @@ public class PlantGrowth : MonoBehaviour
             print("Spawning Plant");
         }
 
+        
         Destroy(this.gameObject);
     }
 

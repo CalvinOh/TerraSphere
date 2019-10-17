@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject currentlySelecting;
     [SerializeField]
-    private GameObject seedItem;
+    public GameObject seedItem;
     [SerializeField]
     private GameObject groundHole;
     //private GameObject shovel;
@@ -309,6 +309,7 @@ public class PlayerController : MonoBehaviour
             }
             if(currentlySelecting.CompareTag("Plant"))
             {
+                objectsInTrigger.Remove(currentlySelecting);
                 currentlySelecting.gameObject.GetComponent<PlantGrowth>().Harvest();
             }
         }
@@ -356,6 +357,7 @@ public class PlayerController : MonoBehaviour
         if (seedItem.gameObject.GetComponent<Item>().stackNumber <= 1)
         {
             PlantSeed();
+           
             seedItem.gameObject.GetComponent<Item>().stackNumber--; //Bugged Right now
             //hotBarInventory[itemInInventorySelected] = blankSlot; //Bugged, stays even when 0 and swapped.
            
