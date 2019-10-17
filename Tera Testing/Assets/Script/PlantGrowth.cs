@@ -45,7 +45,8 @@ public class PlantGrowth : MonoBehaviour
     private GameObject SeedSpawnedWhenHarvested;
     [SerializeField]
     private GameObject PlantSpawnedWhenHarvested;
-
+    [SerializeField]
+    private float GrassTriggerRadius = 3;
 
 
     [SerializeField]
@@ -139,6 +140,7 @@ public class PlantGrowth : MonoBehaviour
                 {
                     MyPS.enableEmission = true;
                     this.gameObject.tag = "Plant";
+                    TriggerNearbyGrassGrowth();
                 }
 
                 CurrentGrowthAmount += GrowthSpeed * Time.deltaTime;
@@ -155,6 +157,7 @@ public class PlantGrowth : MonoBehaviour
                 {
                     MyPS.enableEmission = true;
                     this.gameObject.tag = "Plant";
+                    TriggerNearbyGrassGrowth();
                 }
 
                 CurrentGrowthAmount += GrowthSpeed * Time.deltaTime * 2;
@@ -204,6 +207,15 @@ public class PlantGrowth : MonoBehaviour
                 i.material = UnOutlined;
             else
                 i.material = Outlined;
+        }
+    }
+
+    private void TriggerNearbyGrassGrowth()
+    {
+        Collider[] allOverlappingColliders = Physics.OverlapSphere(this.transform.position, GrassTriggerRadius);
+        foreach (Collider C in allOverlappingColliders)
+        {
+            C.GetComponent<GrassGrow>().StartGrowth();
         }
     }
 }

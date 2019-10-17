@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7255295208134296915}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -55,8 +55,8 @@ MonoBehaviour:
   Stage2Cap: 20
   Stage1TerraFormPerSecond: 10
   Stage2TerraFormPerSecond: 20
-  Stage1: {fileID: 0}
-  Stage2: {fileID: 0}
+  Stage1: {fileID: 7255295208268101251}
+  Stage2: {fileID: 6071585799356909824}
   MinAmountOfSeedDrop: 1
   MaxAmountOfSeedDrop: 3
   SeedSpawnedWhenHarvested: {fileID: 0}
@@ -4979,6 +4979,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6db19bacc29a3f40bb4395963be161c, type: 3}
+--- !u!1 &6071585799356909824 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3525587954669270959, guid: e6db19bacc29a3f40bb4395963be161c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7255295207632846511}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7078658298739473137 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 473879319365551198, guid: e6db19bacc29a3f40bb4395963be161c,
