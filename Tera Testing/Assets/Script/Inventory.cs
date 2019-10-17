@@ -21,6 +21,7 @@ public class Inventory : MonoBehaviour
 
     public GameObject slotHolder;
 
+
     private void Start()
     {
         // Find how many slots the UI has for the inventory
@@ -47,6 +48,11 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Open Inventory"))
         {
             ToggleDisplayInventory();
+
+            if (inventoryDisplaying)
+                Cursor.lockState = CursorLockMode.None;
+            else if (!inventoryDisplaying)
+                Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
