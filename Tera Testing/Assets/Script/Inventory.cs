@@ -78,9 +78,10 @@ public class Inventory : MonoBehaviour
 
         if(inventoryDisplaying)
         {
-            ToogleTabDisplayed();
+            ToggleTabDisplayed();
             UpdateDescriptionBox();
         }
+        print(eventSystem.currentSelectedGameObject);
     }
 
     private void UpdateDescriptionBox()
@@ -101,7 +102,7 @@ public class Inventory : MonoBehaviour
         inventoryDisplaying = !inventoryDisplaying;
         if (inventoryDisplaying)
         {
-            ToogleTabDisplayed();
+            ToggleTabDisplayed();
         }
         else
         {
@@ -111,7 +112,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void ToogleTabDisplayed()
+    private void ToggleTabDisplayed()
     {
         if (seedTab)
         {

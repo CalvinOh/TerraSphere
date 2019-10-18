@@ -36,6 +36,10 @@ public class Slot : MonoBehaviour
             icon = item.GetComponent<Item>().icon;
             UpdateSlot();
         }
+        else
+        {
+            this.gameObject.GetComponent<Toggle>().interactable = false;
+        }
     }
 
     public void Update()
@@ -62,6 +66,7 @@ public class Slot : MonoBehaviour
 
     public void UpdateSlot()
     {
+        this.gameObject.GetComponent<Toggle>().interactable = true;
         slotIconGO.GetComponent<Image>().sprite = icon;
     }
 

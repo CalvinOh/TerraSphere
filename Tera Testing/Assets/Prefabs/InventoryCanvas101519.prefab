@@ -2925,12 +2925,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.1
-  m_Text: 'Item: Cone Seed
-
-    Type: Seed
-
-
-    Description: A seed for a cone plant. Oddly enough, it isn''t shaped like a cone.'
+  m_Text: 
 --- !u!1 &4998545871899701761
 GameObject:
   m_ObjectHideFlags: 0
@@ -3277,12 +3272,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.1
-  m_Text: 'Item: Cone Seed
-
-    Type: Seed
-
-
-    Description: A seed for a cone plant. Oddly enough, it isn''t shaped like a cone.'
+  m_Text: 
 --- !u!1 &6513103402724362516
 GameObject:
   m_ObjectHideFlags: 0
