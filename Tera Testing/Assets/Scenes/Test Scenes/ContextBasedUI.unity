@@ -772,8 +772,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536655364094ba24ca26d9c8176713d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rectTransform: {fileID: 417947028}
   cameraPosition: {fileID: 53585872076281073}
+  rectTransform: {fileID: 417947028}
+  player: {fileID: 3273369152015404212}
 --- !u!1001 &440998372
 PrefabInstance:
   m_ObjectHideFlags: 0
