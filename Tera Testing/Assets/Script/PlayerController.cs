@@ -5,77 +5,66 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //Player Movement Variables
+
+    //Player Move Speed
     [SerializeField]
     float moveSpeed;
-
-    //[SerializeField]
-    //public GameObject[] hotBarInventory = new GameObject[10];
-    [SerializeField]
-    Inventory invScript;
-
-    [SerializeField]
-    int itemInInventorySelected;
-
-    //[SerializeField]
-    //public Transform spawnHeldLocation;
-    [SerializeField]
-    Transform spawnItemLocation;
-    //[SerializeField]
-    //GameObject currentlyHolding;
-    //[SerializeField]
-    //GameObject blankSlot;
-    //[SerializeField]
-    //private float jumpHeight;
-    [SerializeField]
-    private GameObject currentlySelecting;
-    [SerializeField]
-    public GameObject seedItem;
-    [SerializeField]
-    private GameObject groundHole;
-    //private GameObject shovel;
-    //[SerializeField]
-    //private GameObject rake;
-    //[SerializeField]
-    //private GameObject wateringCan;
-
-    //private GameObject spawnShovelItem;
-
-    //private GameObject spawnRakeItem;
-    //private GameObject spawnWateringGun;
-
-    [SerializeField]
-    public float oxygenValue;
-    [SerializeField]
-    private float oxygenDecreaseValue;
-
-    public float oxygenMax = 100f;
-
+    //How fast the player can rotate
     [SerializeField]
     [Tooltip("Speed of rotation, 100 suggested")]
     private float speed = 100;
+    //How long it will take to move at full speed. 
+    [SerializeField]
+    private float SecondsTakenToFullSpeed =1;
+    //What direction the player will move in
+    private Vector3 moveDirection;
+    //Multiplier for move faster in a direction 
+    private float MoveSpeedCurrentMultiplier;
 
-    //[SerializeField]
-    //[Tooltip("Plug in thid person camera")]
-    //private GameObject TPSCamera;
-    //[SerializeField]
-    //[Tooltip("Plug in top down camera")]
-    //private GameObject TDCamera;
+    //Game Object Variables 
 
+    //Reference to Inventory Script
+    [SerializeField]
+    Inventory invScript;
+    //The gameObject that the player is currently selecting wihtin the trigger box
+    [SerializeField]
+    private GameObject currentlySelecting;
+    //The currently selected seed item
+    [SerializeField]
+    public GameObject seedItem;
+    //The ground prefab that the player spawns in
+    [SerializeField]
+    private GameObject groundHole;
+    //Knowing the planet 
     [SerializeField]
     public GameObject planet;
 
+    //Variables using the Trigger Box
+
+    //The location where the item will spawn, is a trigger box
+    [SerializeField]
+    Transform spawnItemLocation;
+    //A list of all gameObejcts in the trigger box
     public List<GameObject> objectsInTrigger;
 
-    private Vector3 moveDirection;
-    //private bool itemSelected;
-    //private bool hasJumped;
 
-    private float MoveSpeedCurrentMultiplier;
+    //Player Oxygen Value
 
+    //The current value for the players oxygen value
+    [SerializeField]
+    public float oxygenValue;
+    //How much oxygen is being decreased 
+    [SerializeField]
+    private float oxygenDecreaseValue;
+    //Max oxygen value
+    public float oxygenMax = 100f;
+
+    //UI
+
+    //UI for context based direction.
     private ContextBasedUI contextBasedUI;
 
-    [SerializeField]
-    private float SecondsTakenToFullSpeed =1;
 
     private void Start()
     {
@@ -84,7 +73,7 @@ public class PlayerController : MonoBehaviour
             contextBasedUI = FindObjectOfType<ContextBasedUI>();
         }
         MoveSpeedCurrentMultiplier = 0;
-        //inventory = new GameObject[10];
+
         if (invScript == null)
         {
             invScript = this.gameObject.GetComponent<Inventory>();
@@ -97,58 +86,39 @@ public class PlayerController : MonoBehaviour
         }
         objectsInTrigger = new List<GameObject>();
 
-        //shovel.transform.position = spawnHeldLocation.transform.position;
-        //rake.transform.position = spawnHeldLocation.transform.position;
-        //wateringCan.transform.position = spawnHeldLocation.transform.position;
 
-        //hotBarInventory[0] = shovel;
-        //hotBarInventory[2] = rake;
-        //hotBarInventory[3] = wateringCan;
-
-        //currentlyHolding = hotBarInventory[0];
         Cursor.lockState = CursorLockMode.Locked;
-
-        //SpawnItems();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        //SelectItemKeyboard();
-        //SelectItemController();
+
        
         if (!invScript.inventoryDisplaying)
         {
             RotateCamera();
             ContextSelectingItem();
-            //Jump();
-            //ChangeCameraView();
         }
-
-        //SetItemToPlayer();
-
-        //if (!itemSelected)
-        //{
-        //    // Since Item was switched, destroy what was previously held and assign the new value
-        //    //Destroy(currentlyHolding.gameObject);
-           
-        //    SetItemPosition();
-        //    itemSelected = true;
-        //}
-        
        
         ReassigningPlanetAsBaseSelection();
 
         DecreaseOxygen();
     }
+    private void FixedUpdate()
+    {
+        Movement();
+    }
 
+    //Player Losing Oxygen
     private void DecreaseOxygen()
     {
         oxygenValue -= oxygenDecreaseValue;
         oxygenValue = Mathf.Clamp(oxygenValue, 0f, 100f);
     }
 
+    //After the player walks away from an object, this makes the planet as the selected object. 
     private void ReassigningPlanetAsBaseSelection()
     {
         if (objectsInTrigger.Count == 0 || (objectsInTrigger.Count == 1 && objectsInTrigger[0] == planet))
@@ -159,147 +129,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    //private void SpawnItems()
-    //{
-    //    // Assigning the currently held item
-    //    //currentlyHolding = (GameObject)Instantiate(hotBarInventory[itemInInventorySelected], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
-    //    //
-    //    //GameObject item = (GameObject)Instantiate(currentlyHolding, spawnLocation.transform);
-    //    //item.transform.parent = this.transform;
-    //    spawnShovelItem = (GameObject)Instantiate(hotBarInventory[0], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
-    //    spawnSeedItem = (GameObject)Instantiate(hotBarInventory[1], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
-    //    spawnRakeItem = (GameObject)Instantiate(hotBarInventory[2], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
-    //    spawnWateringGun = (GameObject)Instantiate(hotBarInventory[3], spawnHeldLocation.transform.position, spawnHeldLocation.transform.rotation);
-
-    //    spawnShovelItem.transform.parent = this.spawnHeldLocation;
-    //    spawnSeedItem.transform.parent = this.spawnHeldLocation;
-    //    spawnRakeItem.transform.parent = this.spawnHeldLocation;
-    //    spawnWateringGun.transform.parent = this.spawnHeldLocation;
-
-    //    spawnSeedItem.transform.position = planet.transform.position;
-    //    spawnRakeItem.transform.position = planet.transform.position;
-    //    spawnWateringGun.transform.position = planet.transform.position;
-
-
-    //}
-
-    //private void SetItemToPlayer()
-    //{
-    //    currentlyHolding = hotBarInventory[itemInInventorySelected];
-    //}
-
-    //private void SetItemPosition()
-    //{
-    //    if(itemInInventorySelected == 0)
-    //    {
-    //        spawnShovelItem.transform.position = spawnHeldLocation.transform.position;
-    //        spawnSeedItem.transform.position = planet.transform.position;
-    //        spawnRakeItem.transform.position = planet.transform.position;
-    //        spawnWateringGun.transform.position = planet.transform.position;
-    //    }
-    //    else if (itemInInventorySelected == 1)
-    //    {
-    //        spawnShovelItem.transform.position = planet.transform.position;
-    //        spawnSeedItem.transform.position = spawnHeldLocation.transform.position;
-    //        spawnRakeItem.transform.position = planet.transform.position;
-    //        spawnWateringGun.transform.position = planet.transform.position;
-    //    }
-    //    else if (itemInInventorySelected == 2)
-    //    {
-    //        spawnShovelItem.transform.position = planet.transform.position;
-    //        spawnSeedItem.transform.position = planet.transform.position;
-    //        spawnRakeItem.transform.position = spawnHeldLocation.transform.position;
-    //        spawnWateringGun.transform.position = planet.transform.position;
-    //    }
-    //    else if (itemInInventorySelected == 3)
-    //    {
-    //        spawnShovelItem.transform.position = planet.transform.position;
-    //        spawnSeedItem.transform.position = planet.transform.position;
-    //        spawnRakeItem.transform.position = planet.transform.position;
-    //        spawnWateringGun.transform.position = spawnHeldLocation.transform.position;
-    //    }
-    //}
-
-    //private void SelectItemKeyboard()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Alpha1) && hotBarInventory[0] != null)
-    //    {
-    //        itemInInventorySelected = 0;
-    //        itemSelected = false;
-    //    }
-            
-    //    if (Input.GetKeyDown(KeyCode.Alpha2) && hotBarInventory[1] != null)
-    //    {
-    //        itemInInventorySelected = 1;
-    //        itemSelected = false;
-    //    }
-    //    if (Input.GetKeyDown(KeyCode.Alpha3) && hotBarInventory[2] != null)
-    //    {
-    //        itemInInventorySelected = 2;
-    //        itemSelected = false;
-    //    }
-    //    if (Input.GetKeyDown(KeyCode.Alpha4) && hotBarInventory[3] != null)
-    //    {
-    //        itemInInventorySelected = 3;
-    //        itemSelected = false;
-    //    }
-   
-    //}
-
-    //private void SelectItemController()
-    //{
-    //    if(Input.GetButtonDown("Left Bumper"))
-    //    {
-
-    //        print("leftbumper");
-    //       if(itemInInventorySelected == 0)
-    //        {
-    //            itemInInventorySelected = 3;
-               
-    //            SetItemPosition();
-                
-    //            itemSelected = false;
-    //        }
-    //       else
-    //        {
-    //            itemInInventorySelected--;
-  
-    //            SetItemPosition();
-               
-    //            itemSelected = false;
-    //        }
-
-
-
-    //    }
-    //    if(Input.GetButtonDown("Right Bumper"))
-    //    {
-    //        print("rightbumper");
-    //        if (itemInInventorySelected == 3)
-    //        {
-    //            itemInInventorySelected = 0;
-    
-    //            SetItemPosition();
-             
-    //            itemSelected = false;
-    //        }
-    //        else
-    //        {
-    //            itemInInventorySelected++;
-  
-    //            SetItemPosition();
-               
-    //            itemSelected = false;
-    //        }
-    //    }
-    //}
-
-    private void FixedUpdate()
-    {
-        Movement();
-    }
-
-    //Use Items
+    //Functions that the player call when needing to interact with a gameObject in the game. 
 
     void ContextSelectingItem()
     {
@@ -328,7 +158,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
     private void Water()
     {
         if (currentlySelecting.CompareTag("Seed"))
@@ -338,8 +167,6 @@ public class PlayerController : MonoBehaviour
             currentlySelecting.gameObject.GetComponent<PlantGrowth>().Water(10f);
         }
     }
-
-
     private void DigHole()
     {
         if(currentlySelecting.CompareTag("Ground"))
@@ -349,23 +176,17 @@ public class PlayerController : MonoBehaviour
 
         }
     }
-
     void PlantSeed()
     {
         if(currentlySelecting.CompareTag("Hole"))
         {
-            //Spawn a new seed/plant onto the world, removes a stack until 0 and removes from inventory.
             GameObject newSeed = (GameObject)Instantiate(seedItem.GetComponent<SeedItem>().plantToGrowInto, spawnItemLocation.transform.position, spawnItemLocation.transform.rotation);
             newSeed.gameObject.GetComponent<PlantGrowth>().Grow = true;
-            //blankSlot = new GameObject();
-            //hotBarInventory[itemInInventorySelected] = blankSlot;
-            //currentlyHolding = hotBarInventory[itemInInventorySelected];
             print("Planting");
-            //check for stack, if yes -- from stack; else remove from inventory;
+
         }
 
     }
-
     void CheckSeedNumber()
     {
         if (seedItem.gameObject.GetComponent<Item>().stackNumber <= 1)
@@ -384,17 +205,6 @@ public class PlayerController : MonoBehaviour
            
         //}
     }
-
-   
-
-    //private void ChangeCameraView()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("Select"))
-    //    {
-    //        TPSCamera.active = !TPSCamera.active;
-    //        TDCamera.active = !TDCamera.active;
-    //    }
-    //}
 
     //Movement Functions
     private void Movement()
@@ -416,18 +226,6 @@ public class PlayerController : MonoBehaviour
             this.GetComponent<Rigidbody>().MovePosition(this.GetComponent<Rigidbody>().position + transform.TransformDirection(moveDirection) * moveSpeed * Time.deltaTime*MoveSpeedCurrentMultiplier);
         }
     }
-
-    //void Jump()
-    //{
-    //    if (Input.GetButtonDown("Jump") && hasJumped == false)
-    //    {
-    //        Debug.Log("Jumping");
-    //        this.gameObject.GetComponent<Rigidbody>().AddForce(transform.up * jumpHeight);
-    //        hasJumped = true;
-
-    //    }
-    //}
-
     private void RotateCamera()
     {
         transform.Rotate((new Vector3(0, Input.GetAxis("Right Joystick X"), 0)) * Time.deltaTime * speed);
@@ -437,19 +235,13 @@ public class PlayerController : MonoBehaviour
 
     }
 
-
-
-
-
+    //OnTriggerEnter Functions
 
     private void OnTriggerEnter(Collider other)
     {
         objectsInTrigger.Add(other.gameObject);
         currentlySelecting = other.gameObject;
-        //if(currentlySelecting.CompareTag("Plant"))
-        //{
-        //    currentlySelecting.gameObject.GetComponent<PlantGrowth>().ToggleOutline();
-        //}
+    
     }
 
     private void OnTriggerExit(Collider other)
