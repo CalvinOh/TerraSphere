@@ -11,35 +11,61 @@ public class Inventory : MonoBehaviour
     private GameObject toggleStart;
 
     public bool inventoryDisplaying = true;
-    public GameObject inventory;
+    public GameObject seedInventoryCanvas;
+    public GameObject plantInventoryCanvas;
+    //public GameObject seedInventory;
+    //public GameObject plantInventory;
 
-    private int allSlots;
+    private int totalSeedSlots;
+    private int totalPlantSlots;
     private int enabledSlots;
     //public int itemsPickedUp;
-    public GameObject[] slot;
+    public GameObject[] seedSlot;
+    public GameObject[] plantSlot;
     private EventSystem eventSystem;
     private GameObject esLastSelected;
 
-    public GameObject slotHolder;
-    public Text textBox;
+    public GameObject seedSlotHolder;
+    public GameObject plantSlotHolder;
+    public bool seedTab = true; // True = seed tab, false = plant tab
+    public Text seedTextBox;
+    public Text plantTextBox;
+
 
     private void Start()
     {
         // Find how many slots the UI has for the inventory
-        allSlots = slotHolder.GetComponentsInChildren<Slot>().Length;
-        slot = new GameObject[allSlots];
+        totalSeedSlots = seedSlotHolder.GetComponentsInChildren<Slot>().Length;
+        seedSlot = new GameObject[totalSeedSlots];
+        totalPlantSlots = seedSlotHolder.GetComponentsInChildren<Slot>().Length;
+        plantSlot = new GameObject[totalPlantSlots];
 
         eventSystem = FindObjectOfType<EventSystem>();
 
-        for(int i = 0; i < allSlots; i++)
+        if(toggleStart==null)
         {
-            slot[i] = slotHolder.transform.GetChild(i).gameObject;
+            toggleStart = seedSlotHolder.GetComponentInChildren<Toggle>().gameObject;
+        }
 
-            if (slot[i].GetComponent<Slot>().item == null)
+        for(int i = 0; i < totalSeedSlots; i++)
+        {
+            seedSlot[i] = seedSlotHolder.transform.GetChild(i).gameObject;
+
+            if (seedSlot[i].GetComponent<Slot>().item == null)
             {
-                slot[i].GetComponent<Slot>().empty = true;
+                seedSlot[i].GetComponent<Slot>().empty = true;
             }
         }
+        for (int i = 0; i < totalPlantSlots; i++)
+        {
+            plantSlot[i] = plantSlotHolder.transform.GetChild(i).gameObject;
+
+            if (plantSlot[i].GetComponent<Slot>().item == null)
+            {
+                plantSlot[i].GetComponent<Slot>().empty = true;
+            }
+        }
+        seedTab = true;
 
         ToggleDisplayInventory();
     }
@@ -49,16 +75,31 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Open Inventory"))
         {
             ToggleDisplayInventory();
+
+            if (inventoryDisplaying)
+                Cursor.lockState = CursorLockMode.None;
+            else if (!inventoryDisplaying)
+                Cursor.lockState = CursorLockMode.Locked;
         }
 
         if(inventoryDisplaying)
         {
-            if(eventSystem.currentSelectedGameObject != esLastSelected)
-            {
-                textBox.text = eventSystem.currentSelectedGameObject.GetComponent<Slot>().item.GetComponent<Item>().itemDescriptionBoxContent();
-            }
-            esLastSelected = eventSystem.currentSelectedGameObject;
+            ToggleTabDisplayed();
+            UpdateDescriptionBox();
         }
+        print(eventSystem.currentSelectedGameObject);
+    }
+
+    private void UpdateDescriptionBox()
+    {
+        if (eventSystem.currentSelectedGameObject != esLastSelected)
+        {
+            if(seedTab)
+                seedTextBox.text = eventSystem.currentSelectedGameObject.GetComponent<Slot>().item.GetComponent<Item>().itemDescriptionBoxContent();
+            else
+                plantTextBox.text = eventSystem.currentSelectedGameObject.GetComponent<Slot>().item.GetComponent<Item>().itemDescriptionBoxContent();
+        }
+        esLastSelected = eventSystem.currentSelectedGameObject;
     }
 
     public void ToggleDisplayInventory()
@@ -67,18 +108,43 @@ public class Inventory : MonoBehaviour
         inventoryDisplaying = !inventoryDisplaying;
         if (inventoryDisplaying)
         {
-            inventory.GetComponentInParent<Canvas>().targetDisplay = 0;
+            ToggleTabDisplayed();
+        }
+        else
+        {
+            seedInventoryCanvas.GetComponentInParent<Canvas>().targetDisplay = 7;
+            plantInventoryCanvas.GetComponent<Canvas>().targetDisplay = 7;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+    }
+
+    private void ToggleTabDisplayed()
+    {
+        if (seedTab)
+        {
+            seedInventoryCanvas.GetComponent<Canvas>().targetDisplay = 0;
+            plantInventoryCanvas.GetComponent<Canvas>().targetDisplay = 7;
+
+            toggleStart = seedSlotHolder.GetComponentInChildren<Toggle>().gameObject;
             // making sure that all of the slots are not "chosen"
-            for (int i = 0; i < slot.Length; i++)
+            for (int i = 0; i < seedSlot.Length; i++)
             {
-                slot[i].GetComponent<Toggle>().isOn = false;
+                seedSlot[i].GetComponent<Toggle>().isOn = false;
             }
             //Cursor.lockState = CursorLockMode.None;
         }
         else
         {
-            inventory.GetComponentInParent<Canvas>().targetDisplay = 7;
-            Cursor.lockState = CursorLockMode.Locked;
+            seedInventoryCanvas.GetComponent<Canvas>().targetDisplay = 7;
+            plantInventoryCanvas.GetComponent<Canvas>().targetDisplay = 0;
+
+            toggleStart = plantSlotHolder.GetComponentInChildren<Toggle>().gameObject;
+            // making sure that all of the slots are not "chosen"
+            for (int i = 0; i < seedSlot.Length; i++)
+            {
+                seedSlot[i].GetComponent<Toggle>().isOn = false;
+            }
+            //Cursor.lockState = CursorLockMode.None;
         }
     }
 
@@ -91,16 +157,10 @@ public class Inventory : MonoBehaviour
             if (item.type == "Seed")
             {
                 item.tag = "Seed";
-
-                //Loop through inventory and hot bar, if current seed exists then add to stack, if not add to inventory 
-                //if(item.subType == "Shroom Seed")
-                //{
-                //    item.stackNumber++;
-                //}
             }
             else if (item.type == "Plant")
             {
-                item.tag = "Plant";//same as seed, add to stack if have, if not add new. 
+                item.tag = "Plant";
             }
 
             addItem(itemPickedUp, item.ID, item.type, item.description, item.icon, item.subType, item.stackNumber);
@@ -128,36 +188,75 @@ public class Inventory : MonoBehaviour
     //    }
     //}
 
+        // CLEAN UP REQUIRED - PT
     void addItem(GameObject itemObject, int itemID, string itemType, string itemDescription, Sprite itemIcon, string subType, int stackNumber)
     {
-        for(int i = 0; i < allSlots; i++)
+        if(itemObject.tag == "Seed")
         {
-            // Already has this kind of item
-            if (!slot[i].GetComponent<Slot>().empty && slot[i].GetComponent<Slot>().item.GetComponent<Item>().ID == itemID)
+            for (int i = 0; i < totalSeedSlots; i++)
             {
-                slot[i].GetComponent<Slot>().stackNumber++;
-                itemObject.transform.position = new Vector3(0, 0, 0);
-                return;
+                // Already has this kind of item, stack instead of add new.
+                if (!seedSlot[i].GetComponent<Slot>().empty && seedSlot[i].GetComponent<Slot>().item.GetComponent<Item>().ID == itemID)
+                {
+                    seedSlot[i].GetComponent<Slot>().stackNumber++;
+                    seedSlot[i].GetComponent<Slot>().item.GetComponent<Item>().stackNumber++;
+                    itemObject.transform.position = new Vector3(0, 0, 0);
+                    return;
+                }
+                else if (seedSlot[i].GetComponent<Slot>().empty)
+                {
+                    itemObject.GetComponent<Item>().pickedUp = true;
+
+                    seedSlot[i].GetComponent<Slot>().item = itemObject;
+                    seedSlot[i].GetComponent<Slot>().icon = itemIcon;
+                    seedSlot[i].GetComponent<Slot>().type = itemType;
+                    seedSlot[i].GetComponent<Slot>().ID = itemID;
+                    seedSlot[i].GetComponent<Slot>().description = itemDescription;
+                    seedSlot[i].GetComponent<Slot>().subType = subType;
+                    seedSlot[i].GetComponent<Slot>().stackNumber = 1;
+
+
+                    itemObject.transform.position = new Vector3(0, 0, 0);
+
+
+                    seedSlot[i].GetComponent<Slot>().UpdateSlot();
+                    seedSlot[i].GetComponent<Slot>().empty = false;
+                    return;
+                }
             }
-            else if (slot[i].GetComponent<Slot>().empty)
+        }
+        else if (itemObject.tag == "Plant")
+        {
+            for (int i = 0; i < totalSeedSlots; i++)
             {
-                itemObject.GetComponent<Item>().pickedUp = true;
+                // Already has this kind of item, stack instead of add new.
+                if (!plantSlot[i].GetComponent<Slot>().empty && plantSlot[i].GetComponent<Slot>().item.GetComponent<Item>().ID == itemID)
+                {
+                    plantSlot[i].GetComponent<Slot>().stackNumber++;
+                    plantSlot[i].GetComponent<Slot>().item.GetComponent<Item>().stackNumber++;
+                    itemObject.transform.position = new Vector3(0, 0, 0);
+                    return;
+                }
+                else if (plantSlot[i].GetComponent<Slot>().empty)
+                {
+                    itemObject.GetComponent<Item>().pickedUp = true;
 
-                slot[i].GetComponent<Slot>().item = itemObject;
-                slot[i].GetComponent<Slot>().icon = itemIcon;
-                slot[i].GetComponent<Slot>().type = itemType;
-                slot[i].GetComponent<Slot>().ID = itemID;
-                slot[i].GetComponent<Slot>().description = itemDescription;
-                slot[i].GetComponent<Slot>().subType = subType;
-                slot[i].GetComponent<Slot>().stackNumber = 1;
+                    plantSlot[i].GetComponent<Slot>().item = itemObject;
+                    plantSlot[i].GetComponent<Slot>().icon = itemIcon;
+                    plantSlot[i].GetComponent<Slot>().type = itemType;
+                    plantSlot[i].GetComponent<Slot>().ID = itemID;
+                    plantSlot[i].GetComponent<Slot>().description = itemDescription;
+                    plantSlot[i].GetComponent<Slot>().subType = subType;
+                    plantSlot[i].GetComponent<Slot>().stackNumber = 1;
 
 
-                itemObject.transform.position = new Vector3(0, 0, 0);
+                    itemObject.transform.position = new Vector3(0, 0, 0);
 
 
-                slot[i].GetComponent<Slot>().UpdateSlot();
-                slot[i].GetComponent<Slot>().empty = false;
-                return;
+                    plantSlot[i].GetComponent<Slot>().UpdateSlot();
+                    plantSlot[i].GetComponent<Slot>().empty = false;
+                    return;
+                }
             }
         }
     }

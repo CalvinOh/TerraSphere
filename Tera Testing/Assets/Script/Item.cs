@@ -96,6 +96,6 @@ public class Item : MonoBehaviour
 
     public string itemDescriptionBoxContent()
     {
-        return $"Item: {subType}\nType: {type}\n\nDescription: {description}";
+        return $"Item: {subType}\nType: {type}\nStack: {stackNumber}\n\nDescription: {description}";
     }
 }
