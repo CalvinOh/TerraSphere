@@ -597,7 +597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &338178019
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1081,7 +1081,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &649226297
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1849,7 +1849,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 7f6df4e9c32be6d4cabdbc74c43477d8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -5194,6 +5194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emptyIcon: {fileID: 338178020}
+  greenOutline: {fileID: 649226298}
   animator: {fileID: 1296349005}
   seedIcon: {fileID: 21300000, guid: dc7063a83429f8c40a8e813165846968, type: 3}
   waterIcon: {fileID: 21300000, guid: e5ce8e14d38a2a74b87c80755b993527, type: 3}

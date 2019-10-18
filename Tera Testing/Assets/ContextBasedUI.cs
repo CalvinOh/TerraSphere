@@ -8,6 +8,8 @@ public class ContextBasedUI : MonoBehaviour
 {
     [SerializeField]
     private Image emptyIcon;
+    [SerializeField]
+    private Image greenOutline;
 
     [SerializeField]
     private Animator animator;
@@ -50,33 +52,45 @@ public class ContextBasedUI : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        detector = other;
-        alreadyActivated++;
-        if (alreadyActivated <= 0)
+        if (other.tag == "Hole" || other.tag == "Seed" || other.tag == "Plant")
         {
-            print("PopUpAnimStart");
-            animator.SetBool("AnimStart", true);
+            emptyIcon.gameObject.SetActive(true);
+            greenOutline.gameObject.SetActive(true);
+            detector = other;
+            if (alreadyActivated <= 0)
+            {
+                print("PopUpAnimStart");
+                animator.SetBool("AnimStart", true);
+            }
+            alreadyActivated++;
+            if (other.tag == "Plant")
+            {
+                emptyIcon.sprite = harvestIcon;
+            }
+            else if (other.tag == "Seed")
+            {
+                emptyIcon.sprite = waterIcon;
+            }
+            else if (other.tag == "Hole")
+            {
+                emptyIcon.sprite = seedIcon;
+            }
         }
-        alreadyActivated++;
-        if (other.tag == "Plant")
-        {
-            emptyIcon.sprite = harvestIcon;
-        }
-        else if (other.tag == "Seed")
-        {
-            emptyIcon.sprite = waterIcon;
-        }
-        else if ( other.tag == "Hole")
-        {
-            emptyIcon.sprite = seedIcon;
-        }
-        
     }
 
     private void OnTriggerExit(Collider other)
     {
-        alreadyActivated--;
-        animator.SetBool("AnimEnd", true);
-        animator.SetBool("AnimStart", false);
+        if(other.tag == "Hole" || other.tag == "Seed" || other.tag == "Plant")
+        {
+            alreadyActivated--;
+            print(alreadyActivated+" "+other.tag);
+            if (alreadyActivated <= 0)
+            {
+                emptyIcon.gameObject.SetActive(false);
+                greenOutline.gameObject.SetActive(false);
+                emptyIcon.sprite = null;
+                animator.SetBool("AnimStart", false);
+            }  
+        }
     }
 }
