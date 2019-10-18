@@ -672,6 +672,7 @@ GameObject:
   - component: {fileID: 417947027}
   - component: {fileID: 417947026}
   - component: {fileID: 417947025}
+  - component: {fileID: 417947029}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -746,7 +747,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 417947024}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.039567452, y: 0.95935184, z: 0.21945181, w: 0.17297241}
   m_LocalPosition: {x: 0, y: 0, z: 8.47}
   m_LocalScale: {x: 0.0023279905, y: 0.0023279905, z: 0.0023279905}
   m_Children:
@@ -759,6 +760,18 @@ RectTransform:
   m_AnchoredPosition: {x: -0.7, y: 55.31}
   m_SizeDelta: {x: 500, y: 750}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &417947029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417947024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 536655364094ba24ca26d9c8176713d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &440998372
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1751,7 +1764,6 @@ GameObject:
   - component: {fileID: 1296349001}
   - component: {fileID: 1296349003}
   - component: {fileID: 1296349002}
-  - component: {fileID: 1296349004}
   - component: {fileID: 1296349005}
   m_Layer: 5
   m_Name: Outline
@@ -1767,7 +1779,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1296349000}
-  m_LocalRotation: {x: -0.039540894, y: 0.9593855, z: 0.21930452, w: 0.17297848}
+  m_LocalRotation: {x: -0.026230555, y: 0.97331893, z: 0.14548282, w: 0.17549066}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5949, y: 0.5949, z: 0.5949}
   m_Children:
@@ -1777,7 +1789,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 2}
+  m_AnchoredPosition: {x: 0, y: 1200}
   m_SizeDelta: {x: 2062, y: 3060.1274}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1296349002
@@ -1817,25 +1829,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1296349000}
   m_CullTransparentMesh: 0
---- !u!1183024399 &1296349004
-LookAtConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1296349000}
-  m_Enabled: 1
-  m_Weight: 1
-  m_RotationAtRest: {x: 0, y: 0, z: 0}
-  m_RotationOffset: {x: 0, y: 0, z: 0}
-  m_Roll: 0
-  m_WorldUpObject: {fileID: 53585872076281073}
-  m_UseUpObject: 0
-  m_IsContraintActive: 1
-  m_IsLocked: 1
-  m_Sources:
-  - sourceTransform: {fileID: 53585872076281073}
-    weight: 1
 --- !u!95 &1296349005
 Animator:
   serializedVersion: 3
@@ -5195,6 +5188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emptyIcon: {fileID: 338178020}
   greenOutline: {fileID: 649226298}
+  popUpCanvas: {fileID: 417947028}
   animator: {fileID: 1296349005}
   seedIcon: {fileID: 21300000, guid: dc7063a83429f8c40a8e813165846968, type: 3}
   waterIcon: {fileID: 21300000, guid: e5ce8e14d38a2a74b87c80755b993527, type: 3}

@@ -72,11 +72,17 @@ public class PlayerController : MonoBehaviour
 
     private float MoveSpeedCurrentMultiplier;
 
+    private ContextBasedUI contextBasedUI;
+
     [SerializeField]
     private float SecondsTakenToFullSpeed =1;
 
     private void Start()
     {
+        if(contextBasedUI == null)
+        {
+            contextBasedUI = FindObjectOfType<ContextBasedUI>();
+        }
         MoveSpeedCurrentMultiplier = 0;
         //inventory = new GameObject[10];
         if (invScript == null)
@@ -316,6 +322,7 @@ public class PlayerController : MonoBehaviour
             if(currentlySelecting.CompareTag("Plant"))
             {
                 objectsInTrigger.Remove(currentlySelecting);
+                contextBasedUI.AfterHarvest();
                 currentlySelecting.gameObject.GetComponent<PlantGrowth>().Harvest();
             }
         }
