@@ -49,12 +49,12 @@ public class Slot : MonoBehaviour
             this.gameObject.GetComponent<Toggle>().isOn = false; // deactivate to prevent using infinite times
             if (item.GetComponent<Item>().type == "Plant")
             {
-                useItem();
+                UseItem();
                 this.player.GetComponent<Inventory>().ToggleDisplayInventory();
             }
             else if (item.GetComponent<Item>().type == "Seed")
             {
-                //this.player.GetComponent<PlayerController>().hotBarInventory[1] = item;
+                this.player.GetComponent<PlayerController>().seedItem = item;
                 //this.player.GetComponent<PlayerController>().seedSlotBackground.GetComponent<Image>().sprite = item.GetComponent<Item>().icon;
                 this.player.GetComponent<Inventory>().ToggleDisplayInventory();
 
@@ -70,7 +70,7 @@ public class Slot : MonoBehaviour
         slotIconGO.GetComponent<Image>().sprite = icon;
     }
 
-    public void useItem()
+    public void UseItem()
     {
         item.GetComponent<Item>().itemUsage(this);
         stackNumber--;

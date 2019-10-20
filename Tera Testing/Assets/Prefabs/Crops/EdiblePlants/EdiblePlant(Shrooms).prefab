@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 1566154769774205929}
   - component: {fileID: 6151726453307511747}
   - component: {fileID: 5921434026377371245}
+  - component: {fileID: 8186595374973696865}
   m_Layer: 0
   m_Name: EdiblePlant(Shrooms)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,7 +105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa703eb6cb70784997da0fd903ff253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-
   OxygenProvided: 0
 --- !u!114 &8186595374973696865
 MonoBehaviour:
@@ -124,5 +124,5 @@ MonoBehaviour:
   icon: {fileID: 0}
   pickedUp: 0
   oxygenValue: 10
-  stackNumber: 0
+  stackNumber: 1
   subType: Shroom Plant

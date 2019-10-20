@@ -31,6 +31,8 @@ public class Inventory : MonoBehaviour
     public Text seedTextBox;
     public Text plantTextBox;
 
+    //Check Controller Connected
+    string[] connectedControllers;
 
     private void Start()
     {
@@ -41,6 +43,8 @@ public class Inventory : MonoBehaviour
         plantSlot = new GameObject[totalPlantSlots];
 
         eventSystem = FindObjectOfType<EventSystem>();
+
+        connectedControllers = Input.GetJoystickNames();
 
         if(toggleStart==null)
         {
@@ -72,19 +76,50 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Open Inventory"))
+        if(connectedControllers.Length > 0)
         {
-            ToggleDisplayInventory();
+            for(int i = 0; i < connectedControllers.Length; i++)
+            {
+                if(!string.IsNullOrEmpty(connectedControllers[i]))
+                {
+                    if(Input.GetButtonDown("Open Inventory"))
+                    {
+                        ToggleDisplayInventory();
+                    }
+                }
+                else
+                {
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        ToggleDisplayInventory();
 
-            if (inventoryDisplaying)
-                Cursor.lockState = CursorLockMode.None;
-            else if (!inventoryDisplaying)
-                Cursor.lockState = CursorLockMode.Locked;
+                        if (inventoryDisplaying)
+                            Cursor.lockState = CursorLockMode.None;
+                        else if (!inventoryDisplaying)
+                            Cursor.lockState = CursorLockMode.Locked;
+                    }
+                }
+            }
         }
+
+
+        //if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Open Inventory"))
+        //{
+        //    ToggleDisplayInventory();
+
+        //    if (inventoryDisplaying)
+        //        Cursor.lockState = CursorLockMode.None;
+        //    else if (!inventoryDisplaying)
+        //        Cursor.lockState = CursorLockMode.Locked;
+        //}
 
         if(inventoryDisplaying)
         {
-            ToggleTabDisplayed();
+            if (Input.GetButtonDown("Right Bumper") || Input.GetButtonDown("Left Bumper"))
+            {
+                seedTab = !seedTab;
+                ToggleTabDisplayed();
+            }
             UpdateDescriptionBox();
         }
         print(eventSystem.currentSelectedGameObject);
@@ -126,6 +161,7 @@ public class Inventory : MonoBehaviour
             plantInventoryCanvas.GetComponent<Canvas>().targetDisplay = 7;
 
             toggleStart = seedSlotHolder.GetComponentInChildren<Toggle>().gameObject;
+            eventSystem.SetSelectedGameObject(toggleStart);
             // making sure that all of the slots are not "chosen"
             for (int i = 0; i < seedSlot.Length; i++)
             {
@@ -139,10 +175,11 @@ public class Inventory : MonoBehaviour
             plantInventoryCanvas.GetComponent<Canvas>().targetDisplay = 0;
 
             toggleStart = plantSlotHolder.GetComponentInChildren<Toggle>().gameObject;
+            eventSystem.SetSelectedGameObject(toggleStart);
             // making sure that all of the slots are not "chosen"
-            for (int i = 0; i < seedSlot.Length; i++)
+            for (int i = 0; i < plantSlot.Length; i++)
             {
-                seedSlot[i].GetComponent<Toggle>().isOn = false;
+                plantSlot[i].GetComponent<Toggle>().isOn = false;
             }
             //Cursor.lockState = CursorLockMode.None;
         }
@@ -163,7 +200,7 @@ public class Inventory : MonoBehaviour
                 item.tag = "Plant";
             }
 
-            addItem(itemPickedUp, item.ID, item.type, item.description, item.icon, item.subType, item.stackNumber);
+            AddItem(itemPickedUp, item.ID, item.type, item.description, item.icon, item.subType, item.stackNumber);
             //item.gameObject.transform.parent = slot[0].GetComponent<Slot>().player.gameObject.GetComponent<PlayerController>().spawnHeldLocation;
             //SetSeedSlot();
 
@@ -189,7 +226,7 @@ public class Inventory : MonoBehaviour
     //}
 
         // CLEAN UP REQUIRED - PT
-    void addItem(GameObject itemObject, int itemID, string itemType, string itemDescription, Sprite itemIcon, string subType, int stackNumber)
+    void AddItem(GameObject itemObject, int itemID, string itemType, string itemDescription, Sprite itemIcon, string subType, int stackNumber)
     {
         if(itemObject.tag == "Seed")
         {
