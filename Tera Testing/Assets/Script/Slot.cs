@@ -55,6 +55,7 @@ public class Slot : MonoBehaviour
             else if (item.GetComponent<Item>().type == "Seed")
             {
                 this.player.GetComponent<PlayerController>().seedItem = item;
+                this.player.GetComponent<PlayerController>().contextBasedUI.GetComponent<ContextBasedUI>().seedIcon = item.GetComponent<Item>().icon;
                 //this.player.GetComponent<PlayerController>().seedSlotBackground.GetComponent<Image>().sprite = item.GetComponent<Item>().icon;
                 this.player.GetComponent<Inventory>().ToggleDisplayInventory();
 

@@ -2681,6 +2681,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 612068274455440130, guid: 1b6fb9bd3e28ccf44a26ecf30abf577c,
+        type: 3}
+      propertyPath: m_Colors.m_ColorMultiplier
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b6fb9bd3e28ccf44a26ecf30abf577c, type: 3}
 --- !u!1 &1658944521
