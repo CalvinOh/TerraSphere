@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    public Slot ParentSlot { get; private set; }
     public int ID;
     public string type; // seed, tool, etc. Like an internal tag
     public string description;
@@ -31,6 +32,11 @@ public class Item : MonoBehaviour
 
     }
 
+    public void AssignParent(Slot parent)
+    {
+        this.ParentSlot = parent;
+    }
+
     public void itemUsage(Slot itemFromSlot)
     {
         if(type == "Plant" || this.tag == "Plant")
@@ -38,7 +44,7 @@ public class Item : MonoBehaviour
             print("Used Plant!");
             itemFromSlot.player.GetComponent<PlayerController>().oxygenValue += this.oxygenValue;
         }
-        
+        stackNumber--;
     }
 
     public string itemDescriptionBoxContent()
