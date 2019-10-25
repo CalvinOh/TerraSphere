@@ -44,7 +44,15 @@ public class Slot : MonoBehaviour
 
     public void Update()
     {
-        if(this.gameObject.GetComponent<Toggle>().isOn)
+        if (player.GetComponent<Inventory>().inventoryDisplaying)
+        {
+            CheckChosenSlot();
+        }
+    }
+
+    private void CheckChosenSlot()
+    {
+        if (this.gameObject.GetComponent<Toggle>().isOn)
         {
             this.gameObject.GetComponent<Toggle>().isOn = false; // deactivate to prevent using infinite times
             if (item.GetComponent<Item>().type == "Plant")
@@ -62,8 +70,6 @@ public class Slot : MonoBehaviour
             }
         }
     }
-
-
 
     public void UpdateSlot()
     {
