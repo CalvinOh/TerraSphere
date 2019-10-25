@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class Slot : MonoBehaviour
 {
-    public GameObject player;
+    public GameObject player { get; private set; }
     public GameObject item;
     public int ID;
     public string type;
@@ -75,6 +75,7 @@ public class Slot : MonoBehaviour
     {
         this.gameObject.GetComponent<Toggle>().interactable = true;
         slotIconGO.GetComponent<Image>().sprite = icon;
+        this.item.GetComponent<Item>().AssignParent(this);
     }
 
     public void UseItem()
@@ -83,7 +84,7 @@ public class Slot : MonoBehaviour
         stackNumber--;
         if(stackNumber <= 0)
         {
-            empty = true;
+            //empty = true;
 
         }
     }
