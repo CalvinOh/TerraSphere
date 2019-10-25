@@ -44,17 +44,26 @@ public class Slot : MonoBehaviour
 
     public void Update()
     {
-        if(this.gameObject.GetComponent<Toggle>().isOn)
+        if (player.GetComponent<Inventory>().inventoryDisplaying)
+        {
+            CheckChosenSlot();
+        }
+    }
+
+    private void CheckChosenSlot()
+    {
+        if (this.gameObject.GetComponent<Toggle>().isOn)
         {
             this.gameObject.GetComponent<Toggle>().isOn = false; // deactivate to prevent using infinite times
             if (item.GetComponent<Item>().type == "Plant")
             {
-                useItem();
+                UseItem();
                 this.player.GetComponent<Inventory>().ToggleDisplayInventory();
             }
             else if (item.GetComponent<Item>().type == "Seed")
             {
-                //this.player.GetComponent<PlayerController>().hotBarInventory[1] = item;
+                this.player.GetComponent<PlayerController>().seedItem = item;
+                this.player.GetComponent<PlayerController>().contextBasedUI.GetComponent<ContextBasedUI>().seedIcon = item.GetComponent<Item>().icon;
                 //this.player.GetComponent<PlayerController>().seedSlotBackground.GetComponent<Image>().sprite = item.GetComponent<Item>().icon;
                 this.player.GetComponent<Inventory>().ToggleDisplayInventory();
 
@@ -62,15 +71,13 @@ public class Slot : MonoBehaviour
         }
     }
 
-
-
     public void UpdateSlot()
     {
         this.gameObject.GetComponent<Toggle>().interactable = true;
         slotIconGO.GetComponent<Image>().sprite = icon;
     }
 
-    public void useItem()
+    public void UseItem()
     {
         item.GetComponent<Item>().itemUsage(this);
         stackNumber--;

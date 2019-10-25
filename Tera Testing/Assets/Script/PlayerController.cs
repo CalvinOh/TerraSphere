@@ -63,8 +63,9 @@ public class PlayerController : MonoBehaviour
     //UI
 
     //UI for context based direction.
-    private ContextBasedUI contextBasedUI;
+    public ContextBasedUI contextBasedUI { get; private set; }
 
+    
 
     private void Start()
     {
