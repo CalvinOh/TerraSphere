@@ -190,11 +190,12 @@ public class PlayerController : MonoBehaviour
     }
     void CheckSeedNumber()
     {
-        if (seedItem.gameObject.GetComponent<Item>().stackNumber <= 1)
+        if (seedItem.gameObject.GetComponent<Item>().stackNumber >= 1)
         {
             PlantSeed();
-           
-            seedItem.gameObject.GetComponent<Item>().stackNumber--; //Bugged Right now
+
+            seedItem.GetComponent<Item>().ParentSlot.GetComponent<Slot>().UseItem();
+            //seedItem.gameObject.GetComponent<Item>().stackNumber--; //Bugged Right now
             //hotBarInventory[itemInInventorySelected] = blankSlot; //Bugged, stays even when 0 and swapped.
            
         }
