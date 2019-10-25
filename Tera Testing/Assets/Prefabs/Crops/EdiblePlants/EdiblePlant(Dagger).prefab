@@ -121,7 +121,7 @@ MonoBehaviour:
   ID: 6
   type: Plant
   description: A harvested dagger plant, handle with care! Can be consumed for oxygen
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: e24be222e19b50549898268bd9b7bf29, type: 3}
   pickedUp: 0
   oxygenValue: 10
   stackNumber: 1
