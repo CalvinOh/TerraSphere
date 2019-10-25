@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GrowthSpeed: 1
+  StartingSize: 0.3
   FinalSize: 2
   Stage1Cap: 10
   Stage2Cap: 20
@@ -62,6 +63,7 @@ MonoBehaviour:
     type: 3}
   PlantSpawnedWhenHarvested: {fileID: 3063869180261443612, guid: 972b11a73d5339b46b12dd76eeb378fc,
     type: 3}
+  GrassTriggerRadius: 5
   UnOutlined: {fileID: 2100000, guid: 4812f976f0f55e74f9a5f90fba3569eb, type: 2}
   Outlined: {fileID: 2100000, guid: c2807779e31f79d49abeb8d4769d3b55, type: 2}
   Grow: 0
@@ -4807,6 +4809,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7853986092499012553}
     m_Modifications:
+    - target: {fileID: 2260323551048197847, guid: a968d1cfd102d5746b34f480fa121cbb,
+        type: 3}
+      propertyPath: m_Name
+      value: Alien_PLANT_P
+      objectReference: {fileID: 0}
+    - target: {fileID: 2260323551048197847, guid: a968d1cfd102d5746b34f480fa121cbb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2260323551048197847, guid: a968d1cfd102d5746b34f480fa121cbb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Plant
+      objectReference: {fileID: 0}
     - target: {fileID: 5313924757266393004, guid: a968d1cfd102d5746b34f480fa121cbb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4877,21 +4894,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 70
       objectReference: {fileID: 0}
-    - target: {fileID: 2260323551048197847, guid: a968d1cfd102d5746b34f480fa121cbb,
-        type: 3}
-      propertyPath: m_Name
-      value: Alien_PLANT_P
-      objectReference: {fileID: 0}
-    - target: {fileID: 2260323551048197847, guid: a968d1cfd102d5746b34f480fa121cbb,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2260323551048197847, guid: a968d1cfd102d5746b34f480fa121cbb,
-        type: 3}
-      propertyPath: m_TagString
-      value: Plant
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a968d1cfd102d5746b34f480fa121cbb, type: 3}
 --- !u!1 &8331869276200562070 stripped
@@ -4913,6 +4915,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7853986092499012553}
     m_Modifications:
+    - target: {fileID: 4605582474802256804, guid: 60482861e12be424795e2812ce1823e1,
+        type: 3}
+      propertyPath: m_Name
+      value: Alien_SAP_P
+      objectReference: {fileID: 0}
+    - target: {fileID: 4605582474802256804, guid: 60482861e12be424795e2812ce1823e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Seed
+      objectReference: {fileID: 0}
     - target: {fileID: 6994919771324859081, guid: 60482861e12be424795e2812ce1823e1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4982,16 +4994,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 4605582474802256804, guid: 60482861e12be424795e2812ce1823e1,
-        type: 3}
-      propertyPath: m_Name
-      value: Alien_SAP_P
-      objectReference: {fileID: 0}
-    - target: {fileID: 4605582474802256804, guid: 60482861e12be424795e2812ce1823e1,
-        type: 3}
-      propertyPath: m_TagString
-      value: Seed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60482861e12be424795e2812ce1823e1, type: 3}

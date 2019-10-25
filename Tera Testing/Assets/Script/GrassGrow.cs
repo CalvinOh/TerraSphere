@@ -11,7 +11,7 @@ public class GrassGrow : MonoBehaviour
     [SerializeField]
     private float FinalSize = 1;
 
-    private bool Growing;
+    public bool Growing;
     private float CurrentScale;
     private float MaxScale;
     // Start is called before the first frame update
@@ -20,8 +20,9 @@ public class GrassGrow : MonoBehaviour
         
         Growing = false;
         CurrentScale = 0;
-        //VisualObject.SetActive(false);
+        VisualObject.SetActive(false);
         MaxScale = Random.Range(0.75f*FinalSize, 1.25f*FinalSize);
+        this.transform.localScale = CurrentScale * Vector3.one * MaxScale;
     }
 
     // Update is called once per frame
