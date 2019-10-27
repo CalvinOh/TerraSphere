@@ -173,12 +173,16 @@ public class Inventory : MonoBehaviour
             plantInventoryCanvas.GetComponent<Canvas>().targetDisplay = 7;
 
             //toggleStartS = seedSlotHolder.GetComponentInChildren<Toggle>().gameObject;
-            eventSystem.SetSelectedGameObject(toggleStartS);
             // making sure that all of the slots are not "chosen"
             for (int i = 0; i < seedSlot.Length; i++)
             {
                 seedSlot[i].GetComponent<Toggle>().isOn = false;
+                if (!seedSlot[i].GetComponent<Slot>().empty)
+                    seedSlot[i].GetComponent<Toggle>().interactable = true;
+                plantSlot[i].GetComponent<Toggle>().interactable = false;
             }
+            eventSystem.SetSelectedGameObject(toggleStartS);
+            eventSystem.UpdateModules();
             //Cursor.lockState = CursorLockMode.None;
         }
         else
@@ -187,12 +191,16 @@ public class Inventory : MonoBehaviour
             plantInventoryCanvas.GetComponent<Canvas>().targetDisplay = 0;
 
             //toggleStartP = plantSlotHolder.GetComponentInChildren<Toggle>().gameObject;
-            eventSystem.SetSelectedGameObject(toggleStartP); // Event system keeps going back to seedSlot as selected.
             // making sure that all of the slots are not "chosen"
             for (int i = 0; i < plantSlot.Length; i++)
             {
                 plantSlot[i].GetComponent<Toggle>().isOn = false;
+                if(!plantSlot[i].GetComponent<Slot>().empty)
+                    plantSlot[i].GetComponent<Toggle>().interactable = true;
+                seedSlot[i].GetComponent<Toggle>().interactable = false;
             }
+            eventSystem.SetSelectedGameObject(toggleStartP); // Event system keeps going back to seedSlot as selected.
+            eventSystem.UpdateModules();
             //Cursor.lockState = CursorLockMode.None;
         }
         UpdateDescriptionBox(); // Update after switching inventory tabs
