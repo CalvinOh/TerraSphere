@@ -55,11 +55,11 @@ public class Slot : MonoBehaviour
         if (this.gameObject.GetComponent<Toggle>().isOn)
         {
             this.gameObject.GetComponent<Toggle>().isOn = false; // deactivate to prevent using infinite times
-            if (item.GetComponent<Item>().type == "Plant")
+            if (item.GetComponent<Item>().type == "Plant" && stackNumber > 0)
             {
                 UseItem();
             }
-            else if (item.GetComponent<Item>().type == "Seed")
+            else if (item.GetComponent<Item>().type == "Seed" && stackNumber > 0)
             {
                 this.player.GetComponent<PlayerController>().seedItem = item;
                 this.player.GetComponent<PlayerController>().contextBasedUI.GetComponent<ContextBasedUI>().seedIcon = item.GetComponent<Item>().icon;

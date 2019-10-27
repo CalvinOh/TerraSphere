@@ -94,7 +94,7 @@ public class Inventory : MonoBehaviour
 
         if (inventoryDisplaying)
         {
-            UpdateDescriptionBox(); //update during inventory displaying
+            UpdateDescriptionBox(true); //update during inventory displaying
             if (Input.GetButtonDown("Right Bumper") || Input.GetButtonDown("Left Bumper"))
             {
                 seedTab = !seedTab;
@@ -130,9 +130,9 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void UpdateDescriptionBox()
+    private void UpdateDescriptionBox(bool force = false)
     {
-        if (eventSystem.currentSelectedGameObject != esLastSelected)
+        if (eventSystem.currentSelectedGameObject != esLastSelected || force)
         {
             if(seedTab)
             {
