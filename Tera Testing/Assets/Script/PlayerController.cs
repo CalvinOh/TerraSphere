@@ -86,7 +86,8 @@ public class PlayerController : MonoBehaviour
             print("Planet Found");
         }
         objectsInTrigger = new List<GameObject>();
-
+        seedItem = invScript.seedSlot[0].GetComponent<Slot>().item;
+        contextBasedUI.seedIcon = seedItem.GetComponent<Item>().icon;
 
         Cursor.lockState = CursorLockMode.Locked;
 
@@ -134,28 +135,30 @@ public class PlayerController : MonoBehaviour
 
     void ContextSelectingItem()
     {
-
-        if(Input.GetButtonDown("Use Item"))
+        if(!invScript.GetComponent<Inventory>().inventoryDisplaying)
         {
-            //When left click, based on item held, trigger function
-            if (currentlySelecting.CompareTag("Ground"))
+            if (Input.GetButtonDown("Use Item"))
             {
-                DigHole();
-            }
-            if (currentlySelecting.CompareTag("Hole"))
-            {
-                CheckSeedNumber();
+                //When left click, based on item held, trigger function
+                if (currentlySelecting.CompareTag("Ground") && (Time.time >= invScript.nextDig))
+                {
+                    DigHole();
+                }
+                if (currentlySelecting.CompareTag("Hole"))
+                {
+                    CheckSeedNumber();
 
-            }
-            if (currentlySelecting.CompareTag("Seed"))
-            {
-                Water();
-            }
-            if(currentlySelecting.CompareTag("Plant"))
-            {
-                objectsInTrigger.Remove(currentlySelecting);
-                contextBasedUI.AfterHarvest();
-                currentlySelecting.gameObject.GetComponent<PlantGrowth>().Harvest();
+                }
+                if (currentlySelecting.CompareTag("Seed"))
+                {
+                    Water();
+                }
+                if (currentlySelecting.CompareTag("Plant"))
+                {
+                    objectsInTrigger.Remove(currentlySelecting);
+                    contextBasedUI.AfterHarvest();
+                    currentlySelecting.gameObject.GetComponent<PlantGrowth>().Harvest();
+                }
             }
         }
     }

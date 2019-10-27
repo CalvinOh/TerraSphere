@@ -58,16 +58,16 @@ public class Slot : MonoBehaviour
             if (item.GetComponent<Item>().type == "Plant")
             {
                 UseItem();
-                this.player.GetComponent<Inventory>().ToggleDisplayInventory();
             }
             else if (item.GetComponent<Item>().type == "Seed")
             {
                 this.player.GetComponent<PlayerController>().seedItem = item;
                 this.player.GetComponent<PlayerController>().contextBasedUI.GetComponent<ContextBasedUI>().seedIcon = item.GetComponent<Item>().icon;
                 //this.player.GetComponent<PlayerController>().seedSlotBackground.GetComponent<Image>().sprite = item.GetComponent<Item>().icon;
-                this.player.GetComponent<Inventory>().ToggleDisplayInventory();
 
             }
+            this.player.GetComponent<Inventory>().nextDig = Time.time + 0.6f;
+            this.player.GetComponent<Inventory>().ToggleDisplayInventory();
         }
     }
 
@@ -76,13 +76,14 @@ public class Slot : MonoBehaviour
         this.gameObject.GetComponent<Toggle>().interactable = true;
         slotIconGO.GetComponent<Image>().sprite = icon;
         this.item.GetComponent<Item>().AssignParent(this);
+        this.empty = false;
     }
 
     public void UseItem()
     {
         item.GetComponent<Item>().itemUsage(this);
         stackNumber--;
-        if(stackNumber <= 0)
+        if (stackNumber <= 0)
         {
             //empty = true;
 

@@ -8,7 +8,9 @@ public class Inventory : MonoBehaviour
 {
     [SerializeField]
     [Tooltip("The toggle the inventory starts on.")]
-    private GameObject toggleStart;
+    private GameObject toggleStartS;
+    [SerializeField]
+    private GameObject toggleStartP;
 
     public bool inventoryDisplaying = true;
     public GameObject seedInventoryCanvas;
@@ -31,6 +33,8 @@ public class Inventory : MonoBehaviour
     //Check Controller Connected
     string[] connectedControllers;
 
+    public float nextDig = 0;
+
     private void Start()
     {
         // Find how many slots the UI has for the inventory
@@ -40,9 +44,13 @@ public class Inventory : MonoBehaviour
 
         connectedControllers = Input.GetJoystickNames();
 
-        if (toggleStart == null)
+        if (toggleStartS == null)
         {
-            toggleStart = seedSlotHolder.GetComponentInChildren<Toggle>().gameObject;
+            toggleStartS = seedSlotHolder.GetComponentInChildren<Toggle>().gameObject;
+        }
+        if (toggleStartP == null)
+        {
+            toggleStartP = plantSlotHolder.GetComponentInChildren<Toggle>().gameObject;
         }
 
         ToggleDisplayInventory();
@@ -71,6 +79,7 @@ public class Inventory : MonoBehaviour
             if (plantSlot[i].GetComponent<Slot>().item == null)
             {
                 plantSlot[i].GetComponent<Slot>().empty = true;
+                //plantSlot[i].GetComponent<Toggle>().interactable = false;
             }
         }
     }
@@ -85,12 +94,12 @@ public class Inventory : MonoBehaviour
 
         if (inventoryDisplaying)
         {
+            UpdateDescriptionBox(); //update during inventory displaying
             if (Input.GetButtonDown("Right Bumper") || Input.GetButtonDown("Left Bumper"))
             {
                 seedTab = !seedTab;
                 ToggleTabDisplayed();
             }
-            UpdateDescriptionBox();
         }
         //print(eventSystem.currentSelectedGameObject);
     }
@@ -126,15 +135,22 @@ public class Inventory : MonoBehaviour
         if (eventSystem.currentSelectedGameObject != esLastSelected)
         {
             if(seedTab)
-                seedTextBox.text = eventSystem.currentSelectedGameObject.GetComponent<Slot>().item.GetComponent<Item>().itemDescriptionBoxContent();
+            {
+                seedTextBox.text = eventSystem.currentSelectedGameObject.GetComponent<Slot>().item.GetComponent<Item>().itemDescriptionBoxContent()
+                    ?? "Slot is Empty";
+            }
             else
-                plantTextBox.text = eventSystem.currentSelectedGameObject.GetComponent<Slot>().item.GetComponent<Item>().itemDescriptionBoxContent();
+            {
+                plantTextBox.text = eventSystem.currentSelectedGameObject.GetComponent<Slot>().item.GetComponent<Item>().itemDescriptionBoxContent()
+                    ?? "Slot is Empty";
+            }
         }
         esLastSelected = eventSystem.currentSelectedGameObject;
     }
 
     public void ToggleDisplayInventory()
     {
+        UpdateDescriptionBox(); // Update before displaying inventory
         //eventSystem.SetSelectedGameObject(toggleStart);
         inventoryDisplaying = !inventoryDisplaying;
         if (inventoryDisplaying)
@@ -156,8 +172,8 @@ public class Inventory : MonoBehaviour
             seedInventoryCanvas.GetComponent<Canvas>().targetDisplay = 0;
             plantInventoryCanvas.GetComponent<Canvas>().targetDisplay = 7;
 
-            toggleStart = seedSlotHolder.GetComponentInChildren<Toggle>().gameObject;
-            eventSystem.SetSelectedGameObject(toggleStart);
+            //toggleStartS = seedSlotHolder.GetComponentInChildren<Toggle>().gameObject;
+            eventSystem.SetSelectedGameObject(toggleStartS);
             // making sure that all of the slots are not "chosen"
             for (int i = 0; i < seedSlot.Length; i++)
             {
@@ -170,8 +186,8 @@ public class Inventory : MonoBehaviour
             seedInventoryCanvas.GetComponent<Canvas>().targetDisplay = 7;
             plantInventoryCanvas.GetComponent<Canvas>().targetDisplay = 0;
 
-            toggleStart = plantSlotHolder.GetComponentInChildren<Toggle>().gameObject;
-            eventSystem.SetSelectedGameObject(toggleStart);
+            //toggleStartP = plantSlotHolder.GetComponentInChildren<Toggle>().gameObject;
+            eventSystem.SetSelectedGameObject(toggleStartP); // Event system keeps going back to seedSlot as selected.
             // making sure that all of the slots are not "chosen"
             for (int i = 0; i < plantSlot.Length; i++)
             {
@@ -179,6 +195,7 @@ public class Inventory : MonoBehaviour
             }
             //Cursor.lockState = CursorLockMode.None;
         }
+        UpdateDescriptionBox(); // Update after switching inventory tabs
     }
 
     private void OnTriggerEnter(Collider other)
@@ -269,7 +286,6 @@ public class Inventory : MonoBehaviour
                 itemObject.transform.position = this.gameObject.GetComponent<PlayerController>().planet.transform.position; //new Vector3(0, 0, 0);
                 
                 temp[i].GetComponent<Slot>().UpdateSlot();
-                temp[i].GetComponent<Slot>().empty = false;
                 return;
             }
         }
