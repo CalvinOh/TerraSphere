@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 25e3a015a58665b4aa91dd7006a458a2
+guid: 193fc8766fa6d1542a2f9b3d8395f383
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: Take 001
+    second: breathe
   externalObjects: {}
   materials:
     importMaterials: 0
@@ -26,7 +26,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: breathe
       takeName: Take 001
       internalID: 1827226128182048838
-      firstFrame: 2.5
-      lastFrame: 26
+      firstFrame: 1
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
