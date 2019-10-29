@@ -121,7 +121,7 @@ MonoBehaviour:
   ID: 8
   type: Plant
   description: It looks like a plant? Maybe it's tasty
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 312d3d978b770854cb50622aea980ad4, type: 3}
   pickedUp: 0
   oxygenValue: 10
   stackNumber: 1

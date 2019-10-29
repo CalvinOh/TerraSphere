@@ -121,7 +121,7 @@ MonoBehaviour:
   ID: 7
   type: Plant
   description: A harvested shroom, ready for consumption
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: c771540a0f1f64747b1877863f4e9055, type: 3}
   pickedUp: 0
   oxygenValue: 10
   stackNumber: 1
