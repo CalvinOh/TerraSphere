@@ -90,6 +90,18 @@ public class Inventory : MonoBehaviour
         {
             DetermineIfUsingController();
         }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                ToggleDisplayInventory();
+
+                if (inventoryDisplaying)
+                    Cursor.lockState = CursorLockMode.None;
+                else if (!inventoryDisplaying)
+                    Cursor.lockState = CursorLockMode.Locked;
+            }
+        }
 
 
         if (inventoryDisplaying)
@@ -115,18 +127,7 @@ public class Inventory : MonoBehaviour
                     ToggleDisplayInventory();
                 }
             }
-            else
-            {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    ToggleDisplayInventory();
-
-                    if (inventoryDisplaying)
-                        Cursor.lockState = CursorLockMode.None;
-                    else if (!inventoryDisplaying)
-                        Cursor.lockState = CursorLockMode.Locked;
-                }
-            }
+            
         }
     }
 
