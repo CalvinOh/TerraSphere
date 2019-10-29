@@ -51,10 +51,10 @@ MonoBehaviour:
   GrowthSpeed: 1
   StartingSize: 0.3
   FinalSize: 2
-  Stage1Cap: 10
-  Stage2Cap: 20
-  Stage1TerraFormPerSecond: 10
-  Stage2TerraFormPerSecond: 20
+  Stage1Cap: 7
+  Stage2Cap: 14
+  Stage1TerraFormPerSecond: 5
+  Stage2TerraFormPerSecond: 10
   Stage1: {fileID: 5730685787555002626}
   Stage2: {fileID: 2182453743569394385}
   MinAmountOfSeedDrop: 1

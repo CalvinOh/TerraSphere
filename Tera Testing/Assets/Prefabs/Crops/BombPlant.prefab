@@ -52,9 +52,9 @@ MonoBehaviour:
   StartingSize: 0.3
   FinalSize: 2
   Stage1Cap: 10
-  Stage2Cap: 20
-  Stage1TerraFormPerSecond: 10
-  Stage2TerraFormPerSecond: 20
+  Stage2Cap: 18
+  Stage1TerraFormPerSecond: 5
+  Stage2TerraFormPerSecond: 22
   Stage1: {fileID: 1867145541310396558}
   Stage2: {fileID: 3375137774673334146}
   MinAmountOfSeedDrop: 1
