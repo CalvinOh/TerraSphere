@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 6372456419642487492}
   m_Layer: 0
   m_Name: GrassOnSurface01
-  m_TagString: Untagged
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,11 +52,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6372456419642487492}
     m_Modifications:
-    - target: {fileID: 4411622128002972329, guid: 0594b79476c78e448b6707acd05f5664,
-        type: 3}
-      propertyPath: m_Name
-      value: Grass01
-      objectReference: {fileID: 0}
     - target: {fileID: 4411622128002972331, guid: 0594b79476c78e448b6707acd05f5664,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -126,6 +121,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.08002462
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411622128002972329, guid: 0594b79476c78e448b6707acd05f5664,
+        type: 3}
+      propertyPath: m_Name
+      value: Grass01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411622128002972329, guid: 0594b79476c78e448b6707acd05f5664,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grass
       objectReference: {fileID: 0}
     - target: {fileID: 4411622128002972328, guid: 0594b79476c78e448b6707acd05f5664,
         type: 3}

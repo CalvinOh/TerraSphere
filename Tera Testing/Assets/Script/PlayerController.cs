@@ -127,6 +127,7 @@ public class PlayerController : MonoBehaviour
             currentlySelecting = planet;
            
         }
+  
 
     }
 
@@ -241,8 +242,12 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        objectsInTrigger.Add(other.gameObject);
-        currentlySelecting = other.gameObject;
+        if(other.gameObject.tag != "Grass")
+        {
+            objectsInTrigger.Add(other.gameObject);
+            currentlySelecting = other.gameObject;
+        }
+       
     
     }
 

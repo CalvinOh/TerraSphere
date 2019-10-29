@@ -60,43 +60,6 @@ CapsuleCollider:
   m_Height: 3.6461868
   m_Direction: 1
   m_Center: {x: 0.011320591, y: 1.9405365, z: 0}
---- !u!114 &6628017133948517553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3527049133544179183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4655b7a92808ed94a9580cf9f90b68e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 15
-  hotBarInventory:
-  - {fileID: 0}
-  - {fileID: 1725089123845229640, guid: 8bc7ce2451e8f4c4781a7a5b86b68493, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  invScript: {fileID: 0}
-  itemInInventorySelected: 0
-  spawnHeldLocation: {fileID: 0}
-  spawnItemLocation: {fileID: 0}
-  currentlyHolding: {fileID: 0}
-  blankSlot: {fileID: 0}
-  jumpHeight: 500
-  currentlySelecting: {fileID: 0}
-  shovel: {fileID: 3177799350950190381, guid: a0b6729568d46fe47bc7a5d82db09df2, type: 3}
-  rake: {fileID: 1093187540545653568, guid: 9e96b98f3cb232147a33a635359a624a, type: 3}
-  wateringCan: {fileID: 2079379734958626780, guid: f98f4e7ddb6382848b0d5ce12489e571,
-    type: 3}
-  oxygenValue: 0
-  oxygenMax: 100
-  speed: 100
-  TPSCamera: {fileID: 0}
-  TDCamera: {fileID: 0}
-  planet: {fileID: 0}
-  objectsInTrigger: []
 --- !u!114 &1893010981821403099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,10 +86,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6cd6746cbfad0499a38887933f8dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toggleStart: {fileID: 0}
   inventoryDisplaying: 1
-  inventory: {fileID: 0}
-  slot: []
-  slotHolder: {fileID: 0}
+  seedInventoryCanvas: {fileID: 0}
+  plantInventoryCanvas: {fileID: 0}
+  seedSlot: []
+  plantSlot: []
+  seedSlotHolder: {fileID: 0}
+  plantSlotHolder: {fileID: 0}
+  seedTab: 1
+  seedTextBox: {fileID: 0}
+  plantTextBox: {fileID: 0}
+--- !u!114 &6628017133948517553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3527049133544179183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4655b7a92808ed94a9580cf9f90b68e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 15
+  speed: 100
+  SecondsTakenToFullSpeed: 1
+  invScript: {fileID: 0}
+  currentlySelecting: {fileID: 0}
+  seedItem: {fileID: 0}
+  groundHole: {fileID: 0}
+  planet: {fileID: 0}
+  spawnItemLocation: {fileID: 0}
+  objectsInTrigger: []
+  oxygenValue: 0
+  oxygenDecreaseValue: 0
+  oxygenMax: 100
 --- !u!1 &4518731176602227987
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2138703530824299944}
-  - component: {fileID: 4220444247866162850}
+  - component: {fileID: 4406741088288768378}
   m_Layer: 0
   m_Name: Spawn/Check_Location
   m_TagString: Untagged
@@ -152,14 +147,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4518731176602227987}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.10000038, y: -0.126, z: 1.51}
+  m_LocalPosition: {x: -0.10000038, y: 0.03, z: 1.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 480127758728886268}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4220444247866162850
-BoxCollider:
+--- !u!135 &4406741088288768378
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -169,8 +164,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1.2
+  m_Center: {x: -0.04360962, y: 0, z: -0.00289917}
 --- !u!1 &5692662549835385838
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,11 +375,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: finmodel
       objectReference: {fileID: 0}
-    - target: {fileID: -4622407528917056833, guid: 62cace186ca42aa4d8fd67aec8cd4514,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 0e0e334d3dc2f2c43bc35a33eb708385, type: 2}
     - target: {fileID: -4216859302048453862, guid: 62cace186ca42aa4d8fd67aec8cd4514,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -450,6 +440,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 69af3c2153215ce49b45a87912a980ad, type: 2}
+    - target: {fileID: -4622407528917056833, guid: 62cace186ca42aa4d8fd67aec8cd4514,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e0e334d3dc2f2c43bc35a33eb708385, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62cace186ca42aa4d8fd67aec8cd4514, type: 3}
 --- !u!1 &3527049133544179183 stripped
