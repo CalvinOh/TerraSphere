@@ -1162,6 +1162,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b03c6dce2464b9245901e8008da07f9d, type: 3}
+--- !u!114 &466920084 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7745186587720555797, guid: 1b6fb9bd3e28ccf44a26ecf30abf577c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1728876801}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &490647227
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,6 +1507,12 @@ MonoBehaviour:
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &719795715 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1269478601112523761, guid: 1b6fb9bd3e28ccf44a26ecf30abf577c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1728876801}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &750506549
 GameObject:
   m_ObjectHideFlags: 0
@@ -2518,6 +2536,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3236493689784191545, guid: 46e9558e5eb391045a3cd68def67186c,
+        type: 3}
+      propertyPath: m_Name
+      value: ship_P
+      objectReference: {fileID: 0}
+    - target: {fileID: 3236493689784191545, guid: 46e9558e5eb391045a3cd68def67186c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Rocket
+      objectReference: {fileID: 0}
     - target: {fileID: 8121683615091504271, guid: 46e9558e5eb391045a3cd68def67186c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2587,16 +2615,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 3236493689784191545, guid: 46e9558e5eb391045a3cd68def67186c,
-        type: 3}
-      propertyPath: m_Name
-      value: ship_P
-      objectReference: {fileID: 0}
-    - target: {fileID: 3236493689784191545, guid: 46e9558e5eb391045a3cd68def67186c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Rocket
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6488769466198448826, guid: 46e9558e5eb391045a3cd68def67186c, type: 3}
@@ -4204,6 +4222,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2009892703}
   m_CullTransparentMesh: 0
+--- !u!1 &2017599623 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8330075224152440361, guid: 1b6fb9bd3e28ccf44a26ecf30abf577c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1728876801}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2098365207
 GameObject:
   m_ObjectHideFlags: 0
@@ -4248,6 +4272,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41adde4e3ce932c45ba47dd0d7760041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2122598200 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1269478601958795730, guid: 1b6fb9bd3e28ccf44a26ecf30abf577c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1728876801}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2125838493
 GameObject:
   m_ObjectHideFlags: 0
@@ -5484,7 +5514,7 @@ PrefabInstance:
         type: 3}
       propertyPath: plantSlotHolder
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2122598200}
     - target: {fileID: 6271376325731813486, guid: d64cfc0e221e98b408db0930da674aad,
         type: 3}
       propertyPath: seedTextBox
@@ -5494,7 +5524,17 @@ PrefabInstance:
         type: 3}
       propertyPath: plantTextBox
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 466920084}
+    - target: {fileID: 6271376325731813486, guid: d64cfc0e221e98b408db0930da674aad,
+        type: 3}
+      propertyPath: toggleStartP
+      value: 
+      objectReference: {fileID: 719795715}
+    - target: {fileID: 6271376325731813486, guid: d64cfc0e221e98b408db0930da674aad,
+        type: 3}
+      propertyPath: toggleStartS
+      value: 
+      objectReference: {fileID: 2017599623}
     - target: {fileID: 2138703530824299944, guid: d64cfc0e221e98b408db0930da674aad,
         type: 3}
       propertyPath: m_LocalPosition.y
