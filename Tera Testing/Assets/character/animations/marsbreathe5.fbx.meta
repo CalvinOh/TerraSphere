@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 38f39061440b1104ba80b8b77562688e
+guid: 40ff664b315c3ae4b947e8264632f9a7
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
   - first:
-      74: 1827226128182048838
-    second: Take 001
+      74: -146150326026531945
+    second: breathe
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
-      takeName: Take 001
-      internalID: 1827226128182048838
-      firstFrame: 2.5
-      lastFrame: 26
+      name: breathe
+      takeName: marsbreathe5
+      internalID: -146150326026531945
+      firstFrame: 1
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

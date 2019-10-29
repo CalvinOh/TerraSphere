@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: b8a04d06b423af74689aae0d002729df
+guid: 36924c2a2aeffae4fbbe82842d9ae5ae
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
   - first:
-      74: 1827226128182048838
-    second: Take 001
+      74: -1207287165054307774
+    second: marswalkfinal
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -35,9 +35,9 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
-      takeName: Take 001
-      internalID: 1827226128182048838
+      name: marswalkfinal
+      takeName: marswalkfinal
+      internalID: -1207287165054307774
       firstFrame: 1
       lastFrame: 24
       wrapMode: 0
