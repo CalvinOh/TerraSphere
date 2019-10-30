@@ -64,11 +64,12 @@ public class PlayerController : MonoBehaviour
 
     //UI for context based direction.
     public ContextBasedUI contextBasedUI { get; private set; }
-
+    private Animator MyAnimator;
     
 
     private void Start()
     {
+        MyAnimator = GetComponent<Animator>();
         if(contextBasedUI == null)
         {
             contextBasedUI = FindObjectOfType<ContextBasedUI>();
@@ -100,16 +101,20 @@ public class PlayerController : MonoBehaviour
        
         if (!invScript.inventoryDisplaying)
         {
-            RotateCamera();
-            ContextSelectingItem();
+            //if (MyAnimator.GetCurrentAnimatorStateInfo(0).IsName("breath") || MyAnimator.GetCurrentAnimatorStateInfo(0).IsName("walk"))
+            {
+                RotateCamera();
+                ContextSelectingItem();
+            }
         }
        
         ReassigningPlanetAsBaseSelection();
-
+        HandleAnimatioons();
         DecreaseOxygen();
     }
     private void FixedUpdate()
     {
+        //if(MyAnimator.GetCurrentAnimatorStateInfo(0).IsName("breath")|| MyAnimator.GetCurrentAnimatorStateInfo(0).IsName("walk"))
         Movement();
     }
 
@@ -118,6 +123,16 @@ public class PlayerController : MonoBehaviour
     {
         oxygenValue -= oxygenDecreaseValue;
         oxygenValue = Mathf.Clamp(oxygenValue, 0f, 100f);
+    }
+
+    private void HandleAnimatioons()
+    {
+        MyAnimator.SetFloat("Speed", MoveSpeedCurrentMultiplier);
+    }
+
+    public void PlayEatingAnimation()
+    {
+        MyAnimator.Play("eat");
     }
 
     //After the player walks away from an object, this makes the planet as the selected object. 
@@ -153,6 +168,7 @@ public class PlayerController : MonoBehaviour
                 if (currentlySelecting.CompareTag("Seed"))
                 {
                     Water();
+                    
                 }
                 if (currentlySelecting.CompareTag("Plant"))
                 {
@@ -170,6 +186,7 @@ public class PlayerController : MonoBehaviour
             //Trigger plant accelarate function
             print("Watering");
             currentlySelecting.gameObject.GetComponent<PlantGrowth>().Water(10f);
+            MyAnimator.Play("water");
         }
     }
     private void DigHole()
@@ -178,7 +195,7 @@ public class PlayerController : MonoBehaviour
         {
             print("Digging");
             Instantiate(groundHole, spawnItemLocation.transform.position, spawnItemLocation.transform.rotation);
-
+            MyAnimator.Play("pickup");
         }
     }
     void PlantSeed()
@@ -188,7 +205,7 @@ public class PlayerController : MonoBehaviour
             GameObject newSeed = (GameObject)Instantiate(seedItem.GetComponent<SeedItem>().plantToGrowInto, spawnItemLocation.transform.position, spawnItemLocation.transform.rotation);
             newSeed.gameObject.GetComponent<PlantGrowth>().Grow = true;
             print("Planting");
-
+            MyAnimator.Play("pickup");
         }
 
     }
