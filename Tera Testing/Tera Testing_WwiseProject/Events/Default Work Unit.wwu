@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{67DB832D-096F-46EA-AFEC-C809B6AC0548}" SchemaVersion="94">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{67DB832D-096F-46EA-AFEC-C809B6AC0548}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="play_ts_sx_uni_plr_footsteps" ID="{8B65EE62-4CCC-49AA-AAF9-6393EA83E5A7}">
+					<ChildrenList>
+						<Action Name="" ID="{71C5E690-DFE7-4EB0-A510-AE37E3804998}" ShortID="667306279">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Plr Footstep Base" ID="{259CFE34-01C4-44A2-8B2A-B3D5C80DEC49}" WorkUnitID="{B5EF5589-4D56-4D54-BD95-57157958CE5B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{88773975-1067-444F-9765-8390EC9DF9FD}" ShortID="405489370">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Footstep_Layers" ID="{F78BE306-ED4A-4BE1-8FC5-A6E5554503A0}" WorkUnitID="{B5EF5589-4D56-4D54-BD95-57157958CE5B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_ts_sx_uni_int_shovel" ID="{073A1B0C-A19C-455A-8330-7D82E9630CD7}">
+					<ChildrenList>
+						<Action Name="" ID="{BE8BB5ED-1C71-4BFB-8EF2-EA09746ADAC8}" ShortID="733981263">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Shovel" ID="{B0F3F674-B736-4403-934C-F80BB7A23AB3}" WorkUnitID="{B5EF5589-4D56-4D54-BD95-57157958CE5B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_ts_sx_uni_env_bush_thru" ID="{14E7B026-34BA-4250-90DB-FF1B0EFFA4F4}">
+					<ChildrenList>
+						<Action Name="" ID="{25612037-5B53-4ECF-B242-14AE40CE7CED}" ShortID="895711261">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ts_sx_uni_env_bush_thru" ID="{65EDEDA4-9AF6-49E4-A57D-00B2F12E8334}" WorkUnitID="{B5EF5589-4D56-4D54-BD95-57157958CE5B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_ts_sx_uni_int_plant_harvest" ID="{FDE338CA-CF85-4624-A1F6-4164C83AB176}">
+					<ChildrenList>
+						<Action Name="" ID="{417609A7-223E-47A1-9E21-68DE890AD47C}" ShortID="615533496">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ts_sx_uni_int_plant_harvest" ID="{F4074E61-B066-4BB5-BFBB-95E15AEA0C98}" WorkUnitID="{B5EF5589-4D56-4D54-BD95-57157958CE5B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_ts_sx_uni_int_seed_plant" ID="{ACADE5C2-6F29-493C-BE1A-ED91DE707F1B}">
+					<ChildrenList>
+						<Action Name="" ID="{3D558298-CDFC-4977-92EC-78B32DD72A62}" ShortID="408936487">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ts_sx_uni_int_seed_plant" ID="{E22923C3-27DB-4853-98B9-99F47D59C5CF}" WorkUnitID="{B5EF5589-4D56-4D54-BD95-57157958CE5B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_ts_sx_uni_int_water" ID="{5854C0B7-06C9-41A9-88B4-FCA9F847387D}">
+					<ChildrenList>
+						<Action Name="" ID="{096225CF-0F82-4A38-AEBF-45C9135625FF}" ShortID="922730404">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ts_sx_uni_int_water" ID="{E90F1238-7CEA-49BF-BC46-AC9821458864}" WorkUnitID="{B5EF5589-4D56-4D54-BD95-57157958CE5B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_ts_sx_uni_ui_oxygen_low" ID="{5CFE9EAF-C68D-46AA-95B6-3A530C2C9AF2}">
+					<ChildrenList>
+						<Action Name="" ID="{16042965-F718-472D-B8D0-D54C6D29E9E9}" ShortID="460302154">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ts_sx_uni_ui_oxygen_low" ID="{798D0729-8074-487E-B2AA-549FDE4225CC}" WorkUnitID="{B5EF5589-4D56-4D54-BD95-57157958CE5B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_ts_sx_uni_ui_plant_consume" ID="{28E691EA-7497-4E7A-9FD1-BDDEADE80BB4}">
+					<ChildrenList>
+						<Action Name="" ID="{87C6D92A-1083-4A77-8106-AD62351DBEA3}" ShortID="767273697">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ts_sx_uni_ui_plant_consume" ID="{B0703B39-8A84-4D5B-82FD-64364B273E91}" WorkUnitID="{B5EF5589-4D56-4D54-BD95-57157958CE5B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_ts_sx_uni_ui_close" ID="{A2F63A68-01A8-4BA7-B2A3-C0DD3598EA2C}">
+					<ChildrenList>
+						<Action Name="" ID="{3216D412-3DEB-4365-86F5-8F260E3E1A4B}" ShortID="565322657">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ts_sx_uni_ui_close" ID="{5CF90F5E-97ED-46E1-8323-BF7DAD988E88}" WorkUnitID="{B5EF5589-4D56-4D54-BD95-57157958CE5B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_ts_sx_uni_ui_navigate" ID="{C65DAE0B-4530-4AB6-A3AB-F438A60A0507}">
+					<ChildrenList>
+						<Action Name="" ID="{42AC8907-392F-4A91-8F84-5692C7A435C6}" ShortID="620815052">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ts_sx_uni_ui_navigate" ID="{61EF3833-6141-45DD-96E5-8E966E12AE35}" WorkUnitID="{B5EF5589-4D56-4D54-BD95-57157958CE5B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_ts_sx_uni_ui_open" ID="{859F0785-D276-4EE4-83ED-FA2A8AC5994B}">
+					<ChildrenList>
+						<Action Name="" ID="{C276DB40-3E0D-4DA0-8225-137AFFED812B}" ShortID="145960950">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ts_sx_uni_ui_open" ID="{F8C57E8E-49F1-43C9-A181-D3BA07895C4D}" WorkUnitID="{B5EF5589-4D56-4D54-BD95-57157958CE5B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_ts_sx_uni_ui_select" ID="{BFD5DDFE-8702-4FF6-85EE-6C5081CDEA89}">
+					<ChildrenList>
+						<Action Name="" ID="{D1FBD8C1-24F3-4044-AADB-6D48FD6E689E}" ShortID="10930760">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ts_sx_uni_ui_select" ID="{7F0E012F-DA8C-4581-AA70-19492D76EA21}" WorkUnitID="{B5EF5589-4D56-4D54-BD95-57157958CE5B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Ambience" ID="{052B0F41-C135-429A-95CE-FAEB3FA9C1C1}">
+					<ChildrenList>
+						<Action Name="" ID="{1F30C6A4-1ABF-408A-A4CA-2F9F5F0415B8}" ShortID="85707912">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ambiences" ID="{58322797-9600-419A-BCA3-E87F491A5D3D}" WorkUnitID="{B5EF5589-4D56-4D54-BD95-57157958CE5B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
