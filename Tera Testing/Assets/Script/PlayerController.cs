@@ -65,7 +65,8 @@ public class PlayerController : MonoBehaviour
     //UI for context based direction.
     public ContextBasedUI contextBasedUI { get; private set; }
     private Animator MyAnimator;
-    
+
+    int firstPass = 0;
 
     private void Start()
     {
@@ -87,7 +88,12 @@ public class PlayerController : MonoBehaviour
             print("Planet Found");
         }
         objectsInTrigger = new List<GameObject>();
-        seedItem = invScript.seedSlot[0].GetComponent<Slot>().item;
+
+        if (invScript.seedSlot.Length < 6)
+            firstPass = 1;
+        //    invScript.SetUpSeedAndPlantSlots();
+        if(firstPass == 0)
+            seedItem = invScript.seedSlot[0].GetComponent<Slot>().item;
         contextBasedUI.seedIcon = seedItem.GetComponent<Item>().icon;
 
         Cursor.lockState = CursorLockMode.Locked;
@@ -97,8 +103,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        EasyMode();
 
-       
         if (!invScript.inventoryDisplaying)
         {
             //if (MyAnimator.GetCurrentAnimatorStateInfo(0).IsName("breath") || MyAnimator.GetCurrentAnimatorStateInfo(0).IsName("walk"))
@@ -107,11 +113,22 @@ public class PlayerController : MonoBehaviour
                 ContextSelectingItem();
             }
         }
-       
+
         ReassigningPlanetAsBaseSelection();
         HandleAnimatioons();
         DecreaseOxygen();
     }
+
+    private void EasyMode()
+    {
+        if (firstPass < 4)
+            firstPass += 1;
+        if (firstPass == 1)
+            // Success
+            if (firstPass == 3)
+                seedItem = invScript.seedSlot[0].GetComponent<Slot>().item;
+    }
+
     private void FixedUpdate()
     {
         //if(MyAnimator.GetCurrentAnimatorStateInfo(0).IsName("breath")|| MyAnimator.GetCurrentAnimatorStateInfo(0).IsName("walk"))

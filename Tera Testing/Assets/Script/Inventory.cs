@@ -56,7 +56,7 @@ public class Inventory : MonoBehaviour
         ToggleDisplayInventory();
     }
 
-    private void SetUpSeedAndPlantSlots()
+    public void SetUpSeedAndPlantSlots()
     {
         totalSeedSlots = seedSlotHolder.GetComponentsInChildren<Slot>().Length;
         seedSlot = new GameObject[totalSeedSlots];
@@ -79,7 +79,6 @@ public class Inventory : MonoBehaviour
             if (plantSlot[i].GetComponent<Slot>().item == null)
             {
                 plantSlot[i].GetComponent<Slot>().empty = true;
-                //plantSlot[i].GetComponent<Toggle>().interactable = false;
             }
         }
     }
