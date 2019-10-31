@@ -119,11 +119,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfa4751f29fb1fe4ea3ff5fe11fafc2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 3
+  ID: 14
   type: Seed
   description: A small Jelly you can plant!
-  icon: {fileID: 21300000, guid: c5bdf90083404dd48b2c652cadccb3af, type: 3}
+  icon: {fileID: 21300000, guid: 312d3d978b770854cb50622aea980ad4, type: 3}
   pickedUp: 0
   oxygenValue: 0
   stackNumber: 1
-  subType: Shroom Seed
+  subType: JellySeed
