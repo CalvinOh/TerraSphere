@@ -31,7 +31,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 4c0a8fbbfe23f541a45c13ac07bf3e40
     GuidInternal: 
-    m_lastTime: -8586291220314775808
+    m_lastTime: -8586290261814775808
     List:
     - name: Main
       guid: c319c4187372354dbc56b32d29cf2496
@@ -47,7 +47,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 2d83db676f09ea46afecc809b6ac0548
     GuidInternal: 
-    m_lastTime: -8586292054804775808
+    m_lastTime: -8586290249644775808
     List:
     - name: Play_Ambience
       guid: 410f2b0535c19a4295cefaeb3fa9c1c1
@@ -58,6 +58,30 @@ MonoBehaviour:
       - ElementName: Play_Ambience
         ObjectType: 3
       Path: Default Work Unit/Play_Ambience
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_MainTheme
+      guid: ac74a0aea17f174495c3355497c5e760
+      id: 3009755888
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_MainTheme
+        ObjectType: 3
+      Path: Default Work Unit/Play_MainTheme
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Music
+      guid: 6b84f1140dff2742a1e2c77210c82b6b
+      id: 2932040671
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Music
+        ObjectType: 3
+      Path: Default Work Unit/Play_Music
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -205,12 +229,24 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.136375
       minDuration: 0.136375
+    - name: WwiseTerraformPercent
+      guid: 34ab30441ce97a4c932ffc8ea8d1e73c
+      id: 3992473883
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: WwiseTerraformPercent
+        ObjectType: 3
+      Path: Default Work Unit/WwiseTerraformPercent
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 011c64672a1dbc4cbb1ad1f5e0fb072b
     GuidInternal: 
-    m_lastTime: -8586292064174775808
+    m_lastTime: -8586290261814775808
     List:
     - name: TerraformPercent
       guid: d19eba2d39e6e34ba2a2de7d24cab1ca
@@ -226,8 +262,45 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 8a6c2949df5831448f19255fa02b02fd
     GuidInternal: 
-    m_lastTime: -8586292255874775808
-    List: []
+    m_lastTime: -8586290261814775808
+    List:
+    - name: TerraformProgress
+      guid: be3c9feb6b910246839c95aa48193338
+      id: 2315045542
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: TerraformProgress
+        ObjectType: 9
+      Path: Default Work Unit/TerraformProgress
+      values:
+      - name: Cheerful
+        guid: a54507eb65f36546826b9344785605eb
+        id: 3269321353
+        PathAndIcons:
+        - ElementName: Cheerful
+          ObjectType: 8
+      - name: Desolate
+        guid: d793a2912d310545a8520c4843f48e8f
+        id: 3464252766
+        PathAndIcons:
+        - ElementName: Desolate
+          ObjectType: 8
+      - name: Hopeful
+        guid: ed4833ee58054c40842efcb55b87c63a
+        id: 2757808320
+        PathAndIcons:
+        - ElementName: Hopeful
+          ObjectType: 8
+      - name: None
+        guid: 8b111baca555404c8433e207cdd1315a
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   SwitchWwu:
   - PhysicalPath: Switches/Default Work Unit.wwu
     ParentPhysicalPath: 
@@ -271,7 +344,5 @@ MonoBehaviour:
   - /Tera Testing_WwiseProject
   - /Tera Testing_WwiseProject/Events
   - /Tera Testing_WwiseProject/Events/Default Work Unit
-  - /Tera Testing_WwiseProject/SoundBanks
-  - /Tera Testing_WwiseProject/SoundBanks/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

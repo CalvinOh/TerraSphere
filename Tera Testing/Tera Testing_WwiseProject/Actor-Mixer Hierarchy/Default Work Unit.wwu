@@ -7,7 +7,7 @@
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-3</Value>
+								<Value>-12</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -118,25 +118,25 @@
 									<CrossfadingInfo>
 										<LeftEdgePos>0</LeftEdgePos>
 										<LeftFadingMode>Automatic</LeftFadingMode>
-										<RightEdgePos>40.1424121050289</RightEdgePos>
+										<RightEdgePos>0.401424121050289</RightEdgePos>
 										<RightFadingMode>Automatic</RightFadingMode>
 									</CrossfadingInfo>
 								</BlendTrackAssoc>
 								<BlendTrackAssoc>
 									<ItemRef Name="ts_sx_uni_amb_hopeful" ID="{E82E6704-DD94-4872-8C66-E6B2DBA3261E}"/>
 									<CrossfadingInfo>
-										<LeftEdgePos>19.9821984868714</LeftEdgePos>
+										<LeftEdgePos>0.199821984868714</LeftEdgePos>
 										<LeftFadingMode>Automatic</LeftFadingMode>
-										<RightEdgePos>80.0178015131286</RightEdgePos>
+										<RightEdgePos>0.800178015131286</RightEdgePos>
 										<RightFadingMode>Automatic</RightFadingMode>
 									</CrossfadingInfo>
 								</BlendTrackAssoc>
 								<BlendTrackAssoc>
 									<ItemRef Name="ts_sx_uni_amb_cheerful" ID="{AE632932-95EF-4847-9028-7B03EEDA5A20}"/>
 									<CrossfadingInfo>
-										<LeftEdgePos>59.9910992434357</LeftEdgePos>
+										<LeftEdgePos>0.599910992434357</LeftEdgePos>
 										<LeftFadingMode>Automatic</LeftFadingMode>
-										<RightEdgePos>100</RightEdgePos>
+										<RightEdgePos>1</RightEdgePos>
 										<RightFadingMode>Automatic</RightFadingMode>
 									</CrossfadingInfo>
 								</BlendTrackAssoc>
@@ -169,6 +169,11 @@
 									</Modifier>
 								</ModifierInfo>
 							</ModifierList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
 						</Property>
 					</PropertyList>
 					<ReferenceList>
@@ -637,6 +642,13 @@
 				<Folder Name="Oneshots" ID="{088F041E-0E25-4B6E-8736-2254FD3826F8}" ShortID="396504482">
 					<ChildrenList>
 						<Sound Name="ts_sx_uni_env_bush_thru" ID="{65EDEDA4-9AF6-49E4-A57D-00B2F12E8334}" ShortID="285335367">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{13807498-01DA-4DC6-AF65-8BB9FB440611}"/>
@@ -668,6 +680,11 @@
 											</Modifier>
 										</ModifierInfo>
 									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
 								</Property>
 							</PropertyList>
 							<ReferenceList>
@@ -701,6 +718,11 @@
 											</Modifier>
 										</ModifierInfo>
 									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
 								</Property>
 							</PropertyList>
 							<ReferenceList>
@@ -739,6 +761,11 @@
 											</Modifier>
 										</ModifierInfo>
 									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
 								</Property>
 							</PropertyList>
 							<ReferenceList>
@@ -793,6 +820,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="ts_sx_uni_ui_plant_consume" ID="{B0703B39-8A84-4D5B-82FD-64364B273E91}" ShortID="798645459">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{13807498-01DA-4DC6-AF65-8BB9FB440611}"/>
@@ -816,6 +850,13 @@
 				<Folder Name="UI" ID="{A25BE7BC-DF90-4472-86D2-7A4A3B87FC7B}" ShortID="263819216">
 					<ChildrenList>
 						<Sound Name="ts_sx_uni_ui_close" ID="{5CF90F5E-97ED-46E1-8323-BF7DAD988E88}" ShortID="228291867">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{13807498-01DA-4DC6-AF65-8BB9FB440611}"/>
@@ -835,6 +876,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="ts_sx_uni_ui_navigate" ID="{61EF3833-6141-45DD-96E5-8E966E12AE35}" ShortID="22306030">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{13807498-01DA-4DC6-AF65-8BB9FB440611}"/>
@@ -854,6 +902,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="ts_sx_uni_ui_open" ID="{F8C57E8E-49F1-43C9-A181-D3BA07895C4D}" ShortID="890980673">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{13807498-01DA-4DC6-AF65-8BB9FB440611}"/>
@@ -873,6 +928,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="ts_sx_uni_ui_select" ID="{7F0E012F-DA8C-4581-AA70-19492D76EA21}" ShortID="236662151">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{13807498-01DA-4DC6-AF65-8BB9FB440611}"/>

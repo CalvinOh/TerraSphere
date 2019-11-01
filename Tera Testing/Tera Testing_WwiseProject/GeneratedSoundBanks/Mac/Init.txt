@@ -1,3 +1,12 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	2315045542	TerraformProgress			\Default Work Unit\TerraformProgress	
+
+State	ID	Name	State Group			Notes
+	0	None	TerraformProgress			
+	2757808320	Hopeful	TerraformProgress			
+	3269321353	Cheerful	TerraformProgress			
+	3464252766	Desolate	TerraformProgress			
+
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 

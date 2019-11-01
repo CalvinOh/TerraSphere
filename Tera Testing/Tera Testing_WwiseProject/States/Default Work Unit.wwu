@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{49296C8A-58DF-4431-8F19-255FA02B02FD}" SchemaVersion="94">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{49296C8A-58DF-4431-8F19-255FA02B02FD}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{49296C8A-58DF-4431-8F19-255FA02B02FD}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="TerraformProgress" ID="{EB9F3CBE-916B-4602-839C-95AA48193338}">
+					<ChildrenList>
+						<State Name="None" ID="{AC1B118B-55A5-4C40-8433-E207CDD1315A}"/>
+						<State Name="Desolate" ID="{91A293D7-312D-4505-A852-0C4843F48E8F}"/>
+						<State Name="Hopeful" ID="{EE3348ED-0558-404C-842E-FCB55B87C63A}"/>
+						<State Name="Cheerful" ID="{EB0745A5-F365-4665-826B-9344785605EB}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>

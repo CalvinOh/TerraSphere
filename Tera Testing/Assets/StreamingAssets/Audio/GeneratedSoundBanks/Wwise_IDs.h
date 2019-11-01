@@ -14,6 +14,8 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID PLAY_AMBIENCE = 278617630U;
+        static const AkUniqueID PLAY_MAINTHEME = 3009755888U;
+        static const AkUniqueID PLAY_MUSIC = 2932040671U;
         static const AkUniqueID PLAY_TS_SX_UNI_ENV_BUSH_THRU = 4229852413U;
         static const AkUniqueID PLAY_TS_SX_UNI_INT_PLANT_HARVEST = 416558692U;
         static const AkUniqueID PLAY_TS_SX_UNI_INT_SEED_PLANT = 2965097530U;
@@ -27,6 +29,22 @@ namespace AK
         static const AkUniqueID PLAY_TS_SX_UNI_UI_PLANT_CONSUME = 2262292382U;
         static const AkUniqueID PLAY_TS_SX_UNI_UI_SELECT = 3919949730U;
     } // namespace EVENTS
+
+    namespace STATES
+    {
+        namespace TERRAFORMPROGRESS
+        {
+            static const AkUniqueID GROUP = 2315045542U;
+
+            namespace STATE
+            {
+                static const AkUniqueID CHEERFUL = 3269321353U;
+                static const AkUniqueID DESOLATE = 3464252766U;
+                static const AkUniqueID HOPEFUL = 2757808320U;
+            } // namespace STATE
+        } // namespace TERRAFORMPROGRESS
+
+    } // namespace STATES
 
     namespace SWITCHES
     {

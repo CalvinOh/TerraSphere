@@ -3328,7 +3328,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889444074}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6939621, y: 54.094604, z: 4.6563883}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1424189248}
@@ -3354,7 +3354,8 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: f7462a5d11df541759eeb89496ce310c,
+      type: 2}
   useCallbacks: 0
   Callbacks: []
   playingId: 0
@@ -3400,7 +3401,6 @@ GameObject:
   - component: {fileID: 1892842043}
   - component: {fileID: 1892842045}
   - component: {fileID: 1892842044}
-  - component: {fileID: 1892842046}
   m_Layer: 0
   m_Name: Ambience Handler
   m_TagString: Untagged
@@ -3478,18 +3478,6 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
---- !u!114 &1892842046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1892842042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d796216827a544f798bf769e4a1e6e81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1895490887
 PrefabInstance:
   m_ObjectHideFlags: 0

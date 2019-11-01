@@ -1,6 +1,583 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{36BC7EAE-C912-49A2-AD29-FA23AD693CA5}" SchemaVersion="94">
 	<InteractiveMusic>
-		<WorkUnit Name="Default Work Unit" ID="{36BC7EAE-C912-49A2-AD29-FA23AD693CA5}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{36BC7EAE-C912-49A2-AD29-FA23AD693CA5}" PersistMode="Standalone">
+			<ChildrenList>
+				<MusicSegment Name="Menu Music" ID="{1A251BE7-E8C3-4961-8585-CA3BD7086466}" ShortID="1014137494">
+					<PropertyList>
+						<Property Name="EndPosition" Type="Real64" Value="85786.5208333333"/>
+						<Property Name="Tempo" Type="Real64" Value="113"/>
+						<Property Name="TimeSignatureUpper" Type="int16" Value="3"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{13807498-01DA-4DC6-AF65-8BB9FB440611}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54A5BFE0-0382-448F-ABD3-AFA59BE4ACF6}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicTrack Name="TERRA_LevelLoop2_[Hopeful]_10_31_19_v01_1" ID="{9DD7B5F4-E3C1-4C92-BBCF-D7E359A8FB6D}" ShortID="787690475">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{13807498-01DA-4DC6-AF65-8BB9FB440611}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54A5BFE0-0382-448F-ABD3-AFA59BE4ACF6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="TERRA_LevelLoop2_[Hopeful]_10_31_19_v01_1" ID="{93DB8099-6824-4A96-B8B1-FD1D85928BDD}" ShortID="872136651">
+									<Language>SFX</Language>
+									<AudioFile>TERRA_LevelLoop2_[Hopeful]_10.31.19_v01.1.wav</AudioFile>
+									<ConvertedFileIDList>
+										<File ID="567862008"/>
+									</ConvertedFileIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{2CAA101B-62D7-44C4-BAC6-E5D30855CDA3}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<SequenceList>
+								<MusicTrackSequence Name="" ID="{5BA80433-AC8F-4EFA-92CA-844C3E16721B}">
+									<ClipList>
+										<MusicClip Name="TERRA_LevelLoop2_[Hopeful]_10_31_19_v01_1" ID="{32E54B07-3543-4CCE-8A91-48C1694E7367}">
+											<PropertyList>
+												<Property Name="EndTrimOffset" Type="Real64" Value="51428.5833333333"/>
+												<Property Name="FadeInMode" Type="int16" Value="0"/>
+												<Property Name="FadeOutMode" Type="int16" Value="0"/>
+											</PropertyList>
+											<AudioSourceRef Name="TERRA_LevelLoop2_[Hopeful]_10_31_19_v01_1" ID="{93DB8099-6824-4A96-B8B1-FD1D85928BDD}"/>
+										</MusicClip>
+									</ClipList>
+								</MusicTrackSequence>
+							</SequenceList>
+						</MusicTrack>
+					</ChildrenList>
+					<CueList>
+						<MusicCue Name="Entry Cue" ID="{3186BC3C-8752-4FBA-9315-2BBF532216B1}"/>
+						<MusicCue Name="Exit Cue" ID="{406E0A41-BDC7-4C7D-96A7-D44C3B99B044}">
+							<PropertyList>
+								<Property Name="CueType" Type="int16" Value="1"/>
+								<Property Name="TimeMs" Type="Real64" Value="1000"/>
+							</PropertyList>
+						</MusicCue>
+					</CueList>
+				</MusicSegment>
+				<MusicSegment Name="Des to Hope" ID="{1D8FF502-EF39-4ECB-9B9E-D7363519DE29}" ShortID="1033497122">
+					<PropertyList>
+						<Property Name="EndPosition" Type="Real64" Value="9056.6875"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{13807498-01DA-4DC6-AF65-8BB9FB440611}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54A5BFE0-0382-448F-ABD3-AFA59BE4ACF6}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicTrack Name="TERRA_Trans1-2_[Desolate-Hopeful]_10_31_19_v01" ID="{3CFDBF84-B0E0-471E-8308-6C4E2E4D8B15}" ShortID="210806750">
+							<ReferenceList>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54A5BFE0-0382-448F-ABD3-AFA59BE4ACF6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="TERRA_Trans1-2_[Desolate-Hopeful]_10_31_19_v01" ID="{86956EDA-46BD-4AF4-A18F-C41D01F87984}" ShortID="579891144">
+									<Language>SFX</Language>
+									<AudioFile>TERRA_Trans1-2_[Desolate-Hopeful]_10.31.19_v01.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{476B5C73-A8AB-41C5-A9B7-CAE900C63351}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<SequenceList>
+								<MusicTrackSequence Name="" ID="{CE94967A-548B-4561-8047-4D7D09B388AC}">
+									<ClipList>
+										<MusicClip Name="TERRA_Trans1-2_[Desolate-Hopeful]_10_31_19_v01" ID="{BE795651-CF18-4B97-AF6D-6C54649D115A}">
+											<PropertyList>
+												<Property Name="EndTrimOffset" Type="Real64" Value="9056.6875"/>
+												<Property Name="FadeInMode" Type="int16" Value="0"/>
+												<Property Name="FadeOutMode" Type="int16" Value="0"/>
+											</PropertyList>
+											<AudioSourceRef Name="TERRA_Trans1-2_[Desolate-Hopeful]_10_31_19_v01" ID="{86956EDA-46BD-4AF4-A18F-C41D01F87984}"/>
+										</MusicClip>
+									</ClipList>
+								</MusicTrackSequence>
+							</SequenceList>
+						</MusicTrack>
+					</ChildrenList>
+					<CueList>
+						<MusicCue Name="Entry Cue" ID="{7F93E314-D88C-46C6-B5FB-959DB1CE213B}"/>
+						<MusicCue Name="Exit Cue" ID="{61C703BA-D1B8-40A1-A13B-DEE4D69BCA9C}">
+							<PropertyList>
+								<Property Name="CueType" Type="int16" Value="1"/>
+								<Property Name="TimeMs" Type="Real64" Value="1000"/>
+							</PropertyList>
+						</MusicCue>
+					</CueList>
+				</MusicSegment>
+				<MusicSegment Name="Hope to Cheer" ID="{51CBAAD6-F5A5-425C-81D7-C649ED6E8FD9}" ShortID="152213931">
+					<PropertyList>
+						<Property Name="EndPosition" Type="Real64" Value="11199.5416666667"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{13807498-01DA-4DC6-AF65-8BB9FB440611}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54A5BFE0-0382-448F-ABD3-AFA59BE4ACF6}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicTrack Name="TERRA_Trans2-3_[Hopeful-Cheerful]_10_31_19_v01" ID="{EA102A34-22B5-4C29-8E8C-BF870DD0B1EB}" ShortID="994410962">
+							<ReferenceList>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54A5BFE0-0382-448F-ABD3-AFA59BE4ACF6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="TERRA_Trans2-3_[Hopeful-Cheerful]_10_31_19_v01" ID="{679A4225-BD90-4CC7-B8B9-31D36F7EB4D3}" ShortID="264264254">
+									<Language>SFX</Language>
+									<AudioFile>TERRA_Trans2-3_[Hopeful-Cheerful]_10.31.19_v01.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{47A6C0BC-7B81-453D-87B0-45D8B3AECAC9}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<SequenceList>
+								<MusicTrackSequence Name="" ID="{D6BE0D27-AF48-45D4-9A30-B94FF42D5F0C}">
+									<ClipList>
+										<MusicClip Name="TERRA_Trans2-3_[Hopeful-Cheerful]_10_31_19_v01" ID="{CAD546AC-3947-40AF-A2C8-B949F1095743}">
+											<PropertyList>
+												<Property Name="EndTrimOffset" Type="Real64" Value="11199.5416666667"/>
+												<Property Name="FadeInMode" Type="int16" Value="0"/>
+												<Property Name="FadeOutMode" Type="int16" Value="0"/>
+											</PropertyList>
+											<AudioSourceRef Name="TERRA_Trans2-3_[Hopeful-Cheerful]_10_31_19_v01" ID="{679A4225-BD90-4CC7-B8B9-31D36F7EB4D3}"/>
+										</MusicClip>
+									</ClipList>
+								</MusicTrackSequence>
+							</SequenceList>
+						</MusicTrack>
+					</ChildrenList>
+					<CueList>
+						<MusicCue Name="Entry Cue" ID="{5152F8FE-230C-44F9-8D11-FFCC473CD8B2}"/>
+						<MusicCue Name="Exit Cue" ID="{ADF2B768-0464-41A1-87CC-139BEF5399D8}">
+							<PropertyList>
+								<Property Name="CueType" Type="int16" Value="1"/>
+								<Property Name="TimeMs" Type="Real64" Value="11199.5416666667"/>
+							</PropertyList>
+						</MusicCue>
+					</CueList>
+				</MusicSegment>
+				<MusicSwitchContainer Name="Music Switch" ID="{33A490CE-87CA-4EE0-9E45-2A11E56DB8CC}" ShortID="845989754">
+					<PropertyList>
+						<Property Name="GridFrequencyPreset" Type="int16" Value="51"/>
+						<Property Name="Tempo" Type="Real64" Value="113"/>
+						<Property Name="TimeSignatureUpper" Type="int16" Value="3"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{13807498-01DA-4DC6-AF65-8BB9FB440611}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54A5BFE0-0382-448F-ABD3-AFA59BE4ACF6}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicPlaylistContainer Name="Desolate" ID="{A8A9F88D-67EA-4082-8382-B5F4C34CCDA4}" ShortID="44257240">
+							<PropertyList>
+								<Property Name="Tempo" Type="Real64" Value="112"/>
+								<Property Name="TimeSignatureUpper" Type="int16" Value="3"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{13807498-01DA-4DC6-AF65-8BB9FB440611}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54A5BFE0-0382-448F-ABD3-AFA59BE4ACF6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicSegment Name="TERRA_LevelLoop1_[Desolate]_10_31_19_v01_1" ID="{1CA4965E-3C28-401D-B8DD-BAD434B89084}" ShortID="421890755">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="42857.1458333333"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{13807498-01DA-4DC6-AF65-8BB9FB440611}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54A5BFE0-0382-448F-ABD3-AFA59BE4ACF6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="TERRA_LevelLoop1_[Desolate]_10_31_19_v01_1" ID="{A994A896-2FF8-42EF-B809-36C3430EC82C}" ShortID="813477567">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54A5BFE0-0382-448F-ABD3-AFA59BE4ACF6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="TERRA_LevelLoop1_[Desolate]_10_31_19_v01_1" ID="{50FB27EA-8642-44F8-B6AF-8D03D9467BA4}" ShortID="760526863">
+													<Language>SFX</Language>
+													<AudioFile>TERRA_LevelLoop1_[Desolate]_10.31.19_v01.1.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{5A2A9026-D802-4CBE-A49A-964E98B76896}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<SequenceList>
+												<MusicTrackSequence Name="" ID="{34269590-CDFF-4FBB-B60F-F81AE4597CDD}">
+													<ClipList>
+														<MusicClip Name="TERRA_LevelLoop1_[Desolate]_10_31_19_v01_1" ID="{93FC6FD4-443B-4647-9037-CFF177D0998C}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="42857.1458333333"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+															</PropertyList>
+															<AudioSourceRef Name="TERRA_LevelLoop1_[Desolate]_10_31_19_v01_1" ID="{50FB27EA-8642-44F8-B6AF-8D03D9467BA4}"/>
+														</MusicClip>
+													</ClipList>
+												</MusicTrackSequence>
+											</SequenceList>
+										</MusicTrack>
+									</ChildrenList>
+									<CueList>
+										<MusicCue Name="Entry Cue" ID="{40FAEFAD-DE50-4688-BD4E-1DF7B20F2B17}"/>
+										<MusicCue Name="Exit Cue" ID="{8D8CAE8D-0984-4787-B989-B3CAFAEB8B0A}">
+											<PropertyList>
+												<Property Name="CueType" Type="int16" Value="1"/>
+												<Property Name="TimeMs" Type="Real64" Value="42857.1458333333"/>
+											</PropertyList>
+										</MusicCue>
+									</CueList>
+								</MusicSegment>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{66CD329B-A9AD-4EA7-932F-4908C842D20A}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{075FDA32-F2AA-4398-B0D8-5F251AC99D8C}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<Playlist>
+								<MusicPlaylistItem Name="" ID="{CB30EE56-7999-4540-A5B2-826A998512AB}" ShortID="353391265">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{18741C7A-6426-49C9-8F24-2C9D4FDB9FAC}" ShortID="883416740">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="TERRA_LevelLoop1_[Desolate]_10_31_19_v01_1" ID="{1CA4965E-3C28-401D-B8DD-BAD434B89084}"/>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Playlist>
+						</MusicPlaylistContainer>
+						<MusicPlaylistContainer Name="Hopeful" ID="{EF36D9CB-AB28-4182-B8BE-C36AF8E3E1C7}" ShortID="14170557">
+							<PropertyList>
+								<Property Name="Tempo" Type="Real64" Value="112"/>
+								<Property Name="TimeSignatureUpper" Type="int16" Value="3"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{13807498-01DA-4DC6-AF65-8BB9FB440611}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54A5BFE0-0382-448F-ABD3-AFA59BE4ACF6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicSegment Name="TERRA_LevelLoop2_[Hopeful]_10_31_19_v01_1" ID="{3E2785ED-E7B5-4CFB-9912-A8E417BBF1D2}" ShortID="716773011">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="51428.5833333333"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{13807498-01DA-4DC6-AF65-8BB9FB440611}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54A5BFE0-0382-448F-ABD3-AFA59BE4ACF6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="TERRA_LevelLoop2_[Hopeful]_10_31_19_v01_1" ID="{0B4896D3-D5C9-4965-8198-49CA62879BBC}" ShortID="447161082">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54A5BFE0-0382-448F-ABD3-AFA59BE4ACF6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="TERRA_LevelLoop2_[Hopeful]_10_31_19_v01_1" ID="{4B7BDA9F-3F8E-45C1-9C4B-616D14E9C492}" ShortID="567862008">
+													<Language>SFX</Language>
+													<AudioFile>TERRA_LevelLoop2_[Hopeful]_10.31.19_v01.1.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{D2C50935-8D69-40DE-9650-644B58F1713F}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<SequenceList>
+												<MusicTrackSequence Name="" ID="{F5E7A5E5-0D6E-4CD6-A824-832077C0BA40}">
+													<ClipList>
+														<MusicClip Name="TERRA_LevelLoop2_[Hopeful]_10_31_19_v01_1" ID="{9F91911B-7F0D-467F-BD1A-B768C0B6F8EC}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="51428.5833333333"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+															</PropertyList>
+															<AudioSourceRef Name="TERRA_LevelLoop2_[Hopeful]_10_31_19_v01_1" ID="{4B7BDA9F-3F8E-45C1-9C4B-616D14E9C492}"/>
+														</MusicClip>
+													</ClipList>
+												</MusicTrackSequence>
+											</SequenceList>
+										</MusicTrack>
+									</ChildrenList>
+									<CueList>
+										<MusicCue Name="Entry Cue" ID="{B4528487-8C77-432B-8AED-74BE9657BCEB}"/>
+										<MusicCue Name="Exit Cue" ID="{9FCD1769-6FEF-4B49-84C9-5453C8E2E9E2}">
+											<PropertyList>
+												<Property Name="CueType" Type="int16" Value="1"/>
+												<Property Name="TimeMs" Type="Real64" Value="51428.5833333333"/>
+											</PropertyList>
+										</MusicCue>
+									</CueList>
+								</MusicSegment>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{39D480F9-0E59-4AB6-AC6A-CCCADCDD8539}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{DB0522E3-DEF8-4B96-BAFF-7D6898E609FE}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<Playlist>
+								<MusicPlaylistItem Name="" ID="{D44273B7-DD1C-4354-B498-4B2FE83E2BAE}" ShortID="26784968">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{A704081C-DC7D-4935-9830-20E3D6C2D08B}" ShortID="491070917">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="TERRA_LevelLoop2_[Hopeful]_10_31_19_v01_1" ID="{3E2785ED-E7B5-4CFB-9912-A8E417BBF1D2}"/>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Playlist>
+						</MusicPlaylistContainer>
+						<MusicPlaylistContainer Name="Cheerful" ID="{57DF89F6-44A9-4AD3-A865-FA4A3FD5BC0E}" ShortID="661161690">
+							<PropertyList>
+								<Property Name="Tempo" Type="Real64" Value="112"/>
+								<Property Name="TimeSignatureUpper" Type="int16" Value="3"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{13807498-01DA-4DC6-AF65-8BB9FB440611}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54A5BFE0-0382-448F-ABD3-AFA59BE4ACF6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicSegment Name="TERRA_LevelLoop3_[Cheerful]_10_31_19_v01" ID="{6269D9ED-E995-4D21-99B7-E2F66612E8DC}" ShortID="813361645">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="53035.7083333333"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{13807498-01DA-4DC6-AF65-8BB9FB440611}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54A5BFE0-0382-448F-ABD3-AFA59BE4ACF6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="TERRA_LevelLoop3_[Cheerful]_10_31_19_v01" ID="{A1FE37BD-816A-4995-B1D2-297E8BE26E53}" ShortID="443347389">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54A5BFE0-0382-448F-ABD3-AFA59BE4ACF6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="TERRA_LevelLoop3_[Cheerful]_10_31_19_v01" ID="{2DE2490E-BDDD-4FA7-8CD3-1F82F089010E}" ShortID="1052497568">
+													<Language>SFX</Language>
+													<AudioFile>TERRA_LevelLoop3_[Cheerful]_10.31.19_v01.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{BDC517DB-12E5-47D7-B526-3E5B8015A1C9}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<SequenceList>
+												<MusicTrackSequence Name="" ID="{F76C6B2A-F05A-4765-BDE4-389ABEB2A7D1}">
+													<ClipList>
+														<MusicClip Name="TERRA_LevelLoop3_[Cheerful]_10_31_19_v01" ID="{30F4021F-6189-487C-A04B-D7E73A327AF5}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="53035.7083333333"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+															</PropertyList>
+															<AudioSourceRef Name="TERRA_LevelLoop3_[Cheerful]_10_31_19_v01" ID="{2DE2490E-BDDD-4FA7-8CD3-1F82F089010E}"/>
+														</MusicClip>
+													</ClipList>
+												</MusicTrackSequence>
+											</SequenceList>
+										</MusicTrack>
+									</ChildrenList>
+									<CueList>
+										<MusicCue Name="Entry Cue" ID="{45F94936-0153-4D51-8229-4D161943C264}"/>
+										<MusicCue Name="Exit Cue" ID="{3B291EE7-230E-4183-A03A-0D1FBCAA798E}">
+											<PropertyList>
+												<Property Name="CueType" Type="int16" Value="1"/>
+												<Property Name="TimeMs" Type="Real64" Value="53035.7083333333"/>
+											</PropertyList>
+										</MusicCue>
+									</CueList>
+								</MusicSegment>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{534F7771-AEFE-4D25-8254-B2606E47F0B5}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{DCBE0C47-01E0-4385-ADC4-626ED092D4B7}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<Playlist>
+								<MusicPlaylistItem Name="" ID="{18106DB8-0E3F-41C6-B1DD-0906EB5ECEF7}" ShortID="232873071">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{B2AF7AF4-C7A8-4ACD-B79E-9683D532CFE0}" ShortID="793840859">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="TERRA_LevelLoop3_[Cheerful]_10_31_19_v01" ID="{6269D9ED-E995-4D21-99B7-E2F66612E8DC}"/>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Playlist>
+						</MusicPlaylistContainer>
+					</ChildrenList>
+					<TransitionList>
+						<MusicTransition Name="Root" ID="{6767024B-A590-4252-ACF4-0A08526DC15C}">
+							<PropertyList>
+								<Property Name="IsFolder" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicTransition Name="Transition" ID="{FF096910-7914-47AA-8B4F-AA2D4B4226C9}">
+									<PropertyList>
+										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="1"/>
+									</PropertyList>
+									<TransitionInfo>
+										<SourceFadeOut>
+											<MusicFade Name="Source Fade-out" ID="{105F9003-85BD-4E30-9104-9C7ACBA55C16}">
+												<PropertyList>
+													<Property Name="FadeTime" Type="Real64" Value="2"/>
+													<Property Name="FadeType" Type="int16" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</SourceFadeOut>
+									</TransitionInfo>
+								</MusicTransition>
+							</ChildrenList>
+							<TransitionInfo/>
+						</MusicTransition>
+					</TransitionList>
+					<ArgumentList>
+						<ArgumentRef Name="TerraformProgress" ID="{EB9F3CBE-916B-4602-839C-95AA48193338}"/>
+					</ArgumentList>
+					<EntryList>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Desolate" ID="{91A293D7-312D-4505-A852-0C4843F48E8F}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Desolate" ID="{A8A9F88D-67EA-4082-8382-B5F4C34CCDA4}" WorkUnitID="{36BC7EAE-C912-49A2-AD29-FA23AD693CA5}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Hopeful" ID="{EE3348ED-0558-404C-842E-FCB55B87C63A}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Hopeful" ID="{EF36D9CB-AB28-4182-B8BE-C36AF8E3E1C7}" WorkUnitID="{36BC7EAE-C912-49A2-AD29-FA23AD693CA5}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Cheerful" ID="{EB0745A5-F365-4665-826B-9344785605EB}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Cheerful" ID="{57DF89F6-44A9-4AD3-A865-FA4A3FD5BC0E}" WorkUnitID="{36BC7EAE-C912-49A2-AD29-FA23AD693CA5}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="None" ID="{AC1B118B-55A5-4C40-8433-E207CDD1315A}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Desolate" ID="{A8A9F88D-67EA-4082-8382-B5F4C34CCDA4}" WorkUnitID="{36BC7EAE-C912-49A2-AD29-FA23AD693CA5}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+					</EntryList>
+				</MusicSwitchContainer>
+			</ChildrenList>
+		</WorkUnit>
 	</InteractiveMusic>
 </WwiseDocument>

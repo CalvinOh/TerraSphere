@@ -153,6 +153,42 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_MainTheme" ID="{AEA074AC-7FA1-4417-95C3-355497C5E760}">
+					<ChildrenList>
+						<Action Name="" ID="{7CB12B39-901C-4608-8C01-2BE2CEB32A5E}" ShortID="465018778">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Hopeful" ID="{EF36D9CB-AB28-4182-B8BE-C36AF8E3E1C7}" WorkUnitID="{36BC7EAE-C912-49A2-AD29-FA23AD693CA5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Music" ID="{14F1846B-FF0D-4227-A1E2-C77210C82B6B}">
+					<ChildrenList>
+						<Action Name="" ID="{22BC2CA0-5760-4CAE-A56F-146700EF38DF}" ShortID="514342585">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music Switch" ID="{33A490CE-87CA-4EE0-9E45-2A11E56DB8CC}" WorkUnitID="{36BC7EAE-C912-49A2-AD29-FA23AD693CA5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="WwiseTerraformPercent" ID="{4430AB34-E91C-4C7A-932F-FC8EA8D1E73C}">
+					<ChildrenList>
+						<Action Name="" ID="{F4CB0B6D-DDE2-48D6-A353-8A364B540F4B}" ShortID="685314690">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TerraformPercent" ID="{2DBA9ED1-E639-4BE3-A2A2-DE7D24CAB1CA}" WorkUnitID="{67641C01-1D2A-4CBC-BB1A-D1F5E0FB072B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

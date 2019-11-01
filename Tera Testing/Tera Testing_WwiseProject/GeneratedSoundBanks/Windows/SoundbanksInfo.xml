@@ -22,6 +22,8 @@
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
 				<Event Id="278617630" Name="Play_Ambience" ObjectPath="\Events\Default Work Unit\Play_Ambience" DurationType="Infinite"/>
+				<Event Id="3009755888" Name="Play_MainTheme" ObjectPath="\Events\Default Work Unit\Play_MainTheme" DurationType="Infinite"/>
+				<Event Id="2932040671" Name="Play_Music" ObjectPath="\Events\Default Work Unit\Play_Music" DurationType="Infinite"/>
 				<Event Id="4229852413" Name="Play_ts_sx_uni_env_bush_thru" ObjectPath="\Events\Default Work Unit\Play_ts_sx_uni_env_bush_thru" DurationType="OneShot" DurationMin="1.150042" DurationMax="1.150042"/>
 				<Event Id="416558692" Name="Play_ts_sx_uni_int_plant_harvest" ObjectPath="\Events\Default Work Unit\Play_ts_sx_uni_int_plant_harvest" DurationType="OneShot" DurationMin="0.270801" DurationMax="0.341188"/>
 				<Event Id="2965097530" Name="Play_ts_sx_uni_int_seed_plant" ObjectPath="\Events\Default Work Unit\Play_ts_sx_uni_int_seed_plant" DurationType="OneShot" DurationMin="0.220158" DurationMax="0.293875"/>
@@ -100,6 +102,10 @@
 					<ShortName>ts_sx_uni_ui_open.wav</ShortName>
 					<Path>SFX/ts_sx_uni_ui_open_10C4C929.wem</Path>
 				</File>
+				<File Id="567862008" Language="SFX">
+					<ShortName>TERRA_LevelLoop2_[Hopeful]_10.31.19_v01.1.wav</ShortName>
+					<Path>SFX/TERRA_LevelLoop2_[Hopeful]_10.31.19_v01.1_D79FB2B7.wem</Path>
+				</File>
 				<File Id="587471345" Language="SFX">
 					<ShortName>ts_sx_uni_int_water.wav</ShortName>
 					<Path>SFX/ts_sx_uni_int_water_10C4C929.wem</Path>
@@ -115,6 +121,10 @@
 				<File Id="700190998" Language="SFX">
 					<ShortName>ts_sx_uni_amb_desolate.wav</ShortName>
 					<Path>SFX/ts_sx_uni_amb_desolate_D79FB2B7.wem</Path>
+				</File>
+				<File Id="760526863" Language="SFX">
+					<ShortName>TERRA_LevelLoop1_[Desolate]_10.31.19_v01.1.wav</ShortName>
+					<Path>SFX/TERRA_LevelLoop1_[Desolate]_10.31.19_v01.1_D79FB2B7.wem</Path>
 				</File>
 				<File Id="788884385" Language="SFX">
 					<ShortName>ts_sx_uni_ui_select.wav</ShortName>
@@ -135,6 +145,10 @@
 				<File Id="1017290464" Language="SFX">
 					<ShortName>ts_sx_uni_int_seed_plant.wav</ShortName>
 					<Path>SFX/ts_sx_uni_int_seed_plant_10C4C929.wem</Path>
+				</File>
+				<File Id="1052497568" Language="SFX">
+					<ShortName>TERRA_LevelLoop3_[Cheerful]_10.31.19_v01.wav</ShortName>
+					<Path>SFX/TERRA_LevelLoop3_[Cheerful]_10.31.19_v01_D79FB2B7.wem</Path>
 				</File>
 				<File Id="1055686485" Language="SFX">
 					<ShortName>ts_sx_uni_ui_oxygen_low.wav</ShortName>
