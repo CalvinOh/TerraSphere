@@ -68,7 +68,15 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        if(contextBasedUI == null)
+        /*v ckrueger audio v*/
+        //play oxygen low sound when oxygen reaches low levels
+        if (oxygenValue <= 15f)
+        {
+            InvokeRepeating("PlaySoundLowOxygen", 0f, 5f);
+        }
+        /*^ ckrueger audio ^*/
+
+        if (contextBasedUI == null)
         {
             contextBasedUI = FindObjectOfType<ContextBasedUI>();
         }
@@ -94,8 +102,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-       
         if (!invScript.inventoryDisplaying)
         {
             RotateCamera();
@@ -106,6 +112,7 @@ public class PlayerController : MonoBehaviour
 
         DecreaseOxygen();
     }
+
     private void FixedUpdate()
     {
         Movement();
@@ -281,4 +288,10 @@ public class PlayerController : MonoBehaviour
     {
         AkSoundEngine.PostEvent("Play_ts_sx_uni_int_shovel", gameObject);
     }
+
+    private void PlaySoundLowOxygen()
+    {
+        AkSoundEngine.PostEvent("Play_ts_sx_uni_ui_oxygen_low", gameObject);
+    }
+    /*^ ckrueger audio ^*/
 }
