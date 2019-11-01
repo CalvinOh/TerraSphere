@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,6 +19,14 @@ public class Inventory : MonoBehaviour
     private int totalSeedSlots;
     private int totalPlantSlots;
     private int enabledSlots;
+
+    /*ckrueger audio*/
+    //differentiates between two sounds: UI open(0) and UI close(1)
+    private int uISoundNumber;
+    //allows navigation sound to be played each time the player presses a button to navigate the menu
+    private GameObject SelectHistory;
+
+    //public int itemsPickedUp;
     public GameObject[] seedSlot;
     public GameObject[] plantSlot;
     private EventSystem eventSystem;
@@ -37,10 +45,15 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
+        /*ckrueger audio*/
+        uISoundNumber = 0;
+
+
         // Find how many slots the UI has for the inventory
         SetUpSeedAndPlantSlots();
 
         eventSystem = FindObjectOfType<EventSystem>();
+        SelectHistory = eventSystem.currentSelectedGameObject;
 
         connectedControllers = Input.GetJoystickNames();
 
@@ -85,6 +98,43 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
+
+        /*v ckrueger audio v*/
+        if (eventSystem.currentSelectedGameObject != SelectHistory)
+        {
+            PlaySoundUINavigate();
+        }
+        SelectHistory = eventSystem.currentSelectedGameObject;
+        /*^ ckrueger audio ^*/
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Open Inventory"))
+        {
+            /*v ckrueger audio v*/
+            if (uISoundNumber == 0)
+            {
+                PlaySoundUIOpen();
+            }
+            else
+            {
+                PlaySoundUIClose();
+            }
+            /*^ ckrueger audio ^*/
+
+            ToggleDisplayInventory();
+
+            if (inventoryDisplaying)
+            {
+                /*ckrueger audio*/
+                uISoundNumber = 1;
+
+                Cursor.lockState = CursorLockMode.None;
+            }
+            else if (!inventoryDisplaying)
+            {
+                /*ckrueger audio*/
+                uISoundNumber = 0;
+
+                Cursor.lockState = CursorLockMode.Locked;
+
         if(connectedControllers.Length > 0)
         {
             DetermineIfUsingController();
@@ -99,6 +149,7 @@ public class Inventory : MonoBehaviour
                     Cursor.lockState = CursorLockMode.None;
                 else if (!inventoryDisplaying)
                     Cursor.lockState = CursorLockMode.Locked;
+
             }
         }
 
@@ -305,4 +356,24 @@ public class Inventory : MonoBehaviour
 
     }
 
+    /*ckrueger audio*/
+    private void PlaySoundUIOpen()
+    {
+        AkSoundEngine.PostEvent("Play_ts_sx_uni_ui_open", gameObject);
+    }
+
+    private void PlaySoundUIClose()
+    {
+        AkSoundEngine.PostEvent("Play_ts_sx_uni_ui_close", gameObject);
+    }
+
+    private void PlaySoundUINavigate()
+    {
+        AkSoundEngine.PostEvent("Play_ts_sx_uni_ui_navigate", gameObject);
+    }
+
+    private void PlaySoundUISelect()
+    {
+        AkSoundEngine.PostEvent("Play_ts_sx_uni_ui_select", gameObject);
+    }
 }

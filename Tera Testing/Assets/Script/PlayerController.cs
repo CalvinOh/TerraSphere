@@ -70,6 +70,17 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+
+        /*v ckrueger audio v*/
+        //play oxygen low sound when oxygen reaches low levels
+        if (oxygenValue <= 15f)
+        {
+            InvokeRepeating("PlaySoundLowOxygen", 0f, 5f);
+        }
+        /*^ ckrueger audio ^*/
+
+        if (contextBasedUI == null)
+        
         MyAnimator = GetComponent<Animator>();
         if(contextBasedUI == null)
         {
@@ -103,7 +114,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         EasyMode();
+
 
         if (!invScript.inventoryDisplaying)
         {
@@ -118,6 +131,7 @@ public class PlayerController : MonoBehaviour
         HandleAnimatioons();
         DecreaseOxygen();
     }
+
 
     private void EasyMode()
     {
@@ -170,6 +184,7 @@ public class PlayerController : MonoBehaviour
     {
         if(!invScript.GetComponent<Inventory>().inventoryDisplaying)
         {
+
             if (Input.GetButtonDown("Use Item"))
             {
                 //When left click, based on item held, trigger function
@@ -192,7 +207,10 @@ public class PlayerController : MonoBehaviour
                     objectsInTrigger.Remove(currentlySelecting);
                     contextBasedUI.AfterHarvest();
                     currentlySelecting.gameObject.GetComponent<PlantGrowth>().Harvest();
+                    
+                        PlaySoundPlantHarvest();
                 }
+
             }
         }
     }
@@ -203,7 +221,12 @@ public class PlayerController : MonoBehaviour
             //Trigger plant accelarate function
             print("Watering");
             currentlySelecting.gameObject.GetComponent<PlantGrowth>().Water(10f);
+
+            /*ckrueger audio*/
+            PlaySoundWater();
+
             MyAnimator.Play("water");
+
         }
     }
     private void DigHole()
@@ -212,7 +235,12 @@ public class PlayerController : MonoBehaviour
         {
             print("Digging");
             Instantiate(groundHole, spawnItemLocation.transform.position, spawnItemLocation.transform.rotation);
+
+            /*ckrueger audio*/
+            PlaySoundShovel();
+
             MyAnimator.Play("pickup");
+
         }
     }
     void PlantSeed()
@@ -222,7 +250,12 @@ public class PlayerController : MonoBehaviour
             GameObject newSeed = (GameObject)Instantiate(seedItem.GetComponent<SeedItem>().plantToGrowInto, spawnItemLocation.transform.position, spawnItemLocation.transform.rotation);
             newSeed.gameObject.GetComponent<PlantGrowth>().Grow = true;
             print("Planting");
+
+            /*ckrueger audio*/
+            PlaySoundPlantSeed();
+
             MyAnimator.Play("pickup");
+
         }
 
     }
@@ -232,8 +265,10 @@ public class PlayerController : MonoBehaviour
         {
             PlantSeed();
 
+
             seedItem.GetComponent<Item>().ParentSlot.GetComponent<Slot>().UseItem();
             //seedItem.gameObject.GetComponent<Item>().stackNumber--; //Bugged Right now
+
             //hotBarInventory[itemInInventorySelected] = blankSlot; //Bugged, stays even when 0 and swapped.
            
         }
@@ -295,4 +330,31 @@ public class PlayerController : MonoBehaviour
         //Outline still in development, not going to be in alpha
 
     }
+
+    /*v ckrueger audio v*/
+    private void PlaySoundPlantSeed()
+    {
+        AkSoundEngine.PostEvent("Play_ts_sx_uni_int_seed_plant", gameObject);
+    }
+
+    private void PlaySoundWater()
+    {
+        AkSoundEngine.PostEvent("Play_ts_sx_uni_int_water", gameObject);
+    }
+
+    private void PlaySoundPlantHarvest()
+    {
+        AkSoundEngine.PostEvent("Play_ts_sx_uni_int_plant_harvest", gameObject);
+    }
+
+    private void PlaySoundShovel()
+    {
+        AkSoundEngine.PostEvent("Play_ts_sx_uni_int_shovel", gameObject);
+    }
+
+    private void PlaySoundLowOxygen()
+    {
+        AkSoundEngine.PostEvent("Play_ts_sx_uni_ui_oxygen_low", gameObject);
+    }
+    /*^ ckrueger audio ^*/
 }
