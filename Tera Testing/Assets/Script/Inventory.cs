@@ -100,7 +100,7 @@ public class Inventory : MonoBehaviour
     {
 
         /*v ckrueger audio v*/
-        if (eventSystem.currentSelectedGameObject != SelectHistory)
+        if (eventSystem.currentSelectedGameObject != SelectHistory && inventoryDisplaying)
         {
             PlaySoundUINavigate();
         }
@@ -127,6 +127,7 @@ public class Inventory : MonoBehaviour
                 uISoundNumber = 1;
 
                 Cursor.lockState = CursorLockMode.None;
+
             }
             else if (!inventoryDisplaying)
             {
@@ -164,6 +165,15 @@ public class Inventory : MonoBehaviour
                     }
                 }
                 //print(eventSystem.currentSelectedGameObject);
+            }
+        }
+        if (inventoryDisplaying)
+        {
+            UpdateDescriptionBox(true); //update during inventory displaying
+            if (Input.GetButtonDown("Right Bumper") || Input.GetButtonDown("Left Bumper"))
+            {
+                seedTab = !seedTab;
+                ToggleTabDisplayed();
             }
         }
     }
