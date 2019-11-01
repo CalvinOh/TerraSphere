@@ -31,19 +31,21 @@ public class FadeInScript : MonoBehaviour
     private GameObject image5;
 
     private float timerReset;
+    private float timeAtAwake;
 
     private void Awake()
     {
-        
+        timeAtAwake = Time.time;
     }
 
     void Update()
     {
-        if(Time.time >= fadeInTimer + panelTimer)
+        timerReset = Time.time - timeAtAwake;
+        if(timerReset >= fadeInTimer + panelTimer)
         {
             this.gameObject.SetActive(false);
         }
-        if(Time.fixedTime >= panelTimer || Input.GetButton("Use Item"))
+        if(timerReset >= panelTimer || Input.GetButton("Use Item"))
         {
             panelImage.CrossFadeAlpha(0, fadeInTimer,false);
             image1.SetActive(false);
