@@ -98,4 +98,10 @@ public class Item : MonoBehaviour
     {
         return $"Item: {subType}\nType: {type}\nStack: {stackNumber}\n\nDescription: {description}";
     }
+
+    /*ckrueger audio*/
+    private void PlaySoundPlantSeed()
+    {
+        AkSoundEngine.PostEvent("Play_ts_sx_uni_int_seed_plant", gameObject);
+    }
 }

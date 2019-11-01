@@ -144,7 +144,6 @@ public class PlayerController : MonoBehaviour
             if (currentlySelecting.CompareTag("Hole"))
             {
                 CheckSeedNumber();
-
             }
             if (currentlySelecting.CompareTag("Seed"))
             {
@@ -155,6 +154,9 @@ public class PlayerController : MonoBehaviour
                 objectsInTrigger.Remove(currentlySelecting);
                 contextBasedUI.AfterHarvest();
                 currentlySelecting.gameObject.GetComponent<PlantGrowth>().Harvest();
+
+                /*ckrueger audio*/
+                PlaySoundPlantHarvest();
             }
         }
     }
@@ -165,6 +167,9 @@ public class PlayerController : MonoBehaviour
             //Trigger plant accelarate function
             print("Watering");
             currentlySelecting.gameObject.GetComponent<PlantGrowth>().Water(10f);
+
+            /*ckrueger audio*/
+            PlaySoundWater();
         }
     }
     private void DigHole()
@@ -174,6 +179,8 @@ public class PlayerController : MonoBehaviour
             print("Digging");
             Instantiate(groundHole, spawnItemLocation.transform.position, spawnItemLocation.transform.rotation);
 
+            /*ckrueger audio*/
+            PlaySoundShovel();
         }
     }
     void PlantSeed()
@@ -184,6 +191,8 @@ public class PlayerController : MonoBehaviour
             newSeed.gameObject.GetComponent<PlantGrowth>().Grow = true;
             print("Planting");
 
+            /*ckrueger audio*/
+            PlaySoundPlantSeed();
         }
 
     }
@@ -192,7 +201,7 @@ public class PlayerController : MonoBehaviour
         if (seedItem.gameObject.GetComponent<Item>().stackNumber <= 1)
         {
             PlantSeed();
-           
+
             seedItem.gameObject.GetComponent<Item>().stackNumber--; //Bugged Right now
             //hotBarInventory[itemInInventorySelected] = blankSlot; //Bugged, stays even when 0 and swapped.
            
@@ -250,5 +259,26 @@ public class PlayerController : MonoBehaviour
        
         //Outline still in development, not going to be in alpha
 
+    }
+
+    /*v ckrueger audio v*/
+    private void PlaySoundPlantSeed()
+    {
+        AkSoundEngine.PostEvent("Play_ts_sx_uni_int_seed_plant", gameObject);
+    }
+
+    private void PlaySoundWater()
+    {
+        AkSoundEngine.PostEvent("Play_ts_sx_uni_int_water", gameObject);
+    }
+
+    private void PlaySoundPlantHarvest()
+    {
+        AkSoundEngine.PostEvent("Play_ts_sx_uni_int_plant_harvest", gameObject);
+    }
+
+    private void PlaySoundShovel()
+    {
+        AkSoundEngine.PostEvent("Play_ts_sx_uni_int_shovel", gameObject);
     }
 }
