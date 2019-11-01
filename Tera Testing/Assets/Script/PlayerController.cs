@@ -63,11 +63,14 @@ public class PlayerController : MonoBehaviour
     //UI
 
     //UI for context based direction.
-    private ContextBasedUI contextBasedUI;
+    public ContextBasedUI contextBasedUI { get; private set; }
+    private Animator MyAnimator;
 
+    int firstPass = 0;
 
     private void Start()
     {
+
         /*v ckrueger audio v*/
         //play oxygen low sound when oxygen reaches low levels
         if (oxygenValue <= 15f)
@@ -77,6 +80,9 @@ public class PlayerController : MonoBehaviour
         /*^ ckrueger audio ^*/
 
         if (contextBasedUI == null)
+        
+        MyAnimator = GetComponent<Animator>();
+        if(contextBasedUI == null)
         {
             contextBasedUI = FindObjectOfType<ContextBasedUI>();
         }
@@ -94,6 +100,12 @@ public class PlayerController : MonoBehaviour
         }
         objectsInTrigger = new List<GameObject>();
 
+        if (invScript.seedSlot.Length < 6)
+            firstPass = 1;
+        //    invScript.SetUpSeedAndPlantSlots();
+        if(firstPass == 0)
+            seedItem = invScript.seedSlot[0].GetComponent<Slot>().item;
+        contextBasedUI.seedIcon = seedItem.GetComponent<Item>().icon;
 
         Cursor.lockState = CursorLockMode.Locked;
 
@@ -102,19 +114,38 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        EasyMode();
+
+
         if (!invScript.inventoryDisplaying)
         {
-            RotateCamera();
-            ContextSelectingItem();
+            //if (MyAnimator.GetCurrentAnimatorStateInfo(0).IsName("breath") || MyAnimator.GetCurrentAnimatorStateInfo(0).IsName("walk"))
+            {
+                RotateCamera();
+                ContextSelectingItem();
+            }
         }
-       
-        ReassigningPlanetAsBaseSelection();
 
+        ReassigningPlanetAsBaseSelection();
+        HandleAnimatioons();
         DecreaseOxygen();
+    }
+
+
+    private void EasyMode()
+    {
+        if (firstPass < 4)
+            firstPass += 1;
+        if (firstPass == 1)
+            // Success
+            if (firstPass == 3)
+                seedItem = invScript.seedSlot[0].GetComponent<Slot>().item;
     }
 
     private void FixedUpdate()
     {
+        //if(MyAnimator.GetCurrentAnimatorStateInfo(0).IsName("breath")|| MyAnimator.GetCurrentAnimatorStateInfo(0).IsName("walk"))
         Movement();
     }
 
@@ -125,6 +156,16 @@ public class PlayerController : MonoBehaviour
         oxygenValue = Mathf.Clamp(oxygenValue, 0f, 100f);
     }
 
+    private void HandleAnimatioons()
+    {
+        MyAnimator.SetFloat("Speed", MoveSpeedCurrentMultiplier);
+    }
+
+    public void PlayEatingAnimation()
+    {
+        MyAnimator.Play("eat");
+    }
+
     //After the player walks away from an object, this makes the planet as the selected object. 
     private void ReassigningPlanetAsBaseSelection()
     {
@@ -133,6 +174,7 @@ public class PlayerController : MonoBehaviour
             currentlySelecting = planet;
            
         }
+  
 
     }
 
@@ -140,30 +182,35 @@ public class PlayerController : MonoBehaviour
 
     void ContextSelectingItem()
     {
-
-        if(Input.GetButtonDown("Use Item"))
+        if(!invScript.GetComponent<Inventory>().inventoryDisplaying)
         {
-            //When left click, based on item held, trigger function
-            if (currentlySelecting.CompareTag("Ground"))
-            {
-                DigHole();
-            }
-            if (currentlySelecting.CompareTag("Hole"))
-            {
-                CheckSeedNumber();
-            }
-            if (currentlySelecting.CompareTag("Seed"))
-            {
-                Water();
-            }
-            if(currentlySelecting.CompareTag("Plant"))
-            {
-                objectsInTrigger.Remove(currentlySelecting);
-                contextBasedUI.AfterHarvest();
-                currentlySelecting.gameObject.GetComponent<PlantGrowth>().Harvest();
 
-                /*ckrueger audio*/
-                PlaySoundPlantHarvest();
+            if (Input.GetButtonDown("Use Item"))
+            {
+                //When left click, based on item held, trigger function
+                if (currentlySelecting.CompareTag("Ground") && (Time.time >= invScript.nextDig))
+                {
+                    DigHole();
+                }
+                if (currentlySelecting.CompareTag("Hole"))
+                {
+                    CheckSeedNumber();
+
+                }
+                if (currentlySelecting.CompareTag("Seed"))
+                {
+                    Water();
+                    
+                }
+                if (currentlySelecting.CompareTag("Plant"))
+                {
+                    objectsInTrigger.Remove(currentlySelecting);
+                    contextBasedUI.AfterHarvest();
+                    currentlySelecting.gameObject.GetComponent<PlantGrowth>().Harvest();
+                    
+                        PlaySoundPlantHarvest();
+                }
+
             }
         }
     }
@@ -177,6 +224,9 @@ public class PlayerController : MonoBehaviour
 
             /*ckrueger audio*/
             PlaySoundWater();
+
+            MyAnimator.Play("water");
+
         }
     }
     private void DigHole()
@@ -188,6 +238,9 @@ public class PlayerController : MonoBehaviour
 
             /*ckrueger audio*/
             PlaySoundShovel();
+
+            MyAnimator.Play("pickup");
+
         }
     }
     void PlantSeed()
@@ -200,16 +253,22 @@ public class PlayerController : MonoBehaviour
 
             /*ckrueger audio*/
             PlaySoundPlantSeed();
+
+            MyAnimator.Play("pickup");
+
         }
 
     }
     void CheckSeedNumber()
     {
-        if (seedItem.gameObject.GetComponent<Item>().stackNumber <= 1)
+        if (seedItem.gameObject.GetComponent<Item>().stackNumber >= 1)
         {
             PlantSeed();
 
-            seedItem.gameObject.GetComponent<Item>().stackNumber--; //Bugged Right now
+
+            seedItem.GetComponent<Item>().ParentSlot.GetComponent<Slot>().UseItem();
+            //seedItem.gameObject.GetComponent<Item>().stackNumber--; //Bugged Right now
+
             //hotBarInventory[itemInInventorySelected] = blankSlot; //Bugged, stays even when 0 and swapped.
            
         }
@@ -255,8 +314,12 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        objectsInTrigger.Add(other.gameObject);
-        currentlySelecting = other.gameObject;
+        if(other.gameObject.tag != "Grass")
+        {
+            objectsInTrigger.Add(other.gameObject);
+            currentlySelecting = other.gameObject;
+        }
+       
     
     }
 

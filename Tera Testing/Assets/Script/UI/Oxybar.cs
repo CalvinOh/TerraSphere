@@ -31,8 +31,13 @@ public class Oxybar : MonoBehaviour
     [Tooltip("The multiplier that helps the color clamping, 1-2 recommended.")]
     private float multiplier = 1.3f;
 
+    [SerializeField]
+    [Tooltip("Canvas when oxygen runs out.")]
+    private GameObject canvasObject;
+
     private float maxOxygen;
     private float currentOxygen;
+    private bool canvasCalled = false;
 
     private void Awake()
     {
@@ -46,10 +51,16 @@ public class Oxybar : MonoBehaviour
         currentPercentage = currentOxygen / maxOxygen;
         oxybar.fillAmount = currentPercentage;
         ColorChange();
+        if (currentPercentage <= 0 && !canvasCalled)
+        {
+            canvasObject.SetActive(true);
+            Time.timeScale = 0;
+            canvasCalled = !canvasCalled;
+        }
     }
 
     private void ColorChange()
     {
-        oxybar.color = Color.Lerp(colorEnd,colorStart, currentPercentage*multiplier);
+        oxybar.color = Color.Lerp(colorEnd, colorStart, currentPercentage*multiplier);
     }
 }

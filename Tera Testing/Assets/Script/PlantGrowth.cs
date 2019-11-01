@@ -46,7 +46,7 @@ public class PlantGrowth : MonoBehaviour
     [SerializeField]
     private GameObject PlantSpawnedWhenHarvested;
     [SerializeField]
-    private float GrassTriggerRadius = 3;
+    private float GrassTriggerRadius;
 
 
     [SerializeField]
@@ -216,7 +216,8 @@ public class PlantGrowth : MonoBehaviour
         Collider[] allOverlappingColliders = Physics.OverlapSphere(this.transform.position, GrassTriggerRadius);
         foreach (Collider C in allOverlappingColliders)
         {
-            C.GetComponent<GrassGrow>().StartGrowth();
+            if(C.gameObject.GetComponent<GrassGrow>()!=null)
+            C.gameObject.GetComponent<GrassGrow>().StartGrowth();
         }
     }
 }

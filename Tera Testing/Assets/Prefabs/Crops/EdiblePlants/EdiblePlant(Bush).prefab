@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 6495203801546656327}
   - component: {fileID: 5279369981672905506}
   - component: {fileID: 3303319055168159330}
+  - component: {fileID: -3917672076281897384}
   m_Layer: 0
   m_Name: EdiblePlant(Bush)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,7 +105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa703eb6cb70784997da0fd903ff253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-
   OxygenProvided: 0
 --- !u!114 &-3917672076281897384
 MonoBehaviour:
@@ -121,11 +121,8 @@ MonoBehaviour:
   ID: 5
   type: Plant
   description: A harvested bush, ready for consumption
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 50da598dd069a9c4398830529961a2af, type: 3}
   pickedUp: 0
-
   oxygenValue: 10
-
-  stackNumber: 0
+  stackNumber: 1
   subType: Bush Plant
-

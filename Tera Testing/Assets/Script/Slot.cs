@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class Slot : MonoBehaviour
 {
-    public GameObject player;
+    public GameObject player { get; private set; }
     public GameObject item;
     public int ID;
     public string type;
@@ -44,39 +44,48 @@ public class Slot : MonoBehaviour
 
     public void Update()
     {
-        if(this.gameObject.GetComponent<Toggle>().isOn)
+        if (player.GetComponent<Inventory>().inventoryDisplaying)
         {
-            this.gameObject.GetComponent<Toggle>().isOn = false; // deactivate to prevent using infinite times
-            if (item.GetComponent<Item>().type == "Plant")
-            {
-                useItem();
-                this.player.GetComponent<Inventory>().ToggleDisplayInventory();
-            }
-            else if (item.GetComponent<Item>().type == "Seed")
-            {
-                //this.player.GetComponent<PlayerController>().hotBarInventory[1] = item;
-                //this.player.GetComponent<PlayerController>().seedSlotBackground.GetComponent<Image>().sprite = item.GetComponent<Item>().icon;
-                this.player.GetComponent<Inventory>().ToggleDisplayInventory();
-
-            }
+            CheckChosenSlot();
         }
     }
 
+    private void CheckChosenSlot()
+    {
+        if (this.gameObject.GetComponent<Toggle>().isOn)
+        {
+            this.gameObject.GetComponent<Toggle>().isOn = false; // deactivate to prevent using infinite times
+            if (item.GetComponent<Item>().type == "Plant" && stackNumber > 0)
+            {
+                UseItem();
+            }
+            else if (item.GetComponent<Item>().type == "Seed" && stackNumber > 0)
+            {
+                this.player.GetComponent<PlayerController>().seedItem = item;
+                this.player.GetComponent<PlayerController>().contextBasedUI.GetComponent<ContextBasedUI>().seedIcon = item.GetComponent<Item>().icon;
+                //this.player.GetComponent<PlayerController>().seedSlotBackground.GetComponent<Image>().sprite = item.GetComponent<Item>().icon;
 
+            }
+            this.player.GetComponent<Inventory>().nextDig = Time.time + 0.6f;
+            this.player.GetComponent<Inventory>().ToggleDisplayInventory();
+        }
+    }
 
     public void UpdateSlot()
     {
         this.gameObject.GetComponent<Toggle>().interactable = true;
         slotIconGO.GetComponent<Image>().sprite = icon;
+        this.item.GetComponent<Item>().AssignParent(this);
+        this.empty = false;
     }
 
-    public void useItem()
+    public void UseItem()
     {
         item.GetComponent<Item>().itemUsage(this);
         stackNumber--;
-        if(stackNumber <= 0)
+        if (stackNumber <= 0)
         {
-            empty = true;
+            //empty = true;
 
         }
     }

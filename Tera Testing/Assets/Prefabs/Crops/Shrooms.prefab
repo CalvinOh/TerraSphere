@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GrowthSpeed: 1
+  StartingSize: 0.3
   FinalSize: 2
   Stage1Cap: 10
   Stage2Cap: 20
@@ -62,6 +63,7 @@ MonoBehaviour:
     type: 3}
   PlantSpawnedWhenHarvested: {fileID: 7461860657618276763, guid: 4c2f235a62411cc4b8f7e5ee5fed9091,
     type: 3}
+  GrassTriggerRadius: 5
   UnOutlined: {fileID: 2100000, guid: 4812f976f0f55e74f9a5f90fba3569eb, type: 2}
   Outlined: {fileID: 2100000, guid: c2807779e31f79d49abeb8d4769d3b55, type: 2}
   Grow: 0
@@ -4908,6 +4910,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7856097418601620294}
     m_Modifications:
+    - target: {fileID: 388224945109886459, guid: 48145365d658bde42b7e106e5f2270d8,
+        type: 3}
+      propertyPath: m_Name
+      value: Shrooms_Plant_P
+      objectReference: {fileID: 0}
+    - target: {fileID: 388224945109886459, guid: 48145365d658bde42b7e106e5f2270d8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Plant
+      objectReference: {fileID: 0}
+    - target: {fileID: 388224945109886459, guid: 48145365d658bde42b7e106e5f2270d8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6485403864180175209, guid: 48145365d658bde42b7e106e5f2270d8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4977,21 +4994,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 388224945109886459, guid: 48145365d658bde42b7e106e5f2270d8,
-        type: 3}
-      propertyPath: m_Name
-      value: Shrooms_Plant_P
-      objectReference: {fileID: 0}
-    - target: {fileID: 388224945109886459, guid: 48145365d658bde42b7e106e5f2270d8,
-        type: 3}
-      propertyPath: m_TagString
-      value: Plant
-      objectReference: {fileID: 0}
-    - target: {fileID: 388224945109886459, guid: 48145365d658bde42b7e106e5f2270d8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48145365d658bde42b7e106e5f2270d8, type: 3}

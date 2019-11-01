@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 6845369889884341649}
   - component: {fileID: 5867332440896390208}
   - component: {fileID: 2125763578268495386}
+  - component: {fileID: -447015998362770099}
   m_Layer: 0
   m_Name: EdiblePlant(Alien)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,7 +105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa703eb6cb70784997da0fd903ff253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-
   OxygenProvided: 0
 --- !u!114 &-447015998362770099
 MonoBehaviour:
@@ -121,9 +121,8 @@ MonoBehaviour:
   ID: 8
   type: Plant
   description: It looks like a plant? Maybe it's tasty
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 312d3d978b770854cb50622aea980ad4, type: 3}
   pickedUp: 0
   oxygenValue: 10
-  stackNumber: 0
+  stackNumber: 1
   subType: Alien Plant
-
