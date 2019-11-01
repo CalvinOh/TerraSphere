@@ -175,20 +175,6 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="WwiseTerraformPercent" ID="{4430AB34-E91C-4C7A-932F-FC8EA8D1E73C}">
-					<ChildrenList>
-						<Action Name="" ID="{F4CB0B6D-DDE2-48D6-A353-8A364B540F4B}" ShortID="685314690">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="38"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="TerraformPercent" ID="{2DBA9ED1-E639-4BE3-A2A2-DE7D24CAB1CA}" WorkUnitID="{67641C01-1D2A-4CBC-BB1A-D1F5E0FB072B}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

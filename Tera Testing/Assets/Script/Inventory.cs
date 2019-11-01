@@ -24,7 +24,7 @@ public class Inventory : MonoBehaviour
     //differentiates between two sounds: UI open(0) and UI close(1)
     private int uISoundNumber;
     //allows navigation sound to be played each time the player presses a button to navigate the menu
-    //private GameObject SelectHistory;
+    private GameObject SelectHistory;
 
     //public int itemsPickedUp;
     public GameObject[] seedSlot;
@@ -43,7 +43,7 @@ public class Inventory : MonoBehaviour
     {
         /*ckrueger audio*/
         uISoundNumber = 0;
-        //SelectHistory = eventSystem.currentSelectedGameObject;
+
 
         // Find how many slots the UI has for the inventory
         totalSeedSlots = seedSlotHolder.GetComponentsInChildren<Slot>().Length;
@@ -52,8 +52,9 @@ public class Inventory : MonoBehaviour
         plantSlot = new GameObject[totalPlantSlots];
 
         eventSystem = FindObjectOfType<EventSystem>();
+        SelectHistory = eventSystem.currentSelectedGameObject;
 
-        if(toggleStart==null)
+        if (toggleStart==null)
         {
             toggleStart = seedSlotHolder.GetComponentInChildren<Toggle>().gameObject;
         }
@@ -83,6 +84,13 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
+        /*v ckrueger audio v*/
+        if (eventSystem.currentSelectedGameObject != SelectHistory)
+        {
+            PlaySoundUINavigate();
+        }
+        SelectHistory = eventSystem.currentSelectedGameObject;
+        /*^ ckrueger audio ^*/
         if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Open Inventory"))
         {
             /*v ckrueger audio v*/
@@ -94,12 +102,6 @@ public class Inventory : MonoBehaviour
             {
                 PlaySoundUIClose();
             }
-
-            //if(eventSystem.currentSelectedGameObject == !SelectHistory)
-            //{
-               // PlaySoundUISelect();
-               // SelectHistory = eventSystem.currentSelectedGameObject;
-           // }
             /*^ ckrueger audio ^*/
 
             ToggleDisplayInventory();

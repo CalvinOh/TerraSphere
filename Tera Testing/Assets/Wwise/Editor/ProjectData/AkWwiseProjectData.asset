@@ -47,7 +47,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 2d83db676f09ea46afecc809b6ac0548
     GuidInternal: 
-    m_lastTime: -8586290249644775808
+    m_lastTime: -8586290210124775808
     List:
     - name: Play_Ambience
       guid: 410f2b0535c19a4295cefaeb3fa9c1c1
@@ -229,24 +229,12 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.136375
       minDuration: 0.136375
-    - name: WwiseTerraformPercent
-      guid: 34ab30441ce97a4c932ffc8ea8d1e73c
-      id: 3992473883
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: WwiseTerraformPercent
-        ObjectType: 3
-      Path: Default Work Unit/WwiseTerraformPercent
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 011c64672a1dbc4cbb1ad1f5e0fb072b
     GuidInternal: 
-    m_lastTime: -8586290261814775808
+    m_lastTime: -8586290224124775808
     List:
     - name: TerraformPercent
       guid: d19eba2d39e6e34ba2a2de7d24cab1ca
@@ -342,7 +330,5 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /Tera Testing_WwiseProject
-  - /Tera Testing_WwiseProject/Events
-  - /Tera Testing_WwiseProject/Events/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

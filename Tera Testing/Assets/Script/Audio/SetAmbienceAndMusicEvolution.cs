@@ -7,6 +7,7 @@ public class SetAmbienceAndMusicEvolution : MonoBehaviour
     /*ckrueger audio*/
 
     public AK.Wwise.RTPC TerraformRTPC;
+    public AK.Wwise.State TerraformState;
 
     TerraBar t;
 
@@ -20,5 +21,11 @@ public class SetAmbienceAndMusicEvolution : MonoBehaviour
     void Update()
     {
         TerraformRTPC.SetGlobalValue(t.barPercentage);
+
+        if (t.barPercentage < 35)
+        {
+            //TerraformState.SetValue;
+        }
+        
     }
 }

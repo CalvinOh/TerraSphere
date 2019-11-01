@@ -1640,6 +1640,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41adde4e3ce932c45ba47dd0d7760041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1087557879 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8330075224152440361, guid: 1b6fb9bd3e28ccf44a26ecf30abf577c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1728876801}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1138399272 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1962037859114798154, guid: b03c6dce2464b9245901e8008da07f9d,
@@ -2155,6 +2161,7 @@ GameObject:
   - component: {fileID: 1424189248}
   - component: {fileID: 1424189247}
   - component: {fileID: 1424189249}
+  - component: {fileID: 1424189250}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -2230,6 +2237,23 @@ MonoBehaviour:
   unloadTriggerList: 958ca0ea
   bankNameInternal: 
   valueGuidInternal: 
+--- !u!114 &1424189250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424189246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3501bd2e70bf54a2aadb709c98518906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TerraformRTPC:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 48f0c1aebbe5040e889520e9b8ade28a,
+      type: 2}
 --- !u!1001 &1430597191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4883,7 +4907,7 @@ PrefabInstance:
         type: 3}
       propertyPath: toggleStart
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1087557879}
     - target: {fileID: 6271376325731813486, guid: d64cfc0e221e98b408db0930da674aad,
         type: 3}
       propertyPath: seedSlotHolder
