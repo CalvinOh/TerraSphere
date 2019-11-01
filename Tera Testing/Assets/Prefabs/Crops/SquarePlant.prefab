@@ -63,7 +63,7 @@ MonoBehaviour:
     type: 3}
   PlantSpawnedWhenHarvested: {fileID: 5980316380976418999, guid: d2bf0a988e1333e4682e5b52df0b6218,
     type: 3}
-  GrassTriggerRadius: 0
+  GrassTriggerRadius: 5
   UnOutlined: {fileID: 2100000, guid: 4812f976f0f55e74f9a5f90fba3569eb, type: 2}
   Outlined: {fileID: 2100000, guid: c2807779e31f79d49abeb8d4769d3b55, type: 2}
   Grow: 1

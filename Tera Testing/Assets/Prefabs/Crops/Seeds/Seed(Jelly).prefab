@@ -125,5 +125,5 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 03e79a5132c18ae42ac5af3fdcd3fd09, type: 3}
   pickedUp: 0
   oxygenValue: 0
-  stackNumber: 0
+  stackNumber: 1
   subType: JellySeed

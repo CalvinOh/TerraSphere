@@ -4535,6 +4535,37 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6173502806351897059, guid: 948c7999e9016824aaf56a0ce872398d,
         type: 3}
+    - target: {fileID: 7414443116053151825, guid: 1b6fb9bd3e28ccf44a26ecf30abf577c,
+        type: 3}
+      propertyPath: stackNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414443116053151825, guid: 1b6fb9bd3e28ccf44a26ecf30abf577c,
+        type: 3}
+      propertyPath: ID
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414443116053151825, guid: 1b6fb9bd3e28ccf44a26ecf30abf577c,
+        type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 312d3d978b770854cb50622aea980ad4,
+        type: 3}
+    - target: {fileID: 7414443116053151825, guid: 1b6fb9bd3e28ccf44a26ecf30abf577c,
+        type: 3}
+      propertyPath: description
+      value: A small Jelly you can plant!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414443116053151825, guid: 1b6fb9bd3e28ccf44a26ecf30abf577c,
+        type: 3}
+      propertyPath: subType
+      value: JellySeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414443116053151825, guid: 1b6fb9bd3e28ccf44a26ecf30abf577c,
+        type: 3}
+      propertyPath: type
+      value: Seed
+      objectReference: {fileID: 0}
     - target: {fileID: 2240667732192903122, guid: 1b6fb9bd3e28ccf44a26ecf30abf577c,
         type: 3}
       propertyPath: item
