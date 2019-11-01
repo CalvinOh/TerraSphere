@@ -5402,7 +5402,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8d182b68317bd824f92358f8369abb6e, type: 3}
-    m_FontSize: 28
+    m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -5416,7 +5416,7 @@ MonoBehaviour:
   m_Text: "Calvin Oh - Gameplay Programmer\r\n\r\nPedro Tresgallo - Systems Programmer\r\n\r\nVictoria
     Zeilenga - Environmental and Prop Artist\r\n\r\nMaddy Smith - Character Artist\r\n\r\nJiening
     Tao - Gameplay Designer\r\n\r\nZoey Reyes - UI/UX and Narrative Designer\n\nCole
-    Krueger- Sound Designer \n\nDylan Love - Composer"
+    Krueger- Sound Designer\n\nDylan Love - Composer\n\nMarlon Lang - Composer"
 --- !u!222 &241407639
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19876,6 +19876,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlanetNew
       objectReference: {fileID: 0}
+    - target: {fileID: 8299793927086194060, guid: ff75aa15dbc9f1e409b17d12141b905e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299793927086194060, guid: ff75aa15dbc9f1e409b17d12141b905e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299793927086194060, guid: ff75aa15dbc9f1e409b17d12141b905e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5657149513039195044, guid: ff75aa15dbc9f1e409b17d12141b905e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19955,21 +19970,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -7.5750003
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299793927086194060, guid: ff75aa15dbc9f1e409b17d12141b905e,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299793927086194060, guid: ff75aa15dbc9f1e409b17d12141b905e,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299793927086194060, guid: ff75aa15dbc9f1e409b17d12141b905e,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 768139393938108224, guid: ff75aa15dbc9f1e409b17d12141b905e, type: 3}
