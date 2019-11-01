@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -130,8 +131,39 @@ public class PlayerController : MonoBehaviour
         ReassigningPlanetAsBaseSelection();
         HandleAnimatioons();
         DecreaseOxygen();
+        ChangeCurrentlySelecting();
     }
 
+    private void ChangeCurrentlySelecting()
+    {
+        int i = objectsInTrigger.IndexOf(currentlySelecting);
+
+        if(Input.GetButtonDown("Right Bumper"))
+        {
+            i++;
+            if(objectsInTrigger.IndexOf(currentlySelecting) != objectsInTrigger.Count-1)
+            {
+                currentlySelecting = objectsInTrigger[i];
+            }
+            else
+            {
+                currentlySelecting = objectsInTrigger[0];
+            }
+            
+        }
+        if (Input.GetButtonDown("Left Bumper"))
+        {
+            i--;
+            if (objectsInTrigger.IndexOf(currentlySelecting) != objectsInTrigger.IndexOf(objectsInTrigger[0]))
+            {
+                currentlySelecting = objectsInTrigger[i];
+            }
+            else
+            {
+                currentlySelecting = objectsInTrigger[objectsInTrigger.Count-1];
+            }
+        }
+    }
 
     private void EasyMode()
     {
@@ -253,7 +285,9 @@ public class PlayerController : MonoBehaviour
             newSeed.gameObject.GetComponent<PlantGrowth>().Grow = true;
             print("Planting");
 
-            Destroy(currentlySelecting.gameObject);
+            objectsInTrigger.Remove(currentlySelecting);
+            Destroy(currentlySelecting);
+            currentlySelecting = objectsInTrigger[0];
 
             /*ckrueger audio*/
             PlaySoundPlantSeed();
