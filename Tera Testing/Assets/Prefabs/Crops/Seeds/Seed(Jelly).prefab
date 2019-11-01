@@ -122,8 +122,8 @@ MonoBehaviour:
   ID: 14
   type: Seed
   description: A small Jelly you can plant!
-  icon: {fileID: 21300000, guid: 312d3d978b770854cb50622aea980ad4, type: 3}
+  icon: {fileID: 21300000, guid: 03e79a5132c18ae42ac5af3fdcd3fd09, type: 3}
   pickedUp: 0
   oxygenValue: 0
-  stackNumber: 1
+  stackNumber: 0
   subType: JellySeed

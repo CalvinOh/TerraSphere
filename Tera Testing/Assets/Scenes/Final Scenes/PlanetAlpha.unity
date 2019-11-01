@@ -1109,7 +1109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66eb41cad8bf6f54ab6436cb496b593d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlanetTerraformAmount: 1000000
+  PlanetTerraformAmount: 750000
   PercentageWhichTreesStartToAppear: 0
 --- !u!114 &416604032
 MonoBehaviour:
@@ -7161,6 +7161,11 @@ PrefabInstance:
       propertyPath: plantTextBox
       value: 
       objectReference: {fileID: 1314347151}
+    - target: {fileID: 2578194761795731692, guid: d64cfc0e221e98b408db0930da674aad,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5459683399624953430, guid: d64cfc0e221e98b408db0930da674aad, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d64cfc0e221e98b408db0930da674aad, type: 3}

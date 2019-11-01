@@ -100,7 +100,7 @@ public class Inventory : MonoBehaviour
     {
 
         /*v ckrueger audio v*/
-        if (eventSystem.currentSelectedGameObject != SelectHistory && inventoryDisplaying)
+        if (eventSystem.currentSelectedGameObject != SelectHistory && inventoryDisplaying && Time.time >= 0.1f)
         {
             PlaySoundUINavigate();
         }
