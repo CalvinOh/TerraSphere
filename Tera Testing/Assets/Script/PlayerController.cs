@@ -247,9 +247,13 @@ public class PlayerController : MonoBehaviour
     {
         if(currentlySelecting.CompareTag("Hole"))
         {
-            GameObject newSeed = (GameObject)Instantiate(seedItem.GetComponent<SeedItem>().plantToGrowInto, spawnItemLocation.transform.position, spawnItemLocation.transform.rotation);
+            
+
+            GameObject newSeed = (GameObject)Instantiate(seedItem.GetComponent<SeedItem>().plantToGrowInto, currentlySelecting.transform.position, currentlySelecting.transform.rotation);
             newSeed.gameObject.GetComponent<PlantGrowth>().Grow = true;
             print("Planting");
+
+            Destroy(currentlySelecting.gameObject);
 
             /*ckrueger audio*/
             PlaySoundPlantSeed();
