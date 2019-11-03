@@ -14,7 +14,7 @@ public class EnviromentTree : MonoBehaviour
 
 
     private Vector3 StartSize;
-    private float CurrentScale;
+    public float CurrentScale;
     private Collider MyCollider;
     private float StartTime;
     private bool Grow;
@@ -55,17 +55,15 @@ public class EnviromentTree : MonoBehaviour
     {
         // CurrentScale *= 1.01f;
         //CurrentScale = (-(20 * Mathf.Sin(20 * (Time.fixedTime - StartTime))) / (20 * (Time.fixedTime - StartTime)) + 10) / 10 * PopupSize;
-        
-        if (Time.fixedTime - StartTime >= 0.8)
-        {
-            CurrentScale *= 1.005f;
-        }
-        else
-        {
-            CurrentScale = (-(20 * Mathf.Sin(30 * (Time.fixedTime - StartTime))) / (60 * (Time.fixedTime - StartTime)) + 10)/10 * PopupSize;
-        }
 
-        if (CurrentScale == 1)
+        if(Time.fixedTime - StartTime <= 0.5)
+            CurrentScale += PopupSize / 0.5f *Time.deltaTime;
+        else
+            CurrentScale += 0.002f * Time.deltaTime;
+
+
+
+        if (CurrentScale >= 1)
             Grow = false;
         CurrentScale = Mathf.Clamp(CurrentScale, 0f, 1f);
     }

@@ -10,10 +10,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 5.58
-  m_Height: 20.12
+  m_Radius: 0.04
+  m_Height: 0.2
   m_Direction: 1
-  m_Center: {x: 0, y: 3.17, z: 0}
+  m_Center: {x: 0, y: 0.06, z: 0}
 --- !u!1 &8677986007332407678
 GameObject:
   m_ObjectHideFlags: 0
@@ -52,6 +52,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5060500598930734404}
     m_Modifications:
+    - target: {fileID: 594685516564439583, guid: 9656b961d37bff14db9d12b38ad4b7ed,
+        type: 3}
+      propertyPath: m_Name
+      value: Grass02
+      objectReference: {fileID: 0}
+    - target: {fileID: 594685516564439583, guid: 9656b961d37bff14db9d12b38ad4b7ed,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grass
+      objectReference: {fileID: 0}
     - target: {fileID: 594685516564439581, guid: 9656b961d37bff14db9d12b38ad4b7ed,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -121,16 +131,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.08002462
-      objectReference: {fileID: 0}
-    - target: {fileID: 594685516564439583, guid: 9656b961d37bff14db9d12b38ad4b7ed,
-        type: 3}
-      propertyPath: m_Name
-      value: Grass02
-      objectReference: {fileID: 0}
-    - target: {fileID: 594685516564439583, guid: 9656b961d37bff14db9d12b38ad4b7ed,
-        type: 3}
-      propertyPath: m_TagString
-      value: Grass
       objectReference: {fileID: 0}
     - target: {fileID: 594685516564439580, guid: 9656b961d37bff14db9d12b38ad4b7ed,
         type: 3}

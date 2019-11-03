@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3079135076393118205}
   - component: {fileID: 3079135076393118206}
   m_Layer: 0
-  m_Name: TreeOnSurface (4)
+  m_Name: TreeOnSurface
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 3079135076393118204}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.021785917, y: 0.021785917, z: 0.021785917}
   m_Children:
   - {fileID: 3567350083777943545}
   m_Father: {fileID: 0}
@@ -64,7 +64,7 @@ PrefabInstance:
     - target: {fileID: 1962037859114798154, guid: b03c6dce2464b9245901e8008da07f9d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0.4596
       objectReference: {fileID: 0}
     - target: {fileID: 1962037859114798154, guid: b03c6dce2464b9245901e8008da07f9d,
         type: 3}
