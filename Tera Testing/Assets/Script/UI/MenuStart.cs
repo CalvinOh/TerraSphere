@@ -29,15 +29,25 @@ public class MenuStart : MonoBehaviour
     private float timeNeededMenu;
 
     private EventSystem eventSystem;
+    private GameObject SelectHistory;
+    private bool firstSelectOverride = false;
 
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.None;
         eventSystem = FindObjectOfType<EventSystem>();
+        SelectHistory = eventSystem.currentSelectedGameObject;
+        AkSoundEngine.PostEvent("Play_MainTheme", this.gameObject);
     }
 
     void Update()
     {
+        if(eventSystem.currentSelectedGameObject != SelectHistory && Time.time >= 0.1f)
+        {
+            AkSoundEngine.PostEvent("Play_ts_sx_uni_ui_navigate", this.gameObject);
+        }
+        SelectHistory = eventSystem.currentSelectedGameObject;
+        firstSelectOverride = true;
         if(Input.GetButtonDown("Use Item"))
         {
             timeNeededAnim = 0;

@@ -23,6 +23,16 @@ public class GameOverMenu : MonoBehaviour
     [Tooltip("The scene index number for this scene.")]
     private int thisSceneIndex;
 
+    private bool DeathScreenIsActive = false;
+
+    private void FixedUpdate()
+    {
+        if(DeathScreenIsActive && eventSystem.currentSelectedGameObject == null)
+        {
+            eventSystem.SetSelectedGameObject(startingButton.gameObject);
+        }
+    }
+
     public void DeathScreen()
     {
         gameOverPanel.SetActive(true);

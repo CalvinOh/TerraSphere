@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{67641C01-1D2A-4CBC-BB1A-D1F5E0FB072B}" SchemaVersion="94">
+	<GameParameters>
+		<WorkUnit Name="Default Work Unit" ID="{67641C01-1D2A-4CBC-BB1A-D1F5E0FB072B}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="TerraformPercent" ID="{2DBA9ED1-E639-4BE3-A2A2-DE7D24CAB1CA}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>

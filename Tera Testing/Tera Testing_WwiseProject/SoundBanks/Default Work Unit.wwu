@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{BB8F0A4C-23FE-41F5-A45C-13AC07BF3E40}" SchemaVersion="94">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{BB8F0A4C-23FE-41F5-A45C-13AC07BF3E40}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Main" ID="{18C419C3-7273-4D35-BC56-B32D29CF2496}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Play_ts_sx_uni_int_water" ID="{5854C0B7-06C9-41A9-88B4-FCA9F847387D}" WorkUnitID="{67DB832D-096F-46EA-AFEC-C809B6AC0548}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_Music" ID="{14F1846B-FF0D-4227-A1E2-C77210C82B6B}" WorkUnitID="{67DB832D-096F-46EA-AFEC-C809B6AC0548}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_ts_sx_uni_env_bush_thru" ID="{14E7B026-34BA-4250-90DB-FF1B0EFFA4F4}" WorkUnitID="{67DB832D-096F-46EA-AFEC-C809B6AC0548}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_Ambience" ID="{052B0F41-C135-429A-95CE-FAEB3FA9C1C1}" WorkUnitID="{67DB832D-096F-46EA-AFEC-C809B6AC0548}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_MainTheme" ID="{AEA074AC-7FA1-4417-95C3-355497C5E760}" WorkUnitID="{67DB832D-096F-46EA-AFEC-C809B6AC0548}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="play_ts_sx_uni_int_shovel" ID="{073A1B0C-A19C-455A-8330-7D82E9630CD7}" WorkUnitID="{67DB832D-096F-46EA-AFEC-C809B6AC0548}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_ts_sx_uni_int_plant_harvest" ID="{FDE338CA-CF85-4624-A1F6-4164C83AB176}" WorkUnitID="{67DB832D-096F-46EA-AFEC-C809B6AC0548}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_ts_sx_uni_ui_oxygen_low" ID="{5CFE9EAF-C68D-46AA-95B6-3A530C2C9AF2}" WorkUnitID="{67DB832D-096F-46EA-AFEC-C809B6AC0548}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_ts_sx_uni_int_seed_plant" ID="{ACADE5C2-6F29-493C-BE1A-ED91DE707F1B}" WorkUnitID="{67DB832D-096F-46EA-AFEC-C809B6AC0548}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="play_ts_sx_uni_plr_footsteps" ID="{8B65EE62-4CCC-49AA-AAF9-6393EA83E5A7}" WorkUnitID="{67DB832D-096F-46EA-AFEC-C809B6AC0548}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_ts_sx_uni_ui_navigate" ID="{C65DAE0B-4530-4AB6-A3AB-F438A60A0507}" WorkUnitID="{67DB832D-096F-46EA-AFEC-C809B6AC0548}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_ts_sx_uni_ui_close" ID="{A2F63A68-01A8-4BA7-B2A3-C0DD3598EA2C}" WorkUnitID="{67DB832D-096F-46EA-AFEC-C809B6AC0548}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_ts_sx_uni_ui_plant_consume" ID="{28E691EA-7497-4E7A-9FD1-BDDEADE80BB4}" WorkUnitID="{67DB832D-096F-46EA-AFEC-C809B6AC0548}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_ts_sx_uni_ui_open" ID="{859F0785-D276-4EE4-83ED-FA2A8AC5994B}" WorkUnitID="{67DB832D-096F-46EA-AFEC-C809B6AC0548}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_ts_sx_uni_ui_select" ID="{BFD5DDFE-8702-4FF6-85EE-6C5081CDEA89}" WorkUnitID="{67DB832D-096F-46EA-AFEC-C809B6AC0548}" Filter="7" Origin="Manual"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>
