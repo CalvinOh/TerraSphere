@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 11
   type: Seed
-  description: A small BombPlant you can plant!
+  description: Seed for a small bomb plant, please harvest from over 3 meters away
   icon: {fileID: 21300000, guid: 84afe2d349f240c48b2abcad9d952b97, type: 3}
   pickedUp: 0
   oxygenValue: 0

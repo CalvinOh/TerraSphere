@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 15
   type: Seed
-  description: A small square you can plant!
+  description: Seed for a square plant, a member of the plant species shapes.
   icon: {fileID: 21300000, guid: 6af66bac943901e43afcd96722dfa37f, type: 3}
   pickedUp: 0
   oxygenValue: 0

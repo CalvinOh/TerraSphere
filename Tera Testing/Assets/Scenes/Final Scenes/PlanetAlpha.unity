@@ -1123,6 +1123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetTerraformAmount: 750000
   PercentageWhichTreesStartToAppear: 0
+  EnviromentalTrees: []
 --- !u!114 &416604032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5180,6 +5181,16 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 845255591}
+    - target: {fileID: 2282345446249981836, guid: 1b6fb9bd3e28ccf44a26ecf30abf577c,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054700702245522004, guid: 1b6fb9bd3e28ccf44a26ecf30abf577c,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b6fb9bd3e28ccf44a26ecf30abf577c, type: 3}
 --- !u!1 &1789754345
@@ -7830,6 +7841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetTerraformAmount: 100000
   PercentageWhichTreesStartToAppear: 0
+  EnviromentalTrees: []
 --- !u!114 &8962144445664453613
 MonoBehaviour:
   m_ObjectHideFlags: 0
