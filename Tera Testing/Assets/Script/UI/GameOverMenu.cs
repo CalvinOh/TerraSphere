@@ -16,12 +16,28 @@ public class GameOverMenu : MonoBehaviour
     private GameObject gameOverPanel;
 
     [SerializeField]
+    [Tooltip("Canvas to be deactivated")]
+    private GameObject Canvas1;
+
+    [SerializeField]
+    [Tooltip("Canvas to be deactivated")]
+    private GameObject Canvas2;
+
+    [SerializeField]
+    [Tooltip("Canvas to be deactivated")]
+    private GameObject Canvas3;
+
+    [SerializeField]
     [Tooltip("The button the gameover panel should start on.")]
     private Button startingButton;
 
     [SerializeField]
     [Tooltip("The scene index number for this scene.")]
     private int thisSceneIndex;
+
+    [SerializeField]
+    [Tooltip("The scene index number for this scene.")]
+    private int MainMenuSceneIndex;
 
     private bool DeathScreenIsActive = false;
 
@@ -35,8 +51,13 @@ public class GameOverMenu : MonoBehaviour
 
     public void DeathScreen()
     {
+        Canvas1.SetActive(false);
+        Canvas2.SetActive(false);
+        Canvas3.SetActive(false);
         gameOverPanel.SetActive(true);
+        DeathScreenIsActive = true;
         eventSystem.SetSelectedGameObject(startingButton.gameObject);
+        Debug.Log(eventSystem.currentSelectedGameObject);
         //activates death screen panel and sets the starting button to be selected entering the player into that menu navigation.
     }
 
@@ -47,6 +68,8 @@ public class GameOverMenu : MonoBehaviour
 
     public void RestartLevel()
     {
+        Time.timeScale = 1;
+        SceneManager.UnloadSceneAsync(thisSceneIndex);
         SceneManager.LoadScene(thisSceneIndex);
     }
 }

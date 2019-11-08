@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     Inventory invScript;
     //The gameObject that the player is currently selecting wihtin the trigger box
     [SerializeField]
-    private GameObject currentlySelecting;
+    public GameObject currentlySelecting;
     //The currently selected seed item
     [SerializeField]
     public GameObject seedItem;

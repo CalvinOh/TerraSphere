@@ -1263,7 +1263,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 7b1537ce50f07924787b3c2f5867f692, type: 2}
+      objectReference: {fileID: 2100000, guid: 688a1d8f4837d994ba1bd93703e0a593, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5508d89e3293d3643b87b0928cd0ed99, type: 3}
 --- !u!1 &432756345
@@ -2377,6 +2377,12 @@ CanvasRenderer:
 --- !u!1 &909486845 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8330075224152440361, guid: 1b6fb9bd3e28ccf44a26ecf30abf577c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1728876801}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &995484363 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9100561491492978919, guid: 1b6fb9bd3e28ccf44a26ecf30abf577c,
     type: 3}
   m_PrefabInstance: {fileID: 1728876801}
   m_PrefabAsset: {fileID: 0}
@@ -5026,8 +5032,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventSystem: {fileID: 824819105}
   gameOverPanel: {fileID: 1868536319}
+  Canvas1: {fileID: 2944476038799764436}
+  Canvas2: {fileID: 432756345}
+  Canvas3: {fileID: 995484363}
   startingButton: {fileID: 84770357}
   thisSceneIndex: 1
+  MainMenuSceneIndex: 1
 --- !u!114 &1855900944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5978,7 +5988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barFill: {fileID: 1415005164684370755}
-  grass: {fileID: 2100000, guid: 7b1537ce50f07924787b3c2f5867f692, type: 2}
+  grass: {fileID: 2100000, guid: 688a1d8f4837d994ba1bd93703e0a593, type: 2}
   animator: {fileID: 1570532744}
   barPercentage: 0
 --- !u!222 &1415005164684370754
@@ -7196,6 +7206,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 174979710288676187, guid: d64cfc0e221e98b408db0930da674aad,
+        type: 3}
+      propertyPath: oxygenValue
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5459683399624953430, guid: d64cfc0e221e98b408db0930da674aad, type: 3}

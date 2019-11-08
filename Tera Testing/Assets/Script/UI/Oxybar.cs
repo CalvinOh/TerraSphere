@@ -38,9 +38,11 @@ public class Oxybar : MonoBehaviour
     private float maxOxygen;
     private float currentOxygen;
     private bool canvasCalled = false;
+    private GameOverMenu gameOverMenu;
 
     private void Awake()
     {
+        
         playerController = FindObjectOfType<PlayerController>();
         maxOxygen = playerController.oxygenMax;
     }
@@ -54,6 +56,8 @@ public class Oxybar : MonoBehaviour
         if (currentPercentage <= 0 && !canvasCalled)
         {
             canvasObject.SetActive(true);
+            gameOverMenu = FindObjectOfType<GameOverMenu>();
+            gameOverMenu.DeathScreen();
             Time.timeScale = 0;
             canvasCalled = !canvasCalled;
         }

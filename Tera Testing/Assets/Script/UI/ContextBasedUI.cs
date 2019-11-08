@@ -30,9 +30,19 @@ public class ContextBasedUI : MonoBehaviour
     private int alreadyActivated = 0;
     private Transform newLocation;
 
+    private PlayerController player;
+
+    private void Start()
+    {
+        player = FindObjectOfType<PlayerController>();
+    }
+
     private void Update()
     {
         CheckCollider();
+        popUpCanvas.rotation = player.currentlySelecting.transform.rotation;
+
+        popUpCanvas.position = player.currentlySelecting.transform.position;
     }
 
     private void CheckCollider()
@@ -66,9 +76,7 @@ public class ContextBasedUI : MonoBehaviour
             {
                 print("PopUpAnimStart");
                 animator.SetBool("AnimStart", true);
-                popUpCanvas.rotation = other.transform.rotation;
-
-                popUpCanvas.position = other.transform.position;
+                
             }
             alreadyActivated++;
             if (other.tag == "Plant")
