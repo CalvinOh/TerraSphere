@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
 
         if (!invScript.inventoryDisplaying)
         {
-            //if (MyAnimator.GetCurrentAnimatorStateInfo(0).IsName("breath") || MyAnimator.GetCurrentAnimatorStateInfo(0).IsName("walk"))
+            if (MyAnimator.GetCurrentAnimatorStateInfo(0).IsName("breath") || MyAnimator.GetCurrentAnimatorStateInfo(0).IsName("walk"))
             {
                 RotateCamera();
                 ContextSelectingItem();
@@ -177,7 +177,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //if(MyAnimator.GetCurrentAnimatorStateInfo(0).IsName("breath")|| MyAnimator.GetCurrentAnimatorStateInfo(0).IsName("walk"))
+        if (MyAnimator.GetCurrentAnimatorStateInfo(0).IsName("breath") || MyAnimator.GetCurrentAnimatorStateInfo(0).IsName("walk"))
         Movement();
     }
 

@@ -15,7 +15,7 @@ public class PlanetManager : MonoBehaviour
     static float CurrentTerraformAmount;
 
     private List<PlantGrowth> PlantsOnPlanet = new List<PlantGrowth>();
-    private List<EnviromentTree> EnviromentalTrees = new List<EnviromentTree>();
+    public List<EnviromentTree> EnviromentalTrees = new List<EnviromentTree>();
 
 
     public float TerraformPercentage
@@ -42,6 +42,7 @@ public class PlanetManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(GrowTrees());
         CurrentTerraformAmount = 0;
     }
 
@@ -50,7 +51,6 @@ public class PlanetManager : MonoBehaviour
     private void FixedUpdate()
     {
         CurrentTerraformAmount += TerraformAmountPerSecond;
-        
         CurrentTerraformAmount = Mathf.Clamp(CurrentTerraformAmount, 0, PlanetTerraformAmount);
     }
 
@@ -65,7 +65,7 @@ public class PlanetManager : MonoBehaviour
     }
     
 
-
+    /*
     private void SpawnTrees()
     {
         if (TerraformPercentage >= PercentageWhichTreesStartToAppear)
@@ -73,6 +73,7 @@ public class PlanetManager : MonoBehaviour
 
             for (int i = 0; i < EnviromentalTrees.Count; i++)
             {
+
                 if (TerraformPercentage <= ((100 - PercentageWhichTreesStartToAppear) / EnviromentalTrees.Count) * i && TerraformPercentage + TerraformAmountPerSecond > (100 - PercentageWhichTreesStartToAppear) / EnviromentalTrees.Count *i)
                 {
                     EnviromentalTrees[i].StartGrow();
@@ -81,4 +82,23 @@ public class PlanetManager : MonoBehaviour
             
         }
     }
+    */
+
+    private IEnumerator GrowTrees()
+    {
+        int NumberOfTreeToGrowNext =0;
+        while (PlanetTerraformAmount < 100)
+        {
+            if (CurrentTerraformAmount > ((100 - PercentageWhichTreesStartToAppear) / EnviromentalTrees.Count) * NumberOfTreeToGrowNext)
+            {
+                EnviromentalTrees[NumberOfTreeToGrowNext].StartGrow();
+                NumberOfTreeToGrowNext++;
+            }
+
+        }
+
+        return null;
+
+    }
+
 }
