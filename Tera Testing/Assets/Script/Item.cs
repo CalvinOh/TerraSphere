@@ -49,7 +49,7 @@ public class Item : MonoBehaviour
 
     public string itemDescriptionBoxContent()
     {
-        return ($"Item: {subType}\nType: {type}\nStack: {stackNumber}\n\nDescription: {description}" ?? "Slot is Empty");
+        return ($"Item: {subType}\nStack: {stackNumber}\n\nDescription: {description}" ?? "Slot is Empty");
     }
 
     /*ckrueger audio*/
