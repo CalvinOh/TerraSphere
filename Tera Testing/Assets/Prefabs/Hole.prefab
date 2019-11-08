@@ -197,7 +197,7 @@ PrefabInstance:
     - target: {fileID: 1984260073224113157, guid: 50e4003f2fa984d45b160eb1240371ca,
         type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1984260073224113157, guid: 50e4003f2fa984d45b160eb1240371ca,
         type: 3}
@@ -213,6 +213,86 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
       value: 0.20830366
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984260073224113157, guid: 50e4003f2fa984d45b160eb1240371ca,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 1.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984260073224113157, guid: 50e4003f2fa984d45b160eb1240371ca,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984260073224113157, guid: 50e4003f2fa984d45b160eb1240371ca,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984260073224113157, guid: 50e4003f2fa984d45b160eb1240371ca,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984260073224113157, guid: 50e4003f2fa984d45b160eb1240371ca,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.r
+      value: 0.3773585
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984260073224113157, guid: 50e4003f2fa984d45b160eb1240371ca,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.g
+      value: 0.2765954
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984260073224113157, guid: 50e4003f2fa984d45b160eb1240371ca,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.b
+      value: 0.21181916
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984260073224113157, guid: 50e4003f2fa984d45b160eb1240371ca,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.r
+      value: 0.5471698
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984260073224113157, guid: 50e4003f2fa984d45b160eb1240371ca,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.g
+      value: 0.39946428
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984260073224113157, guid: 50e4003f2fa984d45b160eb1240371ca,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.b
+      value: 0.24519402
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984260073224113157, guid: 50e4003f2fa984d45b160eb1240371ca,
+        type: 3}
+      propertyPath: ColorModule.gradient.minGradient.key0.r
+      value: 0.6509434
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984260073224113157, guid: 50e4003f2fa984d45b160eb1240371ca,
+        type: 3}
+      propertyPath: ColorModule.gradient.minGradient.key0.g
+      value: 0.48820755
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984260073224113157, guid: 50e4003f2fa984d45b160eb1240371ca,
+        type: 3}
+      propertyPath: ColorModule.gradient.minGradient.key0.b
+      value: 0.24256852
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984260073224113157, guid: 50e4003f2fa984d45b160eb1240371ca,
+        type: 3}
+      propertyPath: ColorModule.gradient.minGradient.key1.r
+      value: 0.3018868
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984260073224113157, guid: 50e4003f2fa984d45b160eb1240371ca,
+        type: 3}
+      propertyPath: ColorModule.gradient.minGradient.key1.g
+      value: 0.28159487
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984260073224113157, guid: 50e4003f2fa984d45b160eb1240371ca,
+        type: 3}
+      propertyPath: ColorModule.gradient.minGradient.key1.b
+      value: 0.22071913
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50e4003f2fa984d45b160eb1240371ca, type: 3}

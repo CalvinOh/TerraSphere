@@ -47,17 +47,17 @@ public class ContextBasedUI : MonoBehaviour
 
     private void CheckCollider()
     {
-        if(detector != null)
+        if(player.currentlySelecting != null)
         {
-            if (detector.tag == "Plant")
+            if (player.currentlySelecting.tag == "Plant")
             {
                 emptyIcon.sprite = harvestIcon;
             }
-            else if (detector.tag == "Seed")
+            else if (player.currentlySelecting.tag == "Seed")
             {
                 emptyIcon.sprite = waterIcon;
             }
-            else if (detector.tag == "Hole")
+            else if (player.currentlySelecting.tag == "Hole")
             {
                 emptyIcon.sprite = seedIcon;
             }
@@ -65,13 +65,13 @@ public class ContextBasedUI : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Hole" || other.tag == "Seed" || other.tag == "Plant")
+        if (player.currentlySelecting.tag == "Hole" || player.currentlySelecting.tag == "Seed" || player.currentlySelecting.tag == "Plant")
         {
             emptyIcon.gameObject.SetActive(true);
             greenOutline.gameObject.SetActive(true);
-            detector = other;
+            //detector = other;
             if (alreadyActivated <= 0)
             {
                 print("PopUpAnimStart");
@@ -79,15 +79,15 @@ public class ContextBasedUI : MonoBehaviour
                 
             }
             alreadyActivated++;
-            if (other.tag == "Plant")
+            if (player.currentlySelecting.tag == "Plant")
             {
                 emptyIcon.sprite = harvestIcon;
             }
-            else if (other.tag == "Seed")
+            else if (player.currentlySelecting.tag == "Seed")
             {
                 emptyIcon.sprite = waterIcon;
             }
-            else if (other.tag == "Hole")
+            else if (player.currentlySelecting.tag == "Hole")
             {
                 emptyIcon.sprite = seedIcon;
             }
@@ -96,7 +96,7 @@ public class ContextBasedUI : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Hole" || other.tag == "Seed" || other.tag == "Plant")
+        if(player.currentlySelecting.tag == "Hole" || player.currentlySelecting.tag == "Seed" || player.currentlySelecting.tag == "Plant")
         {
             alreadyActivated--;
             print(alreadyActivated+" "+other.tag);
