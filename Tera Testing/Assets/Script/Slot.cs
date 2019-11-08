@@ -20,7 +20,7 @@ public class Slot : MonoBehaviour
 
     public void Start()
     {
-        slotIconGO = transform.GetChild(0);
+        slotIconGO = transform.GetChild(1);//.GetChild(0);
         player = FindObjectOfType<Inventory>().gameObject;
         this.gameObject.GetComponent<Toggle>().isOn = false;
 
