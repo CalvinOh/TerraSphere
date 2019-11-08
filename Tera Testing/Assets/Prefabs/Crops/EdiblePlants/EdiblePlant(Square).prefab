@@ -121,7 +121,7 @@ MonoBehaviour:
   ID: 20
   type: Plant
   description: A harvested Square, ready for consumption
-  icon: {fileID: 21300000, guid: c771540a0f1f64747b1877863f4e9055, type: 3}
+  icon: {fileID: 21300000, guid: 2669d1dc4f22ea84287a40c594ef3cd8, type: 3}
   pickedUp: 0
   oxygenValue: 10
   stackNumber: 1

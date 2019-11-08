@@ -122,7 +122,7 @@ MonoBehaviour:
   ID: 12
   type: Seed
   description: A small Corndog you can plant!
-  icon: {fileID: 21300000, guid: dc7063a83429f8c40a8e813165846968, type: 3}
+  icon: {fileID: 21300000, guid: 8da02e80a8c2c7b49b0671b51b0978ca, type: 3}
   pickedUp: 0
   oxygenValue: 0
   stackNumber: 1

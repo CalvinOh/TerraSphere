@@ -121,7 +121,7 @@ MonoBehaviour:
   ID: 18
   type: Plant
   description: A harvested Carrot, ready for consumption
-  icon: {fileID: 21300000, guid: e24be222e19b50549898268bd9b7bf29, type: 3}
+  icon: {fileID: 21300000, guid: 12529e8da13bfda4dad0484405f80935, type: 3}
   pickedUp: 0
   oxygenValue: 20
   stackNumber: 1

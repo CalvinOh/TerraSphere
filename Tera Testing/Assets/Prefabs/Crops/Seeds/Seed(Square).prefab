@@ -122,7 +122,7 @@ MonoBehaviour:
   ID: 15
   type: Seed
   description: A small square you can plant!
-  icon: {fileID: 21300000, guid: c5bdf90083404dd48b2c652cadccb3af, type: 3}
+  icon: {fileID: 21300000, guid: 6af66bac943901e43afcd96722dfa37f, type: 3}
   pickedUp: 0
   oxygenValue: 0
   stackNumber: 1
