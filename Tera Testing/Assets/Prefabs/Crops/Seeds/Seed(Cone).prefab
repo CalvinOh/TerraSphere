@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7850877792659401192}
   - component: {fileID: 96758828577659761}
   m_Layer: 0
-  m_Name: Seed(Dagger)
+  m_Name: Seed(Cupcake)
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2
   type: Seed
-  description: A dagger seed, not quite pointy.
+  description: Seed for a cupcake plant, complete with cherrty on top.
   icon: {fileID: 21300000, guid: 95866fa38338cfc42b733725d0bfdd48, type: 3}
   pickedUp: 0
   oxygenValue: 0

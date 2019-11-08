@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 12
   type: Seed
-  description: A small Corndog you can plant!
+  description: Seed for a corndog plant, no mircowave required.
   icon: {fileID: 21300000, guid: 8da02e80a8c2c7b49b0671b51b0978ca, type: 3}
   pickedUp: 0
   oxygenValue: 0
