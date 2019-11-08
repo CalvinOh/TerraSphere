@@ -122,7 +122,7 @@ MonoBehaviour:
   ID: 11
   type: Seed
   description: A small BombPlant you can plant!
-  icon: {fileID: 21300000, guid: 711215af033ae204b8622c0381ecb8cf, type: 3}
+  icon: {fileID: 21300000, guid: 84afe2d349f240c48b2abcad9d952b97, type: 3}
   pickedUp: 0
   oxygenValue: 0
   stackNumber: 1

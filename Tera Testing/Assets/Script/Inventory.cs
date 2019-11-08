@@ -106,6 +106,7 @@ public class Inventory : MonoBehaviour
         }
         SelectHistory = eventSystem.currentSelectedGameObject;
         /*^ ckrueger audio ^*/
+
         if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Open Inventory"))
         {
             /*v ckrueger audio v*/
@@ -136,23 +137,23 @@ public class Inventory : MonoBehaviour
 
                 Cursor.lockState = CursorLockMode.Locked;
 
-                if (connectedControllers.Length > 0)
-                {
-                    DetermineIfUsingController();
-                }
-                else
-                {
-                    if (Input.GetKeyDown(KeyCode.E))
-                    {
-                        ToggleDisplayInventory();
+                //if (connectedControllers.Length > 0)
+                //{
+                //    DetermineIfUsingController();
+                //}
+                //else
+                //{
+                //    if (Input.GetKeyDown(KeyCode.E))
+                //    {
+                //        ToggleDisplayInventory();
 
-                        if (inventoryDisplaying)
-                            Cursor.lockState = CursorLockMode.None;
-                        else if (!inventoryDisplaying)
-                            Cursor.lockState = CursorLockMode.Locked;
+                //        if (inventoryDisplaying)
+                //            Cursor.lockState = CursorLockMode.None;
+                //        else if (!inventoryDisplaying)
+                //            Cursor.lockState = CursorLockMode.Locked;
 
-                    }
-                }
+                //    }
+                //}
 
 
                 if (inventoryDisplaying)
@@ -177,214 +178,184 @@ public class Inventory : MonoBehaviour
             }
         }
     }
-            private void DetermineIfUsingController()
-            {
-                for (int i = 0; i < connectedControllers.Length; i++)
-                {
-                    if (!string.IsNullOrEmpty(connectedControllers[i]))
-                    {
-                        if (Input.GetButtonDown("Open Inventory"))
-                        {
-                            ToggleDisplayInventory();
-                        }
-                    }
 
+    private void DetermineIfUsingController()
+    {
+        for (int i = 0; i < connectedControllers.Length; i++)
+        {
+            if (!string.IsNullOrEmpty(connectedControllers[i]))
+            {
+                if (Input.GetButtonDown("Open Inventory"))
+                {
+                    ToggleDisplayInventory();
                 }
             }
 
-            private void UpdateDescriptionBox(bool force = false)
+        }
+    }
+
+    private void UpdateDescriptionBox(bool force = false)
+    {
+        if (eventSystem.currentSelectedGameObject != esLastSelected || force)
+        {
+            if (seedTab)
             {
-                if (eventSystem.currentSelectedGameObject != esLastSelected || force)
-                {
-                    if (seedTab)
-                    {
-                        seedTextBox.text = eventSystem.currentSelectedGameObject.GetComponent<Slot>().item.GetComponent<Item>().itemDescriptionBoxContent()
-                            ?? "Slot is Empty";
-                    }
-                    else
-                    {
-                        plantTextBox.text = eventSystem.currentSelectedGameObject.GetComponent<Slot>().item.GetComponent<Item>().itemDescriptionBoxContent()
-                            ?? "Slot is Empty";
-                    }
-                }
-                esLastSelected = eventSystem.currentSelectedGameObject;
+                seedTextBox.text = eventSystem.currentSelectedGameObject.GetComponent<Slot>().item.GetComponent<Item>().itemDescriptionBoxContent()
+                    ?? "Slot is Empty";
             }
-
-            public void ToggleDisplayInventory()
+            else
             {
-                UpdateDescriptionBox(); // Update before displaying inventory
-                                        //eventSystem.SetSelectedGameObject(toggleStart);
-                inventoryDisplaying = !inventoryDisplaying;
-                if (inventoryDisplaying)
-                {
-                    ToggleTabDisplayed();
-                }
-                else
-                {
-                    seedInventoryCanvas.GetComponentInParent<Canvas>().targetDisplay = 7;
-                    plantInventoryCanvas.GetComponent<Canvas>().targetDisplay = 7;
-                    Cursor.lockState = CursorLockMode.Locked;
-                }
-            }
-
-            private void ToggleTabDisplayed()
-            {
-                if (seedTab)
-                {
-                    seedInventoryCanvas.GetComponent<Canvas>().targetDisplay = 0;
-                    plantInventoryCanvas.GetComponent<Canvas>().targetDisplay = 7;
-
-                    //toggleStartS = seedSlotHolder.GetComponentInChildren<Toggle>().gameObject;
-                    // making sure that all of the slots are not "chosen"
-                    for (int i = 0; i < seedSlot.Length; i++)
-                    {
-                        seedSlot[i].GetComponent<Toggle>().isOn = false;
-                        if (!seedSlot[i].GetComponent<Slot>().empty)
-                            seedSlot[i].GetComponent<Toggle>().interactable = true;
-                        plantSlot[i].GetComponent<Toggle>().interactable = false;
-                    }
-                    eventSystem.SetSelectedGameObject(toggleStartS);
-                    eventSystem.UpdateModules();
-                    //Cursor.lockState = CursorLockMode.None;
-                }
-                else
-                {
-                    seedInventoryCanvas.GetComponent<Canvas>().targetDisplay = 7;
-                    plantInventoryCanvas.GetComponent<Canvas>().targetDisplay = 0;
-
-                    //toggleStartP = plantSlotHolder.GetComponentInChildren<Toggle>().gameObject;
-                    // making sure that all of the slots are not "chosen"
-                    for (int i = 0; i < plantSlot.Length; i++)
-                    {
-                        plantSlot[i].GetComponent<Toggle>().isOn = false;
-                        if (!plantSlot[i].GetComponent<Slot>().empty)
-                            plantSlot[i].GetComponent<Toggle>().interactable = true;
-                        seedSlot[i].GetComponent<Toggle>().interactable = false;
-                    }
-                    eventSystem.SetSelectedGameObject(toggleStartP); // Event system keeps going back to seedSlot as selected.
-                    eventSystem.UpdateModules();
-                    //Cursor.lockState = CursorLockMode.None;
-                }
-                UpdateDescriptionBox(); // Update after switching inventory tabs
-            }
-
-            private void OnTriggerEnter(Collider other)
-            {
-                if (other.tag == "Item")
-                {
-                    GameObject itemPickedUp = other.gameObject;
-                    Item item = itemPickedUp.GetComponent<Item>();
-                    if (item.type == "Seed")
-                    {
-                        item.tag = "Seed";
-                    }
-                    else if (item.type == "Plant")
-                    {
-                        item.tag = "Plant";
-                    }
-
-                    AddItem(itemPickedUp, item.ID, item.type, item.description, item.icon, item.subType, item.stackNumber, new GameObject[6]);
-                }
-            }
-
-            // CLEAN UP REQUIRED - PT
-            void AddItem(GameObject itemObject, int itemID, string itemType, string itemDescription, Sprite itemIcon, string subType, int stackNumber, GameObject[] temp)
-            {
-                if (itemObject.tag == "Seed")
-                {
-                    temp = seedSlot;
-                }
-                else if (itemObject.tag == "Plant")
-                {
-                    temp = plantSlot;
-                    /*for (int i = 0; i < totalSeedSlots; i++)
-                    {
-                        // Already has this kind of item, stack instead of add new.
-                        if (!plantSlot[i].GetComponent<Slot>().empty && plantSlot[i].GetComponent<Slot>().item.GetComponent<Item>().ID == itemID)
-                        {
-                            plantSlot[i].GetComponent<Slot>().stackNumber++;
-                            plantSlot[i].GetComponent<Slot>().item.GetComponent<Item>().stackNumber++;
-                            itemObject.transform.position = new Vector3(0, 0, 0);
-                            return;
-                        }
-                        else if (plantSlot[i].GetComponent<Slot>().empty)
-                        {
-                            itemObject.GetComponent<Item>().pickedUp = true;
-
-                            plantSlot[i].GetComponent<Slot>().item = itemObject;
-                            plantSlot[i].GetComponent<Slot>().icon = itemIcon;
-                            plantSlot[i].GetComponent<Slot>().type = itemType;
-                            plantSlot[i].GetComponent<Slot>().ID = itemID;
-                            plantSlot[i].GetComponent<Slot>().description = itemDescription;
-                            plantSlot[i].GetComponent<Slot>().subType = subType;
-                            plantSlot[i].GetComponent<Slot>().stackNumber = 1;
-
-
-                            itemObject.transform.position = new Vector3(0, 0, 0);
-
-
-                            plantSlot[i].GetComponent<Slot>().UpdateSlot();
-                            plantSlot[i].GetComponent<Slot>().empty = false;
-                            return;
-                        }
-                    }
-                    */
-                }
-
-                for (int i = 0; i < temp.Length; i++)
-                {
-                    // Already has this kind of item, stack instead of add new.
-                    if (!temp[i].GetComponent<Slot>().empty && temp[i].GetComponent<Slot>().item.GetComponent<Item>().ID == itemID)
-                    {
-                        temp[i].GetComponent<Slot>().stackNumber++;
-                        temp[i].GetComponent<Slot>().item.GetComponent<Item>().stackNumber++;
-                        itemObject.transform.position = this.gameObject.GetComponent<PlayerController>().planet.transform.position; //new Vector3(0, 0, 0);
-                        return;
-                    }
-                    else if (temp[i].GetComponent<Slot>().empty)
-                    {
-                        itemObject.GetComponent<Item>().pickedUp = true;
-
-                        temp[i].GetComponent<Slot>().item = itemObject;
-                        temp[i].GetComponent<Slot>().icon = itemIcon;
-                        temp[i].GetComponent<Slot>().type = itemType;
-                        temp[i].GetComponent<Slot>().ID = itemID;
-                        temp[i].GetComponent<Slot>().description = itemDescription;
-                        temp[i].GetComponent<Slot>().subType = subType;
-                        temp[i].GetComponent<Slot>().stackNumber = 1;
-
-                        itemObject.transform.position = this.gameObject.GetComponent<PlayerController>().planet.transform.position; //new Vector3(0, 0, 0);
-
-                        temp[i].GetComponent<Slot>().UpdateSlot();
-                        return;
-                    }
-                }
-
-                if (itemObject.tag == "Seed")
-                    seedSlot = temp;
-                else if (itemObject.tag == "Plant")
-                    plantSlot = temp;
-
-            }
-
-            /*ckrueger audio*/
-            private void PlaySoundUIOpen()
-            {
-                AkSoundEngine.PostEvent("Play_ts_sx_uni_ui_open", gameObject);
-            }
-
-            private void PlaySoundUIClose()
-            {
-                AkSoundEngine.PostEvent("Play_ts_sx_uni_ui_close", gameObject);
-            }
-
-            private void PlaySoundUINavigate()
-            {
-                AkSoundEngine.PostEvent("Play_ts_sx_uni_ui_navigate", gameObject);
-            }
-
-            private void PlaySoundUISelect()
-            {
-                AkSoundEngine.PostEvent("Play_ts_sx_uni_ui_select", gameObject);
+                plantTextBox.text = eventSystem.currentSelectedGameObject.GetComponent<Slot>().item.GetComponent<Item>().itemDescriptionBoxContent()
+                    ?? "Slot is Empty";
             }
         }
+        esLastSelected = eventSystem.currentSelectedGameObject;
+    }
+
+    public void ToggleDisplayInventory()
+    {
+        UpdateDescriptionBox(); // Update before displaying inventory
+                                //eventSystem.SetSelectedGameObject(toggleStart);
+        inventoryDisplaying = !inventoryDisplaying;
+        if (inventoryDisplaying)
+        {
+            ToggleTabDisplayed();
+        }
+        else
+        {
+            seedInventoryCanvas.GetComponentInParent<Canvas>().targetDisplay = 7;
+            plantInventoryCanvas.GetComponent<Canvas>().targetDisplay = 7;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+    }
+
+    private void ToggleTabDisplayed()
+    {
+        if (seedTab)
+        {
+            seedInventoryCanvas.GetComponent<Canvas>().targetDisplay = 0;
+            plantInventoryCanvas.GetComponent<Canvas>().targetDisplay = 7;
+
+            //toggleStartS = seedSlotHolder.GetComponentInChildren<Toggle>().gameObject;
+            // making sure that all of the slots are not "chosen"
+            for (int i = 0; i < seedSlot.Length; i++)
+            {
+                seedSlot[i].GetComponent<Toggle>().isOn = false;
+                if (!seedSlot[i].GetComponent<Slot>().empty)
+                    seedSlot[i].GetComponent<Toggle>().interactable = true;
+                plantSlot[i].GetComponent<Toggle>().interactable = false;
+            }
+            eventSystem.SetSelectedGameObject(toggleStartS);
+            eventSystem.UpdateModules();
+            //Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            seedInventoryCanvas.GetComponent<Canvas>().targetDisplay = 7;
+            plantInventoryCanvas.GetComponent<Canvas>().targetDisplay = 0;
+
+            //toggleStartP = plantSlotHolder.GetComponentInChildren<Toggle>().gameObject;
+            // making sure that all of the slots are not "chosen"
+            for (int i = 0; i < plantSlot.Length; i++)
+            {
+                plantSlot[i].GetComponent<Toggle>().isOn = false;
+                if (!plantSlot[i].GetComponent<Slot>().empty)
+                    plantSlot[i].GetComponent<Toggle>().interactable = true;
+                seedSlot[i].GetComponent<Toggle>().interactable = false;
+            }
+            eventSystem.SetSelectedGameObject(toggleStartP); // Event system keeps going back to seedSlot as selected.
+            eventSystem.UpdateModules();
+            //Cursor.lockState = CursorLockMode.None;
+        }
+        UpdateDescriptionBox(); // Update after switching inventory tabs
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Item")
+        {
+            GameObject itemPickedUp = other.gameObject;
+            Item item = itemPickedUp.GetComponent<Item>();
+            if (item.type == "Seed")
+            {
+                item.tag = "Seed";
+            }
+            else if (item.type == "Plant")
+            {
+                item.tag = "Plant";
+            }
+
+            AddItem(itemPickedUp, item.ID, item.type, item.description, item.icon, item.subType, item.stackNumber, new GameObject[6]);
+        }
+    }
+
+    // CLEAN UP REQUIRED - PT
+    void AddItem(GameObject itemObject, int itemID, string itemType, string itemDescription, Sprite itemIcon, string subType, int stackNumber, GameObject[] temp)
+    {
+        if (itemObject.tag == "Seed")
+        {
+            temp = seedSlot;
+        }
+        else if (itemObject.tag == "Plant")
+        {
+            temp = plantSlot;
+        }
+
+        for (int i = 0; i < temp.Length; i++)
+        {
+            // Already has this kind of item, stack instead of add new.
+            if (!temp[i].GetComponent<Slot>().empty && temp[i].GetComponent<Slot>().item.GetComponent<Item>().ID == itemID)
+            {
+                temp[i].GetComponent<Slot>().stackNumber++;
+                temp[i].GetComponent<Slot>().UpdateStackNumber();
+                temp[i].GetComponent<Slot>().item.GetComponent<Item>().stackNumber++;
+                itemObject.transform.position = this.gameObject.GetComponent<PlayerController>().planet.transform.position; //new Vector3(0, 0, 0);
+                return;
+            }
+            else if (temp[i].GetComponent<Slot>().empty)
+            {
+                itemObject.GetComponent<Item>().pickedUp = true;
+
+                temp[i].GetComponent<Slot>().item = itemObject;
+                temp[i].GetComponent<Slot>().icon = itemIcon;
+                temp[i].GetComponent<Slot>().type = itemType;
+                temp[i].GetComponent<Slot>().ID = itemID;
+                temp[i].GetComponent<Slot>().description = itemDescription;
+                temp[i].GetComponent<Slot>().subType = subType;
+                temp[i].GetComponent<Slot>().stackNumber = 1;
+
+                itemObject.transform.position = this.gameObject.GetComponent<PlayerController>().planet.transform.position; //new Vector3(0, 0, 0);
+
+                temp[i].GetComponent<Slot>().UpdateSlot();
+                return;
+            }
+        }
+
+        if (itemObject.tag == "Seed")
+            seedSlot = temp;
+        else if (itemObject.tag == "Plant")
+            plantSlot = temp;
+
+    }
+
+    /*ckrueger audio*/
+    private void PlaySoundUIOpen()
+    {
+        AkSoundEngine.PostEvent("Play_ts_sx_uni_ui_open", gameObject);
+    }
+
+    private void PlaySoundUIClose()
+    {
+        AkSoundEngine.PostEvent("Play_ts_sx_uni_ui_close", gameObject);
+    }
+
+    private void PlaySoundUINavigate()
+    {
+        AkSoundEngine.PostEvent("Play_ts_sx_uni_ui_navigate", gameObject);
+    }
+
+    private void PlaySoundUISelect()
+    {
+        AkSoundEngine.PostEvent("Play_ts_sx_uni_ui_select", gameObject);
+    }
+}

@@ -121,7 +121,7 @@ MonoBehaviour:
   ID: 17
   type: Plant
   description: A harvested CornDog, ready for consumption
-  icon: {fileID: 21300000, guid: 50da598dd069a9c4398830529961a2af, type: 3}
+  icon: {fileID: 21300000, guid: 7ae708ba73dfebe49a8b2edff0acdefc, type: 3}
   pickedUp: 0
   oxygenValue: 50
   stackNumber: 1
