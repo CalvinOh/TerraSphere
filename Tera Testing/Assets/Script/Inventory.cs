@@ -299,38 +299,6 @@ public class Inventory : MonoBehaviour
         else if (itemObject.tag == "Plant")
         {
             temp = plantSlot;
-            /*for (int i = 0; i < totalSeedSlots; i++)
-            {
-                // Already has this kind of item, stack instead of add new.
-                if (!plantSlot[i].GetComponent<Slot>().empty && plantSlot[i].GetComponent<Slot>().item.GetComponent<Item>().ID == itemID)
-                {
-                    plantSlot[i].GetComponent<Slot>().stackNumber++;
-                    plantSlot[i].GetComponent<Slot>().item.GetComponent<Item>().stackNumber++;
-                    itemObject.transform.position = new Vector3(0, 0, 0);
-                    return;
-                }
-                else if (plantSlot[i].GetComponent<Slot>().empty)
-                {
-                    itemObject.GetComponent<Item>().pickedUp = true;
-
-                    plantSlot[i].GetComponent<Slot>().item = itemObject;
-                    plantSlot[i].GetComponent<Slot>().icon = itemIcon;
-                    plantSlot[i].GetComponent<Slot>().type = itemType;
-                    plantSlot[i].GetComponent<Slot>().ID = itemID;
-                    plantSlot[i].GetComponent<Slot>().description = itemDescription;
-                    plantSlot[i].GetComponent<Slot>().subType = subType;
-                    plantSlot[i].GetComponent<Slot>().stackNumber = 1;
-
-
-                    itemObject.transform.position = new Vector3(0, 0, 0);
-
-
-                    plantSlot[i].GetComponent<Slot>().UpdateSlot();
-                    plantSlot[i].GetComponent<Slot>().empty = false;
-                    return;
-                }
-            }
-            */
         }
 
         for (int i = 0; i < temp.Length; i++)
@@ -339,6 +307,7 @@ public class Inventory : MonoBehaviour
             if (!temp[i].GetComponent<Slot>().empty && temp[i].GetComponent<Slot>().item.GetComponent<Item>().ID == itemID)
             {
                 temp[i].GetComponent<Slot>().stackNumber++;
+                temp[i].GetComponent<Slot>().UpdateStackNumber();
                 temp[i].GetComponent<Slot>().item.GetComponent<Item>().stackNumber++;
                 itemObject.transform.position = this.gameObject.GetComponent<PlayerController>().planet.transform.position; //new Vector3(0, 0, 0);
                 return;

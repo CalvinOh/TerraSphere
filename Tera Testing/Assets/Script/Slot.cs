@@ -17,10 +17,12 @@ public class Slot : MonoBehaviour
 
     public Transform slotIconGO;
     public Sprite icon;
+    public Text text;
 
     public void Start()
     {
         slotIconGO = transform.GetChild(1);//.GetChild(0);
+        text = this.GetComponentInChildren<Text>();
         player = FindObjectOfType<Inventory>().gameObject;
         this.gameObject.GetComponent<Toggle>().isOn = false;
 
@@ -33,6 +35,7 @@ public class Slot : MonoBehaviour
             description = item.GetComponent<Item>().description;
             subType = item.GetComponent<Item>().subType;
             stackNumber = 1;
+            UpdateStackNumber();
             icon = item.GetComponent<Item>().icon;
             UpdateSlot();
         }
@@ -75,6 +78,7 @@ public class Slot : MonoBehaviour
     {
         this.gameObject.GetComponent<Toggle>().interactable = true;
         slotIconGO.GetComponent<Image>().sprite = icon;
+        UpdateStackNumber();
         this.item.GetComponent<Item>().AssignParent(this);
         this.empty = false;
     }
@@ -83,10 +87,21 @@ public class Slot : MonoBehaviour
     {
         item.GetComponent<Item>().itemUsage(this);
         stackNumber--;
+        UpdateStackNumber();
         if (stackNumber <= 0)
         {
             //empty = true;
 
+
         }
+        else
+        {
+
+        }
+    }
+
+    public void UpdateStackNumber()
+    {
+        text.text = stackNumber.ToString();
     }
 }
