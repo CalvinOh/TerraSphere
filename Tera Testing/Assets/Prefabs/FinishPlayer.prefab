@@ -171,10 +171,12 @@ MonoBehaviour:
   planet: {fileID: 0}
   spawnItemLocation: {fileID: 2138703530824299944}
   objectsInTrigger: []
+  Hoe: {fileID: 4598353727438082874}
+  WaterCan: {fileID: 2358110299828623365}
+  Spade: {fileID: 231359449379558038}
   oxygenValue: 100
   oxygenDecreaseValue: 0.01
   oxygenMax: 100
-  MyAnimator: {fileID: 0}
 --- !u!114 &238501359500766590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,10 +409,12 @@ MonoBehaviour:
   planet: {fileID: 0}
   spawnItemLocation: {fileID: 2138703530824299944}
   objectsInTrigger: []
+  Hoe: {fileID: 0}
+  WaterCan: {fileID: 0}
+  Spade: {fileID: 0}
   oxygenValue: 100
   oxygenDecreaseValue: 0.01
   oxygenMax: 100
-  MyAnimator: {fileID: 0}
 --- !u!114 &6776740389163208848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,10 +545,12 @@ MonoBehaviour:
   planet: {fileID: 0}
   spawnItemLocation: {fileID: 0}
   objectsInTrigger: []
+  Hoe: {fileID: 0}
+  WaterCan: {fileID: 0}
+  Spade: {fileID: 0}
   oxygenValue: 0
   oxygenDecreaseValue: 0
   oxygenMax: 100
-  MyAnimator: {fileID: 0}
 --- !u!1 &4518731176602227987
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,6 +963,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4b22ff79af73a9a458a2d8586e8a1ce3, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 8885d0a82d3c6584b863bd22c60985f8,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 03ee94f0a75246b4ebdf21a0f878b029, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8885d0a82d3c6584b863bd22c60985f8, type: 3}
 --- !u!4 &7453418094676600537 stripped
@@ -1073,16 +1084,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7985621915443685762}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 6706d8c8c3eadf34fb27d5da5a79868f,
-        type: 3}
-      propertyPath: m_Name
-      value: marsmodel
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 6706d8c8c3eadf34fb27d5da5a79868f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6706d8c8c3eadf34fb27d5da5a79868f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1152,6 +1153,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 96.67204
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 6706d8c8c3eadf34fb27d5da5a79868f,
+        type: 3}
+      propertyPath: m_Name
+      value: marsmodel
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 6706d8c8c3eadf34fb27d5da5a79868f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7815746835458873717, guid: 6706d8c8c3eadf34fb27d5da5a79868f,
         type: 3}

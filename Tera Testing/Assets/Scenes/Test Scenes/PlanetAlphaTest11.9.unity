@@ -683,12 +683,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254862535}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 509943283}
-  m_RootOrder: 7
+  m_Father: {fileID: 2086431670}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!20 &254862538
 Camera:
@@ -753,6 +753,12 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: -7966067633945421924, guid: f62fc4482742725448a95e6a569ff358, type: 3}
+--- !u!95 &304937420 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 713221881716427683, guid: d64cfc0e221e98b408db0930da674aad,
+    type: 3}
+  m_PrefabInstance: {fileID: 8502688422231244796}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &318252608 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8330075225761772837, guid: 1b6fb9bd3e28ccf44a26ecf30abf577c,
@@ -1737,12 +1743,6 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
---- !u!4 &509943283 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1557347862450107135, guid: d64cfc0e221e98b408db0930da674aad,
-    type: 3}
-  m_PrefabInstance: {fileID: 8502688422231244796}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &515027627
 GameObject:
   m_ObjectHideFlags: 0
@@ -6089,6 +6089,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012045231}
   m_CullTransparentMesh: 0
+--- !u!4 &2086431670 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2026859106375503580, guid: d64cfc0e221e98b408db0930da674aad,
+    type: 3}
+  m_PrefabInstance: {fileID: 8502688422231244796}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2098365207
 GameObject:
   m_ObjectHideFlags: 0
@@ -7626,6 +7632,61 @@ PrefabInstance:
       propertyPath: oxygenDecreaseValue
       value: 0.005
       objectReference: {fileID: 0}
+    - target: {fileID: 890463649408443742, guid: d64cfc0e221e98b408db0930da674aad,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624096618166155622, guid: d64cfc0e221e98b408db0930da674aad,
+        type: 3}
+      propertyPath: oxygenDecreaseValue
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624096618166155622, guid: d64cfc0e221e98b408db0930da674aad,
+        type: 3}
+      propertyPath: MyAnimator
+      value: 
+      objectReference: {fileID: 304937420}
+    - target: {fileID: 6760611109522037999, guid: d64cfc0e221e98b408db0930da674aad,
+        type: 3}
+      propertyPath: toggleStartS
+      value: 
+      objectReference: {fileID: 909486845}
+    - target: {fileID: 6760611109522037999, guid: d64cfc0e221e98b408db0930da674aad,
+        type: 3}
+      propertyPath: toggleStartP
+      value: 
+      objectReference: {fileID: 724770480}
+    - target: {fileID: 6760611109522037999, guid: d64cfc0e221e98b408db0930da674aad,
+        type: 3}
+      propertyPath: seedInventoryCanvas
+      value: 
+      objectReference: {fileID: 318252608}
+    - target: {fileID: 6760611109522037999, guid: d64cfc0e221e98b408db0930da674aad,
+        type: 3}
+      propertyPath: plantInventoryCanvas
+      value: 
+      objectReference: {fileID: 1601418723}
+    - target: {fileID: 6760611109522037999, guid: d64cfc0e221e98b408db0930da674aad,
+        type: 3}
+      propertyPath: seedSlotHolder
+      value: 
+      objectReference: {fileID: 113796365}
+    - target: {fileID: 6760611109522037999, guid: d64cfc0e221e98b408db0930da674aad,
+        type: 3}
+      propertyPath: plantSlotHolder
+      value: 
+      objectReference: {fileID: 845255589}
+    - target: {fileID: 6760611109522037999, guid: d64cfc0e221e98b408db0930da674aad,
+        type: 3}
+      propertyPath: seedTextBox
+      value: 
+      objectReference: {fileID: 718421183}
+    - target: {fileID: 6760611109522037999, guid: d64cfc0e221e98b408db0930da674aad,
+        type: 3}
+      propertyPath: plantTextBox
+      value: 
+      objectReference: {fileID: 1314347151}
     m_RemovedComponents:
     - {fileID: 5459683399624953430, guid: d64cfc0e221e98b408db0930da674aad, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d64cfc0e221e98b408db0930da674aad, type: 3}
