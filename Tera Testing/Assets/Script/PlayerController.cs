@@ -49,7 +49,12 @@ public class PlayerController : MonoBehaviour
     //A list of all gameObejcts in the trigger box
     public List<GameObject> objectsInTrigger;
 
-
+    [SerializeField]
+    private GameObject Hoe;
+    [SerializeField]
+    private GameObject WaterCan;
+    [SerializeField]
+    private GameObject Spade;
     //Player Oxygen Value
 
     //The current value for the players oxygen value
@@ -191,6 +196,24 @@ public class PlayerController : MonoBehaviour
     private void HandleAnimatioons()
     {
         MyAnimator.SetFloat("Speed", MoveSpeedCurrentMultiplier);
+        if (MyAnimator.GetCurrentAnimatorStateInfo(0).IsName("breath") || MyAnimator.GetCurrentAnimatorStateInfo(0).IsName("walk"))
+        {
+            Hoe.SetActive(false);
+            WaterCan.SetActive(false);
+            Spade.SetActive(false);
+        }
+        if (MyAnimator.GetCurrentAnimatorStateInfo(0).IsName("dig"))
+        {
+            Spade.SetActive(true);
+        }
+        if (MyAnimator.GetCurrentAnimatorStateInfo(0).IsName("hoeing"))
+        {
+            Hoe.SetActive(true);
+        }
+        if (MyAnimator.GetCurrentAnimatorStateInfo(0).IsName("water"))
+        {
+            WaterCan.SetActive(true);
+        }
     }
 
     public void PlayEatingAnimation()
@@ -271,7 +294,7 @@ public class PlayerController : MonoBehaviour
             /*ckrueger audio*/
             PlaySoundShovel();
 
-            MyAnimator.Play("pickup");
+            MyAnimator.Play("dig");
 
         }
     }
