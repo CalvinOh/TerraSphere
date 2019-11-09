@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2250903347805027880}
   - component: {fileID: 6275827239540777348}
   m_Layer: 0
-  m_Name: Seed(GiantCarrot)
+  m_Name: Seed(FrenchFry)
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 13
   type: Seed
-  description: A small carrot you can plant!
+  description: Seed for a frenchfry plant, Honhonhon.
   icon: {fileID: 21300000, guid: 95866fa38338cfc42b733725d0bfdd48, type: 3}
   pickedUp: 0
   oxygenValue: 0
