@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour
 
     //UI for context based direction.
     public ContextBasedUI contextBasedUI { get; private set; }
+    [SerializeField]
     private Animator MyAnimator;
 
     int firstPass = 0;
