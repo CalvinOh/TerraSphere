@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 8bb2f4ff292a06a4a87c72410ae61982
+guid: 8b5d6f2714143854b8716fefc2b9f5b8
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
   - first:
-      74: 2363931988157344165
-    second: water2
+      74: -4084123436863010794
+    second: water5
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -35,9 +35,9 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: water2
-      takeName: water2
-      internalID: 2363931988157344165
+      name: water5
+      takeName: water5
+      internalID: -4084123436863010794
       firstFrame: 1
       lastFrame: 100
       wrapMode: 0
