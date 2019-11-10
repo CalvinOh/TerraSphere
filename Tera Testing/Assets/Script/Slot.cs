@@ -29,6 +29,8 @@ public class Slot : MonoBehaviour
         if(item != null)
         {
             item = item.GetComponent<Item>().gameObject;
+            Color temp = slotIconGO.GetComponent<Image>().color;
+            slotIconGO.GetComponent<Image>().color = new Color(temp.r, temp.g, temp.b, 1);
             icon = item.GetComponent<Item>().icon;
             type = item.GetComponent<Item>().type;
             ID = item.GetComponent<Item>().ID;
@@ -78,6 +80,8 @@ public class Slot : MonoBehaviour
     {
         this.gameObject.GetComponent<Toggle>().interactable = true;
         slotIconGO.GetComponent<Image>().sprite = icon;
+        Color temp = slotIconGO.GetComponent<Image>().color;
+        slotIconGO.GetComponent<Image>().color = new Color(temp.r, temp.g, temp.b, 1);
         UpdateStackNumber();
         this.item.GetComponent<Item>().AssignParent(this);
         this.empty = false;
