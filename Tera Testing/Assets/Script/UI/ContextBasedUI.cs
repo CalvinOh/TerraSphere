@@ -67,7 +67,7 @@ public class ContextBasedUI : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (player.currentlySelecting.tag == "Hole" || player.currentlySelecting.tag == "Seed" || player.currentlySelecting.tag == "Plant")
+        if ((player.currentlySelecting.tag == "Hole" || player.currentlySelecting.tag == "Seed" || player.currentlySelecting.tag == "Plant")&&!other.CompareTag("Tree"))
         {
             emptyIcon.gameObject.SetActive(true);
             greenOutline.gameObject.SetActive(true);

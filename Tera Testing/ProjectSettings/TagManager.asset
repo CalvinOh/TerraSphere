@@ -15,6 +15,7 @@ TagManager:
   - Hole
   - Rake
   - Grass
+  - Tree
   layers:
   - Default
   - TransparentFX
