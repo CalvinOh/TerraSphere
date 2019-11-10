@@ -121,7 +121,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 14
   type: Seed
-  description: A small Jelly you can plant!
+  description: Seed for a jely plant, Plantae Tracheophytes Angiosperms Eudicots Foodus
+    Gelatinous
   icon: {fileID: 21300000, guid: e2d1cdd4d87962b4e9dec9ef47a6aa73, type: 3}
   pickedUp: 0
   oxygenValue: 0
