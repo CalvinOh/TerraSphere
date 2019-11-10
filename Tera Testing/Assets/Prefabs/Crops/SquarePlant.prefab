@@ -57,7 +57,7 @@ MonoBehaviour:
   Stage2TerraFormPerSecond: 20
   Stage1: {fileID: 2913014654186644377}
   Stage2: {fileID: 1038909942606102044}
-  MinAmountOfSeedDrop: 1
+  MinAmountOfSeedDrop: 2
   MaxAmountOfSeedDrop: 3
   SeedSpawnedWhenHarvested: {fileID: 3663539511408497306, guid: 734e534e53806bb4482d7d3f3f770c49,
     type: 3}

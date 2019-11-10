@@ -67,7 +67,7 @@ public class ContextBasedUI : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if ((player.currentlySelecting.tag == "Hole" || player.currentlySelecting.tag == "Seed" || player.currentlySelecting.tag == "Plant")&&!other.CompareTag("Tree"))
+        if ((player.currentlySelecting.tag == "Hole" || player.currentlySelecting.tag == "Seed" || player.currentlySelecting.tag == "Plant") && !other.CompareTag("Tree") && !other.CompareTag("Grass"))
         {
             emptyIcon.gameObject.SetActive(true);
             greenOutline.gameObject.SetActive(true);
@@ -96,7 +96,7 @@ public class ContextBasedUI : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(player.currentlySelecting.tag == "Hole" || player.currentlySelecting.tag == "Seed" || player.currentlySelecting.tag == "Plant")
+        if((player.currentlySelecting.tag == "Hole" || player.currentlySelecting.tag == "Seed" || player.currentlySelecting.tag == "Plant") && !other.CompareTag("Tree") && !other.CompareTag("Grass"))
         {
             alreadyActivated--;
             print(alreadyActivated+" "+other.tag);

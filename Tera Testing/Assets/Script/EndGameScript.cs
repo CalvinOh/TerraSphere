@@ -21,6 +21,7 @@ public class EndGameScript : MonoBehaviour
     {
         if(other.tag == "Player" && Input.GetButtonDown("Use Item") && terraBar.barPercentage >= 1)
         {
+            AkSoundEngine.StopAll();
             SceneManager.LoadScene(nextScene);
         }
     }

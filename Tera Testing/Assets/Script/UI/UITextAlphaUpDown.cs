@@ -10,6 +10,8 @@ public class UITextAlphaUpDown : MonoBehaviour
 
     private Text text;
     private float currentColor;
+    private Color color1;
+    private Color color2;
 
     private bool isFaded = true;
 
@@ -18,23 +20,28 @@ public class UITextAlphaUpDown : MonoBehaviour
     {
         text = GetComponent<Text>();
         currentColor = text.color.a;
+        color1 = new Color(1, 1, 1, 1);
+        color2 = new Color(1, 1, 1, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentColor = text.color.a;
-        if (currentColor <= 1f)
+        
+        if (currentColor >= 1f)
             isFaded = false;
-        else if (currentColor >= 0f)
+        else //if (currentColor <= 0.1f)
             isFaded = true;
-        if (isFaded)
+        if (isFaded )
         {
-            text.CrossFadeAlpha(1, changeSpeed, false); 
+            text.CrossFadeColor(color1, changeSpeed, false, true);
+            //text.CrossFadeAlpha(1f, changeSpeed, false); 
         }
-        else if (!isFaded)
+        else if (!isFaded )
         {
-            text.CrossFadeAlpha(0, changeSpeed, false);
+            text.CrossFadeColor(color2, changeSpeed, false, true);
+            //text.CrossFadeAlpha(0f, changeSpeed, false);
         }
+        currentColor = text.color.a;
     }
 }

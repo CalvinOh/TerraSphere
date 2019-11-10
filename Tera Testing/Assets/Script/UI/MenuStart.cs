@@ -66,4 +66,9 @@ public class MenuStart : MonoBehaviour
         }
         
     }
+
+    public void StopMusic()
+    {
+        AkSoundEngine.StopAll(this.gameObject);
+    }
 }
