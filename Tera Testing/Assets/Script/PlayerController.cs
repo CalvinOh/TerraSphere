@@ -376,7 +376,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag != "Grass")
+        if(other.gameObject.tag != "Grass"&& other.gameObject.tag != "Tree")
         {
             objectsInTrigger.Add(other.gameObject);
             currentlySelecting = other.gameObject;

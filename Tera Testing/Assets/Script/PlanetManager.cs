@@ -16,7 +16,7 @@ public class PlanetManager : MonoBehaviour
 
     private List<PlantGrowth> PlantsOnPlanet = new List<PlantGrowth>();
     public List<EnviromentTree> EnviromentalTrees = new List<EnviromentTree>();
-
+    private int NumberOfTreeToGrowNext;
 
     public float TerraformPercentage
     {
@@ -42,8 +42,10 @@ public class PlanetManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(GrowTrees());
+        //StartCoroutine(GrowTrees());
         CurrentTerraformAmount = 0;
+        NumberOfTreeToGrowNext = 0;
+        //GrowAllTrees();
     }
 
 
@@ -52,6 +54,7 @@ public class PlanetManager : MonoBehaviour
     {
         CurrentTerraformAmount += TerraformAmountPerSecond;
         CurrentTerraformAmount = Mathf.Clamp(CurrentTerraformAmount, 0, PlanetTerraformAmount);
+        DetermineTreeGrowth();
     }
 
     public void AddPlant(PlantGrowth PlantToAdd)
@@ -87,18 +90,34 @@ public class PlanetManager : MonoBehaviour
     private IEnumerator GrowTrees()
     {
         int NumberOfTreeToGrowNext =0;
-        while (PlanetTerraformAmount < 100)
+        while (TerraformPercentage < 100)
         {
-            if (CurrentTerraformAmount > ((100 - PercentageWhichTreesStartToAppear) / EnviromentalTrees.Count) * NumberOfTreeToGrowNext)
+            if (TerraformPercentage > ((100 - PercentageWhichTreesStartToAppear) / EnviromentalTrees.Count) * (NumberOfTreeToGrowNext+1))
             {
-                EnviromentalTrees[NumberOfTreeToGrowNext].StartGrow();
-                NumberOfTreeToGrowNext++;
+                
             }
 
         }
 
         return null;
 
+    }
+
+    private void DetermineTreeGrowth()
+    {
+        if (TerraformPercentage > ((100 - PercentageWhichTreesStartToAppear) / EnviromentalTrees.Count) * (NumberOfTreeToGrowNext )+PercentageWhichTreesStartToAppear)
+        {
+            EnviromentalTrees[NumberOfTreeToGrowNext].StartGrow();
+            NumberOfTreeToGrowNext++;
+            Debug.Log("time to grow another tree");
+        }
+    }
+    private void GrowAllTrees()
+    {
+        foreach (EnviromentTree T in EnviromentalTrees)
+        {
+            T.StartGrow();
+        }
     }
 
 }
