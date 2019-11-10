@@ -137,6 +137,11 @@ PrefabInstance:
       propertyPath: FinalSize
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 2568163141622193889, guid: 0594b79476c78e448b6707acd05f5664,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0594b79476c78e448b6707acd05f5664, type: 3}
 --- !u!1 &409790583001282203 stripped
