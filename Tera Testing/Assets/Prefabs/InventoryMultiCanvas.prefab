@@ -39,16 +39,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2455832637778215343}
     m_Modifications:
-    - target: {fileID: 3845505593438764553, guid: 68483f7271e9c254dbcebb21d7c5d612,
-        type: 3}
-      propertyPath: m_Name
-      value: PlantInventoryCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 3845505593438764553, guid: 68483f7271e9c254dbcebb21d7c5d612,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3845505593438764557, guid: 68483f7271e9c254dbcebb21d7c5d612,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -168,6 +158,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3845505593438764553, guid: 68483f7271e9c254dbcebb21d7c5d612,
+        type: 3}
+      propertyPath: m_Name
+      value: PlantInventoryCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3845505593438764553, guid: 68483f7271e9c254dbcebb21d7c5d612,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3845505592894165751, guid: 68483f7271e9c254dbcebb21d7c5d612,
         type: 3}
@@ -905,11 +905,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2455832637778215343}
     m_Modifications:
-    - target: {fileID: 3845505593438764553, guid: 68483f7271e9c254dbcebb21d7c5d612,
-        type: 3}
-      propertyPath: m_Name
-      value: SeedInventoryCanvas
-      objectReference: {fileID: 0}
     - target: {fileID: 3845505593438764557, guid: 68483f7271e9c254dbcebb21d7c5d612,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1014,6 +1009,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3845505593438764553, guid: 68483f7271e9c254dbcebb21d7c5d612,
+        type: 3}
+      propertyPath: m_Name
+      value: SeedInventoryCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 3845505592363799764, guid: 68483f7271e9c254dbcebb21d7c5d612,
         type: 3}
@@ -1219,26 +1219,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: Press (A) to select a seed
-      objectReference: {fileID: 0}
-    - target: {fileID: 3845505591826806023, guid: 68483f7271e9c254dbcebb21d7c5d612,
-        type: 3}
-      propertyPath: m_Colors.m_SelectedColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3845505591826806023, guid: 68483f7271e9c254dbcebb21d7c5d612,
-        type: 3}
-      propertyPath: m_Colors.m_SelectedColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3845505591826806023, guid: 68483f7271e9c254dbcebb21d7c5d612,
-        type: 3}
-      propertyPath: m_Colors.m_SelectedColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3845505591826806023, guid: 68483f7271e9c254dbcebb21d7c5d612,
-        type: 3}
-      propertyPath: m_Colors.m_SelectedColor.a
-      value: 0.627451
       objectReference: {fileID: 0}
     - target: {fileID: 3845505593028522577, guid: 68483f7271e9c254dbcebb21d7c5d612,
         type: 3}
@@ -1600,6 +1580,26 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3845505591826806023, guid: 68483f7271e9c254dbcebb21d7c5d612,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3845505591826806023, guid: 68483f7271e9c254dbcebb21d7c5d612,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3845505591826806023, guid: 68483f7271e9c254dbcebb21d7c5d612,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3845505591826806023, guid: 68483f7271e9c254dbcebb21d7c5d612,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.a
+      value: 0.627451
+      objectReference: {fileID: 0}
     - target: {fileID: 3845505593028522576, guid: 68483f7271e9c254dbcebb21d7c5d612,
         type: 3}
       propertyPath: m_Colors.m_SelectedColor.r
@@ -1699,6 +1699,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Colors.m_SelectedColor.a
       value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 736374154930560790, guid: 68483f7271e9c254dbcebb21d7c5d612,
+        type: 3}
+      propertyPath: m_Text
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68483f7271e9c254dbcebb21d7c5d612, type: 3}
