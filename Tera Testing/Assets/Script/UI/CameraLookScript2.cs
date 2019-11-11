@@ -1,12 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class LookAtCamera : MonoBehaviour
+public class CameraLookScript2 : MonoBehaviour
 {
 
-    
+
 
     [SerializeField]
     private Transform cameraPosition;
@@ -20,7 +19,7 @@ public class LookAtCamera : MonoBehaviour
 
     private void Start()
     {
-        rectTransform = this.GetComponent<RectTransform>();
+        //rectTransform = this.GetComponent<RectTransform>();
     }
 
     // Update is called once per frame
