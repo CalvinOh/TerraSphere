@@ -24,10 +24,11 @@ public class LookAtCamera : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         float t = cameraPosition.rotation.y - rectTransform.rotation.y;
         Vector3 NewDir = Vector3.RotateTowards(rectTransform.forward, cameraPosition.position, 10000, 10f);
         rectTransform.rotation = cameraPosition.rotation;
+        //rectTransform.LookAt(cameraPosition);
     }
 }

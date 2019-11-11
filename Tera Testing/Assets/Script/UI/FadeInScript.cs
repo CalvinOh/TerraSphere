@@ -30,6 +30,12 @@ public class FadeInScript : MonoBehaviour
     [SerializeField]
     private GameObject image5;
 
+    [SerializeField]
+    private GameObject text;
+
+    [SerializeField]
+    private GameObject image6;
+
     private float timerReset;
     private float timeAtAwake;
 
