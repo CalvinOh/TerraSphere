@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
         if (invScript.seedSlot.Length < 6)
             firstPass = 1;
         //    invScript.SetUpSeedAndPlantSlots();
-        if(firstPass == 0)
+        if(firstPass == 0 && seedItem == null)
             seedItem = invScript.seedSlot[0].GetComponent<Slot>().item;
         contextBasedUI.seedIcon = seedItem.GetComponent<Item>().icon;
 
