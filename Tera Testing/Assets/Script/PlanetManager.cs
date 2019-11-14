@@ -11,8 +11,12 @@ public class PlanetManager : MonoBehaviour
     [SerializeField]
     private float PercentageWhichTreesStartToAppear;
 
+    [SerializeField]
+    private Material grass;
+
+
     //static on purpose, for plant burst growth
-    static float CurrentTerraformAmount;
+    public static float CurrentTerraformAmount;
 
     private List<PlantGrowth> PlantsOnPlanet = new List<PlantGrowth>();
     public List<EnviromentTree> EnviromentalTrees = new List<EnviromentTree>();
@@ -55,6 +59,8 @@ public class PlanetManager : MonoBehaviour
         CurrentTerraformAmount += TerraformAmountPerSecond;
         CurrentTerraformAmount = Mathf.Clamp(CurrentTerraformAmount, 0, PlanetTerraformAmount);
         DetermineTreeGrowth();
+        Debug.Log(CurrentTerraformAmount);
+        Teramaterial();
     }
 
     public void AddPlant(PlantGrowth PlantToAdd)
@@ -101,6 +107,13 @@ public class PlanetManager : MonoBehaviour
 
         return null;
 
+    }
+
+    private void Teramaterial()
+    {
+        
+        Color alpha = new Color(1, 1, 1, TerraformPercentage/100);
+        grass.color = alpha;
     }
 
     private void DetermineTreeGrowth()

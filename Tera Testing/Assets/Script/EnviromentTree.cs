@@ -29,12 +29,13 @@ public class EnviromentTree : MonoBehaviour
         StartSize = VisualObject.transform.localScale;
         CurrentScale = 0.0000001f;
         MyCollider = GetComponent<Collider>();
-        MyCollider.enabled = false;
+        //MyCollider.enabled = false;
         VisualObject.SetActive(false);
         //this need to be set to false for the tree to not appear at the start
         Grow = false;
-        FindObjectOfType<PlanetManager>().AddTree(this);
+        //FindObjectOfType<PlanetManager>().AddTree(this);
         //StartGrow();
+        VisualObject.transform.localScale = StartSize * CurrentScale;
     }
 
     // Update is called once per frame

@@ -42,6 +42,7 @@ public class GrassGrow : MonoBehaviour
         {
             Growing = false;
             CompleteGrowth();
+            this.GetComponent<Collider>().enabled=false;
         }
         else
         {
