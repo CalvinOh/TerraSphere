@@ -60,6 +60,8 @@ public class PlayerController : MonoBehaviour
     //The current value for the players oxygen value
     [SerializeField]
     public float oxygenValue;
+    /* ckrueger audio */
+    public bool oxygenLow = false;
     //How much oxygen is being decreased 
     [SerializeField]
     private float oxygenDecreaseValue;
@@ -77,15 +79,6 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-
-        /*v ckrueger audio v*/
-        //play oxygen low sound when oxygen reaches low levels
-        if (oxygenValue <= 15f)
-        {
-            InvokeRepeating("PlaySoundLowOxygen", 0f, 5f);
-        }
-        /*^ ckrueger audio ^*/
-
         if (contextBasedUI == null)
         
         //MyAnimator = GetComponent<Animator>();
@@ -116,14 +109,26 @@ public class PlayerController : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
 
+        /* ckrueger audio */
+        CheckForLowOxygen();
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*v ckrueger audio v*/
+        if (oxygenValue <= 99f)
+        {
+            Debug.Log("OXYGEN LOW");
+            oxygenLow = true;
+        }
+        else
+        {
+            oxygenLow = false;
+        }
+        /*^ ckrueger audio ^*/
 
         EasyMode();
-
 
         if (!invScript.inventoryDisplaying)
         {
@@ -417,6 +422,20 @@ public class PlayerController : MonoBehaviour
     private void PlaySoundLowOxygen()
     {
         AkSoundEngine.PostEvent("Play_ts_sx_uni_ui_oxygen_low", gameObject);
+    }
+
+    //check for the oxygen to be below a set level
+    private void CheckForLowOxygen()
+    {
+        if(oxygenLow == true)
+        {
+            Debug.Log("Playing Oxy Sound");
+            InvokeRepeating("PlaySoundLowOxygen", 0f, 5f);
+        }
+        else
+        {
+            Debug.Log("Not playing oxy sound");
+        }
     }
     /*^ ckrueger audio ^*/
 }
