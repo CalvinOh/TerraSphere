@@ -296,6 +296,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="ts_sx_uni_int_rocket_launch" ID="{ABCF2D1D-E0E2-4EB8-98BD-8885048E1C9C}" ShortID="343992791">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-8</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{13807498-01DA-4DC6-AF65-8BB9FB440611}"/>

@@ -17,21 +17,21 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 07212be2271c0443a607b5c934de2c32
     GuidInternal: 
-    m_lastTime: -8586290149419801278
+    m_lastTime: -8586283899169836565
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: e0bfa55482038f44abd3afa59be4acf6
     GuidInternal: 
-    m_lastTime: -8586290149441473112
+    m_lastTime: -8586283899196904326
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 4c0a8fbbfe23f541a45c13ac07bf3e40
     GuidInternal: 
-    m_lastTime: -8586290149419850858
+    m_lastTime: -8586283899169906581
     List:
     - name: Main
       guid: c319c4187372354dbc56b32d29cf2496
@@ -47,7 +47,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 2d83db676f09ea46afecc809b6ac0548
     GuidInternal: 
-    m_lastTime: -8586290149454907205
+    m_lastTime: -8586283899216452951
     List:
     - name: Play_Ambience
       guid: 410f2b0535c19a4295cefaeb3fa9c1c1
@@ -95,8 +95,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Play_ts_sx_uni_env_bush_thru
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.150042
+      minDuration: 1.150042
     - name: Play_ts_sx_uni_int_plant_harvest
       guid: ca38e3fd85cf2446a1f64164c83ab176
       id: 416558692
@@ -107,8 +107,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Play_ts_sx_uni_int_plant_harvest
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.341188
+      minDuration: 0.270801
     - name: Play_ts_sx_uni_int_seed_plant
       guid: c2e5adac296f3c49be1aed91de707f1b
       id: 2965097530
@@ -119,8 +119,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Play_ts_sx_uni_int_seed_plant
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.293875
+      minDuration: 0.220158
     - name: play_ts_sx_uni_int_shovel
       guid: 0c1b3a079ca15a4583307d82e9630cd7
       id: 2144010314
@@ -131,8 +131,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\play_ts_sx_uni_int_shovel
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.877542
+      minDuration: 0.681935
     - name: Play_ts_sx_uni_int_water
       guid: b7c05458c906a94188b4fca9f847387d
       id: 86867240
@@ -143,8 +143,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Play_ts_sx_uni_int_water
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 2.401187
+      minDuration: 2.139215
     - name: play_ts_sx_uni_plr_footsteps
       guid: 62ee658bcc4caa49aaf96393ea83e5a7
       id: 550554089
@@ -155,8 +155,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\play_ts_sx_uni_plr_footsteps
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.647292
+      minDuration: 0.2985
     - name: Play_ts_sx_uni_ui_close
       guid: 683af6a2a801a74bb2a3c0dd3598ea2c
       id: 4207799086
@@ -167,8 +167,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Play_ts_sx_uni_ui_close
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.141271
+      minDuration: 0.141271
     - name: Play_ts_sx_uni_ui_navigate
       guid: 0bae5dc63045b64aa3abf438a60a0507
       id: 2658627103
@@ -179,8 +179,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Play_ts_sx_uni_ui_navigate
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.136375
+      minDuration: 0.136375
     - name: Play_ts_sx_uni_ui_open
       guid: 85079f8576d2e44e83edfa2a8ac5994b
       id: 1124810858
@@ -191,8 +191,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Play_ts_sx_uni_ui_open
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.142687
+      minDuration: 0.142687
     - name: Play_ts_sx_uni_ui_oxygen_low
       guid: af9efe5c8dc6aa4695b63a530c2c9af2
       id: 1567033245
@@ -203,8 +203,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Play_ts_sx_uni_ui_oxygen_low
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.440292
+      minDuration: 0.440292
     - name: Play_ts_sx_uni_ui_plant_consume
       guid: ea91e62897747a4e9fd1bddeade80bb4
       id: 2262292382
@@ -215,8 +215,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Play_ts_sx_uni_ui_plant_consume
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 2.183625
+      minDuration: 2.183625
     - name: Play_ts_sx_uni_ui_select
       guid: feddd5bf0287f64f85ee6c5081cdea89
       id: 3919949730
@@ -227,14 +227,14 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Play_ts_sx_uni_ui_select
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.136375
+      minDuration: 0.136375
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 011c64672a1dbc4cbb1ad1f5e0fb072b
     GuidInternal: 
-    m_lastTime: -8586290149454897471
+    m_lastTime: -8586283899216442955
     List:
     - name: TerraformPercent
       guid: d19eba2d39e6e34ba2a2de7d24cab1ca
@@ -250,7 +250,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 8a6c2949df5831448f19255fa02b02fd
     GuidInternal: 
-    m_lastTime: -8586290149419840886
+    m_lastTime: -8586283899169886575
     List:
     - name: TerraformProgress
       guid: be3c9feb6b910246839c95aa48193338
@@ -294,7 +294,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 61856fd9a8f204478fa8545dabb31e1c
     GuidInternal: 
-    m_lastTime: -8586290149419830908
+    m_lastTime: -8586283899169886575
     List:
     - name: Material
       guid: 24392541353ce640b7666468964c1c84
@@ -326,7 +326,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: c9eb9fbcb3693b40a8d42609a323d2a4
     GuidInternal: 
-    m_lastTime: -8586290149419801278
+    m_lastTime: -8586283899169846564
     List: []
   ExpandedItems:
   - /Tera Testing_WwiseProject

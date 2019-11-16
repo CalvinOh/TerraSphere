@@ -6,8 +6,8 @@
   <CreateWwiseListener>true</CreateWwiseListener>
   <GenerateSoundBanksAsPreBuildStep>false</GenerateSoundBanksAsPreBuildStep>
   <ShowMissingRigidBodyWarning>true</ShowMissingRigidBodyWarning>
-  <SoundbankPath>Audio/GeneratedSoundBanks</SoundbankPath>
+  <SoundbankPath>Audio/GeneratedSoundBanks/</SoundbankPath>
   <WwiseInstallationPathMac>/Applications/Audiokinetic/Wwise 2019.1.4.7065/Wwise.app</WwiseInstallationPathMac>
-  <WwiseInstallationPathWindows />
+  <WwiseInstallationPathWindows>C:\Program Files (x86)\Audiokinetic\Wwise 2019.1.4.7065</WwiseInstallationPathWindows>
   <WwiseProjectPath>../Tera Testing_WwiseProject/Tera Testing_WwiseProject.wproj</WwiseProjectPath>
 </WwiseSettings>
