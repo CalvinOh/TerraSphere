@@ -3554,6 +3554,7 @@ GameObject:
   - component: {fileID: 1248231200}
   - component: {fileID: 1248231203}
   - component: {fileID: 1248231202}
+  - component: {fileID: 1248231204}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -3621,12 +3622,6 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 48f0c1aebbe5040e889520e9b8ade28a,
       type: 2}
-  TerraformState:
-    idInternal: 0
-    valueGuidInternal: 
-    groupIdInternal: 0
-    groupGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
 --- !u!114 &1248231203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3652,6 +3647,18 @@ MonoBehaviour:
   unloadTriggerList: 958ca0ea
   bankNameInternal: 
   valueGuidInternal: 
+--- !u!114 &1248231204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248231199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06197fb72cc85884dadf59d981f2074f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1264683550
 PrefabInstance:
   m_ObjectHideFlags: 0

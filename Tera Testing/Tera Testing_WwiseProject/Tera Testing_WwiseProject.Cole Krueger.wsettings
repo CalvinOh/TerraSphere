@@ -3,8 +3,10 @@
 	<UserProjectSettingsInfo>
 		<UserProjectSettings Name="" ID="{5F6F2C50-07C1-405B-A0CF-A73C6D9BBE58}">
 			<PropertyList>
+				<Property Name="Event Action List\{14F1846B-FF0D-4227-A1E2-C77210C82B6B}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{44CFD44C-628A-4328-BD29-16BEF1413812}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{5CFE9EAF-C68D-46AA-95B6-3A530C2C9AF2}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{8B65EE62-4CCC-49AA-AAF9-6393EA83E5A7}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{AEA074AC-7FA1-4417-95C3-355497C5E760}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{E2E14A66-6763-47CC-8887-CC96C5595CE9}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="EventView\FilterMode1" Type="int32" Value="2"/>
@@ -28,6 +30,9 @@
 				<Property Name="GenerateSoundBanks\x64_SelectedPlatforms" Type="string" Value="G7QB+/5EcUWmzZXHOP9LhA=="/>
 				<Property Name="GenerateSoundBanks\x64_SelectedSoundBanks" Type="string" Value="wxnEGHNyNU28VrMtKc8klg=="/>
 				<Property Name="HardwareController\CurrentSession" Type="string" Value="{00000000-0000-0000-0000-000000000000}"/>
+				<Property Name="Interactive Music\x64_{1A251BE7-E8C3-4961-8585-CA3BD7086466} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwP89r5osHTyVAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
+				<Property Name="Interactive Music\x64_{1D8FF502-EF39-4ECB-9B9E-D7363519DE29} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwP/OTt6XfOllAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
+				<Property Name="Interactive Music\x64_{51CBAAD6-F5A5-425C-81D7-C649ED6E8FD9} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwP78yfiUSZ1RAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
 				<Property Name="MeterView\LastObject1" Type="string" Value="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
 				<Property Name="MeterView\MeterMode1" Type="int32" Value="1"/>
 				<Property Name="MeterView\MeterMode1Viewpoint0" Type="int32" Value="1"/>
@@ -38,6 +43,10 @@
 				<Property Name="MonitoringManager\WatchMgr\WatchesVersion" Type="int32" Value="7"/>
 				<Property Name="MonitoringManager\WatchMgr\x64_GameSyncWatches" Type="string" Value=""/>
 				<Property Name="MonitoringManager\WatchMgr\x64_Watches" Type="string" Value=""/>
+				<Property Name="Music Transition List\{33A490CE-87CA-4EE0-9E45-2A11E56DB8CC}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Music Transition List\{57DF89F6-44A9-4AD3-A865-FA4A3FD5BC0E}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Music Transition List\{A8A9F88D-67EA-4082-8382-B5F4C34CCDA4}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Music Transition List\{EF36D9CB-AB28-4182-B8BE-C36AF8E3E1C7}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="OverrideCacheFolder\Active" Type="bool" Value="False"/>
 				<Property Name="OverrideCacheFolder\Path" Type="string" Value=".cache"/>
 				<Property Name="OverrideOriginalFolder\Active" Type="bool" Value="False"/>

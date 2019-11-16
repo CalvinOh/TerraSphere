@@ -73,6 +73,9 @@
 				<MusicSegment Name="Des to Hope" ID="{1D8FF502-EF39-4ECB-9B9E-D7363519DE29}" ShortID="1033497122">
 					<PropertyList>
 						<Property Name="EndPosition" Type="Real64" Value="9056.6875"/>
+						<Property Name="GridFrequencyPreset" Type="int16" Value="52"/>
+						<Property Name="Tempo" Type="Real64" Value="112"/>
+						<Property Name="TimeSignatureUpper" Type="int16" Value="3"/>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -132,6 +135,9 @@
 				<MusicSegment Name="Hope to Cheer" ID="{51CBAAD6-F5A5-425C-81D7-C649ED6E8FD9}" ShortID="152213931">
 					<PropertyList>
 						<Property Name="EndPosition" Type="Real64" Value="11199.5416666667"/>
+						<Property Name="GridFrequencyPreset" Type="int16" Value="52"/>
+						<Property Name="Tempo" Type="Real64" Value="112"/>
+						<Property Name="TimeSignatureUpper" Type="int16" Value="6"/>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -205,8 +211,10 @@
 					<ChildrenList>
 						<MusicPlaylistContainer Name="Desolate" ID="{A8A9F88D-67EA-4082-8382-B5F4C34CCDA4}" ShortID="44257240">
 							<PropertyList>
+								<Property Name="GridFrequencyPreset" Type="int16" Value="52"/>
+								<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
 								<Property Name="Tempo" Type="Real64" Value="112"/>
-								<Property Name="TimeSignatureUpper" Type="int16" Value="3"/>
+								<Property Name="TimeSignatureUpper" Type="int16" Value="5"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -308,8 +316,10 @@
 						</MusicPlaylistContainer>
 						<MusicPlaylistContainer Name="Hopeful" ID="{EF36D9CB-AB28-4182-B8BE-C36AF8E3E1C7}" ShortID="14170557">
 							<PropertyList>
+								<Property Name="GridFrequencyPreset" Type="int16" Value="52"/>
+								<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
 								<Property Name="Tempo" Type="Real64" Value="112"/>
-								<Property Name="TimeSignatureUpper" Type="int16" Value="3"/>
+								<Property Name="TimeSignatureUpper" Type="int16" Value="6"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -513,6 +523,27 @@
 							</Playlist>
 						</MusicPlaylistContainer>
 					</ChildrenList>
+					<StateInfo>
+						<StateGroupList>
+							<StateGroupInfo>
+								<StateGroupRef Name="TerraformProgress" ID="{EB9F3CBE-916B-4602-839C-95AA48193338}"/>
+							</StateGroupInfo>
+						</StateGroupList>
+						<CustomStateList>
+							<CustomState>
+								<StateRef Name="Hopeful" ID="{EE3348ED-0558-404C-842E-FCB55B87C63A}"/>
+								<CustomState Name="" ID="{55463090-CCBC-4C8D-A0D1-B1E5A13E7842}" ShortID="315062622"/>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="Desolate" ID="{91A293D7-312D-4505-A852-0C4843F48E8F}"/>
+								<CustomState Name="" ID="{8182A543-E6B7-480D-84DF-2A79F0D46D23}" ShortID="818629091"/>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="Cheerful" ID="{EB0745A5-F365-4665-826B-9344785605EB}"/>
+								<CustomState Name="" ID="{BFCDB078-7EFA-4CFF-9DEA-327E3517418C}" ShortID="994088896"/>
+							</CustomState>
+						</CustomStateList>
+					</StateInfo>
 					<TransitionList>
 						<MusicTransition Name="Root" ID="{6767024B-A590-4252-ACF4-0A08526DC15C}">
 							<PropertyList>
@@ -527,6 +558,91 @@
 									<TransitionInfo>
 										<SourceFadeOut>
 											<MusicFade Name="Source Fade-out" ID="{105F9003-85BD-4E30-9104-9C7ACBA55C16}">
+												<PropertyList>
+													<Property Name="FadeTime" Type="Real64" Value="2"/>
+													<Property Name="FadeType" Type="int16" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</SourceFadeOut>
+									</TransitionInfo>
+								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{96FB0D0D-5551-48A6-BBAC-8D3BCC8005B8}">
+									<PropertyList>
+										<Property Name="DestinationContextType" Type="int16" Value="2"/>
+										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+										<Property Name="EnableTransitionFadeIn" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="1"/>
+										<Property Name="PlayTransitionPostExit" Type="bool" Value="False"/>
+										<Property Name="SourceContextType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="DestinationContextObject">
+											<ObjectRef Name="Hopeful" ID="{EF36D9CB-AB28-4182-B8BE-C36AF8E3E1C7}" WorkUnitID="{36BC7EAE-C912-49A2-AD29-FA23AD693CA5}"/>
+										</Reference>
+										<Reference Name="SourceContextObject">
+											<ObjectRef Name="Desolate" ID="{A8A9F88D-67EA-4082-8382-B5F4C34CCDA4}" WorkUnitID="{36BC7EAE-C912-49A2-AD29-FA23AD693CA5}"/>
+										</Reference>
+									</ReferenceList>
+									<TransitionInfo>
+										<TransitionObjectRef Name="Des to Hope" ID="{1D8FF502-EF39-4ECB-9B9E-D7363519DE29}" WorkUnitID="{36BC7EAE-C912-49A2-AD29-FA23AD693CA5}"/>
+										<SourceFadeOut>
+											<MusicFade Name="Source Fade-out" ID="{228DFA91-0540-41F9-89E9-BAB64DAF83BE}">
+												<PropertyList>
+													<Property Name="FadeTime" Type="Real64" Value="2"/>
+													<Property Name="FadeType" Type="int16" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</SourceFadeOut>
+										<TransitionFadeIn>
+											<MusicFade Name="Transition Fade-in" ID="{D927694B-C118-4DDB-8217-FB36CE329D27}">
+												<PropertyList>
+													<Property Name="FadeOffset" Type="Real64" Value="-4"/>
+													<Property Name="FadeTime" Type="Real64" Value="4"/>
+												</PropertyList>
+											</MusicFade>
+										</TransitionFadeIn>
+									</TransitionInfo>
+								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{3A42C842-C153-48F7-BD67-C837E503FA87}">
+									<PropertyList>
+										<Property Name="DestinationContextType" Type="int16" Value="2"/>
+										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="1"/>
+										<Property Name="SourceContextType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="DestinationContextObject">
+											<ObjectRef Name="Cheerful" ID="{57DF89F6-44A9-4AD3-A865-FA4A3FD5BC0E}" WorkUnitID="{36BC7EAE-C912-49A2-AD29-FA23AD693CA5}"/>
+										</Reference>
+										<Reference Name="SourceContextObject">
+											<ObjectRef Name="Hopeful" ID="{EF36D9CB-AB28-4182-B8BE-C36AF8E3E1C7}" WorkUnitID="{36BC7EAE-C912-49A2-AD29-FA23AD693CA5}"/>
+										</Reference>
+									</ReferenceList>
+									<TransitionInfo>
+										<SourceFadeOut>
+											<MusicFade Name="Source Fade-out" ID="{ED8A5F30-9176-4D99-8F43-EAA4C278DD4B}">
+												<PropertyList>
+													<Property Name="FadeTime" Type="Real64" Value="2"/>
+													<Property Name="FadeType" Type="int16" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</SourceFadeOut>
+									</TransitionInfo>
+								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{C51DB300-1740-4C21-907D-A2E8C441672F}">
+									<PropertyList>
+										<Property Name="DestinationContextType" Type="int16" Value="2"/>
+										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="DestinationContextObject">
+											<ObjectRef Name="Desolate" ID="{A8A9F88D-67EA-4082-8382-B5F4C34CCDA4}" WorkUnitID="{36BC7EAE-C912-49A2-AD29-FA23AD693CA5}"/>
+										</Reference>
+									</ReferenceList>
+									<TransitionInfo>
+										<SourceFadeOut>
+											<MusicFade Name="Source Fade-out" ID="{BA899A49-95B8-46D3-913A-9DA5BC0A5652}">
 												<PropertyList>
 													<Property Name="FadeTime" Type="Real64" Value="2"/>
 													<Property Name="FadeType" Type="int16" Value="1"/>

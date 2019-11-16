@@ -262,7 +262,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 8a6c2949df5831448f19255fa02b02fd
     GuidInternal: 
-    m_lastTime: -8586283899169886575
+    m_lastTime: -8586277209941990951
     List:
     - name: TerraformProgress
       guid: be3c9feb6b910246839c95aa48193338
@@ -342,7 +342,8 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /Tera Testing_WwiseProject
-  - /Tera Testing_WwiseProject/Events
-  - /Tera Testing_WwiseProject/Events/Default Work Unit
+  - /Tera Testing_WwiseProject/States
+  - /Tera Testing_WwiseProject/States/Default Work Unit
+  - /Tera Testing_WwiseProject/States/Default Work Unit/TerraformProgress
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
