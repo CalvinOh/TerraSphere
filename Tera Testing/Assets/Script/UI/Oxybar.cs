@@ -60,6 +60,9 @@ public class Oxybar : MonoBehaviour
             gameOverMenu.DeathScreen();
             Time.timeScale = 0;
             canvasCalled = !canvasCalled;
+
+            /* ckrueger audio */
+            AkSoundEngine.StopAll();
         }
     }
 

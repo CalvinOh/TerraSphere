@@ -4,6 +4,7 @@
 		<UserProjectSettings Name="" ID="{5F6F2C50-07C1-405B-A0CF-A73C6D9BBE58}">
 			<PropertyList>
 				<Property Name="Event Action List\{44CFD44C-628A-4328-BD29-16BEF1413812}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{5CFE9EAF-C68D-46AA-95B6-3A530C2C9AF2}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{AEA074AC-7FA1-4417-95C3-355497C5E760}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{E2E14A66-6763-47CC-8887-CC96C5595CE9}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="EventView\FilterMode1" Type="int32" Value="2"/>
