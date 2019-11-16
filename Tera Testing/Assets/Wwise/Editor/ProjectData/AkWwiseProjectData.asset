@@ -31,7 +31,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 4c0a8fbbfe23f541a45c13ac07bf3e40
     GuidInternal: 
-    m_lastTime: -8586283899169906581
+    m_lastTime: -8586277338342398746
     List:
     - name: Main
       guid: c319c4187372354dbc56b32d29cf2496
@@ -47,7 +47,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 2d83db676f09ea46afecc809b6ac0548
     GuidInternal: 
-    m_lastTime: -8586283899216452951
+    m_lastTime: -8586277338342518774
     List:
     - name: Play_Ambience
       guid: 410f2b0535c19a4295cefaeb3fa9c1c1
@@ -85,6 +85,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_Rocket_Launch
+      guid: 4cd4cf448a622843bd2916bef1413812
+      id: 3072389188
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Rocket_Launch
+        ObjectType: 3
+      Path: Default Work Unit\Play_Rocket_Launch
+      maxAttenuation: 0
+      maxDuration: 6.250146
+      minDuration: 6.250146
     - name: Play_ts_sx_uni_env_bush_thru
       guid: 26b0e714ba34504290dbff1b0effa4f4
       id: 4229852413
