@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetMusicEvolution : MonoBehaviour
+public class SetMusicAndAmbienceEvolution : MonoBehaviour
 {
+    /*ckrueger audio*/
+
+    public AK.Wwise.RTPC TerraformRTPC;
+
     TerraBar t;
 
     // Use this for initialization.
@@ -17,26 +21,23 @@ public class SetMusicEvolution : MonoBehaviour
     // Update is called once per frame.
     void Update()
     {
-        UpdateTerraformState();
-    }
+        TerraformRTPC.SetGlobalValue(t.barPercentage);
 
-    void UpdateTerraformState()
-    {
         //Debug.Log("MusicStateSwitcher Running");
 
         if (t.barPercentage <= 5)
         {
-            //Debug.Log("music desolate");
+            Debug.Log("music desolate");
             AkSoundEngine.SetState("TerraformProgress", "Desolate");
         }
         else if ((t.barPercentage > 5) && (t.barPercentage < 10))
         {
-            //Debug.Log("music hopeful");
+            Debug.Log("music hopeful");
             AkSoundEngine.SetState("TerraformProgress", "Hopeful");
         }
         else if (t.barPercentage >= 10)
         {
-            //Debug.Log("music cheerful");
+            Debug.Log("music cheerful");
             AkSoundEngine.SetState("TerraformProgress", "Cheerful");
         }
     }
