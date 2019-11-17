@@ -175,6 +175,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Rocket_Launch" ID="{44CFD44C-628A-4328-BD29-16BEF1413812}">
+					<ChildrenList>
+						<Action Name="" ID="{78049AB8-E5AF-48AA-A6B5-4CBDBAF19984}" ShortID="884079386">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ts_sx_uni_int_rocket_launch" ID="{ABCF2D1D-E0E2-4EB8-98BD-8885048E1C9C}" WorkUnitID="{B5EF5589-4D56-4D54-BD95-57157958CE5B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

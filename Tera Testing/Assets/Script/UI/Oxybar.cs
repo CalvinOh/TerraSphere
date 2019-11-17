@@ -42,9 +42,14 @@ public class Oxybar : MonoBehaviour
 
     private void Awake()
     {
-        
         playerController = FindObjectOfType<PlayerController>();
         maxOxygen = playerController.oxygenMax;
+    }
+
+    private void Start()
+    {
+        /* ckrueger audio */
+        CheckForLowOxygen();
     }
 
     void FixedUpdate()
@@ -53,6 +58,7 @@ public class Oxybar : MonoBehaviour
         currentPercentage = currentOxygen / maxOxygen;
         oxybar.fillAmount = currentPercentage;
         ColorChange();
+
         if (currentPercentage <= 0 && !canvasCalled)
         {
             canvasObject.SetActive(true);
@@ -60,6 +66,9 @@ public class Oxybar : MonoBehaviour
             gameOverMenu.DeathScreen();
             Time.timeScale = 0;
             canvasCalled = !canvasCalled;
+
+            /* ckrueger audio */
+            AkSoundEngine.StopAll();
         }
     }
 
@@ -67,4 +76,20 @@ public class Oxybar : MonoBehaviour
     {
         oxybar.color = Color.Lerp(colorEnd, colorStart, currentPercentage*multiplier);
     }
+
+    /*v ckrueger audio v*/
+    private void PlaySoundLowOxygen()
+    {
+        AkSoundEngine.PostEvent("Play_ts_sx_uni_ui_oxygen_low", gameObject);
+    }
+
+    //check for the oxygen to be below a set level
+    private void CheckForLowOxygen()
+    {
+        if (currentPercentage < .20f)
+        {
+            InvokeRepeating("PlaySoundLowOxygen", 0f, 5f);
+        }
+    }
+    /*^ ckrueger audio ^*/
 }

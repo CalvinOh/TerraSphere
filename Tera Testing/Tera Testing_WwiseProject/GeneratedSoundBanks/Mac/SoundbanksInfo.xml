@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="11" SoundbankVersion="134">
 	<RootPaths>
-		<ProjectRoot>/Users/colekrueger/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Documents/GitHub/TERA_Project/Tera Testing/Tera Testing_WwiseProject/</ProjectRoot>
-		<SourceFilesRoot>/Users/colekrueger/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Documents/GitHub/TERA_Project/Tera Testing/Tera Testing_WwiseProject/.cache/Mac/</SourceFilesRoot>
-		<SoundBanksRoot>/Users/colekrueger/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Documents/GitHub/TERA_Project/Tera Testing/Tera Testing_WwiseProject/GeneratedSoundBanks/Mac/</SoundBanksRoot>
+		<ProjectRoot>C:\Users\Cole Krueger\Documents\GitHub\TERA_Project\Tera Testing\Tera Testing_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Cole Krueger\Documents\GitHub\TERA_Project\Tera Testing\Tera Testing_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Cole Krueger\Documents\GitHub\TERA_Project\Tera Testing\Tera Testing_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>/Users/colekrueger/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Documents/GitHub/TERA_Project/Tera Testing/Tera Testing_WwiseProject/GeneratedSoundBanks/Mac</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\Cole Krueger\Documents\GitHub\TERA_Project\Tera Testing\Tera Testing_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -24,6 +24,7 @@
 				<Event Id="278617630" Name="Play_Ambience" ObjectPath="\Events\Default Work Unit\Play_Ambience" DurationType="Infinite"/>
 				<Event Id="3009755888" Name="Play_MainTheme" ObjectPath="\Events\Default Work Unit\Play_MainTheme" DurationType="Infinite"/>
 				<Event Id="2932040671" Name="Play_Music" ObjectPath="\Events\Default Work Unit\Play_Music" DurationType="Infinite"/>
+				<Event Id="3072389188" Name="Play_Rocket_Launch" ObjectPath="\Events\Default Work Unit\Play_Rocket_Launch" DurationType="OneShot" DurationMin="6.250146" DurationMax="6.250146"/>
 				<Event Id="4229852413" Name="Play_ts_sx_uni_env_bush_thru" ObjectPath="\Events\Default Work Unit\Play_ts_sx_uni_env_bush_thru" DurationType="OneShot" DurationMin="1.150042" DurationMax="1.150042"/>
 				<Event Id="416558692" Name="Play_ts_sx_uni_int_plant_harvest" ObjectPath="\Events\Default Work Unit\Play_ts_sx_uni_int_plant_harvest" DurationType="OneShot" DurationMin="0.270801" DurationMax="0.341188"/>
 				<Event Id="2965097530" Name="Play_ts_sx_uni_int_seed_plant" ObjectPath="\Events\Default Work Unit\Play_ts_sx_uni_int_seed_plant" DurationType="OneShot" DurationMin="0.220158" DurationMax="0.293875"/>
@@ -40,123 +41,127 @@
 			<IncludedMemoryFiles>
 				<File Id="11980147" Language="SFX">
 					<ShortName>ts_sx_uni_ui_navigate.wav</ShortName>
-					<Path>SFX/ts_sx_uni_ui_navigate_10C4C929.wem</Path>
+					<Path>SFX\ts_sx_uni_ui_navigate_10C4C929.wem</Path>
 				</File>
 				<File Id="109378527" Language="SFX">
 					<ShortName>ts_sx_uni_amb_hopeful.wav</ShortName>
-					<Path>SFX/ts_sx_uni_amb_hopeful_D79FB2B7.wem</Path>
+					<Path>SFX\ts_sx_uni_amb_hopeful_D79FB2B7.wem</Path>
 				</File>
 				<File Id="181998071" Language="SFX">
 					<ShortName>ts_sx_uni_plr_footstep_03.wav</ShortName>
-					<Path>SFX/ts_sx_uni_plr_footstep_03_10C4C929.wem</Path>
+					<Path>SFX\ts_sx_uni_plr_footstep_03_10C4C929.wem</Path>
 				</File>
 				<File Id="186361667" Language="SFX">
 					<ShortName>ts_sx_uni_plr_footstep_grass_03.wav</ShortName>
-					<Path>SFX/ts_sx_uni_plr_footstep_grass_03_10C4C929.wem</Path>
+					<Path>SFX\ts_sx_uni_plr_footstep_grass_03_10C4C929.wem</Path>
 				</File>
 				<File Id="223000001" Language="SFX">
 					<ShortName>ts_sx_uni_plr_footstep_grass_04.wav</ShortName>
-					<Path>SFX/ts_sx_uni_plr_footstep_grass_04_10C4C929.wem</Path>
+					<Path>SFX\ts_sx_uni_plr_footstep_grass_04_10C4C929.wem</Path>
 				</File>
 				<File Id="254711624" Language="SFX">
 					<ShortName>ts_sx_uni_int_shovel_03.wav</ShortName>
-					<Path>SFX/ts_sx_uni_int_shovel_03_10C4C929.wem</Path>
+					<Path>SFX\ts_sx_uni_int_shovel_03_10C4C929.wem</Path>
 				</File>
 				<File Id="265289358" Language="SFX">
 					<ShortName>ts_sx_uni_plr_footstep_02.wav</ShortName>
-					<Path>SFX/ts_sx_uni_plr_footstep_02_10C4C929.wem</Path>
+					<Path>SFX\ts_sx_uni_plr_footstep_02_10C4C929.wem</Path>
 				</File>
 				<File Id="265822718" Language="SFX">
 					<ShortName>ts_sx_uni_footstep_dirt_02.wav</ShortName>
-					<Path>SFX/ts_sx_uni_footstep_dirt_02_10C4C929.wem</Path>
+					<Path>SFX\ts_sx_uni_footstep_dirt_02_10C4C929.wem</Path>
 				</File>
 				<File Id="321899424" Language="SFX">
 					<ShortName>ts_sx_uni_int_shovel_02.wav</ShortName>
-					<Path>SFX/ts_sx_uni_int_shovel_02_10C4C929.wem</Path>
+					<Path>SFX\ts_sx_uni_int_shovel_02_10C4C929.wem</Path>
 				</File>
 				<File Id="340968569" Language="SFX">
 					<ShortName>ts_sx_uni_footstep_dirt_01.wav</ShortName>
-					<Path>SFX/ts_sx_uni_footstep_dirt_01_10C4C929.wem</Path>
+					<Path>SFX\ts_sx_uni_footstep_dirt_01_10C4C929.wem</Path>
 				</File>
 				<File Id="347700609" Language="SFX">
 					<ShortName>ts_sx_uni_plr_footstep_04.wav</ShortName>
-					<Path>SFX/ts_sx_uni_plr_footstep_04_10C4C929.wem</Path>
+					<Path>SFX\ts_sx_uni_plr_footstep_04_10C4C929.wem</Path>
 				</File>
 				<File Id="397315755" Language="SFX">
 					<ShortName>ts_sx_uni_int_shovel_01.wav</ShortName>
-					<Path>SFX/ts_sx_uni_int_shovel_01_10C4C929.wem</Path>
+					<Path>SFX\ts_sx_uni_int_shovel_01_10C4C929.wem</Path>
 				</File>
 				<File Id="444677224" Language="SFX">
 					<ShortName>ts_sx_uni_env_bush_thru.wav</ShortName>
-					<Path>SFX/ts_sx_uni_env_bush_thru_10C4C929.wem</Path>
+					<Path>SFX\ts_sx_uni_env_bush_thru_10C4C929.wem</Path>
 				</File>
 				<File Id="509027937" Language="SFX">
 					<ShortName>ts_sx_uni_amb_cheerful.wav</ShortName>
-					<Path>SFX/ts_sx_uni_amb_cheerful_D79FB2B7.wem</Path>
+					<Path>SFX\ts_sx_uni_amb_cheerful_D79FB2B7.wem</Path>
 				</File>
 				<File Id="539067160" Language="SFX">
 					<ShortName>ts_sx_uni_footstep_dirt_03.wav</ShortName>
-					<Path>SFX/ts_sx_uni_footstep_dirt_03_10C4C929.wem</Path>
+					<Path>SFX\ts_sx_uni_footstep_dirt_03_10C4C929.wem</Path>
 				</File>
 				<File Id="562390906" Language="SFX">
 					<ShortName>ts_sx_uni_ui_open.wav</ShortName>
-					<Path>SFX/ts_sx_uni_ui_open_10C4C929.wem</Path>
+					<Path>SFX\ts_sx_uni_ui_open_10C4C929.wem</Path>
 				</File>
 				<File Id="567862008" Language="SFX">
 					<ShortName>TERRA_LevelLoop2_[Hopeful]_10.31.19_v01.1.wav</ShortName>
-					<Path>SFX/TERRA_LevelLoop2_[Hopeful]_10.31.19_v01.1_D79FB2B7.wem</Path>
+					<Path>SFX\TERRA_LevelLoop2_[Hopeful]_10.31.19_v01.1_D79FB2B7.wem</Path>
 				</File>
 				<File Id="587471345" Language="SFX">
 					<ShortName>ts_sx_uni_int_water.wav</ShortName>
-					<Path>SFX/ts_sx_uni_int_water_10C4C929.wem</Path>
+					<Path>SFX\ts_sx_uni_int_water_10C4C929.wem</Path>
 				</File>
 				<File Id="594379140" Language="SFX">
 					<ShortName>ts_sx_uni_ui_plant_consume.wav</ShortName>
-					<Path>SFX/ts_sx_uni_ui_plant_consume_10C4C929.wem</Path>
+					<Path>SFX\ts_sx_uni_ui_plant_consume_10C4C929.wem</Path>
+				</File>
+				<File Id="608302089" Language="SFX">
+					<ShortName>ts_sx_uni_int_rocket_launch.wav</ShortName>
+					<Path>SFX\ts_sx_uni_int_rocket_launch_10C4C929.wem</Path>
 				</File>
 				<File Id="663451030" Language="SFX">
 					<ShortName>ts_sx_uni_plr_footstep_grass_01.wav</ShortName>
-					<Path>SFX/ts_sx_uni_plr_footstep_grass_01_10C4C929.wem</Path>
+					<Path>SFX\ts_sx_uni_plr_footstep_grass_01_10C4C929.wem</Path>
 				</File>
 				<File Id="700190998" Language="SFX">
 					<ShortName>ts_sx_uni_amb_desolate.wav</ShortName>
-					<Path>SFX/ts_sx_uni_amb_desolate_D79FB2B7.wem</Path>
+					<Path>SFX\ts_sx_uni_amb_desolate_D79FB2B7.wem</Path>
 				</File>
 				<File Id="760526863" Language="SFX">
 					<ShortName>TERRA_LevelLoop1_[Desolate]_10.31.19_v01.1.wav</ShortName>
-					<Path>SFX/TERRA_LevelLoop1_[Desolate]_10.31.19_v01.1_D79FB2B7.wem</Path>
+					<Path>SFX\TERRA_LevelLoop1_[Desolate]_10.31.19_v01.1_D79FB2B7.wem</Path>
 				</File>
 				<File Id="788884385" Language="SFX">
 					<ShortName>ts_sx_uni_ui_select.wav</ShortName>
-					<Path>SFX/ts_sx_uni_ui_select_10C4C929.wem</Path>
+					<Path>SFX\ts_sx_uni_ui_select_10C4C929.wem</Path>
 				</File>
 				<File Id="912177619" Language="SFX">
 					<ShortName>ts_sx_uni_plr_footstep_01.wav</ShortName>
-					<Path>SFX/ts_sx_uni_plr_footstep_01_10C4C929.wem</Path>
+					<Path>SFX\ts_sx_uni_plr_footstep_01_10C4C929.wem</Path>
 				</File>
 				<File Id="965413616" Language="SFX">
 					<ShortName>ts_sx_uni_plr_footstep_grass_02.wav</ShortName>
-					<Path>SFX/ts_sx_uni_plr_footstep_grass_02_10C4C929.wem</Path>
+					<Path>SFX\ts_sx_uni_plr_footstep_grass_02_10C4C929.wem</Path>
 				</File>
 				<File Id="1001814997" Language="SFX">
 					<ShortName>ts_sx_uni_int_plant_harvest.wav</ShortName>
-					<Path>SFX/ts_sx_uni_int_plant_harvest_10C4C929.wem</Path>
+					<Path>SFX\ts_sx_uni_int_plant_harvest_10C4C929.wem</Path>
 				</File>
 				<File Id="1017290464" Language="SFX">
 					<ShortName>ts_sx_uni_int_seed_plant.wav</ShortName>
-					<Path>SFX/ts_sx_uni_int_seed_plant_10C4C929.wem</Path>
+					<Path>SFX\ts_sx_uni_int_seed_plant_10C4C929.wem</Path>
 				</File>
 				<File Id="1052497568" Language="SFX">
 					<ShortName>TERRA_LevelLoop3_[Cheerful]_10.31.19_v01.wav</ShortName>
-					<Path>SFX/TERRA_LevelLoop3_[Cheerful]_10.31.19_v01_D79FB2B7.wem</Path>
+					<Path>SFX\TERRA_LevelLoop3_[Cheerful]_10.31.19_v01_D79FB2B7.wem</Path>
 				</File>
 				<File Id="1055686485" Language="SFX">
 					<ShortName>ts_sx_uni_ui_oxygen_low.wav</ShortName>
-					<Path>SFX/ts_sx_uni_ui_oxygen_low_10C4C929.wem</Path>
+					<Path>SFX\ts_sx_uni_ui_oxygen_low_10C4C929.wem</Path>
 				</File>
 				<File Id="1069203955" Language="SFX">
 					<ShortName>ts_sx_uni_ui_close.wav</ShortName>
-					<Path>SFX/ts_sx_uni_ui_close_10C4C929.wem</Path>
+					<Path>SFX\ts_sx_uni_ui_close_10C4C929.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>
