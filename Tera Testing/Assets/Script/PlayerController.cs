@@ -69,6 +69,7 @@ public class PlayerController : MonoBehaviour
     public float oxygenMax = 100f;
 
     //UI
+    public bool showBumpers;
 
     //UI for context based direction.
     public ContextBasedUI contextBasedUI { get; private set; }
@@ -128,6 +129,19 @@ public class PlayerController : MonoBehaviour
         HandleAnimatioons();
         DecreaseOxygen();
         ChangeCurrentlySelecting();
+        CheckForBumpers();
+    }
+
+    private void CheckForBumpers()
+    {
+        if(objectsInTrigger.Count > 2)
+        {
+            showBumpers = true;
+        }
+        else
+        {
+            showBumpers = false;  
+        }
     }
 
     private void ChangeCurrentlySelecting()
