@@ -196,8 +196,9 @@
 				</MusicSegment>
 				<MusicSwitchContainer Name="Music Switch" ID="{33A490CE-87CA-4EE0-9E45-2A11E56DB8CC}" ShortID="845989754">
 					<PropertyList>
-						<Property Name="GridFrequencyPreset" Type="int16" Value="51"/>
-						<Property Name="Tempo" Type="Real64" Value="113"/>
+						<Property Name="ContinuePlay" Type="bool" Value="False"/>
+						<Property Name="GridFrequencyPreset" Type="int16" Value="52"/>
+						<Property Name="Tempo" Type="Real64" Value="112"/>
 						<Property Name="TimeSignatureUpper" Type="int16" Value="3"/>
 					</PropertyList>
 					<ReferenceList>

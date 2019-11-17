@@ -354,7 +354,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-9</Value>
+										<Value>-11</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -446,6 +446,13 @@
 							</ChildrenList>
 						</RandomSequenceContainer>
 						<SwitchContainer Name="Footstep_Layers" ID="{F78BE306-ED4A-4BE1-8FC5-A6E5554503A0}" ShortID="751115703">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-11</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{13807498-01DA-4DC6-AF65-8BB9FB440611}"/>

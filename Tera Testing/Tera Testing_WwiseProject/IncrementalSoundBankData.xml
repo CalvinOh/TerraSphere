@@ -4,12 +4,12 @@
 		<Banks>
 			<Language ID="393239870">
 				<File Name="Init" Hash="1093173604" Timestamp="1573872281"/>
-				<File Name="Main" Hash="193586446" Timestamp="1573886071"/>
+				<File Name="Main" Hash="664714529" Timestamp="1573965252"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="1003274998" Timestamp="1573886071"/>
+				<File Name="" Hash="1003274998" Timestamp="1573965252"/>
 			</Language>
 		</XMLInfo>
 	</Platform>
@@ -17,12 +17,12 @@
 		<Banks>
 			<Language ID="393239870">
 				<File Name="Init" Hash="941257162" Timestamp="1573872283"/>
-				<File Name="Main" Hash="193586446" Timestamp="1573886072"/>
+				<File Name="Main" Hash="664714529" Timestamp="1573965252"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="1150441640" Timestamp="1573886072"/>
+				<File Name="" Hash="1150441640" Timestamp="1573965252"/>
 			</Language>
 		</XMLInfo>
 	</Platform>

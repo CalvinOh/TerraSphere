@@ -26,17 +26,17 @@ public class SetMusicEvolution : MonoBehaviour
 
         if (t.barPercentage <= 5)
         {
-            Debug.Log("music desolate");
+            //Debug.Log("music desolate");
             AkSoundEngine.SetState("TerraformProgress", "Desolate");
         }
         else if ((t.barPercentage > 5) && (t.barPercentage < 10))
         {
-            Debug.Log("music hopeful");
+            //Debug.Log("music hopeful");
             AkSoundEngine.SetState("TerraformProgress", "Hopeful");
         }
         else if (t.barPercentage >= 10)
         {
-            Debug.Log("music cheerful");
+            //Debug.Log("music cheerful");
             AkSoundEngine.SetState("TerraformProgress", "Cheerful");
         }
     }
