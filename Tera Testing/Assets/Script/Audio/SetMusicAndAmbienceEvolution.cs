@@ -25,20 +25,17 @@ public class SetMusicAndAmbienceEvolution : MonoBehaviour
 
         //Debug.Log("MusicStateSwitcher Running");
 
-        if (t.barPercentage <= 5)
+        if ((t.barPercentage < .35f) && (t.barPercentage > .0f))
         {
-            Debug.Log("music desolate");
             AkSoundEngine.SetState("TerraformProgress", "Desolate");
         }
-        else if ((t.barPercentage > 5) && (t.barPercentage < 10))
+        else if ((t.barPercentage > .36f) && (t.barPercentage < .75f))
         {
-            Debug.Log("music hopeful");
             AkSoundEngine.SetState("TerraformProgress", "Hopeful");
         }
-        else if (t.barPercentage >= 10)
+        else if (t.barPercentage >= .76f)
         {
-            Debug.Log("music cheerful");
-            AkSoundEngine.SetState("TerraformProgress", "Cheerful");
+            AkSoundEngine.SetState("TerraformProgress", "Cheerful"); 
         }
     }
 }

@@ -108,26 +108,11 @@ public class PlayerController : MonoBehaviour
         contextBasedUI.seedIcon = seedItem.GetComponent<Item>().icon;
 
         Cursor.lockState = CursorLockMode.Locked;
-
-        /* ckrueger audio */
-        CheckForLowOxygen();
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*v ckrueger audio v*/
-        if (oxygenValue <= 99f)
-        {
-            Debug.Log("OXYGEN LOW");
-            oxygenLow = true;
-        }
-        else
-        {
-            oxygenLow = false;
-        }
-        /*^ ckrueger audio ^*/
-
         EasyMode();
 
         if (!invScript.inventoryDisplaying)
@@ -418,24 +403,4 @@ public class PlayerController : MonoBehaviour
     {
         AkSoundEngine.PostEvent("Play_ts_sx_uni_int_shovel", gameObject);
     }
-
-    private void PlaySoundLowOxygen()
-    {
-        AkSoundEngine.PostEvent("Play_ts_sx_uni_ui_oxygen_low", gameObject);
-    }
-
-    //check for the oxygen to be below a set level
-    private void CheckForLowOxygen()
-    {
-        if(oxygenLow == true)
-        {
-            Debug.Log("Playing Oxy Sound");
-            InvokeRepeating("PlaySoundLowOxygen", 0f, 5f);
-        }
-        else
-        {
-            Debug.Log("Not playing oxy sound");
-        }
-    }
-    /*^ ckrueger audio ^*/
 }

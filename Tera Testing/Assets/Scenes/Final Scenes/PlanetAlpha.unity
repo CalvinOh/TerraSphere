@@ -3553,7 +3553,6 @@ GameObject:
   - component: {fileID: 1248231201}
   - component: {fileID: 1248231200}
   - component: {fileID: 1248231203}
-  - component: {fileID: 1248231202}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -3603,23 +3602,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1248231202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1248231199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3501bd2e70bf54a2aadb709c98518906, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TerraformRTPC:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 48f0c1aebbe5040e889520e9b8ade28a,
-      type: 2}
 --- !u!114 &1248231203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8546,6 +8528,7 @@ GameObject:
   - component: {fileID: 4823459785719774056}
   - component: {fileID: 4823459785719774057}
   - component: {fileID: 4823459785719774064}
+  - component: {fileID: 4823459785719774065}
   m_Layer: 0
   m_Name: Ambience Handler
   m_TagString: Untagged
@@ -8587,6 +8570,23 @@ MonoBehaviour:
   multiPositionTypeLabel: 0
   LargeModePositions: []
   multiPositionArray: []
+--- !u!114 &4823459785719774065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4823459785719774063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3501bd2e70bf54a2aadb709c98518906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TerraformRTPC:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 48f0c1aebbe5040e889520e9b8ade28a,
+      type: 2}
 --- !u!1 &6302708370447266207
 GameObject:
   m_ObjectHideFlags: 0
