@@ -52,6 +52,9 @@ public class MainMenuFunctions : MonoBehaviour
 
     public void GoToScene()
     {
+        /* ckrueger audio */
+        AkSoundEngine.StopAll();
+
         SceneManager.UnloadSceneAsync(currentScene);
         SceneManager.LoadScene(sceneSwitch);
     }

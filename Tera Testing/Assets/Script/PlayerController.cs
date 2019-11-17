@@ -60,6 +60,8 @@ public class PlayerController : MonoBehaviour
     //The current value for the players oxygen value
     [SerializeField]
     public float oxygenValue;
+    /* ckrueger audio */
+    public bool oxygenLow = false;
     //How much oxygen is being decreased 
     [SerializeField]
     private float oxygenDecreaseValue;
@@ -77,15 +79,6 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-
-        /*v ckrueger audio v*/
-        //play oxygen low sound when oxygen reaches low levels
-        if (oxygenValue <= 15f)
-        {
-            InvokeRepeating("PlaySoundLowOxygen", 0f, 5f);
-        }
-        /*^ ckrueger audio ^*/
-
         if (contextBasedUI == null)
         
         //MyAnimator = GetComponent<Animator>();
@@ -110,20 +103,17 @@ public class PlayerController : MonoBehaviour
         if (invScript.seedSlot.Length < 6)
             firstPass = 1;
         //    invScript.SetUpSeedAndPlantSlots();
-        if(firstPass == 0)
+        if(firstPass == 0 && seedItem == null)
             seedItem = invScript.seedSlot[0].GetComponent<Slot>().item;
         contextBasedUI.seedIcon = seedItem.GetComponent<Item>().icon;
 
         Cursor.lockState = CursorLockMode.Locked;
-
     }
 
     // Update is called once per frame
     void Update()
     {
-
         EasyMode();
-
 
         if (!invScript.inventoryDisplaying)
         {
@@ -413,10 +403,4 @@ public class PlayerController : MonoBehaviour
     {
         AkSoundEngine.PostEvent("Play_ts_sx_uni_int_shovel", gameObject);
     }
-
-    private void PlaySoundLowOxygen()
-    {
-        AkSoundEngine.PostEvent("Play_ts_sx_uni_ui_oxygen_low", gameObject);
-    }
-    /*^ ckrueger audio ^*/
 }

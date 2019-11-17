@@ -9,6 +9,7 @@
 						<ObjectRef Name="Play_Music" ID="{14F1846B-FF0D-4227-A1E2-C77210C82B6B}" WorkUnitID="{67DB832D-096F-46EA-AFEC-C809B6AC0548}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_ts_sx_uni_env_bush_thru" ID="{14E7B026-34BA-4250-90DB-FF1B0EFFA4F4}" WorkUnitID="{67DB832D-096F-46EA-AFEC-C809B6AC0548}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_Ambience" ID="{052B0F41-C135-429A-95CE-FAEB3FA9C1C1}" WorkUnitID="{67DB832D-096F-46EA-AFEC-C809B6AC0548}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_Rocket_Launch" ID="{44CFD44C-628A-4328-BD29-16BEF1413812}" WorkUnitID="{67DB832D-096F-46EA-AFEC-C809B6AC0548}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_MainTheme" ID="{AEA074AC-7FA1-4417-95C3-355497C5E760}" WorkUnitID="{67DB832D-096F-46EA-AFEC-C809B6AC0548}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="play_ts_sx_uni_int_shovel" ID="{073A1B0C-A19C-455A-8330-7D82E9630CD7}" WorkUnitID="{67DB832D-096F-46EA-AFEC-C809B6AC0548}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_ts_sx_uni_int_plant_harvest" ID="{FDE338CA-CF85-4624-A1F6-4164C83AB176}" WorkUnitID="{67DB832D-096F-46EA-AFEC-C809B6AC0548}" Filter="7" Origin="Manual"/>
