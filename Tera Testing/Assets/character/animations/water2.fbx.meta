@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: db4a1863f2da7fc418c876f115e92a8a
+guid: 8bb2f4ff292a06a4a87c72410ae61982
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
   - first:
-      74: 1555735683567423060
-    second: marsidle4
+      74: 2363931988157344165
+    second: water2
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -35,18 +35,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: marsidle4
-      takeName: marsidle4
-      internalID: 1555735683567423060
+      name: water2
+      takeName: water2
+      internalID: 2363931988157344165
       firstFrame: 1
-      lastFrame: 32
+      lastFrame: 100
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
