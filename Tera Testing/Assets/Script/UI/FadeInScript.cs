@@ -36,6 +36,9 @@ public class FadeInScript : MonoBehaviour
     [SerializeField]
     private GameObject image6;
 
+    [SerializeField]
+    private GameObject image7;
+
     private float timerReset;
     private float timeAtAwake;
 
@@ -59,6 +62,7 @@ public class FadeInScript : MonoBehaviour
             image3.SetActive(false);
             image4.SetActive(false);
             image5.SetActive(false);
+            image7.SetActive(false);
         }
 
     }
