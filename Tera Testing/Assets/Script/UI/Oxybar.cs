@@ -39,6 +39,8 @@ public class Oxybar : MonoBehaviour
     private float currentOxygen;
     private bool canvasCalled = false;
     private GameOverMenu gameOverMenu;
+    private bool lowOxygen = false;
+    private bool lowStarted = false;
 
     private void Awake()
     {
@@ -49,7 +51,7 @@ public class Oxybar : MonoBehaviour
     private void Start()
     {
         /* ckrueger audio */
-        CheckForLowOxygen();
+        //CheckForLowOxygen();
     }
 
     void FixedUpdate()
@@ -58,6 +60,20 @@ public class Oxybar : MonoBehaviour
         currentPercentage = currentOxygen / maxOxygen;
         oxybar.fillAmount = currentPercentage;
         ColorChange();
+        /* ckrueger audio */
+        if(currentOxygen < 20 && !lowStarted)
+        {
+            lowOxygen = true;
+            CheckForLowOxygen();
+        }
+        if(currentOxygen >= 20)
+        {
+            lowOxygen = false;
+            lowStarted = false;
+            CancelInvoke();
+        }
+
+       
 
         if (currentPercentage <= 0 && !canvasCalled)
         {
@@ -86,9 +102,10 @@ public class Oxybar : MonoBehaviour
     //check for the oxygen to be below a set level
     private void CheckForLowOxygen()
     {
-        if (currentPercentage < .20f)
+        if (currentPercentage < .20f && lowOxygen && !lowStarted)
         {
             InvokeRepeating("PlaySoundLowOxygen", 0f, 5f);
+            lowStarted = true;
         }
     }
     /*^ ckrueger audio ^*/

@@ -9131,6 +9131,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1725089123845229640, guid: 8bc7ce2451e8f4c4781a7a5b86b68493,
         type: 3}
+    - target: {fileID: 2578194761795731692, guid: d64cfc0e221e98b408db0930da674aad,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3527049133544179183, guid: d64cfc0e221e98b408db0930da674aad,
         type: 3}
       propertyPath: m_TagString
@@ -9291,11 +9296,6 @@ PrefabInstance:
       propertyPath: plantTextBox
       value: 
       objectReference: {fileID: 1314347151}
-    - target: {fileID: 2578194761795731692, guid: d64cfc0e221e98b408db0930da674aad,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 174979710288676187, guid: d64cfc0e221e98b408db0930da674aad,
         type: 3}
       propertyPath: oxygenValue
@@ -9321,6 +9321,11 @@ PrefabInstance:
       propertyPath: seedItem
       value: 
       objectReference: {fileID: 1996808306}
+    - target: {fileID: 8624096618166155622, guid: d64cfc0e221e98b408db0930da674aad,
+        type: 3}
+      propertyPath: oxygenValue
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6760611109522037999, guid: d64cfc0e221e98b408db0930da674aad,
         type: 3}
       propertyPath: toggleStartP
